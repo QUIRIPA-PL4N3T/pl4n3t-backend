@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from main.urls import apiurls as main_apiurls
-
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 # Create the API namespace and add the API only URLs of the applications
 apiurls = ([
@@ -27,9 +27,11 @@ apiurls = ([
 
 urlpatterns = [
     path('', include('main.urls')),
-    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('api/', include(apiurls, namespace='api')),
     path('admin/', admin.site.urls),
+    path('documentation/schema.yml', SpectacularAPIView.as_view(), name='schema'),
+    path('documentation/api/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('documentation/api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
 ]
 
 if not settings.IS_PRODUCTION:

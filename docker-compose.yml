@@ -7,6 +7,8 @@ services:
     container_name: pl4n3t
     environment:
       ENVIRONMENT: development
+    env_file:
+      - .env
     depends_on:
       - db
     volumes:
@@ -18,7 +20,7 @@ services:
       - "8000:8000"
 
   db:
-    image: postgres:11
+    image: postgis/postgis:11-3.2
     container_name: pl4n3t-postgres
     environment: 
       POSTGRES_PASSWORD: postgres

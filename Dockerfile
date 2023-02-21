@@ -1,17 +1,31 @@
-FROM python:3.7
+# Use an official Python runtime based on Debian 10 "buster" as a parent image.
+# Info: as of March 2021 python:3.8.1-slim-buster doesn't work because it skips istalling nodejs and npm from nodesource (See: https://github.com/nodejs/help/issues/554)
+FROM python:3.8.1
 ENV PYTHONUNBUFFERED=1
 
-RUN apt-get update
-
-# For localizations
-RUN apt-get install gettext -y
+# Install system packages required by Wagtail and Django.
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+    build-essential \
+    postgis \
+    gdal-bin \
+    python-gdal \
+    python3-gdal \
+    libpq-dev \
+    libmariadbclient-dev \
+    libjpeg62-turbo-dev \
+    zlib1g-dev \
+    libwebp-dev \
+    gettext \
+    python-psycopg2 \
+ && rm -rf /var/lib/apt/lists/*
 
 # Setup workdir
 RUN mkdir /src
 WORKDIR /src
 
 # Python dependencies
-COPY requirements.txt /src/
+COPY requirements/ requirements/
+COPY requirements.txt .
 RUN pip install -r /src/requirements.txt
 
 COPY . /src
