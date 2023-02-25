@@ -3,6 +3,10 @@
 FROM python:3.8.1
 ENV PYTHONUNBUFFERED=1
 
+
+# For node
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
@@ -17,11 +21,16 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
     gettext \
     python-psycopg2 \
- && rm -rf /var/lib/apt/lists/*
+    nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
 # Setup workdir
 RUN mkdir /src
 WORKDIR /src
+
+# JS dependencies
+COPY package.json /src/
+RUN npm install
 
 # Python dependencies
 COPY requirements/ requirements/

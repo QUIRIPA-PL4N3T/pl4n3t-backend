@@ -47,6 +47,7 @@ ADDONS = [
     'rest_framework_gis',
     'rest_framework_simplejwt.token_blacklist',
     'colorfield',
+    'webpack_loader',
     'debug_toolbar',
     'django_filters',
     'drf_spectacular',
@@ -138,6 +139,16 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend'
     ],
+}
+
+# Webpack config
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': IS_PRODUCTION,
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map']
+    }
 }
 
 # Simple JWT

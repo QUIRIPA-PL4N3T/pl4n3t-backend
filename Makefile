@@ -4,6 +4,18 @@ init:
 	find ./ -type f -exec perl -pi -e 's/pl4n3t/$(name)/g' *.* {} \;
 	mv ./pl4n3t ./$(name)
 
+npm-install:
+	docker exec -it pl4n3t npm install
+
+webpack-dev:
+	docker exec -it pl4n3t npm run dev
+
+webpack-dev-server:
+	docker exec -it pl4n3t npm run dev-server
+
+webpack-build:
+	docker exec -it pl4n3t npm run build
+
 superuser:
 	docker exec -it pl4n3t ./manage.py createsuperuser
 

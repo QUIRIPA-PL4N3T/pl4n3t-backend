@@ -36,3 +36,9 @@ EMAIL_HOST = 'smtp.pl4n3t.com'
 EMAIL_HOST_USER = 'pl4n3t'
 EMAIL_HOST_PASSWORD = EMAIL_PASSWORD
 """
+
+
+WEBPACK_LOADER['DEFAULT'].update({
+    'BUNDLE_DIR_NAME': 'dist/',  # must end with slash
+    'STATS_FILE': os.path.join(BASE_DIR, 'webpack-production-stats.json'),
+})

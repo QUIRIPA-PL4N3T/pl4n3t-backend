@@ -20,6 +20,7 @@ Django 3.1.1 + Postgres 11 + Dokku config (Production Ready)
 │   ├── tests.py (We hope you will put some tests here :D)
 │   ├── urls.py (Main urls, place the home page here)
 │   └── views.py
+├── assets (js, stylesheets, etc to create bundle using webpack)
 ├── media
 ├── pl4n3t
 │   ├── settings
@@ -95,6 +96,20 @@ To remove the docker containers including database (Useful sometimes when dealin
 
 ```
 docker-compose down
+```
+#### Assets development with webpack
+
+After the containers are running, the webpack bundle is required in order to render the statics, so just run:
+
+```
+make webpack-dev
+```
+
+The previous command will generate the bundle for webpack once. 
+However, if you want to take advantage of the live reload functionality you should use the next command instead:
+
+```
+make webpack-dev-server
 ```
 
 ### Accessing Administration

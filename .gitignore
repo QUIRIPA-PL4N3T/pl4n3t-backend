@@ -21,5 +21,8 @@ env/
 media/
 static/
 
+assets/webpack_bundles/
+webpack-*-stats.json
+
 !media/.keep
 !static/.keep

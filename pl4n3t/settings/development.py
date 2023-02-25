@@ -58,3 +58,14 @@ SIMPLE_JWT.update({
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'SIGNING_KEY': SECRET_KEY,
 })
+
+
+# Webpack config
+WEBPACK_LOADER['DEFAULT'].update({
+    'BUNDLE_DIR_NAME': 'webpack_bundles/',  # must end with slash
+    'STATS_FILE': os.path.join(BASE_DIR, 'webpack-development-stats.json'),
+})
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
