@@ -19,7 +19,7 @@ tests/report/
 env/
 
 media/
-static/
+/static/
 
 assets/webpack_bundles/
 webpack-*-stats.json
