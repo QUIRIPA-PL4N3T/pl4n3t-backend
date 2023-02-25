@@ -13,28 +13,25 @@
           <a class="nav-link active" aria-current="page" href="#">{% translate 'Home' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">{% translate 'Company' %}</a>
+          <a class="nav-link" aria-current="page" href="#">{% translate 'The Company' %}</a>
         </li>
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {% translate 'Quantify' %}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">{% translate 'Why Quantify' %}</a></li>
+            <li><a class="dropdown-item" href="{% url 'why-quantify' %}">{% translate 'Why Quantify' %}</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">{% translate 'Carbon footprint' %}</a></li>
-            <li><a class="dropdown-item" href="#">{% translate 'Plastic footprint' %}</a></li>
-            <li><a class="dropdown-item" href="#">{% translate 'Water footprint' %}</a></li>
+            <li><a class="dropdown-item" href="{% url 'water-footprint' %}">{% translate 'Carbon footprint' %}</a></li>
+            <li><a class="dropdown-item" href="{% url 'carbon-footprint' %}">{% translate 'Plastic footprint' %}</a></li>
+            <li><a class="dropdown-item" href="{% url 'plastic-footprint' %}">{% translate 'Water footprint' %}</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">{% translate 'Contact us' %}</a>
+          <a class="nav-link" aria-current="page" href="{% url 'contact-us' %}">{% translate 'Contact us' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">{% translate 'Blog' %}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" aria-current="page" href="{% url 'blog' %}">{% translate 'Blog' %}</a>
         </li>
       </ul>
     </div>

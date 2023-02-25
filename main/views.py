@@ -23,5 +23,13 @@ def why_quantify(request):
     return render(request, 'contact_us.html')
 
 
-def carbon_level(request):
-    return render(request, 'carbon_level.html')
+def carbon_footprint(request):
+    return render(request, 'carbon_footprint.html')
+
+
+def plastic_footprint(request):
+    return render(request, 'plastic_footprint.html')
+
+
+def water_footprint(request):
+    return render(request, 'water_footprint.html')

@@ -41,7 +41,7 @@ statics:
 	docker exec -it pl4n3t ./manage.py collectstatic --noinput
 
 makemessages:
-	docker exec -it pl4n3t django-admin makemessages
+	docker exec -it pl4n3t django-admin makemessages -l es
 
 compilemessages:
 	docker exec -it pl4n3t django-admin compilemessages
