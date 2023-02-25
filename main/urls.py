@@ -1,8 +1,7 @@
 # general imports
 from django.urls import path
 from django.urls import include
-from main.views import home
-
+from main.views import home, blog, company, contact_us, why_quantify, carbon_level
 # api imports
 from rest_framework import routers
 from main.api import ConfigurationView
@@ -20,4 +19,9 @@ apiurls = ([
 # general urls
 urlpatterns = [
     path('', home, name="home"),
+    path('blog/', blog, name="home"),
+    path('contact-us', contact_us, name="contact-us"),
+    path('company/', company, name="company"),
+    path('why-quantify', why_quantify, name="why-quantify"),
+    path('carbon-level', carbon_level, name="carbon-level"),
 ]
