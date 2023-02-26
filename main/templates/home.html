@@ -2,3 +2,23 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Home' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row hero">
+      <div class="container d-flex align-items-center">
+        <div class="hero-text">
+          <h1 class="title">{% translate 'WITH PL4NET IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT...' %}</h1>
+          <p>{% translate 'Cabon, Water and Plastic' %}</p>
+          <button class="btn btn-outline-primary">{% translate 'Quantify now!' %}</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row pt-5">
+        <h2>{% translate 'YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS' %}</h2>
+        <hr>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
