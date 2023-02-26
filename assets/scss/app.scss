@@ -5,6 +5,8 @@
 @import "variables";
 
 // Imports required to use bootstrap variables that are not overridden by _variables.scss
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
@@ -18,7 +20,7 @@
 }
 
 body {
-  background: $secondary;
+  background: $white;
   color: black;
   width: 100%;
   height: 100%;
@@ -29,15 +31,25 @@ html {
   height: 100%;
 }
 
+.flex-gap {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.flex-gap {
+  margin: 0 15px 0 15px;
+}
+
 .navbar {
   background-color: rgba(0, 0, 0, 0.25);
   font-family: Quicksand, sans-serif;
   color: #fff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 5rem;
+  -webkit-font-smoothing: antialiased;
 
 
   .navbar-brand {
@@ -59,9 +71,13 @@ html {
   }
 
   .nav-link {
-    color: #fff;
+    color: $white;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+  }
+
+  .nav-link.active {
+    color: $white;
   }
 
   .nav-link.active {
@@ -72,4 +88,13 @@ html {
   .navbar.scrolled {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+}
+
+.footer {
+  background-color: $black;
+  color: $white;
+  font-family: Quicksand, sans-serif;
+  padding: 3rem 5rem;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
 }

@@ -1,0 +1,40 @@
+{% load i18n static %}
+<div class="container-fluid footer mt-auto">
+  <div class="row d-flex flex-column">
+    <div class="row d-flex justify-content-center align-content-center">
+
+      <div class="col-md-4 col-xs-12 d-flex flex-column text-center text-lg-start">
+        <h5 class="m-0">www.pl4n3t.com</h5>
+        <p class="m-0">{% translate 'Address' %}: Cra 20 #36-04, Yopal – Casanare(Colombia)</p>
+        <p class="m-0">{% translate 'Phones' %}: +57 302 865 17 88</p>
+        <p class="m-0 ">{% translate 'Email' %}: <strong><a class="text-white"
+          href="mailto:info@pl4n3t.com ">info@pl4n3t.com</a></strong></p>
+        <p class="m-0">{% translate 'Copyright' %} © 2023 pl4n3t.com
+          - {% translate 'All rights reserved' %}.</p>
+      </div>
+
+      <div class="col-md-4 col-xs-12 d-flex align-items-center justify-content-center footer-social-links p-3 mt-sm-3">
+        <a class="text-decoration-none text-white" href="{{ facebook_page }}">
+          <i class="fa fa-facebook-square fa-3x flex-gap"></i>
+        </a>
+        <a class="text-decoration-none text-white" href="{{ instagram_page }}">
+          <i class="fa fa-instagram fa-3x flex-gap"></i>
+        </a>
+        <a class="text-decoration-none text-white" href="{{ linkedin_page }}">
+          <i class="fa fa-linkedin-square fa-3x flex-gap"></i>
+        </a>
+        <a class="text-decoration-none text-white" href="{{ twitter_page }}">
+          <i class="fa fa-twitter-square fa-3x flex-gap"></i>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-xs-12 d-flex align-items-center justify-content-lg-end justify-content-center text-center mt-sm-3">
+        {% translate 'Powered by' %} Jobul
+      </div>
+    </div>
+
+    <div class="row col-lg-12 d-flex text-center align-items-center pt-2">
+      <h5>{% translate 'Privacy policy' %}</h5>
+    </div>
+  </div>
+</div>
