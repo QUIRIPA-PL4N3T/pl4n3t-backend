@@ -31,3 +31,7 @@ def plastic_footprint(request):
 
 def water_footprint(request):
     return render(request, 'water_footprint.html')
+
+
+def footprint_levels(request):
+    return render(request, 'footprint_levels.html')

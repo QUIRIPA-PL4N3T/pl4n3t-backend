@@ -19,6 +19,109 @@
         <h2>{% translate 'YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS' %}</h2>
         <hr>
       </div>
+      <div class="row">
+        <div class="highlights">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img class="img-fluid" src="{% static 'img/corporate-footprint.webp' %}"
+                 alt="{% translate 'Corporate Footprint' %}">
+            <h4>{% translate 'Corporate Footprint' %}</h4>
+            <span>
+            {% blocktrans %}
+              Measures the environmental impact associated with the carbon footprint of business activities from the
+              quantification of the Greenhouse Gas (GHG) inventories emitted.
+            {% endblocktrans %}
+          </span>
+            <span>
+          <a class="more-button" href="{% url 'footprint-levels' %}">{% translate 'More' %}</a>
+        </span>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="{% static 'img/event-footprint.webp' %}" alt="{% translate 'Event Footprint' %}">
+            <h4>{% translate 'Events Footprint' %}</h4>
+            <span>
+              {% blocktrans %}
+                Quantifies the environmental impact associated with the carbon footprint of an event from before, during
+                and
+                after an event, such as a conference, concert, forum or exhibition in its environment.
+              {% endblocktrans %}
+            </span>
+            <span>
+          <a class="more-button" href="{% url 'footprint-levels' %}">{% translate 'More' %}</a>
+        </span>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="{% static 'img/product-footprint.webp' %}" alt="{% translate 'Product Footprint' %}">
+            <h4>{% translate 'Product Footprint' %}</h4>
+            <span>
+            {% blocktrans %}
+              Calculates the environmental impact to the carbon footprint throughout its life cycle (LCA) of the
+              production process. Factors such as receipt of raw materials, production, transportation and delivery of
+              the product are considered.
+            {% endblocktrans %}
+          </span>
+            <span>
+          <a class="more-button" href="{% url 'footprint-levels' %}">{% translate 'More' %}</a>
+        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row pt-5">
+        <h2>{% translate 'YOU CAN MANAGE DIFFERENT TYPES OF FOOTPRINTS' %}</h2>
+        <hr>
+      </div>
+
+      <div class="footprint-types py-5">
+        <div class="row d-flex flex-row pb-5">
+          <div class="col-12 col-md-6">
+            <img class="img-fluid" src="{% static 'img/car.webp' %}" alt="{% translate 'Carbon Footprint' %}">
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-column">
+            <h4>{% translate 'Carbon Footprint' %}</h4>
+            <span class="pt-4">
+            {% blocktrans %}
+              The carbon footprint is a measure of the environmental impact of an activity or product, expressed in CO2
+              in terms of greenhouse gas emissions - GHG generated in a given time.
+            {% endblocktrans %}
+          </span>
+            <span class="pt-4"><a href="{% url 'carbon-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+          </div>
+        </div>
+        <div class="row d-flex flex-row-reverse pb-5">
+          <div class="col-12 col-md-6">
+            <img class="img-fluid" src="{% static 'img/bleach.webp' %}" alt="{% translate 'Carbon Footprint' %}">
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-column">
+            <h4>{% translate 'Plastic Footprint' %}</h4>
+            <span class="pt-4">
+            {% blocktrans %}
+              The plastic footprint is a measure of the environmental impact associated in Kg with the production, use
+              and management of plastic waste, including the extraction of raw materials, production, transport, use and
+              end-of-life of plastic.
+            {% endblocktrans %}
+          </span>
+            <span class="pt-4"><a href="{% url 'plastic-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+          </div>
+        </div>
+        <div class="row d-flex flex-row">
+          <div class="col-12 col-md-6">
+            <img class="img-fluid" src="{% static 'img/river.webp' %}" alt="{% translate 'Carbon Footprint' %}">
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-column">
+            <h4>{% translate 'Water Footprint' %}</h4>
+            <span class="pt-4">
+            {% blocktrans %}
+              The water footprint is a measure of the environmental impact associated with water use, expressed in terms
+              of the total amount of water, in cubic meters, used to produce a product or perform an activity. It
+              includes water used in agriculture, industry and households.
+            {% endblocktrans %}
+          </span>
+            <span class="pt-4"><a href="{% url 'water-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock content %}

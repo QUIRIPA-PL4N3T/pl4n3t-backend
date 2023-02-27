@@ -2,7 +2,7 @@
 from django.urls import path
 from django.urls import include
 from main.views import home, blog, company, contact_us, why_quantify, water_footprint, carbon_footprint, \
-    plastic_footprint
+    plastic_footprint, footprint_levels
 # api imports
 from rest_framework import routers
 from main.api import ConfigurationView
@@ -23,8 +23,9 @@ urlpatterns = [
     path('blog/', blog, name="blog"),
     path('contact-us', contact_us, name="contact-us"),
     path('company/', company, name="company"),
-    path('why-quantify', why_quantify, name="why-quantify"),
-    path('water-footprint', water_footprint, name="water-footprint"),
-    path('carbon-footprint', carbon_footprint, name="carbon-footprint"),
-    path('plastic-footprint', plastic_footprint, name="plastic-footprint"),
+    path('why-quantify/', why_quantify, name="why-quantify"),
+    path('water-footprint/', water_footprint, name="water-footprint"),
+    path('carbon-footprint/', carbon_footprint, name="carbon-footprint"),
+    path('plastic-footprint/', plastic_footprint, name="plastic-footprint"),
+    path('footprint-levels/', footprint_levels, name="footprint-levels"),
 ]
