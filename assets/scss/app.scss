@@ -159,7 +159,7 @@ hr {
   border-top: 1px solid;
   opacity: 0.75;
   display: block;
-  margin: 16px 0px 0px ;
+  margin: 16px 0px 0px;
 }
 
 .highlights {
@@ -172,7 +172,7 @@ hr {
   margin-top: 40px;
 
 
-  >* {
+  > * {
     display: flex;
     flex: 1 1 160px;
     padding: 10px 50px;
@@ -186,7 +186,8 @@ hr {
 
   img {
     max-width: 336px;
-  };
+  }
+;
 
   span {
     margin-bottom: 30px;
@@ -194,26 +195,57 @@ hr {
   }
 }
 
-  .more-button {
-    border: 2px solid $black;
-    font-size: 16px;
-    color: black;
-    width: 80px;
-    padding: 5px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
+.more-button {
+  border: 2px solid $black;
+  font-size: 16px;
+  color: black;
+  width: 80px;
+  padding: 5px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.more-button:hover {
+  background-color: $black;
+  color: $white;
+  border-color: $black;
+}
+
+.footprint-types {
+  -webkit-font-smoothing: antialiased;
+
+  span {
+    color: $gray-text;
+  }
+}
+
+.text-gray {
+  color: $gray-text;
+}
+
+.newsletter-register {
+
+  input {
+    width: 500px;
+    border: 1px solid $gray-400;
+    padding: 10px 16px 8px;
+    margin-right: 20px;
   }
 
-  .more-button:hover {
-    background-color: $black;
-    color: $white;
-    border-color: $black;
+  .newsletter-button {
+    @extend .more-button;
+    text-align: center;
+    width: 150px;
   }
+}
 
-  .footprint-types {
-      -webkit-font-smoothing: antialiased;
-    span {
-      color: $gray-text;
-    }
+.partners {
+
+  img {
+    max-width:100%;
+    height:auto;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
   }
+}

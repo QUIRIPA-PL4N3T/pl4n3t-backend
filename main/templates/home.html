@@ -86,7 +86,8 @@
               in terms of greenhouse gas emissions - GHG generated in a given time.
             {% endblocktrans %}
           </span>
-            <span class="pt-4"><a href="{% url 'carbon-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+            <span class="pt-4"><a href="{% url 'carbon-footprint' %}"
+                                  class="more-button">{% translate 'More' %}</a></span>
           </div>
         </div>
         <div class="row d-flex flex-row-reverse pb-5">
@@ -102,7 +103,8 @@
               end-of-life of plastic.
             {% endblocktrans %}
           </span>
-            <span class="pt-4"><a href="{% url 'plastic-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+            <span class="pt-4"><a href="{% url 'plastic-footprint' %}"
+                                  class="more-button">{% translate 'More' %}</a></span>
           </div>
         </div>
         <div class="row d-flex flex-row">
@@ -118,9 +120,38 @@
               includes water used in agriculture, industry and households.
             {% endblocktrans %}
           </span>
-            <span class="pt-4"><a href="{% url 'water-footprint' %}" class="more-button">{% translate 'More' %}</a></span>
+            <span class="pt-4"><a href="{% url 'water-footprint' %}"
+                                  class="more-button">{% translate 'More' %}</a></span>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="newsletter-register container d-flex justify-content-center align-items-center flex-column py-5">
+      <h2 class="mb-3">{% translate 'To whom is Pl4n3t directed?' %}</h2>
+      <p class="text-gray">{% translate 'To any organization that wants to focus on sustainability.' %}</p>
+      <div class="d-flex">
+        <input id='email' type="text" placeholder="{% translate 'email' %}">
+        <label for="email"></label>
+        <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-3">{% translate 'Register' %}</a>
+      </div>
+    </div>
+
+    <div class="partners container d-flex justify-content-center align-items-center py-5 flex-column">
+      <h2 class="mb-3">{% translate 'Trust Us' %}</h2>
+      <div class="logos d-flex gap-5">
+        <img src="{% static 'img/compensave.webp' %}" alt="Compensave" class="img-fluid">
+        <img src="{% static 'img/takami.webp' %}" alt="Takami" class="img-fluid">
+        <img src="{% static 'img/quantix.webp' %}" alt="Quantix" class="img-fluid mt-3">
+        <img src="{% static 'img/sua.webp' %}" alt="Sua" class="img-fluid mt-3">
+        <img src="{% static 'img/cataruben.webp' %}" alt="Cataruben" class="">
+      </div>
+    </div>
+
+    <div class="support-us container d-flex justify-content-center align-items-center py-5 flex-column">
+      <h2 class="mb-3">{% translate 'Support us' %}</h2>
+      <div class="logos d-flex gap-5">
+        <img src="{% static 'img/logos-senainnova.webp' %}" alt="Senainnova" class="img-fluid">
+        <img src="{% static 'img/logo-mincomercio.webp' %}" alt="Mincomercio" class="img-fluid">
       </div>
     </div>
   </div>
