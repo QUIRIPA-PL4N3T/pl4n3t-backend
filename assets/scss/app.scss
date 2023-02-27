@@ -227,10 +227,8 @@ hr {
 .newsletter-register {
 
   input {
-    width: 500px;
     border: 1px solid $gray-400;
     padding: 10px 16px 8px;
-    margin-right: 20px;
   }
 
   .newsletter-button {
@@ -242,10 +240,27 @@ hr {
 
 .partners {
 
+  .cataruben-logo {
+    margin-top: 20px;
+    max-height: 75px;
+  }
+
   img {
     max-width:100%;
     height:auto;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+  }
+}
+
+.page-content{
+  padding-top: 120px;
+
+}
+
+.support-us {
+  .senainnova {
+    max-height: 73px;
+    margin-top: 11px;
   }
 }

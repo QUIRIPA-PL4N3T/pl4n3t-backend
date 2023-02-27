@@ -81,7 +81,8 @@
           <div class="col-12 col-md-6 d-flex flex-column">
             <h4>{% translate 'Carbon Footprint' %}</h4>
             <span class="pt-4">
-            {% blocktrans %}The carbon footprint is a measure of the environmental impact of an activity or product, expressed in CO2 in terms of greenhouse gas emissions - GHG generated in a given time.
+            {% blocktrans %}The carbon footprint is a measure of the environmental impact of an activity or product,
+              expressed in CO2 in terms of greenhouse gas emissions - GHG generated in a given time.
             {% endblocktrans %}
           </span>
             <span class="pt-4"><a href="{% url 'carbon-footprint' %}"
@@ -126,29 +127,34 @@
     </div>
     <div class="newsletter-register container d-flex justify-content-center align-items-center flex-column py-5">
       <h2 class="mb-3">{% translate 'To whom is Pl4n3t directed?' %}</h2>
-      <p class="text-gray">{% translate 'To any organization that wants to focus on sustainability.' %}</p>
-      <div class="d-flex">
-        <input id='email' type="text" placeholder="{% translate 'email' %}">
-        <label for="email"></label>
-        <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-3">{% translate 'Register' %}</a>
+      <span class="text-gray text-center mb-3">{% translate 'To any organization that wants to focus on sustainability.' %}</span>
+      <div class="w-100 mx-5 px-5">
+
+        <form action="">
+          <div class="d-flex gap-4 gap-sm-2 flex-column flex-sm-row align-items-center">
+            <label class="sr-only" for="inlineFormInput">{% translate 'email' %}</label>
+            <input type="email" class="form-control" id="email" placeholder="{% translate 'email' %}">
+            <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-2">{% translate 'Register' %}</a>
+          </div>
+        </form>
       </div>
     </div>
 
     <div class="partners container d-flex justify-content-center align-items-center py-5 flex-column">
       <h2 class="mb-3">{% translate 'Trust Us' %}</h2>
-      <div class="logos d-flex gap-5">
+      <div class="logos d-flex gap-5 flex-wrap justify-content-center">
         <img src="{% static 'img/compensave.webp' %}" alt="Compensave" class="img-fluid">
         <img src="{% static 'img/takami.webp' %}" alt="Takami" class="img-fluid">
         <img src="{% static 'img/quantix.webp' %}" alt="Quantix" class="img-fluid mt-3">
         <img src="{% static 'img/sua.webp' %}" alt="Sua" class="img-fluid mt-3">
-        <img src="{% static 'img/cataruben.webp' %}" alt="Cataruben" class="">
+        <img src="{% static 'img/cataruben.webp' %}" alt="Cataruben" class="img-fluid cataruben-logo">
       </div>
     </div>
 
     <div class="support-us container d-flex justify-content-center align-items-center py-5 flex-column">
       <h2 class="mb-3">{% translate 'Support us' %}</h2>
-      <div class="logos d-flex gap-5">
-        <img src="{% static 'img/logos-senainnova.webp' %}" alt="Senainnova" class="img-fluid">
+      <div class="logos d-flex gap-5 flex-wrap justify-content-center">
+        <img src="{% static 'img/logos-senainnova.webp' %}" alt="Senainnova" class="img-fluid senainnova">
         <img src="{% static 'img/logo-mincomercio.webp' %}" alt="Mincomercio" class="img-fluid">
       </div>
     </div>
