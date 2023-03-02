@@ -2,3 +2,44 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Contact Us' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="container navbar-space">
+      <div class="row mt-5">
+        <h2 class="m-3">{% translate 'CONTACT US' %}</h2>
+        <hr class="hr1">
+        <div class="row d-flex text-center my-5">
+          <h4>{% translate 'Find more ways to help!' %}</h4>
+          <h5 class="mt-5">www.pl4n3t.com</h5>
+          <p class="m-0 text-gray">{% translate 'Address' %}: Cra 20 #36-04, Yopal – Casanare(Colombia)</p>
+          <p class="m-0 text-gray">{% translate 'Phones' %}: <a href="tel:+57-3028651788">+57 302 865 17 88</a></p>
+          <p class="m-0 text-gray">{% translate 'Email' %}: <strong>
+            <a class="text-black"
+               href="mailto:info@pl4n3t.com ">info@pl4n3t.com</a>
+          </strong>
+          </p>
+          <div>
+            <a href="https://wa.me/573028651788" target="_blank" icon="whatsApp"
+               class="whatsapp-button align-items-center">
+              <img src="{% static 'img/whatsapp_icon.png' %}" alt="" class="mx-2">
+              {% translate 'Send us a message' %}
+            </a>
+          </div>
+
+          <div class="mt-5 newsletter-register">
+            <h3>{% translate 'Quantify now' %}</h3>
+            <form action="">
+              <div class="d-flex gap-4 gap-sm-2 flex-column flex-sm-row align-items-center">
+                <label class="sr-only" for="inlineFormInput">{% translate 'email' %}</label>
+                <input type="email" class="form-control" id="email" placeholder="{% translate 'email' %}">
+                <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-2">{% translate 'Register' %}</a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
