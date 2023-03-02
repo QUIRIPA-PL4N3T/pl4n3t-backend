@@ -4,11 +4,66 @@
 {% block page_title %}{% translate 'Blog' %}{% endblock page_title %}
 
 {% block content %}
-  <div class="container page-content">
-    <h1>SEMINARIO VIRTUAL</h1>
-  </div>
-  <span>
-  PRÓXIMAMENTE : Seminario virtual sobre herramientas tecnológicas para la digitalización de los procesos y la sostenibilidad ambiental
-  </span>
+  <div class="container-fluid blog">
+    <div class="container navbar-space">
+      <div class="row text-center w-75 m-auto">
+        <h3>{% translate 'WEBINAR' %}</h3>
+        <span class="text-gray">
+          {% blocktrans %}
+            COMING SOON: Webinar on technological tools for the digitization of processes and environmental
+            sustainability
+          {% endblocktrans %}
+        </span>
 
+        <div class="mt-5 newsletter-register">
+          <h4 class="text-gray my-3">{% translate 'Participate in the Virtual Seminar' %}</h4>
+          <form action="">
+            <div class="d-flex gap-4 gap-sm-2 flex-column flex-sm-row align-items-center">
+              <label class="sr-only" for="inlineFormInput">{% translate 'email' %}</label>
+              <input type="email" class="form-control" id="email" placeholder="{% translate 'email' %}">
+              <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-2">{% translate 'Register' %}</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="row text-center my-5">
+          <h2 class="mt-0">{% translate "We're almost ready!" %}</h2>
+          <h4 class="text-gray">{% translate "We are getting ready, don't miss it!" %}</h4>
+        </div>
+
+        <div class="clock gap-4 text-center d-flex justify-content-center mb-5">
+          <div>
+            <div class="numbers">
+              <span>2</span>
+              <span>1</span>
+              <span>7</span>
+            </div>
+            <span class="mt-1">{% translate 'Days' %}</span>
+          </div>
+          <div>
+            <div class="numbers">
+              <span>0</span>
+              <span>5</span>
+            </div>
+            <span class="mt-1">{% translate 'Hours' %}</span>
+          </div>
+          <div>
+            <div class="numbers">
+              <span>2</span>
+              <span>1</span>
+            </div>
+            <span class="mt-1">{% translate 'Minutes' %}</span>
+          </div>
+
+          <div>
+            <div class="numbers">
+              <span>5</span>
+              <span>9</span>
+            </div>
+            <span class="mt-1">{% translate 'Seconds' %}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

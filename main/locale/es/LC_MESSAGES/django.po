@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-27 17:54+0000\n"
+"POT-Creation-Date: 2023-03-02 22:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,41 +18,492 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/templates/blog.html:4 main/templates/includes/header.html:44
+#: main/templates/blog.html:4 main/templates/includes/header.html:45
 msgid "Blog"
 msgstr "Blog"
 
-#: main/templates/carbon_footprint.html:4 main/templates/home.html:79
-#: main/templates/home.html:82 main/templates/home.html:93
-#: main/templates/home.html:110
+#: main/templates/carbon_footprint.html:4
+#: main/templates/carbon_footprint.html:10 main/templates/home.html:79
+#: main/templates/home.html:82 main/templates/home.html:94
+#: main/templates/home.html:111
 #, fuzzy
 #| msgid "Carbon footprint"
 msgid "Carbon Footprint"
 msgstr "Huella de Carbono"
 
-#: main/templates/carbon_level.html:4
-msgid "Cabon Level"
-msgstr "Huella de Carbono"
+#: main/templates/carbon_footprint.html:17
+msgid ""
+"\n"
+"            The carbon footprint is a measure of the total greenhouse gas "
+"(GHG) emissions, expressed in carbon dioxide\n"
+"            equivalents (CO2e), that are produced directly or indirectly as "
+"a result of the activities of an\n"
+"            organization, product or service.\n"
+"\n"
+"            In the business context, carbon footprint measurement has "
+"several functionalities:\n"
+"          "
+msgstr ""
+
+#: main/templates/carbon_footprint.html:28
+#: main/templates/plastic_footprint.html:29
+msgid "Identification of impacts"
+msgstr ""
+
+#: main/templates/carbon_footprint.html:30
+msgid ""
+"\n"
+"            Carbon footprint measurement helps a company identify the "
+"environmental impacts of its operations in terms\n"
+"            of GHG emissions, allowing it to identify areas for improvement "
+"and opportunities for reduction.\n"
+"          "
+msgstr ""
+
+#: main/templates/carbon_footprint.html:38
+#: main/templates/plastic_footprint.html:39
+msgid "Risk management"
+msgstr ""
+
+#: main/templates/carbon_footprint.html:40
+msgid ""
+"\n"
+"            Carbon footprinting also helps a company manage risks related to "
+"environmental regulation and customer and\n"
+"            societal expectations regarding sustainability.\n"
+"          "
+msgstr ""
+
+#: main/templates/carbon_footprint.html:48
+#: main/templates/plastic_footprint.html:49
+msgid "Cost savings"
+msgstr ""
+
+#: main/templates/carbon_footprint.html:50
+msgid ""
+"\n"
+"            Identifying GHG emission reduction opportunities can help a "
+"company save costs in terms of energy and other\n"
+"            resources.\n"
+"          "
+msgstr ""
+
+#: main/templates/carbon_footprint.html:58
+#: main/templates/plastic_footprint.html:59
+msgid "Competitive differentiation"
+msgstr ""
+
+#: main/templates/carbon_footprint.html:60
+msgid ""
+"\n"
+"            Measuring and reducing the carbon footprint can help a company "
+"differentiate itself from its competitors by\n"
+"            demonstrating its commitment to sustainability and social "
+"responsibility.\n"
+"\n"
+"            In summary, carbon footprint measurement is an important tool "
+"for a company's environmental management and\n"
+"            sustainability, enabling impact identification, risk management, "
+"cost savings and competitive\n"
+"            differentiation.\n"
+"          "
+msgstr ""
 
 #: main/templates/company.html:4
 msgid "Company"
 msgstr "Empresa"
 
+#: main/templates/company.html:11
+msgid ""
+"\n"
+"            \"Quantifying it helps us to be aware of our impact and take "
+"concrete steps to live more sustainably and\n"
+"            protect our home.\"\n"
+"          "
+msgstr ""
+
+#: main/templates/company.html:22
+msgid "About us"
+msgstr ""
+
+#: main/templates/company.html:24
+msgid ""
+"\n"
+"          We are a company that quantifies corporate footprints (carbon, "
+"water and plastic footprints), which serve as a\n"
+"          basis for communicating the company's performance in relation to "
+"climate change with all stakeholders\n"
+"          (suppliers, customers, investors, government and others).\n"
+"        "
+msgstr ""
+
+#: main/templates/company.html:36
+msgid "Our Strategies"
+msgstr ""
+
+#: main/templates/company.html:40
+msgid "MISSION"
+msgstr ""
+
+#: main/templates/company.html:42
+msgid ""
+"\n"
+"                We provide solutions to mitigate the corporate footprint "
+"which are Carbon, Water and Plastic Footprint.\n"
+"              "
+msgstr ""
+
+#: main/templates/company.html:48
+msgid "VISION"
+msgstr ""
+
+#: main/templates/company.html:50
+msgid ""
+"\n"
+"                By 2030 we will be recognized in Latin America for our "
+"impact on mitigating climate change at the\n"
+"                corporate level.\n"
+"              "
+msgstr ""
+
+#: main/templates/company.html:62
+msgid ""
+"\n"
+"          With Pl4N3T, it assists in the transition to a low-carbon economy "
+"through sustainable tools that help to\n"
+"          reduce the carbon footprint of the economy.\n"
+"        "
+msgstr ""
+
+#: main/templates/company.html:71
+msgid "Our History"
+msgstr ""
+
+#: main/templates/company.html:75
+msgid ""
+"\n"
+"              Pl4n3t is a brand that emerged in 2021 as a result of tax "
+"reforms that opened an opportunity to generate\n"
+"              income in the environmental area. It was then when "
+"environmental projects began to emerge in collaboration\n"
+"              with international organizations, focused on the "
+"quantification of removals, specifically carbon\n"
+"              sequestration.\n"
+"            "
+msgstr ""
+
+#: main/templates/company.html:83
+msgid ""
+"\n"
+"              With the objective of the need to comply with the agreements "
+"of the Montreal Treaty and the Colombian and\n"
+"              international regulations, which require the quantification of "
+"emissions and compensation through verified\n"
+"              carbon certificates. To expand its market, Amanecer en el "
+"palmar through the Pl4n3t brand decided to\n"
+"              participate in 2022, in an innovation project called "
+"\"SENAInnova Productividad para las Empresas 2.0\"\n"
+"              supported by SENAInnova - Productividad para las empresas "
+"which is a project between SENA and Colombia\n"
+"              Productiva, which is an entity of the Ministry of Industry and "
+"Tourism. The objective was to formulate a\n"
+"              project to quantify the greenhouse gas (GHG) emissions of "
+"companies.\n"
+"            "
+msgstr ""
+
+#: main/templates/company.html:94
+msgid ""
+"\n"
+"              In the year 2022, the company Amanecer en el Palmar under the "
+"brand Pl4n3t began to offer and perform\n"
+"              greenhouse gas (GHG) emissions quantification services to "
+"companies, events, organizations and products.\n"
+"              Finally in mid-November 2022, Amanecer en el Palmar were "
+"selected in the innovation project, which led to\n"
+"              the creation of a technological platform for quantifying the "
+"corporate footprint (Carbon, Plastic and\n"
+"              Hydric).\n"
+"            "
+msgstr ""
+
+#: main/templates/company.html:103
+msgid ""
+"\n"
+"              In summary, Pl4n3t is a brand that was born from the company "
+"Amanecer en el Palmar, with the objective of\n"
+"              taking advantage of the opportunities of the environmental "
+"market, with a focus on the quantification of\n"
+"              GHG\n"
+"              emissions. Its collaboration with Amanecer en el Palmar and "
+"its technological platform demonstrate its\n"
+"              commitment to sustainability and environmental care.\n"
+"            "
+msgstr ""
+
+#: main/templates/company.html:117 main/templates/home.html:157
+msgid "Support us"
+msgstr "Nos Apoyan"
+
+#: main/templates/company.html:122
+msgid "MinComercio"
+msgstr ""
+
+#: main/templates/company.html:124
+msgid ""
+"\n"
+"                It supports business activity, the production of goods, "
+"services and technology, as well as tourism\n"
+"                management in the country's regions to improve their "
+"competitiveness and sustainability and encourage\n"
+"                the\n"
+"                generation of greater added value.\n"
+"              "
+msgstr ""
+
+#: main/templates/company.html:133
+msgid "Colombia Productiva"
+msgstr ""
+
+#: main/templates/company.html:135
+msgid ""
+"\n"
+"                It supports the country's companies through calls for "
+"proposals and programs that enable them to improve\n"
+"                indicators that are important for increasing efficiency in "
+"production processes, such as quality, human\n"
+"                capital and productivity.\n"
+"                Other services offered include technical assistance, "
+"intervention and support for companies to adopt\n"
+"                international production improvement methodologies, "
+"specialized training programs in partnership with\n"
+"                companies and educational institutions, guidance and "
+"financing to obtain certifications as a requirement\n"
+"                for entry into international markets, among others.\n"
+"              "
+msgstr ""
+
+#: main/templates/company.html:147
+msgid "SENA"
+msgstr ""
+
+#: main/templates/company.html:149
+msgid ""
+"\n"
+"                It is responsible for fulfilling the State's duty to invest "
+"in the social and technical development of\n"
+"                Colombian workers, offering and implementing comprehensive "
+"vocational training for the incorporation and\n"
+"                development of people in productive activities that "
+"contribute to the social, economic and technological\n"
+"                development of the country.\n"
+"              "
+msgstr ""
+
+#: main/templates/company.html:158
+msgid "Cataruben"
+msgstr ""
+
+#: main/templates/company.html:160
+msgid ""
+"\n"
+"                It develops nature-based climate solutions to conserve "
+"biodiversity, water and strategic ecosystems in\n"
+"                this region. Cataruben also has a Research, Technological "
+"Development and Innovation Department (R&D&I)\n"
+"                that generates knowledge on carbon offsets.\n"
+"\n"
+"                Its main services are the development of specialized "
+"consultancies in climate change mitigation, the\n"
+"                quantification of GHG reductions and/or removals in the "
+"AFOLU sector and the development of\n"
+"                technological\n"
+"                solutions aimed at improving the life cycle processes of "
+"climate change mitigation projects. .\n"
+"              "
+msgstr ""
+
 #: main/templates/contact_us.html:4
 msgid "Contact Us"
 msgstr "Comunícate con nosotros"
 
-#: main/templates/footprint-levels.html:4
-msgid "Footprint Levels"
-msgstr "Niveles de Huellas"
+#: main/templates/contact_us.html:10
+msgid "CONTACT US"
+msgstr ""
+
+#: main/templates/contact_us.html:13
+msgid "Find more ways to help!"
+msgstr ""
+
+#: main/templates/contact_us.html:15 main/templates/includes/footer.html:8
+msgid "Address"
+msgstr "Dirección"
+
+#: main/templates/contact_us.html:16 main/templates/includes/footer.html:9
+msgid "Phones"
+msgstr "Teléfonos"
+
+#: main/templates/contact_us.html:17 main/templates/includes/footer.html:10
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: main/templates/contact_us.html:26
+msgid "Send us a message"
+msgstr ""
+
+#: main/templates/contact_us.html:31
+#, fuzzy
+#| msgid "Quantify"
+msgid "Quantify now"
+msgstr "Cuantifique"
+
+#: main/templates/contact_us.html:34 main/templates/contact_us.html:35
+#: main/templates/home.html:135 main/templates/home.html:136
+msgid "email"
+msgstr "Dirección de correo electrónico"
+
+#: main/templates/contact_us.html:36 main/templates/home.html:137
+msgid "Register"
+msgstr "Inscribirse"
+
+#: main/templates/footprint_levels.html:4
+msgid "Cabon Level"
+msgstr "Huella de Carbono"
+
+#: main/templates/footprint_levels.html:10
+#, fuzzy
+#| msgid "Carbon footprint"
+msgid "Different Levels of Carbon Footprints"
+msgstr "Huella de Carbono"
+
+#: main/templates/footprint_levels.html:16
+#: main/templates/footprint_levels.html:19 main/templates/home.html:26
+#: main/templates/home.html:27
+#, fuzzy
+#| msgid "Water footprint"
+msgid "Corporate Footprint"
+msgstr "Huella Corporativa"
+
+#: main/templates/footprint_levels.html:21
+msgid ""
+"\n"
+"              The corporate carbon footprint is a measure of the amount of "
+"greenhouse gases an organization emits into\n"
+"              the atmosphere as a result of its business operations. This "
+"includes direct emissions generated by the\n"
+"              company (such as the burning of fossil fuels in vehicles or "
+"equipment) and indirect emissions (such as the\n"
+"              generation of electricity consumed by the company and the "
+"production and transportation of materials or\n"
+"              employee to their workplace).\n"
+"            "
+msgstr ""
+
+#: main/templates/footprint_levels.html:31
+msgid ""
+"\n"
+"              Measuring the corporate carbon footprint can help companies "
+"identify areas for improvement and set targets\n"
+"              to reduce their greenhouse gas emissions in order to mitigate "
+"their environmental impact and comply with\n"
+"              regulations and legal requirements related to climate change "
+"mitigation.\n"
+"            "
+msgstr ""
+
+#: main/templates/footprint_levels.html:38
+#: main/templates/footprint_levels.html:65
+#: main/templates/footprint_levels.html:93
+#, fuzzy
+#| msgid "Water footprint"
+msgid "measure your footprint"
+msgstr "Huella Hidrica"
+
+#: main/templates/footprint_levels.html:45 main/templates/home.html:39
+#, fuzzy
+#| msgid "Water footprint"
+msgid "Event Footprint"
+msgstr "Huella Evento"
+
+#: main/templates/footprint_levels.html:48 main/templates/home.html:40
+#, fuzzy
+#| msgid "Water footprint"
+msgid "Events Footprint"
+msgstr "Huella Eventos"
+
+#: main/templates/footprint_levels.html:50
+msgid ""
+"\n"
+"              The carbon footprint of events refers to the amount of "
+"greenhouse gases emitted into the atmosphere during\n"
+"              an event, such as a conference, concert, festival or corporate "
+"meeting. The carbon footprint of an event\n"
+"              is made up of several sources of emissions, including energy "
+"used for lighting and air conditioning,\n"
+"              transportation of attendees, and production of materials used "
+"during the event.\n"
+"            "
+msgstr ""
+
+#: main/templates/footprint_levels.html:59
+msgid ""
+"\n"
+"              Measuring the carbon footprint of an event can help identify "
+"areas for improvement and establish action\n"
+"              plans to reduce greenhouse gas emissions, which can help "
+"mitigate the environmental impact of the event\n"
+"              and promote sustainability.\n"
+"            "
+msgstr ""
+
+#: main/templates/footprint_levels.html:72
+#, fuzzy
+#| msgid "Carbon footprint"
+msgid "Producto Footprint"
+msgstr "Huella Productos"
+
+#: main/templates/footprint_levels.html:75 main/templates/home.html:54
+#: main/templates/home.html:55
+#, fuzzy
+#| msgid "Carbon footprint"
+msgid "Product Footprint"
+msgstr "Huella Productos"
+
+#: main/templates/footprint_levels.html:77
+msgid ""
+"\n"
+"              The product carbon footprint refers to the amount of "
+"greenhouse gases emitted during the life cycle of a\n"
+"              product, from its extraction, manufacture, distribution, use "
+"and final disposal. This footprint includes\n"
+"              direct and indirect greenhouse gas emissions, such as the "
+"energy used to produce and transport the\n"
+"              product, the emissions generated by the manufacture and use of "
+"the product, and the emissions associated\n"
+"              with its final disposal.\n"
+"            "
+msgstr ""
+
+#: main/templates/footprint_levels.html:87
+msgid ""
+"\n"
+"              Measuring a product's carbon footprint can help companies and "
+"consumers better understand its\n"
+"              environmental impact and make informed decisions on how to "
+"reduce the greenhouse gas emissions associated\n"
+"              with its production and use.\n"
+"            "
+msgstr ""
 
 #: main/templates/home.html:4 main/templates/includes/header.html:15
 msgid "Home"
 msgstr "Inicio"
 
 #: main/templates/home.html:11
-msgid "WITH PL4NET IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
-msgstr "CON PL4NET ES MUY FÁCIL CUANTIFICAR TU HUELLA..."
+#, fuzzy
+#| msgid "WITH PL4N3T IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
+msgid "WITH PL4N3T IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
+msgstr "CON PL4N3T ES MUY FÁCIL CUANTIFICAR TU HUELLA..."
 
 #: main/templates/home.html:12
 msgid "Carbon, Water and Plastic"
@@ -67,12 +518,6 @@ msgstr "Cuantifique"
 #: main/templates/home.html:19
 msgid "YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS"
 msgstr "PUEDES GESTIONAR HUELLAS A DISTINTOS NIVELES"
-
-#: main/templates/home.html:26 main/templates/home.html:27
-#, fuzzy
-#| msgid "Water footprint"
-msgid "Corporate Footprint"
-msgstr "Huella Corporativa"
 
 #: main/templates/home.html:29
 msgid ""
@@ -89,22 +534,10 @@ msgstr ""
 "Invernadero (GEI) emitidos."
 
 #: main/templates/home.html:35 main/templates/home.html:49
-#: main/templates/home.html:64 main/templates/home.html:88
-#: main/templates/home.html:105 main/templates/home.html:122
+#: main/templates/home.html:64 main/templates/home.html:89
+#: main/templates/home.html:106 main/templates/home.html:123
 msgid "More"
 msgstr "Más"
-
-#: main/templates/home.html:39
-#, fuzzy
-#| msgid "Water footprint"
-msgid "Event Footprint"
-msgstr "Huella Evento"
-
-#: main/templates/home.html:40
-#, fuzzy
-#| msgid "Water footprint"
-msgid "Events Footprint"
-msgstr "Huella Eventos"
 
 #: main/templates/home.html:42
 msgid ""
@@ -120,12 +553,6 @@ msgstr ""
 "Cuantifica el impacto ambiental asociado a la huella de carbono en la "
 "realización de un evento desde él antes, durante y después,  como una "
 "conferencia, un concierto, un foro o una exhibición en su entorno."
-
-#: main/templates/home.html:54 main/templates/home.html:55
-#, fuzzy
-#| msgid "Carbon footprint"
-msgid "Product Footprint"
-msgstr "Huella Productos"
 
 #: main/templates/home.html:57
 msgid ""
@@ -157,7 +584,8 @@ msgstr "PUEDES GESTIONAR DISTINTOS TIPOS DE HUELLAS"
 #| "            "
 msgid ""
 "The carbon footprint is a measure of the environmental impact of an activity "
-"or product, expressed in CO2 in terms of greenhouse gas emissions - GHG "
+"or product,\n"
+"              expressed in CO2 in terms of greenhouse gas emissions - GHG "
 "generated in a given time.\n"
 "            "
 msgstr ""
@@ -165,13 +593,14 @@ msgstr ""
 "producto, expresada en CO2 en términos de las emisiones de gases de efecto "
 "invernadero - GEI generadas en un tiempo determinado."
 
-#: main/templates/home.html:96 main/templates/plastic_footprint.html:4
+#: main/templates/home.html:97 main/templates/plastic_footprint.html:4
+#: main/templates/plastic_footprint.html:10
 #, fuzzy
 #| msgid "Plastic footprint"
 msgid "Plastic Footprint"
 msgstr "Huella Plástica"
 
-#: main/templates/home.html:98
+#: main/templates/home.html:99
 msgid ""
 "\n"
 "              The plastic footprint is a measure of the environmental impact "
@@ -187,13 +616,14 @@ msgstr ""
 "extracción de materias primas, la producción, el transporte, el uso y el fin "
 "de vida del mismo. "
 
-#: main/templates/home.html:113 main/templates/water_footprint.html:4
+#: main/templates/home.html:114 main/templates/water_footprint.html:4
+#: main/templates/water_footprint.html:10
 #, fuzzy
 #| msgid "Water footprint"
 msgid "Water Footprint"
 msgstr "Huella Hídrica"
 
-#: main/templates/home.html:115
+#: main/templates/home.html:116
 msgid ""
 "\n"
 "              The water footprint is a measure of the environmental impact "
@@ -209,41 +639,17 @@ msgstr ""
 "cúbicos, utilizada para producir un producto o realizar una actividad. "
 "Incluye el agua utilizada en la agricultura, la industria y el hogar. "
 
-#: main/templates/home.html:128
+#: main/templates/home.html:129
 msgid "To whom is Pl4n3t directed?"
 msgstr "¿A quién se dirige Pl4n3t?"
 
-#: main/templates/home.html:129
+#: main/templates/home.html:130
 msgid "To any organization that wants to focus on sustainability."
 msgstr "A cualquier organización que quiera orientarse a la sostenibilidad."
 
-#: main/templates/home.html:131
-msgid "email"
-msgstr "Dirección de correo electrónico"
-
-#: main/templates/home.html:133
-msgid "Register"
-msgstr "Inscribirse"
-
-#: main/templates/home.html:138
+#: main/templates/home.html:145
 msgid "Trust Us"
 msgstr "Confían en Nosotros"
-
-#: main/templates/home.html:149
-msgid "Support us"
-msgstr "Nos Apoyan"
-
-#: main/templates/includes/footer.html:8
-msgid "Address"
-msgstr "Dirección"
-
-#: main/templates/includes/footer.html:9
-msgid "Phones"
-msgstr "Teléfonos"
-
-#: main/templates/includes/footer.html:10
-msgid "Email"
-msgstr "Correo Electrónico"
 
 #: main/templates/includes/footer.html:12
 msgid "Copyright"
@@ -273,18 +679,219 @@ msgstr "Cuantifique"
 msgid "Why Quantify"
 msgstr "¿Por que Cuantificar?"
 
-#: main/templates/includes/header.html:32
+#: main/templates/includes/header.html:29
+msgid "Footprint Levels"
+msgstr "Niveles de Huellas"
+
+#: main/templates/includes/header.html:33
 msgid "Carbon footprint"
 msgstr "Huella de Carbono"
 
-#: main/templates/includes/header.html:33
+#: main/templates/includes/header.html:34
 msgid "Plastic footprint"
 msgstr "Huella Plástica"
 
-#: main/templates/includes/header.html:35
+#: main/templates/includes/header.html:36
 msgid "Water footprint"
 msgstr "Huella Hidrica"
 
-#: main/templates/includes/header.html:40
+#: main/templates/includes/header.html:41
 msgid "Contact us"
 msgstr "Comunícate con nosotros"
+
+#: main/templates/plastic_footprint.html:17
+msgid ""
+"\n"
+"            The plastic footprint is a tool used to quantify the amount of "
+"plastic a company uses and the amount of\n"
+"            plastic waste it generates throughout its supply chain and "
+"operations. This footprint allows companies to\n"
+"            identify their environmental impacts and take measures to reduce "
+"their plastic use and better manage plastic\n"
+"            waste.\n"
+"\n"
+"            The functionalities of the plastic footprint for a company "
+"include:\n"
+"          "
+msgstr ""
+
+#: main/templates/plastic_footprint.html:31
+msgid ""
+"\n"
+"            Identification of critical points in the supply chain and "
+"operations where plastic is used and waste is\n"
+"            generated.\n"
+"          "
+msgstr ""
+
+#: main/templates/plastic_footprint.html:41
+msgid ""
+"\n"
+"            Evaluation of the company's environmental impact in terms of "
+"greenhouse gas emissions, energy consumption\n"
+"            and use of natural resources, as well as the impact on air, "
+"water and soil pollution.\n"
+"          "
+msgstr ""
+
+#: main/templates/plastic_footprint.html:51
+msgid ""
+"\n"
+"            Identification of opportunities to reduce plastic use and "
+"improve plastic waste management, which can\n"
+"            improve the company's efficiency and profitability.\n"
+"          "
+msgstr ""
+
+#: main/templates/plastic_footprint.html:61
+msgid ""
+"\n"
+"            Development of sustainability and social responsibility "
+"strategies that enable the company to improve its\n"
+"            image and reputation, attract environmentally conscious "
+"consumers and increase its competitiveness in the\n"
+"            marketplace.\n"
+"\n"
+"            In short, plastic footprinting is a valuable tool for companies "
+"that want to improve their sustainability\n"
+"            and reduce their environmental impact. By quantifying their "
+"plastic use and waste, companies can identify\n"
+"            opportunities to improve their resource management and reduce "
+"their impact on the environment.\n"
+"          "
+msgstr ""
+
+#: main/templates/water_footprint.html:17
+msgid ""
+"\n"
+"            The water footprint is a measure of the total volume of water "
+"used in the production of goods or services\n"
+"            and its impact on the planet's water resources. Like the carbon "
+"footprint and plastic footprint, the water\n"
+"            footprint is used to assess and reduce a company's environmental "
+"impact.\n"
+"\n"
+"            The functionalities of the water footprint for a company may "
+"include:\n"
+"          "
+msgstr ""
+
+#: main/templates/water_footprint.html:28
+msgid "Risk identification"
+msgstr ""
+
+#: main/templates/water_footprint.html:30
+msgid ""
+"\n"
+"            Measuring the water footprint can help a company identify areas "
+"where there is a greater risk of water\n"
+"            scarcity, which can be useful in making strategic decisions "
+"regarding water resource management.\n"
+"          "
+msgstr ""
+
+#: main/templates/water_footprint.html:38
+msgid "Cost reduction"
+msgstr ""
+
+#: main/templates/water_footprint.html:40
+msgid ""
+"\n"
+"            Reducing water consumption can result in cost savings for the "
+"company by reducing the need for potable water\n"
+"            and the energy required to treat and deliver water.\n"
+"          "
+msgstr ""
+
+#: main/templates/water_footprint.html:48
+msgid "Improved corporate image"
+msgstr ""
+
+#: main/templates/water_footprint.html:50
+msgid ""
+"\n"
+"            Measuring and reducing the water footprint can help a company "
+"improve its corporate image and reputation in\n"
+"            the marketplace, demonstrating its commitment to sustainability "
+"and responsible management of natural\n"
+"            resources.\n"
+"          "
+msgstr ""
+
+#: main/templates/water_footprint.html:59 main/templates/why_quantify.html:48
+msgid "Regulatory compliance"
+msgstr ""
+
+#: main/templates/water_footprint.html:61
+msgid ""
+"\n"
+"            En resumen, la huella hídrica es una medida del uso de agua de "
+"una empresa o actividad y su impacto en el\n"
+"            medio ambiente. Las empresas pueden utilizar la huella hídrica "
+"para identificar áreas de uso excesivo de\n"
+"            agua y tomar medidas para reducir su impacto en el medio "
+"ambiente y mejorar su sostenibilidad.\n"
+"          "
+msgstr ""
+
+#: main/templates/why_quantify.html:9
+msgid "Why does a company need to quantify its corporate footprint?"
+msgstr ""
+
+#: main/templates/why_quantify.html:12
+msgid "Companies may quantify for several reasons:"
+msgstr ""
+
+#: main/templates/why_quantify.html:18
+msgid "Social responsibility"
+msgstr ""
+
+#: main/templates/why_quantify.html:20
+msgid ""
+"\n"
+"            By knowing their environmental impact, companies can take steps "
+"to minimize it and become more socially\n"
+"            responsible.\n"
+"          "
+msgstr ""
+
+#: main/templates/why_quantify.html:28
+msgid "Improved efficiency"
+msgstr ""
+
+#: main/templates/why_quantify.html:30
+msgid ""
+"\n"
+"            By knowing their corporate footprint, companies can identify "
+"areas for improvement and take steps to become\n"
+"            more efficient in their use of resources.\n"
+"          "
+msgstr ""
+
+#: main/templates/why_quantify.html:38
+msgid "Competitiveness"
+msgstr ""
+
+#: main/templates/why_quantify.html:40
+msgid ""
+"\n"
+"            Companies that demonstrate sustainability and reduced "
+"environmental impact are more attractive to consumers\n"
+"            and may have a competitive advantage in the marketplace.\n"
+"          "
+msgstr ""
+
+#: main/templates/why_quantify.html:50
+msgid ""
+"\n"
+"            In many countries, companies are required to comply with "
+"environmental regulations, and quantifying their\n"
+"            corporate footprint is an important step towards compliance.\n"
+"\n"
+"            In short, quantifying your corporate footprint (carbon, water "
+"and plastic) is a key tool for companies to\n"
+"            understand their environmental impact, improve their efficiency, "
+"social responsibility, comply with\n"
+"            environmental regulations and want to become carbon neutral.\n"
+"          "
+msgstr ""

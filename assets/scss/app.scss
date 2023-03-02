@@ -340,3 +340,33 @@ hr {
   color: white;
   background-color: rgb(79, 102, 114);
 }
+
+.blog {
+  h2 {
+    font-size: 33px;
+    font-weight: 700;
+    word-wrap: break-word;
+    font-family: "Roboto Condensed", sans-serif;
+    color: rgb(27, 27, 27);
+  }
+
+  .clock {
+    div.numbers>span {
+      background-color: black;
+      color: white;
+      min-width: 1.45em;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      display: inline-block;
+    }
+    div>span {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+
+  }
+}
