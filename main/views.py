@@ -18,7 +18,7 @@ def contact_us(request):
 
 
 def why_quantify(request):
-    return render(request, 'contact_us.html')
+    return render(request, 'why_quantify.html')
 
 
 def carbon_footprint(request):

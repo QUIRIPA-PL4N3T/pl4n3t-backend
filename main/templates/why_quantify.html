@@ -2,3 +2,62 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Why Quantify' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container navbar-space">
+    <div class="row text-center">
+      <h2>{% translate 'Why does a company need to quantify its corporate footprint?' %}</h2>
+    </div>
+    <div class="row mt-5">
+      <h2 class="m-3">{% translate 'Companies may quantify for several reasons:' %}</h2>
+      <hr class="hr1">
+    </div>
+
+    <div class="row my-5 d-flex justify-content-center">
+      <div class="col-12 col-md-8 mb-5">
+        <h4 class="mb-3">1. {% translate 'Social responsibility' %}</h4>
+        <span class="text-gray">
+          {% blocktrans %}
+            By knowing their environmental impact, companies can take steps to minimize it and become more socially
+            responsible.
+          {% endblocktrans %}
+        </span>
+      </div>
+
+      <div class="col-12 col-md-8 mb-5">
+        <h4 class="mb-3">2. {% translate 'Improved efficiency' %}</h4>
+        <span class="text-gray">
+          {% blocktrans %}
+            By knowing their corporate footprint, companies can identify areas for improvement and take steps to become
+            more efficient in their use of resources.
+          {% endblocktrans %}
+        </span>
+      </div>
+
+      <div class="col-12 col-md-8 mb-5">
+        <h4 class="mb-3">3. {% translate 'Competitiveness' %}</h4>
+        <span class="text-gray">
+          {% blocktrans %}
+            Companies that demonstrate sustainability and reduced environmental impact are more attractive to consumers
+            and may have a competitive advantage in the marketplace.
+          {% endblocktrans %}
+        </span>
+      </div>
+
+      <div class="col-12 col-md-8 mb-5">
+        <h4 class="mb-3">4. {% translate 'Regulatory compliance' %}</h4>
+        <span class="text-gray">
+          {% blocktrans %}
+            In many countries, companies are required to comply with environmental regulations, and quantifying their
+            corporate footprint is an important step towards compliance.
+
+            In short, quantifying your corporate footprint (carbon, water and plastic) is a key tool for companies to
+            understand their environmental impact, improve their efficiency, social responsibility, comply with
+            environmental regulations and want to become carbon neutral.
+          {% endblocktrans %}
+        </span>
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}
