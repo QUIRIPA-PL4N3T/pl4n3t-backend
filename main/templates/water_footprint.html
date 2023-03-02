@@ -2,3 +2,70 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Water Footprint' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container-fluid water-background">
+    <div class="container navbar-space">
+      <div class="row mt-5">
+        <h2 class="m-3">{% translate 'Water Footprint' %}</h2>
+        <hr class="hr1">
+      </div>
+      <div class="row my-5 d-flex justify-content-end">
+
+        <div class="col-12 col-md-8 mb-5">
+        <span class="text-gray">
+          {% blocktrans %}
+            The water footprint is a measure of the total volume of water used in the production of goods or services
+            and its impact on the planet's water resources. Like the carbon footprint and plastic footprint, the water
+            footprint is used to assess and reduce a company's environmental impact.
+
+            The functionalities of the water footprint for a company may include:
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">1. {% translate 'Risk identification' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Measuring the water footprint can help a company identify areas where there is a greater risk of water
+            scarcity, which can be useful in making strategic decisions regarding water resource management.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">2. {% translate 'Cost reduction' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Reducing water consumption can result in cost savings for the company by reducing the need for potable water
+            and the energy required to treat and deliver water.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">3. {% translate 'Improved corporate image' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Measuring and reducing the water footprint can help a company improve its corporate image and reputation in
+            the marketplace, demonstrating its commitment to sustainability and responsible management of natural
+            resources.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">4. {% translate 'Regulatory compliance' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            En resumen, la huella hídrica es una medida del uso de agua de una empresa o actividad y su impacto en el
+            medio ambiente. Las empresas pueden utilizar la huella hídrica para identificar áreas de uso excesivo de
+            agua y tomar medidas para reducir su impacto en el medio ambiente y mejorar su sostenibilidad.
+          {% endblocktrans %}
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

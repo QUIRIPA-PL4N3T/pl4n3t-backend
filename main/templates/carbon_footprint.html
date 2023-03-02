@@ -2,3 +2,72 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Carbon Footprint' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container-fluid carbon-background">
+    <div class="container navbar-space">
+      <div class="row mt-5">
+        <h2 class="m-3">{% translate 'Carbon Footprint' %}</h2>
+        <hr class="hr1">
+      </div>
+      <div class="row my-5 d-flex justify-content-end">
+
+        <div class="col-12 col-md-8 mb-5">
+        <span class="text-gray">
+          {% blocktrans %}
+            The carbon footprint is a measure of the total greenhouse gas (GHG) emissions, expressed in carbon dioxide
+            equivalents (CO2e), that are produced directly or indirectly as a result of the activities of an
+            organization, product or service.
+
+            In the business context, carbon footprint measurement has several functionalities:
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">1. {% translate 'Identification of impacts' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Carbon footprint measurement helps a company identify the environmental impacts of its operations in terms
+            of GHG emissions, allowing it to identify areas for improvement and opportunities for reduction.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">2. {% translate 'Risk management' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Carbon footprinting also helps a company manage risks related to environmental regulation and customer and
+            societal expectations regarding sustainability.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">3. {% translate 'Cost savings' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Identifying GHG emission reduction opportunities can help a company save costs in terms of energy and other
+            resources.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">4. {% translate 'Competitive differentiation' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Measuring and reducing the carbon footprint can help a company differentiate itself from its competitors by
+            demonstrating its commitment to sustainability and social responsibility.
+
+            In summary, carbon footprint measurement is an important tool for a company's environmental management and
+            sustainability, enabling impact identification, risk management, cost savings and competitive
+            differentiation.
+          {% endblocktrans %}
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

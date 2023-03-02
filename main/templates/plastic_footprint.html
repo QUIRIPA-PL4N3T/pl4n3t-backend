@@ -2,3 +2,74 @@
 {% load static i18n %}
 
 {% block page_title %}{% translate 'Plastic Footprint' %}{% endblock page_title %}
+
+{% block content %}
+  <div class="container-fluid plastic-background">
+    <div class="container navbar-space">
+      <div class="row mt-5">
+        <h2 class="m-3">{% translate 'Plastic Footprint' %}</h2>
+        <hr class="hr1">
+      </div>
+      <div class="row my-5 d-flex justify-content-end">
+
+        <div class="col-12 col-md-8 mb-5">
+        <span class="text-gray">
+          {% blocktrans %}
+            The plastic footprint is a tool used to quantify the amount of plastic a company uses and the amount of
+            plastic waste it generates throughout its supply chain and operations. This footprint allows companies to
+            identify their environmental impacts and take measures to reduce their plastic use and better manage plastic
+            waste.
+
+            The functionalities of the plastic footprint for a company include:
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">1. {% translate 'Identification of impacts' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Identification of critical points in the supply chain and operations where plastic is used and waste is
+            generated.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">2. {% translate 'Risk management' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Evaluation of the company's environmental impact in terms of greenhouse gas emissions, energy consumption
+            and use of natural resources, as well as the impact on air, water and soil pollution.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">3. {% translate 'Cost savings' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Identification of opportunities to reduce plastic use and improve plastic waste management, which can
+            improve the company's efficiency and profitability.
+          {% endblocktrans %}
+        </span>
+        </div>
+
+        <div class="col-12 col-md-8 mb-5">
+          <h4 class="mb-3">4. {% translate 'Competitive differentiation' %}</h4>
+          <span class="text-gray">
+          {% blocktrans %}
+            Development of sustainability and social responsibility strategies that enable the company to improve its
+            image and reputation, attract environmentally conscious consumers and increase its competitiveness in the
+            marketplace.
+
+            In short, plastic footprinting is a valuable tool for companies that want to improve their sustainability
+            and reduce their environmental impact. By quantifying their plastic use and waste, companies can identify
+            opportunities to improve their resource management and reduce their impact on the environment.
+          {% endblocktrans %}
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

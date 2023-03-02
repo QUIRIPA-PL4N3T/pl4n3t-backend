@@ -297,3 +297,27 @@ hr {
     }
   }
 }
+
+.carbon-background {
+    background-image:
+    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+    url('../img/carbon_page.png');
+    background-size: auto, cover;
+    bottom: 0;
+    padding: 20px;
+}
+
+.plastic-background {
+  @extend .carbon-background;
+  background-image:
+    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+    url('../img/plastic_page.png');
+}
+
+.water-background {
+  @extend .carbon-background;
+  background-image:
+    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9)),
+    url('../img/water_page.png');
+  background-position: bottom;
+}
