@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-03 00:00+0000\n"
+"POT-Creation-Date: 2023-03-03 00:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,9 +203,11 @@ msgid ""
 "concrete steps to live more sustainably and\n"
 "            protect our home.\"\n"
 "          "
-msgstr
+msgstr ""
 "\n"
-"Cuantificarla nos ayuda a ser conscientes de nuestro impacto y a tomar medidas concretas para vivir de manera más sostenible y proteger nuestro hogar."
+"Cuantificarla nos ayuda a ser conscientes de nuestro impacto y a tomar "
+"medidas concretas para vivir de manera más sostenible y proteger nuestro "
+"hogar."
 
 #: main/templates/company.html:22
 msgid "About us"
@@ -222,7 +224,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Somos una Empresa que cuantificamos las huellas corporativas ( Huella de Carbono,Hídrica,Plástica), los que sirven de base para la comunicación del desempeño de la empresa frente al cambio climático con todos los grupos de interés (proveedores, clientes, inversionistas, gobierno y otros)."
+"Somos una Empresa que cuantificamos las huellas corporativas ( Huella de "
+"Carbono,Hídrica,Plástica), los que sirven de base para la comunicación del "
+"desempeño de la empresa frente al cambio climático con todos los grupos de "
+"interés (proveedores, clientes, inversionistas, gobierno y otros)."
 
 #: main/templates/company.html:36
 msgid "Our Strategies"
@@ -238,9 +243,10 @@ msgid ""
 "                We provide solutions to mitigate the corporate footprint "
 "which are Carbon, Water and Plastic Footprint.\n"
 "              "
-msgstr
+msgstr ""
 "\n"
-"Brindamos soluciones para mitigar la huella corporativa que son Huella de Carbono, Hídrica y Plástica."
+"Brindamos soluciones para mitigar la huella corporativa que son Huella de "
+"Carbono, Hídrica y Plástica."
 
 #: main/templates/company.html:48
 msgid "VISION"
@@ -253,9 +259,10 @@ msgid ""
 "impact on mitigating climate change at the\n"
 "                corporate level.\n"
 "              "
-msgstr
+msgstr ""
 "\n"
-"En el año 2030 seremos reconocidos en latino-américa por nuestro impacto en mitigar el cambio climático a nivel corporativo."
+"En el año 2030 seremos reconocidos en latino-américa por nuestro impacto en "
+"mitigar el cambio climático a nivel corporativo."
 
 #: main/templates/company.html:62
 msgid ""
@@ -264,9 +271,10 @@ msgid ""
 "through sustainable tools that help to\n"
 "          reduce the carbon footprint of the economy.\n"
 "        "
-msgstr
+msgstr ""
 "\n"
-"Con Pl4N3T ayuda en la transición hacia una economía baja en carbono a través de herramientas soste"
+"Con Pl4N3T ayuda en la transición hacia una economía baja en carbono a "
+"través de herramientas soste"
 
 #: main/templates/company.html:71
 msgid "Our History"
@@ -283,9 +291,13 @@ msgid ""
 "quantification of removals, specifically carbon\n"
 "              sequestration.\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"Pl4n3t es una marca que surgió en el año 2021 a raíz de las reformas tributarias que abrieron una oportunidad para generar ingresos en el área ambiental. Fue  entonces  cuando comenzaron  a surgir proyectos medioambientales  en colaboración  con organismos internacionales, enfocados en la cuantificación de remociones, específicamente la captura de carbono."
+"Pl4n3t es una marca que surgió en el año 2021 a raíz de las reformas "
+"tributarias que abrieron una oportunidad para generar ingresos en el área "
+"ambiental. Fue  entonces  cuando comenzaron  a surgir proyectos "
+"medioambientales  en colaboración  con organismos internacionales, enfocados "
+"en la cuantificación de remociones, específicamente la captura de carbono."
 
 #: main/templates/company.html:83
 msgid ""
@@ -305,9 +317,19 @@ msgid ""
 "              project to quantify the greenhouse gas (GHG) emissions of "
 "companies.\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"Con el objetivo de la necesidad de cumplir con los acuerdos del Tratado de Montreal y la normatividad colombiana e internacional, que exigen la cuantificación de emisiones y la compensación a través de certificados de carbono verificados. Para ampliar su mercado, Amanecer en el palmar por medio la marca Pl4n3t decidió participar en  el año 2022, en un proyecto de innovación llamado “SENAInnova Productividad para las Empresas 2.0” apoyado por SENAInnova - Productividad para las empresas que es un proyecto entre el SENA y Colombia Productiva, que es una entidad del  Ministerio de Industria y Turismo. Con el objetivo de formular un proyecto que permitiera cuantificar las de emisiones de gases de efecto invernadero  (GEI)  de las empresas."
+"Con el objetivo de la necesidad de cumplir con los acuerdos del Tratado de "
+"Montreal y la normatividad colombiana e internacional, que exigen la "
+"cuantificación de emisiones y la compensación a través de certificados de "
+"carbono verificados. Para ampliar su mercado, Amanecer en el palmar por "
+"medio la marca Pl4n3t decidió participar en  el año 2022, en un proyecto de "
+"innovación llamado “SENAInnova Productividad para las Empresas 2.0” apoyado "
+"por SENAInnova - Productividad para las empresas que es un proyecto entre el "
+"SENA y Colombia Productiva, que es una entidad del  Ministerio de Industria "
+"y Turismo. Con el objetivo de formular un proyecto que permitiera "
+"cuantificar las de emisiones de gases de efecto invernadero  (GEI)  de las "
+"empresas."
 
 #: main/templates/company.html:94
 msgid ""
@@ -322,9 +344,15 @@ msgid ""
 "corporate footprint (Carbon, Plastic and\n"
 "              Hydric).\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"En el año 2022, la empresa Amanecer en el Palmar bajo la marca Pl4n3t comenzó a ofrecer y realizar servicios de cuantificación de emisiones de gases de efecto invernadero  (GEI) a las empresas, eventos, organizaciones y productos. Finalmente a mediado de noviembre del año 2022, Amanecer en el Palmar fueron seleccionados en el proyecto de innovación, lo que llevó a la creación de una plataforma tecnológica de cuantificación de la huella corporativa ( Carbono, Plástica y Hidrica)."
+"En el año 2022, la empresa Amanecer en el Palmar bajo la marca Pl4n3t "
+"comenzó a ofrecer y realizar servicios de cuantificación de emisiones de "
+"gases de efecto invernadero  (GEI) a las empresas, eventos, organizaciones y "
+"productos. Finalmente a mediado de noviembre del año 2022, Amanecer en el "
+"Palmar fueron seleccionados en el proyecto de innovación, lo que llevó a la "
+"creación de una plataforma tecnológica de cuantificación de la huella "
+"corporativa ( Carbono, Plástica y Hidrica)."
 
 #: main/templates/company.html:103
 msgid ""
@@ -338,9 +366,14 @@ msgid ""
 "its technological platform demonstrate its\n"
 "              commitment to sustainability and environmental care.\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"En resumen, Pl4n3t es una marca que nace de la empresa Amanecer en el palmar, con el objetivo de aprovechar las oportunidades del mercado ambiental, con un enfoque en la cuantificación de emisiones de GEI. Su colaboración con Amanecer en el Palmar y su plataforma tecnológica demuestran su compromiso con la sostenibilidad y el cuidado del medio ambiente."
+"En resumen, Pl4n3t es una marca que nace de la empresa Amanecer en el "
+"palmar, con el objetivo de aprovechar las oportunidades del mercado "
+"ambiental, con un enfoque en la cuantificación de emisiones de GEI. Su "
+"colaboración con Amanecer en el Palmar y su plataforma tecnológica "
+"demuestran su compromiso con la sostenibilidad y el cuidado del medio "
+"ambiente."
 
 #: main/templates/company.html:117 main/templates/home.html:157
 msgid "Support us"
@@ -348,10 +381,10 @@ msgstr "Nos Apoyan"
 
 #: main/templates/company.html:122
 msgid "MinComercio"
-msgstr ""
+msgstr "MinComercio"
 
 #: main/templates/company.html:124
-msgid "MinComercio"
+msgid ""
 "\n"
 "                It supports business activity, the production of goods, "
 "services and technology, as well as tourism\n"
@@ -360,7 +393,12 @@ msgid "MinComercio"
 "                the\n"
 "                generation of greater added value.\n"
 "              "
-msgstr "Apoya la actividad empresarial, productora de bienes, servicios y tecnología, así como la gestión turística de las regiones del país para mejorar su competitividad y su sostenibilidad e incentivar la generación de mayor valor agregado. "
+msgstr ""
+"\n"
+"Apoya la actividad empresarial, productora de bienes, servicios y "
+"tecnología, así como la gestión turística de las regiones del país para "
+"mejorar su competitividad y su sostenibilidad e incentivar la generación de "
+"mayor valor agregado. "
 
 #: main/templates/company.html:133
 msgid "Colombia Productiva"
@@ -382,10 +420,18 @@ msgid ""
 "financing to obtain certifications as a requirement\n"
 "                for entry into international markets, among others.\n"
 "              "
-msgstr
+msgstr ""
 "\n"
-"Apoya a las empresas del país a través de convocatorias y programas que les permite mejorar en indicadores que son importantes para aumentar la eficiencia en los procesos productivos como calidad, capital humano y productividad.\n"
-"Otros servicios que ofrecen están asistencia técnica, intervención y acompañamiento en las empresas para que adopten metodologías internacionales de mejora productiva, programas de capacitación especializados en alianza con empresas e instituciones educativas, orientación y financiamiento para la obtención de certificaciones como requisito para la entrada a mercados internacionales, entre otros"
+"Apoya a las empresas del país a través de convocatorias y programas que les "
+"permite mejorar en indicadores que son importantes para aumentar la "
+"eficiencia en los procesos productivos como calidad, capital humano y "
+"productividad.\n"
+"Otros servicios que ofrecen están asistencia técnica, intervención y "
+"acompañamiento en las empresas para que adopten metodologías internacionales "
+"de mejora productiva, programas de capacitación especializados en alianza "
+"con empresas e instituciones educativas, orientación y financiamiento para "
+"la obtención de certificaciones como requisito para la entrada a mercados "
+"internacionales, entre otros"
 
 #: main/templates/company.html:147
 msgid "SENA"
@@ -402,9 +448,13 @@ msgid ""
 "contribute to the social, economic and technological\n"
 "                development of the country.\n"
 "              "
-msgstr
+msgstr ""
 "\n"
-"Está encargado de cumplir la función que le corresponde al Estado de invertir en el desarrollo social y técnico de los trabajadores colombianos, ofreciendo y ejecutando la formación profesional integral, para la incorporación y el desarrollo de las personas en actividades productivas que contribuyan al desarrollo social, económico y tecnológico del país. "
+"Está encargado de cumplir la función que le corresponde al Estado de "
+"invertir en el desarrollo social y técnico de los trabajadores colombianos, "
+"ofreciendo y ejecutando la formación profesional integral, para la "
+"incorporación y el desarrollo de las personas en actividades productivas que "
+"contribuyan al desarrollo social, económico y tecnológico del país. "
 
 #: main/templates/company.html:158
 msgid "Cataruben"
@@ -427,10 +477,17 @@ msgid ""
 "                solutions aimed at improving the life cycle processes of "
 "climate change mitigation projects. .\n"
 "              "
-msgstr
+msgstr ""
 "\n"
-"Desarrolla soluciones climáticas basadas en la naturaleza para conservar la biodiversidad, el agua y los ecosistemas estratégicos en esta región. Cataruben también cuenta con un Departamento de Investigación, Desarrollo Tecnológico e Innovación (I+D+i) que genera conocimiento sobre compensaciones de carbono."
-"Sus Principales servicios son el desarrollo de consultorías especializadas en mitigación del cambio climático, la cuantificación de reducciones y/o remociones de GEI en el sector AFOLU y el desarrollo de soluciones tecnológicas orientadas a mejorar los procesos del ciclo de vida de los proyectos de mitigación del cambio climático."
+"Desarrolla soluciones climáticas basadas en la naturaleza para conservar la "
+"biodiversidad, el agua y los ecosistemas estratégicos en esta región. "
+"Cataruben también cuenta con un Departamento de Investigación, Desarrollo "
+"Tecnológico e Innovación (I+D+i) que genera conocimiento sobre "
+"compensaciones de carbono.Sus Principales servicios son el desarrollo de "
+"consultorías especializadas en mitigación del cambio climático, la "
+"cuantificación de reducciones y/o remociones de GEI en el sector AFOLU y el "
+"desarrollo de soluciones tecnológicas orientadas a mejorar los procesos del "
+"ciclo de vida de los proyectos de mitigación del cambio climático."
 
 #: main/templates/contact_us.html:4
 msgid "Contact Us"
@@ -442,7 +499,7 @@ msgstr "COMUNÍCATE CON NOSOTROS"
 
 #: main/templates/contact_us.html:13
 msgid "Find more ways to help!"
-msgstr ""
+msgstr "¡Encuentra más formas de ayudar!"
 
 #: main/templates/contact_us.html:15 main/templates/includes/footer.html:8
 msgid "Address"
@@ -458,29 +515,23 @@ msgstr "Correo Electrónico"
 
 #: main/templates/contact_us.html:26
 msgid "Send us a message"
-msgstr ""
+msgstr "Envíanos un mensaje"
 
 #: main/templates/contact_us.html:31
-#, fuzzy
-#| msgid "Quantify"
 msgid "Quantify now"
-msgstr "Cuantifique"
+msgstr "Cuantifique ya"
 
 #: main/templates/footprint_levels.html:4
-msgid "Cabon Level"
+msgid "Carbon Level"
 msgstr "Huella de Carbono"
 
 #: main/templates/footprint_levels.html:10
-#, fuzzy
-#| msgid "Carbon footprint"
 msgid "Different Levels of Carbon Footprints"
-msgstr "Huella de Carbono"
+msgstr "Distintos Niveles de Huellas de Carbono"
 
 #: main/templates/footprint_levels.html:16
 #: main/templates/footprint_levels.html:19 main/templates/home.html:26
 #: main/templates/home.html:27
-#, fuzzy
-#| msgid "Water footprint"
 msgid "Corporate Footprint"
 msgstr "Huella Corporativa"
 
@@ -498,6 +549,14 @@ msgid ""
 "              employee to their workplace).\n"
 "            "
 msgstr ""
+"\n"
+"La huella de carbono corporativo es una medida de la cantidad de gases de "
+"efecto invernadero que una organización emite a la atmósfera como resultado "
+"de sus operaciones comerciales. Esto incluye emisiones directas generadas "
+"por la empresa (como la quema de combustibles fósiles en vehículos o "
+"equipos) e indirectas (como la generación de electricidad consumida por la "
+"empresa y la producción y transporte de materiales o empleado a su sitio de "
+"trabajo ). "
 
 #: main/templates/footprint_levels.html:31
 msgid ""
@@ -510,24 +569,24 @@ msgid ""
 "mitigation.\n"
 "            "
 msgstr ""
+"\n"
+"Medir la huella de carbono corporativo puede ayudar a las empresas a "
+"identificar áreas de mejora y establecer objetivos para reducir sus "
+"emisiones de gases de efecto invernadero, con el fin de mitigar su impacto "
+"ambiental y cumplir con regulaciones y requisitos legales relacionados con "
+"la mitigación del cambio climático. "
 
 #: main/templates/footprint_levels.html:38
 #: main/templates/footprint_levels.html:65
 #: main/templates/footprint_levels.html:93
-#, fuzzy
-#| msgid "Water footprint"
 msgid "measure your footprint"
-msgstr "Huella Hidrica"
+msgstr "Mida su Huella"
 
 #: main/templates/footprint_levels.html:45 main/templates/home.html:39
-#, fuzzy
-#| msgid "Water footprint"
 msgid "Event Footprint"
 msgstr "Huella Evento"
 
 #: main/templates/footprint_levels.html:48 main/templates/home.html:40
-#, fuzzy
-#| msgid "Water footprint"
 msgid "Events Footprint"
 msgstr "Huella Eventos"
 
@@ -544,6 +603,14 @@ msgid ""
 "during the event.\n"
 "            "
 msgstr ""
+"\n"
+"La huella de carbono de eventos se refiere a la cantidad de gases de efecto "
+"invernadero emitidos a la atmósfera durante la realización de un evento, "
+"como una conferencia, concierto, festival o reunión corporativa. La huella "
+"de carbono de un evento se compone de varias fuentes de emisiones, "
+"incluyendo la energía utilizada para la iluminación y la climatización, el "
+"transporte de los asistentes y la producción de los materiales utilizados "
+"durante el evento. "
 
 #: main/templates/footprint_levels.html:59
 msgid ""
@@ -555,19 +622,17 @@ msgid ""
 "              and promote sustainability.\n"
 "            "
 msgstr ""
+"\n"
+"Medir la huella de carbono de un evento puede ayudar a identificar áreas de "
+"mejora y establecer planes de acción para reducir las emisiones de gases de "
+"efecto invernadero, lo que puede contribuir a mitigar el impacto ambiental "
+"del evento y promover la sostenibilidad."
 
 #: main/templates/footprint_levels.html:72
-#, fuzzy
-#| msgid "Carbon footprint"
-msgid "Producto Footprint"
-msgstr "Huella Productos"
-
 #: main/templates/footprint_levels.html:75 main/templates/home.html:54
 #: main/templates/home.html:55
-#, fuzzy
-#| msgid "Carbon footprint"
 msgid "Product Footprint"
-msgstr "Huella Productos"
+msgstr "Huella Producto"
 
 #: main/templates/footprint_levels.html:77
 msgid ""
@@ -582,7 +647,9 @@ msgid ""
 "the product, and the emissions associated\n"
 "              with its final disposal.\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"La huella de carbono de productos se refiere a la cantidad de gases de efecto invernadero emitidos durante el ciclo de vida de un producto, desde su extracción, fabricación, distribución, uso y disposición final. Esta huella incluye emisiones directas e indirectas de gases de efecto invernadero, como la energía utilizada para producir y transportar el producto, las emisiones generadas por la fabricación y el uso del producto y las emisiones asociadas con su disposición final. "
 
 #: main/templates/footprint_levels.html:87
 msgid ""
@@ -593,7 +660,9 @@ msgid ""
 "reduce the greenhouse gas emissions associated\n"
 "              with its production and use.\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"Medir la huella de carbono de un producto puede ayudar a las empresas y consumidores a comprender mejor su impacto ambiental y tomar decisiones informadas sobre cómo reducir las emisiones de gases de efecto invernadero asociadas con su producción y uso."
 
 #: main/templates/home.html:4 main/templates/includes/header.html:15
 msgid "Home"
@@ -995,3 +1064,7 @@ msgid ""
 "            environmental regulations and want to become carbon neutral.\n"
 "          "
 msgstr ""
+
+#~| msgid "Carbon footprint"
+#~ msgid "Producto Footprint"
+#~ msgstr "Huella Productos"
