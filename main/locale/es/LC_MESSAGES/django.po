@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-03 00:53+0000\n"
+"POT-Creation-Date: 2023-03-03 01:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,8 +81,6 @@ msgstr "Segundos"
 #: main/templates/carbon_footprint.html:10 main/templates/home.html:79
 #: main/templates/home.html:82 main/templates/home.html:94
 #: main/templates/home.html:111
-#, fuzzy
-#| msgid "Carbon footprint"
 msgid "Carbon Footprint"
 msgstr "Huella de Carbono"
 
@@ -647,9 +645,15 @@ msgid ""
 "the product, and the emissions associated\n"
 "              with its final disposal.\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"La huella de carbono de productos se refiere a la cantidad de gases de efecto invernadero emitidos durante el ciclo de vida de un producto, desde su extracción, fabricación, distribución, uso y disposición final. Esta huella incluye emisiones directas e indirectas de gases de efecto invernadero, como la energía utilizada para producir y transportar el producto, las emisiones generadas por la fabricación y el uso del producto y las emisiones asociadas con su disposición final. "
+"La huella de carbono de productos se refiere a la cantidad de gases de "
+"efecto invernadero emitidos durante el ciclo de vida de un producto, desde "
+"su extracción, fabricación, distribución, uso y disposición final. Esta "
+"huella incluye emisiones directas e indirectas de gases de efecto "
+"invernadero, como la energía utilizada para producir y transportar el "
+"producto, las emisiones generadas por la fabricación y el uso del producto y "
+"las emisiones asociadas con su disposición final. "
 
 #: main/templates/footprint_levels.html:87
 msgid ""
@@ -660,17 +664,18 @@ msgid ""
 "reduce the greenhouse gas emissions associated\n"
 "              with its production and use.\n"
 "            "
-msgstr
+msgstr ""
 "\n"
-"Medir la huella de carbono de un producto puede ayudar a las empresas y consumidores a comprender mejor su impacto ambiental y tomar decisiones informadas sobre cómo reducir las emisiones de gases de efecto invernadero asociadas con su producción y uso."
+"Medir la huella de carbono de un producto puede ayudar a las empresas y "
+"consumidores a comprender mejor su impacto ambiental y tomar decisiones "
+"informadas sobre cómo reducir las emisiones de gases de efecto invernadero "
+"asociadas con su producción y uso."
 
 #: main/templates/home.html:4 main/templates/includes/header.html:15
 msgid "Home"
 msgstr "Inicio"
 
 #: main/templates/home.html:11
-#, fuzzy
-#| msgid "WITH PL4N3T IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
 msgid "WITH PL4N3T IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
 msgstr "CON PL4N3T ES MUY FÁCIL CUANTIFICAR TU HUELLA..."
 
@@ -679,10 +684,8 @@ msgid "Carbon, Water and Plastic"
 msgstr "De Carbono, Hídrica y Plástica"
 
 #: main/templates/home.html:13
-#, fuzzy
-#| msgid "Quantify"
 msgid "Quantify now!"
-msgstr "Cuantifique"
+msgstr "¡Gestiona Ya!"
 
 #: main/templates/home.html:19
 msgid "YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS"
@@ -743,14 +746,6 @@ msgid "YOU CAN MANAGE DIFFERENT TYPES OF FOOTPRINTS"
 msgstr "PUEDES GESTIONAR DISTINTOS TIPOS DE HUELLAS"
 
 #: main/templates/home.html:84
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "              The carbon footprint is a measure of the environmental "
-#| "impact of an activity or product, expressed in CO2\n"
-#| "              in terms of greenhouse gas emissions - GHG generated in a "
-#| "given time.\n"
-#| "            "
 msgid ""
 "The carbon footprint is a measure of the environmental impact of an activity "
 "or product,\n"
@@ -764,8 +759,6 @@ msgstr ""
 
 #: main/templates/home.html:97 main/templates/plastic_footprint.html:4
 #: main/templates/plastic_footprint.html:10
-#, fuzzy
-#| msgid "Plastic footprint"
 msgid "Plastic Footprint"
 msgstr "Huella Plástica"
 
@@ -787,8 +780,6 @@ msgstr ""
 
 #: main/templates/home.html:114 main/templates/water_footprint.html:4
 #: main/templates/water_footprint.html:10
-#, fuzzy
-#| msgid "Water footprint"
 msgid "Water Footprint"
 msgstr "Huella Hídrica"
 
@@ -862,7 +853,7 @@ msgstr "Huella Plástica"
 
 #: main/templates/includes/header.html:36
 msgid "Water footprint"
-msgstr "Huella Hidrica"
+msgstr "Huella Hídrica"
 
 #: main/templates/includes/header.html:41
 msgid "Contact us"
@@ -989,7 +980,7 @@ msgstr ""
 
 #: main/templates/water_footprint.html:59 main/templates/why_quantify.html:48
 msgid "Regulatory compliance"
-msgstr ""
+msgstr "Cumplimiento de regulaciones"
 
 #: main/templates/water_footprint.html:61
 msgid ""
@@ -1005,15 +996,15 @@ msgstr ""
 
 #: main/templates/why_quantify.html:9
 msgid "Why does a company need to quantify its corporate footprint?"
-msgstr ""
+msgstr "¿Por qué una empresa necesita cuantificar su huella corporativa?"
 
 #: main/templates/why_quantify.html:12
 msgid "Companies may quantify for several reasons:"
-msgstr ""
+msgstr "Las empresas pueden cuantificar por varias razones:"
 
 #: main/templates/why_quantify.html:18
 msgid "Social responsibility"
-msgstr ""
+msgstr "Responsabilidad social"
 
 #: main/templates/why_quantify.html:20
 msgid ""
@@ -1022,11 +1013,13 @@ msgid ""
 "to minimize it and become more socially\n"
 "            responsible.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"Al conocer su impacto ambiental, las empresas pueden tomar medidas para "
+"minimizarlo y ser más responsables socialmente."
 
 #: main/templates/why_quantify.html:28
 msgid "Improved efficiency"
-msgstr ""
+msgstr " Mejora de la eficiencia"
 
 #: main/templates/why_quantify.html:30
 msgid ""
@@ -1036,12 +1029,22 @@ msgid ""
 "            more efficient in their use of resources.\n"
 "          "
 msgstr ""
+"\n"
+"Al conocer su huella corporativa, las empresas pueden identificar áreas de "
+"mejora y tomar medidas para ser más eficientes en el uso de recursos."
 
 #: main/templates/why_quantify.html:38
 msgid "Competitiveness"
 msgstr ""
 
 #: main/templates/why_quantify.html:40
+#, fuzzy
+#| msgid ""
+#| "Competitividad\n"
+#| "            Companies that demonstrate sustainability and reduced "
+#| "environmental impact are more attractive to consumers\n"
+#| "            and may have a competitive advantage in the marketplace.\n"
+#| "          "
 msgid ""
 "\n"
 "            Companies that demonstrate sustainability and reduced "
@@ -1049,6 +1052,9 @@ msgid ""
 "            and may have a competitive advantage in the marketplace.\n"
 "          "
 msgstr ""
+"Las empresas que demuestran ser sostenibles y tener un impacto ambiental "
+"reducido son más atractivas para los consumidores y pueden tener una ventaja "
+"competitiva en el mercado"
 
 #: main/templates/why_quantify.html:50
 msgid ""
@@ -1064,6 +1070,13 @@ msgid ""
 "            environmental regulations and want to become carbon neutral.\n"
 "          "
 msgstr ""
+"\n"
+"En muchos países, las empresas están obligadas a cumplir con regulaciones "
+"ambientales, y cuantificar su huella corporativa es un paso importante para "
+"cumplir con ellas.En resumen, cuantificar su huella corporativa (carbono, "
+"hídrica y plástica) es una herramienta clave para que las empresas entiendan "
+"su impacto ambiental, mejoren su eficiencia, responsabilidad social, cumplan "
+"con regulaciones ambientales y quieran certificarse carbono neutro."
 
 #~| msgid "Carbon footprint"
 #~ msgid "Producto Footprint"
