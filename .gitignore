@@ -6,7 +6,6 @@
 .DS_Store
 .idea/
 .env/
-*.mo
 
 __pycache__
 MANIFEST
