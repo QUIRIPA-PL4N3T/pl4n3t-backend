@@ -6,8 +6,8 @@ SECRET_KEY = 'p3gm=o9o+_r(5*o$$kn#h*8#n1r)aquf^^nm_v5u0pn^qa$=4*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*', 'https://pl4n3t.com/']
-CSRF_TRUSTED_ORIGINS = ['https://pl4n3t.com/', 'https:/www.pl4n3t.com/']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://pl4n3t.com', 'https:/www.pl4n3t.com']
 
 # CORS Config: install django-cors-headers and uncomment the following to allow CORS from any origin
 """
