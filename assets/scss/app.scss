@@ -370,3 +370,15 @@ hr {
 
   }
 }
+
+.form-select-sm {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  font-family: Quicksand, sans-serif;
+  margin-top: 6px;
+  color: white;
+}
+
+select.form-select-sm:focus-visible {
+  border: none;
+}

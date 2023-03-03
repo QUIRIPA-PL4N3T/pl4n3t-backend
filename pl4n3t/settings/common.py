@@ -187,6 +187,10 @@ SIMPLE_JWT = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
 
 LANGUAGE_CODE = 'es'
 TIME_ZONE = 'America/Bogota'

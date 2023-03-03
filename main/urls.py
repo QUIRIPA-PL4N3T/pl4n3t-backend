@@ -28,4 +28,5 @@ urlpatterns = [
     path('carbon-footprint/', carbon_footprint, name="carbon-footprint"),
     path('plastic-footprint/', plastic_footprint, name="plastic-footprint"),
     path('footprint-levels/', footprint_levels, name="footprint-levels"),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]

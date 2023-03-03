@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.utils.translation import activate
+from django.conf import settings
 
 
 def home(request):
@@ -35,3 +38,11 @@ def water_footprint(request):
 
 def footprint_levels(request):
     return render(request, 'footprint_levels.html')
+
+
+def set_language(request):
+    if request.method == 'POST':
+        language = request.POST.get('language')
+        if language in dict(settings.LANGUAGES):
+            activate(language)
+    return redirect(request.META.get('HTTP_REFERER'))

@@ -1,4 +1,8 @@
 {% load static i18n main_tags %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -43,6 +47,22 @@
         <li class="nav-item">
           <a class="nav-link {% active_link 'blog' %}" aria-current="page"
              href="{% url 'blog' %}">{% translate 'Blog' %}</a>
+        </li>
+        <li class="nav-item">
+          <form action="{% url 'set_language' %}" method="post" class="d-flex">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language" onchange="this.form.submit()" class="form-select-sm">
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                  {{ language.code }}
+                </option>
+              {% endfor %}
+            </select>
+          </form>
         </li>
       </ul>
     </div>
