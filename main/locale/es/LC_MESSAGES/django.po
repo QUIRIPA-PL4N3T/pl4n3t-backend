@@ -874,6 +874,9 @@ msgid ""
 "include:\n"
 "          "
 msgstr ""
+"\n"
+"La huella de plástico es una herramienta que se utiliza para cuantificar la cantidad de plástico que una empresa utiliza y la cantidad de residuos plásticos que genera a lo largo de su cadena de suministro y operaciones. Esta huella permite a las empresas identificar sus impactos ambientales y tomar medidas para reducir su uso de plástico y gestionar mejor los residuos plásticos."
+"\nLas funcionalidades de la huella de plástico para una empresa incluyen: "
 
 #: main/templates/plastic_footprint.html:31
 msgid ""
@@ -882,7 +885,8 @@ msgid ""
 "operations where plastic is used and waste is\n"
 "            generated.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"Identificación de los puntos críticos en la cadena de suministro y operaciones donde se utiliza el plástico y se generan residuos."
 
 #: main/templates/plastic_footprint.html:41
 msgid ""
@@ -892,7 +896,8 @@ msgid ""
 "            and use of natural resources, as well as the impact on air, "
 "water and soil pollution.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"Evaluación del impacto ambiental de la empresa en términos de emisiones de gases de efecto invernadero, consumo de energía y uso de recursos naturales, así como el impacto en la contaminación del aire, agua y suelo."
 
 #: main/templates/plastic_footprint.html:51
 msgid ""
@@ -901,7 +906,8 @@ msgid ""
 "improve plastic waste management, which can\n"
 "            improve the company's efficiency and profitability.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"Identificación de oportunidades para reducir el uso de plástico y mejorar la gestión de los residuos plásticos, lo que puede mejorar la eficiencia y la rentabilidad de la empresa"
 
 #: main/templates/plastic_footprint.html:61
 msgid ""
@@ -919,7 +925,9 @@ msgid ""
 "            opportunities to improve their resource management and reduce "
 "their impact on the environment.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"Desarrollo de estrategias de sostenibilidad y responsabilidad social que permitan a la empresa mejorar su imagen y reputación, atraer a los consumidores preocupados por el medio ambiente y aumentar su competitividad en el mercado."
+"En resumen, la huella de plástico es una herramienta valiosa para las empresas que quieren mejorar su sostenibilidad y reducir su impacto ambiental. Al cuantificar su uso de plástico y sus residuos, las empresas pueden identificar oportunidades para mejorar su gestión de los recursos y reducir su impacto en el medio ambiente."
 
 #: main/templates/water_footprint.html:17
 msgid ""
@@ -934,11 +942,13 @@ msgid ""
 "            The functionalities of the water footprint for a company may "
 "include:\n"
 "          "
-msgstr ""
+msgstr "\n"
+"La huella hídrica es una medida del volumen total de agua que se utiliza en la producción de bienes o servicios y su impacto en los recursos hídricos del planeta. Al igual que la huella de carbono y la huella de plástico, la huella hídrica se utiliza para evaluar y reducir el impacto ambiental de una empresa."
+"Las funcionalidades de la huella hídrica para una empresa pueden incluir:"
 
 #: main/templates/water_footprint.html:28
 msgid "Risk identification"
-msgstr ""
+msgstr "Identificación de riesgos"
 
 #: main/templates/water_footprint.html:30
 msgid ""
@@ -948,11 +958,12 @@ msgid ""
 "            scarcity, which can be useful in making strategic decisions "
 "regarding water resource management.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"La medición de la huella hídrica puede ayudar a una empresa a identificar las áreas donde existe un mayor riesgo de escasez de agua, lo que puede ser útil para tomar decisiones estratégicas en cuanto a la gestión de los recursos hídricos."
 
 #: main/templates/water_footprint.html:38
 msgid "Cost reduction"
-msgstr ""
+msgstr "Reducción de costos"
 
 #: main/templates/water_footprint.html:40
 msgid ""
@@ -961,11 +972,12 @@ msgid ""
 "company by reducing the need for potable water\n"
 "            and the energy required to treat and deliver water.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"La reducción del consumo de agua puede resultar en una reducción de costos para la empresa, ya que se reduce la necesidad de agua potable y la energía necesaria para tratar y suministrar agua."
 
 #: main/templates/water_footprint.html:48
 msgid "Improved corporate image"
-msgstr ""
+msgstr "Mejora de la imagen corporativa"
 
 #: main/templates/water_footprint.html:50
 msgid ""
@@ -976,7 +988,8 @@ msgid ""
 "and responsible management of natural\n"
 "            resources.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"La medición y reducción de la huella hídrica puede ayudar a una empresa a mejorar su imagen corporativa y su reputación en el mercado, demostrando su compromiso con la sostenibilidad y la gestión responsable de los recursos naturales."
 
 #: main/templates/water_footprint.html:59 main/templates/why_quantify.html:48
 msgid "Regulatory compliance"
@@ -992,7 +1005,8 @@ msgid ""
 "            agua y tomar medidas para reducir su impacto en el medio "
 "ambiente y mejorar su sostenibilidad.\n"
 "          "
-msgstr ""
+msgstr "\n"
+"En resumen, la huella hídrica es una medida del uso de agua de una empresa o actividad y su impacto en el medio ambiente. Las empresas pueden utilizar la huella hídrica para identificar áreas de uso excesivo de agua y tomar medidas para reducir su impacto en el medio ambiente y mejorar su sostenibilidad."
 
 #: main/templates/why_quantify.html:9
 msgid "Why does a company need to quantify its corporate footprint?"
