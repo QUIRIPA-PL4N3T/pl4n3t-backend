@@ -203,11 +203,13 @@ msgid ""
 "concrete steps to live more sustainably and\n"
 "            protect our home.\"\n"
 "          "
-msgstr ""
+msgstr
+"\n"
+"Cuantificarla nos ayuda a ser conscientes de nuestro impacto y a tomar medidas concretas para vivir de manera más sostenible y proteger nuestro hogar."
 
 #: main/templates/company.html:22
 msgid "About us"
-msgstr ""
+msgstr "Sobre Nosotros"
 
 #: main/templates/company.html:24
 msgid ""
@@ -219,14 +221,16 @@ msgid ""
 "          (suppliers, customers, investors, government and others).\n"
 "        "
 msgstr ""
+"\n"
+"Somos una Empresa que cuantificamos las huellas corporativas ( Huella de Carbono,Hídrica,Plástica), los que sirven de base para la comunicación del desempeño de la empresa frente al cambio climático con todos los grupos de interés (proveedores, clientes, inversionistas, gobierno y otros)."
 
 #: main/templates/company.html:36
 msgid "Our Strategies"
-msgstr ""
+msgstr "Nuestras Estrategias"
 
 #: main/templates/company.html:40
 msgid "MISSION"
-msgstr ""
+msgstr "MISIÓN"
 
 #: main/templates/company.html:42
 msgid ""
@@ -234,11 +238,13 @@ msgid ""
 "                We provide solutions to mitigate the corporate footprint "
 "which are Carbon, Water and Plastic Footprint.\n"
 "              "
-msgstr ""
+msgstr
+"\n"
+"Brindamos soluciones para mitigar la huella corporativa que son Huella de Carbono, Hídrica y Plástica."
 
 #: main/templates/company.html:48
 msgid "VISION"
-msgstr ""
+msgstr "VISIÓN"
 
 #: main/templates/company.html:50
 msgid ""
@@ -247,7 +253,9 @@ msgid ""
 "impact on mitigating climate change at the\n"
 "                corporate level.\n"
 "              "
-msgstr ""
+msgstr
+"\n"
+"En el año 2030 seremos reconocidos en latino-américa por nuestro impacto en mitigar el cambio climático a nivel corporativo."
 
 #: main/templates/company.html:62
 msgid ""
@@ -256,11 +264,13 @@ msgid ""
 "through sustainable tools that help to\n"
 "          reduce the carbon footprint of the economy.\n"
 "        "
-msgstr ""
+msgstr
+"\n"
+"Con Pl4N3T ayuda en la transición hacia una economía baja en carbono a través de herramientas soste"
 
 #: main/templates/company.html:71
 msgid "Our History"
-msgstr ""
+msgstr "Nuestra Historia"
 
 #: main/templates/company.html:75
 msgid ""
@@ -273,7 +283,9 @@ msgid ""
 "quantification of removals, specifically carbon\n"
 "              sequestration.\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"Pl4n3t es una marca que surgió en el año 2021 a raíz de las reformas tributarias que abrieron una oportunidad para generar ingresos en el área ambiental. Fue  entonces  cuando comenzaron  a surgir proyectos medioambientales  en colaboración  con organismos internacionales, enfocados en la cuantificación de remociones, específicamente la captura de carbono."
 
 #: main/templates/company.html:83
 msgid ""
@@ -293,7 +305,9 @@ msgid ""
 "              project to quantify the greenhouse gas (GHG) emissions of "
 "companies.\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"Con el objetivo de la necesidad de cumplir con los acuerdos del Tratado de Montreal y la normatividad colombiana e internacional, que exigen la cuantificación de emisiones y la compensación a través de certificados de carbono verificados. Para ampliar su mercado, Amanecer en el palmar por medio la marca Pl4n3t decidió participar en  el año 2022, en un proyecto de innovación llamado “SENAInnova Productividad para las Empresas 2.0” apoyado por SENAInnova - Productividad para las empresas que es un proyecto entre el SENA y Colombia Productiva, que es una entidad del  Ministerio de Industria y Turismo. Con el objetivo de formular un proyecto que permitiera cuantificar las de emisiones de gases de efecto invernadero  (GEI)  de las empresas."
 
 #: main/templates/company.html:94
 msgid ""
@@ -308,7 +322,9 @@ msgid ""
 "corporate footprint (Carbon, Plastic and\n"
 "              Hydric).\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"En el año 2022, la empresa Amanecer en el Palmar bajo la marca Pl4n3t comenzó a ofrecer y realizar servicios de cuantificación de emisiones de gases de efecto invernadero  (GEI) a las empresas, eventos, organizaciones y productos. Finalmente a mediado de noviembre del año 2022, Amanecer en el Palmar fueron seleccionados en el proyecto de innovación, lo que llevó a la creación de una plataforma tecnológica de cuantificación de la huella corporativa ( Carbono, Plástica y Hidrica)."
 
 #: main/templates/company.html:103
 msgid ""
@@ -322,7 +338,9 @@ msgid ""
 "its technological platform demonstrate its\n"
 "              commitment to sustainability and environmental care.\n"
 "            "
-msgstr ""
+msgstr
+"\n"
+"En resumen, Pl4n3t es una marca que nace de la empresa Amanecer en el palmar, con el objetivo de aprovechar las oportunidades del mercado ambiental, con un enfoque en la cuantificación de emisiones de GEI. Su colaboración con Amanecer en el Palmar y su plataforma tecnológica demuestran su compromiso con la sostenibilidad y el cuidado del medio ambiente."
 
 #: main/templates/company.html:117 main/templates/home.html:157
 msgid "Support us"
@@ -333,7 +351,7 @@ msgid "MinComercio"
 msgstr ""
 
 #: main/templates/company.html:124
-msgid ""
+msgid "MinComercio"
 "\n"
 "                It supports business activity, the production of goods, "
 "services and technology, as well as tourism\n"
@@ -342,11 +360,11 @@ msgid ""
 "                the\n"
 "                generation of greater added value.\n"
 "              "
-msgstr ""
+msgstr "Apoya la actividad empresarial, productora de bienes, servicios y tecnología, así como la gestión turística de las regiones del país para mejorar su competitividad y su sostenibilidad e incentivar la generación de mayor valor agregado. "
 
 #: main/templates/company.html:133
 msgid "Colombia Productiva"
-msgstr ""
+msgstr "Colombia Productiva"
 
 #: main/templates/company.html:135
 msgid ""
@@ -364,11 +382,14 @@ msgid ""
 "financing to obtain certifications as a requirement\n"
 "                for entry into international markets, among others.\n"
 "              "
-msgstr ""
+msgstr
+"\n"
+"Apoya a las empresas del país a través de convocatorias y programas que les permite mejorar en indicadores que son importantes para aumentar la eficiencia en los procesos productivos como calidad, capital humano y productividad.\n"
+"Otros servicios que ofrecen están asistencia técnica, intervención y acompañamiento en las empresas para que adopten metodologías internacionales de mejora productiva, programas de capacitación especializados en alianza con empresas e instituciones educativas, orientación y financiamiento para la obtención de certificaciones como requisito para la entrada a mercados internacionales, entre otros"
 
 #: main/templates/company.html:147
 msgid "SENA"
-msgstr ""
+msgstr "SENA"
 
 #: main/templates/company.html:149
 msgid ""
@@ -381,7 +402,9 @@ msgid ""
 "contribute to the social, economic and technological\n"
 "                development of the country.\n"
 "              "
-msgstr ""
+msgstr
+"\n"
+"Está encargado de cumplir la función que le corresponde al Estado de invertir en el desarrollo social y técnico de los trabajadores colombianos, ofreciendo y ejecutando la formación profesional integral, para la incorporación y el desarrollo de las personas en actividades productivas que contribuyan al desarrollo social, económico y tecnológico del país. "
 
 #: main/templates/company.html:158
 msgid "Cataruben"
@@ -404,7 +427,10 @@ msgid ""
 "                solutions aimed at improving the life cycle processes of "
 "climate change mitigation projects. .\n"
 "              "
-msgstr ""
+msgstr
+"\n"
+"Desarrolla soluciones climáticas basadas en la naturaleza para conservar la biodiversidad, el agua y los ecosistemas estratégicos en esta región. Cataruben también cuenta con un Departamento de Investigación, Desarrollo Tecnológico e Innovación (I+D+i) que genera conocimiento sobre compensaciones de carbono."
+"Sus Principales servicios son el desarrollo de consultorías especializadas en mitigación del cambio climático, la cuantificación de reducciones y/o remociones de GEI en el sector AFOLU y el desarrollo de soluciones tecnológicas orientadas a mejorar los procesos del ciclo de vida de los proyectos de mitigación del cambio climático."
 
 #: main/templates/contact_us.html:4
 msgid "Contact Us"
@@ -412,7 +438,7 @@ msgstr "Comunícate con nosotros"
 
 #: main/templates/contact_us.html:10
 msgid "CONTACT US"
-msgstr ""
+msgstr "COMUNÍCATE CON NOSOTROS"
 
 #: main/templates/contact_us.html:13
 msgid "Find more ways to help!"
