@@ -20,5 +20,9 @@
 {% include 'includes/footer.html' %}
 {% render_bundle 'vendor' 'js' %}
 {% render_bundle 'app' 'js' %}
+
+{% block extra_js %}
+  {# Override this in templates to add extra javascript #}
+{% endblock %}
 </body>
 </html>

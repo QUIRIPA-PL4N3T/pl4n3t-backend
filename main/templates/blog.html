@@ -33,37 +33,54 @@
 
         <div class="clock gap-4 text-center d-flex justify-content-center mb-5">
           <div>
-            <div class="numbers">
-              <span>2</span>
-              <span>1</span>
-              <span>7</span>
-            </div>
+            <div class="numbers" id="days"></div>
             <span class="mt-1">{% translate 'Days' %}</span>
           </div>
           <div>
-            <div class="numbers">
-              <span>0</span>
-              <span>5</span>
-            </div>
+            <div class="numbers" id="hours"></div>
             <span class="mt-1">{% translate 'Hours' %}</span>
           </div>
           <div>
-            <div class="numbers">
-              <span>2</span>
-              <span>1</span>
-            </div>
+            <div class="numbers" id="minutes"></div>
             <span class="mt-1">{% translate 'Minutes' %}</span>
           </div>
-
           <div>
-            <div class="numbers">
-              <span>5</span>
-              <span>9</span>
-            </div>
+            <div class="numbers" id="seconds"></div>
             <span class="mt-1">{% translate 'Seconds' %}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script>
+    let eventDate = new Date('2023-10-06T05:00:00.820Z');
+
+    function splitTextToSpans(text) {
+      let letters = text.toString().split('')
+      return letters.map( character => {
+        return `<span class="mx-1">${character}</span>`;
+      }).join('')
+    }
+
+    setInterval(function () {
+      let CurrentDate = new Date().getTime();
+
+      let difference = eventDate - CurrentDate;
+
+      let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerHTML = splitTextToSpans(days);
+      document.getElementById('hours').innerHTML = splitTextToSpans(hours);
+      document.getElementById('minutes').innerHTML = splitTextToSpans(minutes);
+      document.getElementById('seconds').innerHTML = splitTextToSpans(seconds);
+
+      console.log(days, hours, minutes, seconds);
+    }, 1000);
+  </script>
 {% endblock %}
