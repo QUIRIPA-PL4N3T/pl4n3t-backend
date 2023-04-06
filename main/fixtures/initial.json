@@ -4,7 +4,71 @@
     "pk": 1,
     "fields": {
       "key": "APP_NAME",
-      "value": "pl4n3t"
+      "value": "Pl4n3t"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 2,
+    "fields": {
+      "key": "COMPANY_ADDRESS",
+      "value": "Cra 20 #36-04, Yopal – Casanare(Colombia)"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 4,
+    "fields": {
+      "key": "COMPANY_PHONE_NUMBERS",
+      "value": "+57 302 865 17 88"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 5,
+    "fields": {
+      "key": "COMPANY_EMAIL_ADDRESS",
+      "value": "info@pl4n3t.com"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 6,
+    "fields": {
+      "key": "COMPANY_FACEBOOK_URL",
+      "value": "###"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 7,
+    "fields": {
+      "key": "COMPANY_INSTAGRAM_URL",
+      "value": "###"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 8,
+    "fields": {
+      "key": "COMPANY_LINKEDIN_URL",
+      "value": "###"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 9,
+    "fields": {
+      "key": "COMPANY_TWITTER_URL",
+      "value": "###"
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 10,
+    "fields": {
+      "key": "SITE_URL",
+      "value": "###"
     }
   }
 ]

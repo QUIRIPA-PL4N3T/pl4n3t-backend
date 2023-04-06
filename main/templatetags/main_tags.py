@@ -1,7 +1,7 @@
 from django import template
-from django.conf import settings
 from django.urls import reverse, NoReverseMatch
 from django.utils.encoding import escape_uri_path
+from main.models import Configuration
 
 register = template.Library()
 
@@ -28,3 +28,12 @@ def active_link(context, viewnames, css_class='active', inactive_class='', stric
             break
 
     return css_class if active else inactive_class
+
+
+@register.simple_tag
+def site_settings(key):
+    try:
+        return Configuration.objects.get(key=key).value
+    except Configuration.DoesNotExist:
+        return ''
+
