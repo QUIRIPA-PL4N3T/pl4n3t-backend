@@ -35,6 +35,7 @@ RUN npm install
 # Python dependencies
 COPY requirements/ requirements/
 COPY requirements.txt .
+RUN pip install --upgrade pip
 RUN pip install -r /src/requirements.txt
 
 COPY . /src

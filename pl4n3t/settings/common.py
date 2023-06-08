@@ -36,10 +36,16 @@ DEPENDENCIES_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'django.contrib.sites',
+    'django.contrib.humanize',
 ]
 
 PROJECT_APPS = [
     'main',
+    'accounts',
+    'companies',
+    'emissions',
+    'memberships',
 ]
 
 ADDONS = [
@@ -68,6 +74,8 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+SITE_ID = 1
+AUTH_USER_MODEL = 'accounts.user'
 ROOT_URLCONF = 'pl4n3t.urls'
 
 TEMPLATES = [
