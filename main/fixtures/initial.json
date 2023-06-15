@@ -1,6 +1,6 @@
 [
   {
-    "model": "main.Configuration",
+    "model": "main.configuration",
     "pk": 1,
     "fields": {
       "key": "APP_NAME",
@@ -69,6 +69,188 @@
     "fields": {
       "key": "SITE_URL",
       "value": "###"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 1,
+    "fields": {
+      "name": "Agricultura"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 2,
+    "fields": {
+      "name": "Industria"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 3,
+    "fields": {
+      "name": "Comercio"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 4,
+    "fields": {
+      "name": "Servicios Financieros"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 5,
+    "fields": {
+      "name": "Transporte"
+    }
+  },
+  {
+    "model": "main.economicsector",
+    "pk": 6,
+    "fields": {
+      "name": "Otro"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 1,
+    "fields": {
+      "name": "Alimentación"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 2,
+    "fields": {
+      "name": "Automotriz"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 3,
+    "fields": {
+      "name": "Construcción"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 4,
+    "fields": {
+      "name": "Tecnología"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 5,
+    "fields": {
+      "name": "Turismo"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 6,
+    "fields": {
+      "name": "Salud"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 7,
+    "fields": {
+      "name": "Energía"
+    }
+  },
+  {
+    "model": "main.industrytype",
+    "pk": 8,
+    "fields": {
+      "name": "Otro"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 1,
+    "fields": {
+      "name": "Sede Administrativa"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 2,
+    "fields": {
+      "name": "S"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 3,
+    "fields": {
+      "name": "Sucursal"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 4,
+    "fields": {
+      "name": "Oficina Regional"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 5,
+    "fields": {
+      "name": "Planta de Producción"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 6,
+    "fields": {
+      "name": "Centro de Distribución"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 7,
+    "fields": {
+      "name": "Laboratorio de investigación y desarrollo"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 8,
+    "fields": {
+      "name": "Centro de atención al cliente"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 9,
+    "fields": {
+      "name": "Oficina Virtual (Teletrabajo)"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 10,
+    "fields": {
+      "name": "Punto de venta"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 11,
+    "fields": {
+      "name": "Centro de capacitación"
+    }
+  },
+  {
+    "model": "main.locationtype",
+    "pk": 12,
+    "fields": {
+      "name": "Otra"
     }
   }
 ]

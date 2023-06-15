@@ -110,6 +110,13 @@ class UnitOfMeasure(models.Model):
     MEASURE_TYPE_VOLUME = "VOLUMEN"
     MEASURE_TYPE_SCALE = "SCALE"
     MEASURE_TYPE_WEIGHT = "WEIGHT"
+    MEASURE_TYPE_ENERGY = "ENERGY"
+    MEASURE_TYPE_MASS = "MASS"
+    MEASURE_TYPE_TEMPERATURE = "TEMPERATURE"
+    MEASURE_TYPE_PRESSURE = "TEMPERATURE"
+    MEASURE_TYPE_POWER = "POWER"
+    MEASURE_TYPE_FREQUENCY = "FREQUENCY"
+    MEASURE_TYPE_ENERGY_CONSUMPTION = "ENERGY_CONSUMPTION"
 
     MEASURE_TYPE_CHOICES = [
         (MEASURE_TYPE_UNKNOWN, _("Desconocido")),
@@ -121,6 +128,13 @@ class UnitOfMeasure(models.Model):
         (MEASURE_TYPE_VOLUME, _("Volumen")),
         (MEASURE_TYPE_SCALE, _("Escala")),
         (MEASURE_TYPE_WEIGHT, _("Peso")),
+        (MEASURE_TYPE_ENERGY, _("Energía")),
+        (MEASURE_TYPE_MASS, _("Masa")),
+        (MEASURE_TYPE_TEMPERATURE, _("Temperatura")),
+        (MEASURE_TYPE_PRESSURE, _("Presión")),
+        (MEASURE_TYPE_POWER, _("Potencia")),
+        (MEASURE_TYPE_FREQUENCY, _("Frecuencia")),
+        (MEASURE_TYPE_ENERGY_CONSUMPTION, _("Consumo de energía"))
     ]
 
     name = models.CharField(
@@ -144,13 +158,13 @@ class UnitOfMeasure(models.Model):
     )
     measure_type = models.CharField(
         _("Tipo de Medida"),
-        max_length=8,
+        max_length=18,
         choices=MEASURE_TYPE_CHOICES,
         help_text=_("Tipo de medida"),
     )
     name_standard_unit = models.CharField(
         _("Nombre de la unidad Estándar"),
-        max_length=8,
+        max_length=64,
         blank=True,
         help_text=_(
             "Nombre de las unidades estándar a las que se puede convertir directamente esta unidad de medida"
@@ -198,7 +212,7 @@ class UnitOfMeasure(models.Model):
     class Meta:
         verbose_name = _("Unidad de Medida")
         verbose_name_plural = _("Unidades de Medida")
-        ordering = ["symbol", "name"]
+        ordering = ["measure_type", "name"]
 
     def __str__(self):
         return "%s %s" % (self.symbol, self.name)
@@ -206,3 +220,39 @@ class UnitOfMeasure(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)[:32]
         return super().save(*args, **kwargs)
+
+
+class EconomicSector(models.Model):
+    name = models.CharField(_('Nombre del Sector'), max_length=255, unique=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _('Sector Económico')
+        verbose_name_plural = _('Sectores Económicos')
+
+    def __str__(self):
+        return self.name
+
+
+class IndustryType(models.Model):
+    name = models.CharField(_('Tipo de Industria'), max_length=255, unique=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _('Tipo de Industria')
+        verbose_name_plural = _('Tipos de Industria')
+
+    def __str__(self):
+        return self.name
+
+
+class LocationType(models.Model):
+    name = models.CharField(_('Tipo de sede'), max_length=255, unique=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _('Tipo de sede')
+        verbose_name_plural = _('Tipos de sede')
+
+    def __str__(self):
+        return self.name

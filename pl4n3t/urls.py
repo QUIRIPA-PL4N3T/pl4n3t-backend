@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from main.urls import apiurls as main_apiurls
+from main.urls import api_urls as main_api_urls
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+from accounts.urls import api_urls as account_api_urls
 
 # Create the API namespace and add the API only URLs of the applications
 apiurls = ([
-    path('main/', include(main_apiurls, namespace='main')),
+    path('accounts/', include(account_api_urls, namespace='accounts')),
+    path('main/', include(main_api_urls, namespace='main')),
 ], 'api')
 
 urlpatterns = [

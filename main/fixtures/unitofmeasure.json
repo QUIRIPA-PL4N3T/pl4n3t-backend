@@ -1,0 +1,1136 @@
+[
+  {
+    "model": "main.unitofmeasure",
+    "pk": 1,
+    "fields": {
+      "name": "Partes por millón (ppm):",
+      "slug": "partes-por-millon-ppm",
+      "symbol": "ppm",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 2,
+    "fields": {
+      "name": "Partes por billón (ppb)",
+      "slug": "partes-por-billon-ppb",
+      "symbol": "ppb",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 3,
+    "fields": {
+      "name": "Partes por trillón (ppt)",
+      "slug": "partes-por-trillon-ppt",
+      "symbol": "ppt",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 4,
+    "fields": {
+      "name": "Toneladas de dióxido de carbono equivalente (tCO2e)",
+      "slug": "toneladas-de-dioxido-de-carbono-",
+      "symbol": "tCO2e",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 5,
+    "fields": {
+      "name": "Kilogramos de dióxido de carbono equivalente (kgCO2e)",
+      "slug": "kilogramos-de-dioxido-de-carbono",
+      "symbol": "kgCO2e",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 6,
+    "fields": {
+      "name": "Toneladas (t)",
+      "slug": "toneladas-t",
+      "symbol": "t",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 7,
+    "fields": {
+      "name": "Kilogramo (kg)",
+      "slug": "kilogramo-kg",
+      "symbol": "kg",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 8,
+    "fields": {
+      "name": "Kilotoneladas (kt)",
+      "slug": "kilotoneladas-kt",
+      "symbol": "kt",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 9,
+    "fields": {
+      "name": "Gigatoneladas (Gt)",
+      "slug": "gigatoneladas-gt",
+      "symbol": "Gt",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 22,
+    "fields": {
+      "name": "Desconocido",
+      "slug": "",
+      "symbol": "",
+      "measure_type": "",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 23,
+    "fields": {
+      "name": "Metro",
+      "slug": "metro",
+      "symbol": "m",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 24,
+    "fields": {
+      "name": "Kilómetro",
+      "slug": "kilometro",
+      "symbol": "km",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 25,
+    "fields": {
+      "name": "Centímetro",
+      "slug": "centimetro",
+      "symbol": "cm",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 0.01,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 26,
+    "fields": {
+      "name": "Milímetro",
+      "slug": "milimetro",
+      "symbol": "mm",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 0.001,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 27,
+    "fields": {
+      "name": "Micrómetro",
+      "slug": "micrometro",
+      "symbol": "µm",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1e-06,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 28,
+    "fields": {
+      "name": "Nanómetro",
+      "slug": "nanometro",
+      "symbol": "nm",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1e-09,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 29,
+    "fields": {
+      "name": "Angstrom",
+      "slug": "angstrom",
+      "symbol": "Å",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1e-10,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 30,
+    "fields": {
+      "name": "Milla",
+      "slug": "milla",
+      "symbol": "mi",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 1609.34,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 31,
+    "fields": {
+      "name": "Yarda",
+      "slug": "yarda",
+      "symbol": "yd",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 0.9144,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 32,
+    "fields": {
+      "name": "Pie",
+      "slug": "pie",
+      "symbol": "ft",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 0.3048,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 33,
+    "fields": {
+      "name": "Pulgada",
+      "slug": "pulgada",
+      "symbol": "in",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Metro",
+      "scale_to_standard_unit": 0.0254,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 34,
+    "fields": {
+      "name": "Metro cuadrado",
+      "slug": "metro-cuadrado",
+      "symbol": "m²",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 35,
+    "fields": {
+      "name": "Kilómetro cuadrado",
+      "slug": "kilometro-cuadrado",
+      "symbol": "km²",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 1000000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 36,
+    "fields": {
+      "name": "Hectárea",
+      "slug": "hectarea",
+      "symbol": "ha",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 10000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 37,
+    "fields": {
+      "name": "Acre",
+      "slug": "acre",
+      "symbol": "ac",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 4046.86,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 38,
+    "fields": {
+      "name": "Pulgada cuadrada",
+      "slug": "pulgada-cuadrada",
+      "symbol": "in²",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 0.00064516,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 39,
+    "fields": {
+      "name": "Pie cuadrado",
+      "slug": "pie-cuadrado",
+      "symbol": "ft²",
+      "measure_type": "AREA",
+      "name_standard_unit": "Metro cuadrado",
+      "scale_to_standard_unit": 0.092903,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 40,
+    "fields": {
+      "name": "Grado",
+      "slug": "grado",
+      "symbol": "°",
+      "measure_type": "ANGLE",
+      "name_standard_unit": "Radian",
+      "scale_to_standard_unit": 0.0174533,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 41,
+    "fields": {
+      "name": "Radian",
+      "slug": "radian",
+      "symbol": "rad",
+      "measure_type": "ANGLE",
+      "name_standard_unit": "Radian",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 42,
+    "fields": {
+      "name": "Minuto de arco",
+      "slug": "minuto-arco",
+      "symbol": "′",
+      "measure_type": "ANGLE",
+      "name_standard_unit": "Radian",
+      "scale_to_standard_unit": 0.000290888,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 43,
+    "fields": {
+      "name": "Segundo de arco",
+      "slug": "segundo-arco",
+      "symbol": "″",
+      "measure_type": "ANGLE",
+      "name_standard_unit": "Radian",
+      "scale_to_standard_unit": 4.84814e-06,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 44,
+    "fields": {
+      "name": "Segundo",
+      "slug": "segundo",
+      "symbol": "s",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 45,
+    "fields": {
+      "name": "Minuto",
+      "slug": "minuto",
+      "symbol": "min",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 60.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 46,
+    "fields": {
+      "name": "Hora",
+      "slug": "hora",
+      "symbol": "h",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 3600.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 47,
+    "fields": {
+      "name": "Día",
+      "slug": "dia",
+      "symbol": "d",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 86400.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 48,
+    "fields": {
+      "name": "Semana",
+      "slug": "semana",
+      "symbol": "wk",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 604800.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 49,
+    "fields": {
+      "name": "Mes",
+      "slug": "mes",
+      "symbol": "mo",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 2628000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 50,
+    "fields": {
+      "name": "Año",
+      "slug": "año",
+      "symbol": "yr",
+      "measure_type": "TIME",
+      "name_standard_unit": "Segundo",
+      "scale_to_standard_unit": 31536000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 51,
+    "fields": {
+      "name": "Metro por segundo",
+      "slug": "metro-por-segundo",
+      "symbol": "m/s",
+      "measure_type": "VELOCITY",
+      "name_standard_unit": "Metro por segundo",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 52,
+    "fields": {
+      "name": "Kilómetro por hora",
+      "slug": "kilometro-por-hora",
+      "symbol": "km/h",
+      "measure_type": "VELOCITY",
+      "name_standard_unit": "Metro por segundo",
+      "scale_to_standard_unit": 0.277778,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 53,
+    "fields": {
+      "name": "Milla por hora",
+      "slug": "milla-por-hora",
+      "symbol": "mph",
+      "measure_type": "VELOCITY",
+      "name_standard_unit": "Metro por segundo",
+      "scale_to_standard_unit": 0.44704,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 54,
+    "fields": {
+      "name": "Nudo",
+      "slug": "nudo",
+      "symbol": "kt",
+      "measure_type": "VELOCITY",
+      "name_standard_unit": "Metro por segundo",
+      "scale_to_standard_unit": 0.514444,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 55,
+    "fields": {
+      "name": "Mach",
+      "slug": "mach",
+      "symbol": "Ma",
+      "measure_type": "VELOCITY",
+      "name_standard_unit": "Metro por segundo",
+      "scale_to_standard_unit": 343.2,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 56,
+    "fields": {
+      "name": "Metro cúbico",
+      "slug": "metro-cubico",
+      "symbol": "m³",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 57,
+    "fields": {
+      "name": "Litro",
+      "slug": "litro",
+      "symbol": "L",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 0.001,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 58,
+    "fields": {
+      "name": "Mililitro",
+      "slug": "mililitro",
+      "symbol": "mL",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 1e-06,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 59,
+    "fields": {
+      "name": "Centímetro cúbico",
+      "slug": "centimetro-cubico",
+      "symbol": "cm³",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 1e-06,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 60,
+    "fields": {
+      "name": "Pie cúbico",
+      "slug": "pie-cubico",
+      "symbol": "ft³",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 0.0283168,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 61,
+    "fields": {
+      "name": "Pulgada cúbica",
+      "slug": "pulgada-cubica",
+      "symbol": "in³",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 1.63871e-05,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 62,
+    "fields": {
+      "name": "Galon",
+      "slug": "galon",
+      "symbol": "gal",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Metro cúbico",
+      "scale_to_standard_unit": 0.00378541,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 63,
+    "fields": {
+      "name": "Gramo",
+      "slug": "gramo",
+      "symbol": "g",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.001,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 64,
+    "fields": {
+      "name": "Kilogramo",
+      "slug": "kilogramo",
+      "symbol": "kg",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 65,
+    "fields": {
+      "name": "Tonelada",
+      "slug": "tonelada",
+      "symbol": "t",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 66,
+    "fields": {
+      "name": "Libra",
+      "slug": "libra",
+      "symbol": "lb",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.453592,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 67,
+    "fields": {
+      "name": "Onza",
+      "slug": "onza",
+      "symbol": "oz",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.0283495,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 68,
+    "fields": {
+      "name": "Joule",
+      "slug": "joule",
+      "symbol": "J",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Joule",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 69,
+    "fields": {
+      "name": "Kilojoule",
+      "slug": "kilojoule",
+      "symbol": "kJ",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Joule",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 70,
+    "fields": {
+      "name": "Caloría",
+      "slug": "caloria",
+      "symbol": "cal",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Joule",
+      "scale_to_standard_unit": 4.184,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 71,
+    "fields": {
+      "name": "Kilocaloría",
+      "slug": "kilocaloria",
+      "symbol": "kcal",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Joule",
+      "scale_to_standard_unit": 4184.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 72,
+    "fields": {
+      "name": "Vatio-hora",
+      "slug": "vatio-hora",
+      "symbol": "Wh",
+      "measure_type": "ENERGY_CONSUMPTION",
+      "name_standard_unit": "Vatio-hora",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 73,
+    "fields": {
+      "name": "Kilovatio-hora",
+      "slug": "kilovatio-hora",
+      "symbol": "kWh",
+      "measure_type": "ENERGY_CONSUMPTION",
+      "name_standard_unit": "Vatio-hora",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 74,
+    "fields": {
+      "name": "Megavatio",
+      "slug": "megavatio",
+      "symbol": "MW",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Joule",
+      "scale_to_standard_unit": 1000000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 75,
+    "fields": {
+      "name": "Gramo",
+      "slug": "gramo",
+      "symbol": "g",
+      "measure_type": "MASS",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.001,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 76,
+    "fields": {
+      "name": "Kilogramo",
+      "slug": "kilogramo",
+      "symbol": "kg",
+      "measure_type": "MASS",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 77,
+    "fields": {
+      "name": "Tonelada",
+      "slug": "tonelada",
+      "symbol": "t",
+      "measure_type": "MASS",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 78,
+    "fields": {
+      "name": "Libra",
+      "slug": "libra",
+      "symbol": "lb",
+      "measure_type": "MASS",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.453592,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 79,
+    "fields": {
+      "name": "Onza",
+      "slug": "onza",
+      "symbol": "oz",
+      "measure_type": "MASS",
+      "name_standard_unit": "Kilogramo",
+      "scale_to_standard_unit": 0.0283495,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 80,
+    "fields": {
+      "name": "Celsius",
+      "slug": "celsius",
+      "symbol": "°C",
+      "measure_type": "TEMPERATURE",
+      "name_standard_unit": "Kelvin",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 273.15,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 81,
+    "fields": {
+      "name": "Kelvin",
+      "slug": "kelvin",
+      "symbol": "K",
+      "measure_type": "TEMPERATURE",
+      "name_standard_unit": "Kelvin",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 82,
+    "fields": {
+      "name": "Fahrenheit",
+      "slug": "fahrenheit",
+      "symbol": "°F",
+      "measure_type": "TEMPERATURE",
+      "name_standard_unit": "Kelvin",
+      "scale_to_standard_unit": 0.555556,
+      "offset_to_standard_unit": 255.372222,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 83,
+    "fields": {
+      "name": "Pascal",
+      "slug": "pascal",
+      "symbol": "Pa",
+      "measure_type": "PRESSURE",
+      "name_standard_unit": "Pascal",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 84,
+    "fields": {
+      "name": "Bar",
+      "slug": "bar",
+      "symbol": "bar",
+      "measure_type": "PRESSURE",
+      "name_standard_unit": "Pascal",
+      "scale_to_standard_unit": 100000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 85,
+    "fields": {
+      "name": "Atmósfera",
+      "slug": "atmosfera",
+      "symbol": "atm",
+      "measure_type": "PRESSURE",
+      "name_standard_unit": "Pascal",
+      "scale_to_standard_unit": 101325.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 86,
+    "fields": {
+      "name": "Milímetro de mercurio",
+      "slug": "milimetro-mercurio",
+      "symbol": "mmHg",
+      "measure_type": "PRESSURE",
+      "name_standard_unit": "Pascal",
+      "scale_to_standard_unit": 133.322,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 87,
+    "fields": {
+      "name": "Libra por pulgada cuadrada",
+      "slug": "libra-pulgada-cuadrada",
+      "symbol": "psi",
+      "measure_type": "PRESSURE",
+      "name_standard_unit": "Pascal",
+      "scale_to_standard_unit": 6894.76,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 88,
+    "fields": {
+      "name": "Vatio",
+      "slug": "vatio",
+      "symbol": "W",
+      "measure_type": "POWER",
+      "name_standard_unit": "Vatio",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 89,
+    "fields": {
+      "name": "Kilovatio",
+      "slug": "kilovatio",
+      "symbol": "kW",
+      "measure_type": "POWER",
+      "name_standard_unit": "Vatio",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 90,
+    "fields": {
+      "name": "Megavatio",
+      "slug": "megavatio",
+      "symbol": "MW",
+      "measure_type": "POWER",
+      "name_standard_unit": "Vatio",
+      "scale_to_standard_unit": 1000000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 91,
+    "fields": {
+      "name": "Hertz",
+      "slug": "hertz",
+      "symbol": "Hz",
+      "measure_type": "FREQUENCY",
+      "name_standard_unit": "Hertz",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 92,
+    "fields": {
+      "name": "Kilohertz",
+      "slug": "kilohertz",
+      "symbol": "kHz",
+      "measure_type": "FREQUENCY",
+      "name_standard_unit": "Hertz",
+      "scale_to_standard_unit": 1000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 93,
+    "fields": {
+      "name": "Megahertz",
+      "slug": "megahertz",
+      "symbol": "MHz",
+      "measure_type": "FREQUENCY",
+      "name_standard_unit": "Hertz",
+      "scale_to_standard_unit": 1000000.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  }
+]

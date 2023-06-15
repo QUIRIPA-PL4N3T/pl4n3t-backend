@@ -2,7 +2,7 @@ from django.contrib.gis.db import models
 from accounts.models import User
 from emissions.models import EmissionAgent
 from django.utils.translation import gettext_lazy as _
-from main.models import City, UnitOfMeasure
+from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType
 
 
 class Company(models.Model):
@@ -21,6 +21,20 @@ class Company(models.Model):
     size = models.CharField(_('Tamaño de la Empresa'), max_length=10, choices=SIZE_CHOICES, default=SMALL)
     website = models.CharField(_('Página Web'), max_length=255, blank=True, null=True)
     geo_location = models.PointField(_('Posición geográfica'), null=True, blank=True)
+    economic_sector = models.ForeignKey(
+        EconomicSector,
+        verbose_name=_('Sector Económico'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
+    industry_type = models.ForeignKey(
+        IndustryType,
+        verbose_name=_('Tipo de Industria'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
 
     class Meta:
         ordering = ('name',)
@@ -52,6 +66,13 @@ class Location(models.Model):
     zip_code = models.CharField(_('Código Postal'), max_length=255)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='locations')
     geo_location = models.PointField(_('Posición Geográfica'), null=True, blank=True)
+    location_type = models.ForeignKey(
+        LocationType,
+        verbose_name=_('Tipo de Sede'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
 
     class Meta:
         ordering = ('company__name', 'name')

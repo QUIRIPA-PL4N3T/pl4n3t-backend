@@ -6,8 +6,8 @@ SECRET_KEY = 'p3gm=o9o+_r(5*o$$kn#h*8#n1r)aquf^^nm_v5u0pn^qa$=4*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://pl4n3t.com', 'https:/www.pl4n3t.com']
+ALLOWED_HOSTS = ['https://planet-frontend.dev.altix.co/', 'https:/www.pl4n3t.com', '*']
+CSRF_TRUSTED_ORIGINS = ['https://pl4n3t.com', 'https:/www.pl4n3t.com', 'https://planet-frontend.dev.altix.co']
 
 # CORS Config: install django-cors-headers and uncomment the following to allow CORS from any origin
 """
@@ -66,3 +66,9 @@ WEBPACK_LOADER['DEFAULT'].update({
     'BUNDLE_DIR_NAME': 'webpack_bundles/',  # must end with slash
     'STATS_FILE': os.path.join(BASE_DIR, 'webpack-development-stats.json'),
 })
+
+EMAIL_HOST = os.environ.setdefault('EMAIL_HOST', '')
+EMAIL_PORT = os.environ.setdefault('EMAIL_PORT', '')
+EMAIL_HOST_USER = os.environ.setdefault('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.setdefault('EMAIL_HOST_PASSWORD', '')
+EMAIL_USE_TLS = True

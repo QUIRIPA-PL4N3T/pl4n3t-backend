@@ -5,17 +5,23 @@ from main.views import home, blog, company, contact_us, why_quantify, water_foot
     plastic_footprint, footprint_levels
 # api imports
 from rest_framework import routers
-from main.api import ConfigurationView
+from main.api import ConfigurationView, UnitOfMeasureViewSet, EconomicSectorViewSet, IndustryTypeViewSet, \
+    LocationTypeViewSet, StateViewSet, CityViewSet, DocumentTypeViewSet
 
 # api urls
-api_router = routers.DefaultRouter()
-# /api/main/configurations
-api_router.register('configurations', ConfigurationView)
+router = routers.DefaultRouter()
+router.register('configurations', ConfigurationView, basename='configurations')
+router.register('unit-of-measure', UnitOfMeasureViewSet, basename='unit-of-measure')
+router.register('economic-sector', EconomicSectorViewSet, basename='economic-sector')
+router.register('industry-type', IndustryTypeViewSet, basename='industry-type')
+router.register('location-type', LocationTypeViewSet, basename='location-type')
+router.register('state', StateViewSet, basename='state')
+router.register('city', CityViewSet, basename='city')
+router.register('document-type', DocumentTypeViewSet, basename='document-type')
 
-apiurls = ([
-               # /api/main/<routers>
-               path('', include(api_router.urls))
-           ], 'main')
+api_urls = ([
+    path('', include(router.urls)),
+], 'main')
 
 # general urls
 urlpatterns = [
