@@ -91,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.pl4n3t',
             ],
         },
     },
@@ -244,11 +245,11 @@ SERVER_EMAIL = 'Server <server@pl4n3t.com>'
 # Email
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 
-SPECTACULAR_ENUM_NAME_OVERRIDES = {
-    "PostulationStatusEnum": "platform_qtx.postulations.models.Postulation.STATUS_CHOICES",
-    "ContractStatusEnum": "platform_qtx.contracts.models.Contract.STATUS_CHOICES",
-    "DocumentStatusEnum": "platform_qtx.documents.models.Document.DOCUMENT_STATUS_CHOICES",
-}
+# SPECTACULAR_ENUM_NAME_OVERRIDES = {
+#     "PostulationStatusEnum": "platform_qtx.postulations.models.Postulation.STATUS_CHOICES",
+#     "ContractStatusEnum": "platform_qtx.contracts.models.Contract.STATUS_CHOICES",
+#     "DocumentStatusEnum": "platform_qtx.documents.models.Document.DOCUMENT_STATUS_CHOICES",
+# }
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Pl4N3T API',
@@ -258,8 +259,17 @@ SPECTACULAR_SETTINGS = {
     'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],
     'SCHEMA_PATH_PREFIX': "/api",  # Allows grouping APIs without considering the /api part
     'CAMELIZE_NAMES': True,
-    'ENUM_NAME_OVERRIDES': SPECTACULAR_ENUM_NAME_OVERRIDES,
-    'SERVERS': [{"url": "https://planet.altix.co"}],
+    # 'ENUM_NAME_OVERRIDES': SPECTACULAR_ENUM_NAME_OVERRIDES,
+    'SWAGGER_UI_SETTINGS': {
+        "deepLinking": True,
+        "persistAuthorization": True,
+        "displayOperationId": False,
+        "operationsSorter": "alpha",
+        "tagsSorter": "alpha",
+        "filter": True,
+    },
 }
+
+PL4N3T_APPLICATION = 'https://planet-frontend.dev.altix.co/'
 
 DOCUMENTS_UPLOAD_TO = 'documents'
