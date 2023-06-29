@@ -15,6 +15,7 @@ api_urls = ([
     path("refresh/", CustomTokenRefreshView.as_view(), name="user-refresh-token"),
     path("register/", RegisterAPIView.as_view(), name="user-register"),
     path("recover-password/", ResetPasswordRequestAPIView.as_view(), name="recover-password"),
+    path("change-password/", ResetPasswordConfirmAPIView.as_view(), name="change-password"),
     path("user/<str:username>/", UserDetailAPIView.as_view(), name="get-user-detail"),
     path('', include(avatar_router.urls)),
 

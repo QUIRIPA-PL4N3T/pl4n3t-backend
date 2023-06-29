@@ -9,6 +9,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['https://planet-frontend.dev.altix.co/', 'https:/www.pl4n3t.com', '*']
 CSRF_TRUSTED_ORIGINS = ['https://pl4n3t.com', 'https://www.pl4n3t.com', 'https://planet-frontend.dev.altix.co']
 
+DEFAULT_FROM_EMAIL = 'PL4N3T <qtx@quantix.co>'
+
 # CORS Config: install django-cors-headers and uncomment the following to allow CORS from any origin
 """
 DEV_APPS = [
