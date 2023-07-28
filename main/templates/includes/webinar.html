@@ -1,0 +1,109 @@
+{% load static i18n %}
+<!-- Add this to your CSS -->
+<style>
+#registerButton:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+#registerButton:disabled:hover {
+  color: initial;
+}
+</style>
+
+<h3>{% translate 'WEBINAR' %}</h3>
+
+<!-- Place this where you want the alert to appear -->
+<div id="alertContainer"></div>
+
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<span class="text-gray">
+  {% blocktrans %}
+    COMING SOON: Webinar on technological tools for the digitization of processes and environmental
+    sustainability
+  {% endblocktrans %}
+</span>
+<div class="mt-5 newsletter-register">
+  <h4 class="text-gray my-3">{% translate 'Participate in the Webinar' %}</h4>
+  <form id="register-form" method="POST" action="{% url 'webinar' %}">
+    {% csrf_token %}
+    <div class="d-flex gap-4 gap-sm-2 flex-column flex-sm-row align-items-center">
+      <label class="sr-only" for="inlineFormInput">{% translate 'email' %}</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="{% translate 'email' %}"
+        required
+      >
+      <input type="hidden" id="company_name" name="company_name">
+      <button
+        type="button"
+        id="registerButton"
+        class="newsletter-button p-2"
+        data-bs-toggle="modal"
+        data-bs-target="#companyModal"
+        disabled>{% translate 'Register' %}
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="companyModalLabel">{% translate 'Company Name' %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-3">{% translate 'If you represent a company, please enter its name here.' %}</p>
+        <input type="text" class="form-control" id="companyInput"
+               placeholder="{% translate 'Company Name (optional)' %}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">{% translate 'Close' %}</button>
+        <button type="button" class="btn btn-lg btn-primary" id="submitFormButton">{% translate 'Submit' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script to handle the form submission -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let emailInput = document.getElementById("email");
+    let registerButton = document.getElementById("registerButton");
+
+    // Email validation regex
+    let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    emailInput.addEventListener("input", function () {
+      registerButton.disabled = !emailRegex.test(emailInput.value);
+    });
+
+    let submitFormButton = document.getElementById("submitFormButton");
+    submitFormButton.addEventListener("click", function (e) {
+      let companyInput = document.getElementById("companyInput");
+      let companyName = companyInput.value;
+      let companyField = document.getElementById("company_name");
+      companyField.value = companyName;
+      let form = document.getElementById("register-form");
+
+      form.submit();
+    });
+  });
+</script>

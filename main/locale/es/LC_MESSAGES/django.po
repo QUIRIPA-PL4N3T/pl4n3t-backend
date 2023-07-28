@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-03 01:09+0000\n"
+"POT-Creation-Date: 2023-07-28 16:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,69 +18,273 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/templates/blog.html:4 main/templates/includes/header.html:45
+#: main/models.py:20
+msgid "Nombre del Departamento"
+msgstr ""
+
+#: main/models.py:21 main/models.py:52
+msgid "Código DANE"
+msgstr ""
+
+#: main/models.py:22
+msgid "Código GeoNames"
+msgstr ""
+
+#: main/models.py:34
+msgid "Departamento"
+msgstr ""
+
+#: main/models.py:35
+msgid "Departamentos"
+msgstr ""
+
+#: main/models.py:49 main/models.py:68 main/models.py:69
+msgid "Municipios"
+msgstr ""
+
+#: main/models.py:51
+msgid "Nombre del Municipio"
+msgstr ""
+
+#: main/models.py:83
+msgid "Tipo de Documento"
+msgstr ""
+
+#: main/models.py:84
+msgid "Código"
+msgstr ""
+
+#: main/models.py:87
+msgid "Tipo de documento"
+msgstr ""
+
+#: main/models.py:88
+msgid "Tipos de documento"
+msgstr ""
+
+#: main/models.py:122
+msgid "Desconocido"
+msgstr ""
+
+#: main/models.py:123
+msgid "Area"
+msgstr ""
+
+#: main/models.py:124
+msgid "Longitud"
+msgstr ""
+
+#: main/models.py:125
+msgid "Ángulo"
+msgstr ""
+
+#: main/models.py:126
+msgid "Tiempo"
+msgstr ""
+
+#: main/models.py:127
+msgid "Velocidad"
+msgstr ""
+
+#: main/models.py:128
+msgid "Volumen"
+msgstr ""
+
+#: main/models.py:129
+msgid "Escala"
+msgstr ""
+
+#: main/models.py:130
+msgid "Peso"
+msgstr ""
+
+#: main/models.py:131
+msgid "Energía"
+msgstr ""
+
+#: main/models.py:132
+msgid "Masa"
+msgstr ""
+
+#: main/models.py:133
+msgid "Temperatura"
+msgstr ""
+
+#: main/models.py:134
+msgid "Presión"
+msgstr ""
+
+#: main/models.py:135
+msgid "Potencia"
+msgstr ""
+
+#: main/models.py:136
+msgid "Frecuencia"
+msgstr ""
+
+#: main/models.py:137
+msgid "Consumo de energía"
+msgstr ""
+
+#: main/models.py:141
+msgid "Nombre"
+msgstr ""
+
+#: main/models.py:144
+msgid ""
+"El(los) nombre(s) de una unidad de medida (udm) particular. Los ejemplos "
+"incluirían lo siguiente:1) para el área udm - metros cuadrados <br />2) para "
+"udm Time - segundos <br />3) para el área udm - metros <br />4) Ángulo udm - "
+"grados."
+msgstr ""
+
+#: main/models.py:151
+msgid "Slug"
+msgstr ""
+
+#: main/models.py:153
+msgid "Símbolo"
+msgstr ""
+
+#: main/models.py:156
+msgid ""
+"El símbolo utilizado para esta unidad de medida, como \"ft\" para pies o \"m"
+"\" para metro."
+msgstr ""
+
+#: main/models.py:160
+msgid "Tipo de Medida"
+msgstr ""
+
+#: main/models.py:163
+msgid "Tipo de medida"
+msgstr ""
+
+#: main/models.py:166
+msgid "Nombre de la unidad Estándar"
+msgstr ""
+
+#: main/models.py:170
+msgid ""
+"Nombre de las unidades estándar a las que se puede convertir directamente "
+"esta unidad de medidaSi esta variable es NULL, entonces la unidad estándar "
+"para este tipo de medida dada por el localcopia de la lista de códigos "
+"StandardsUnits."
+msgstr ""
+
+#: main/models.py:176
+msgid "Escala para la unidad Estándar"
+msgstr ""
+
+#: main/models.py:180
+msgid ""
+"Si el sistema de implementación utilizado para este objeto no es compatible "
+"con NULL, la escala se establece en 0 es equivalente a NULL tanto para la "
+"escala como para el desplazamiento.<br />Si X es la unidad actual y S es la "
+"estándar, la escala de dos variables (ToStandardUnit)y "
+"offset(ToStandardUnit) se puede usar para hacer la conversión de X a S por:"
+"<br />S = compensación + escala*X <br />y, por el contrario, <br />X = "
+"(desplazamiento S)/escala"
+msgstr ""
+
+#: main/models.py:190
+msgid "Compensación a la unidad estándar"
+msgstr ""
+
+#: main/models.py:194
+msgid ""
+"Consulte scaleToStandardUnit para obtener una descripción. Nuevamente, esta "
+"variable es NULL y no es una conversión lineal es posible. Si las dos "
+"unidades son solo una escala en diferencia, entonces este número es cero "
+"(0). Si el sistema de implementación utilizado para este objeto no es "
+"compatible con NULL, entonces el conjunto de escalado a 0 es equivalente a "
+"NULL tanto para la escala como para el desplazamiento"
+msgstr ""
+
+#: main/models.py:202
+msgid "Formula"
+msgstr ""
+
+#: main/models.py:206
+msgid ""
+"Una fórmula algebraica (probablemente en algún lenguaje de programación) que "
+"convierte esta unidad de medida (representada en la fórmula por su "
+"uomSymbol) a la norma ISO (representada por su símbolo. Este atributo de "
+"miembro no es obligatorio, pero es una pieza valiosa de documentación"
+msgstr ""
+
+#: main/models.py:213
+msgid "Unidad de Medida"
+msgstr ""
+
+#: main/models.py:214
+msgid "Unidades de Medida"
+msgstr ""
+
+#: main/models.py:226
+msgid "Nombre del Sector"
+msgstr ""
+
+#: main/models.py:230
+msgid "Sector Económico"
+msgstr ""
+
+#: main/models.py:231
+msgid "Sectores Económicos"
+msgstr ""
+
+#: main/models.py:238 main/models.py:242
+msgid "Tipo de Industria"
+msgstr ""
+
+#: main/models.py:243
+msgid "Tipos de Industria"
+msgstr ""
+
+#: main/models.py:250 main/models.py:254
+msgid "Tipo de sede"
+msgstr ""
+
+#: main/models.py:255
+msgid "Tipos de sede"
+msgstr ""
+
+#: main/templates/base_generic.html:8
+msgid "PL4N3T"
+msgstr ""
+
+#: main/templates/blog.html:4 main/templates/includes/header.html:49
 msgid "Blog"
 msgstr "Blog"
 
-#: main/templates/blog.html:10
-msgid "WEBINAR"
-msgstr "SEMINARIO VIRTUAL"
-
-#: main/templates/blog.html:12
-msgid ""
-"\n"
-"            COMING SOON: Webinar on technological tools for the digitization "
-"of processes and environmental\n"
-"            sustainability\n"
-"          "
-msgstr ""
-"\n"
-"PRÓXIMAMENTE : Seminario virtual sobre herramientas tecnológicas para la "
-"digitalización de los procesos y la sostenibilidad ambiental "
-
-#: main/templates/blog.html:19
-msgid "Participate in the Webinar"
-msgstr "Participar al Seminario Virtual"
-
-#: main/templates/blog.html:22 main/templates/blog.html:23
-#: main/templates/contact_us.html:34 main/templates/contact_us.html:35
-#: main/templates/home.html:135 main/templates/home.html:136
-msgid "email"
-msgstr "Dirección de correo electrónico"
-
-#: main/templates/blog.html:24 main/templates/contact_us.html:36
-#: main/templates/home.html:137
-msgid "Register"
-msgstr "Inscribirse"
-
-#: main/templates/blog.html:30
+#: main/templates/blog.html:14
 msgid "We're almost ready!"
 msgstr "¡Ya casi está todo listo!"
 
-#: main/templates/blog.html:31
+#: main/templates/blog.html:15
 msgid "We are getting ready, don't miss it!"
 msgstr "Nos estamos preparando. ¡No te lo pierdas!"
 
-#: main/templates/blog.html:41
+#: main/templates/blog.html:21
 msgid "Days"
 msgstr "Días"
 
-#: main/templates/blog.html:48
+#: main/templates/blog.html:25
 msgid "Hours"
 msgstr "Horas"
 
-#: main/templates/blog.html:55
+#: main/templates/blog.html:29
 msgid "Minutes"
 msgstr "Minutos"
 
-#: main/templates/blog.html:63
+#: main/templates/blog.html:33
 msgid "Seconds"
 msgstr "Segundos"
 
 #: main/templates/carbon_footprint.html:4
-#: main/templates/carbon_footprint.html:10 main/templates/home.html:79
-#: main/templates/home.html:82 main/templates/home.html:94
-#: main/templates/home.html:111
+#: main/templates/carbon_footprint.html:10 main/templates/home.html:82
+#: main/templates/home.html:85 main/templates/home.html:97
+#: main/templates/home.html:114
 msgid "Carbon Footprint"
 msgstr "Huella de Carbono"
 
@@ -373,7 +577,7 @@ msgstr ""
 "demuestran su compromiso con la sostenibilidad y el cuidado del medio "
 "ambiente."
 
-#: main/templates/company.html:117 main/templates/home.html:157
+#: main/templates/company.html:117 main/templates/home.html:160
 msgid "Support us"
 msgstr "Nos Apoyan"
 
@@ -519,6 +723,18 @@ msgstr "Envíanos un mensaje"
 msgid "Quantify now"
 msgstr "Cuantifique ya"
 
+#: main/templates/contact_us.html:34 main/templates/contact_us.html:35
+#: main/templates/home.html:138 main/templates/home.html:139
+#: main/templates/includes/webinar.html:42
+#: main/templates/includes/webinar.html:48
+msgid "email"
+msgstr "Dirección de correo electrónico"
+
+#: main/templates/contact_us.html:36 main/templates/home.html:140
+#: main/templates/includes/webinar.html:58
+msgid "Register"
+msgstr "Inscribirse"
+
 #: main/templates/footprint_levels.html:4
 msgid "Carbon Level"
 msgstr "Huella de Carbono"
@@ -528,8 +744,8 @@ msgid "Different Levels of Carbon Footprints"
 msgstr "Distintos Niveles de Huellas de Carbono"
 
 #: main/templates/footprint_levels.html:16
-#: main/templates/footprint_levels.html:19 main/templates/home.html:26
-#: main/templates/home.html:27
+#: main/templates/footprint_levels.html:19 main/templates/home.html:29
+#: main/templates/home.html:30
 msgid "Corporate Footprint"
 msgstr "Huella Corporativa"
 
@@ -580,11 +796,11 @@ msgstr ""
 msgid "measure your footprint"
 msgstr "Mida su Huella"
 
-#: main/templates/footprint_levels.html:45 main/templates/home.html:39
+#: main/templates/footprint_levels.html:45 main/templates/home.html:42
 msgid "Event Footprint"
 msgstr "Huella Evento"
 
-#: main/templates/footprint_levels.html:48 main/templates/home.html:40
+#: main/templates/footprint_levels.html:48 main/templates/home.html:43
 msgid "Events Footprint"
 msgstr "Huella Eventos"
 
@@ -627,8 +843,8 @@ msgstr ""
 "del evento y promover la sostenibilidad."
 
 #: main/templates/footprint_levels.html:72
-#: main/templates/footprint_levels.html:75 main/templates/home.html:54
-#: main/templates/home.html:55
+#: main/templates/footprint_levels.html:75 main/templates/home.html:57
+#: main/templates/home.html:58
 msgid "Product Footprint"
 msgstr "Huella Producto"
 
@@ -671,7 +887,7 @@ msgstr ""
 "informadas sobre cómo reducir las emisiones de gases de efecto invernadero "
 "asociadas con su producción y uso."
 
-#: main/templates/home.html:4 main/templates/includes/header.html:15
+#: main/templates/home.html:4 main/templates/includes/header.html:19
 msgid "Home"
 msgstr "Inicio"
 
@@ -683,15 +899,15 @@ msgstr "CON PL4N3T ES MUY FÁCIL CUANTIFICAR TU HUELLA..."
 msgid "Carbon, Water and Plastic"
 msgstr "De Carbono, Hídrica y Plástica"
 
-#: main/templates/home.html:13
+#: main/templates/home.html:16
 msgid "Quantify now!"
 msgstr "¡Gestiona Ya!"
 
-#: main/templates/home.html:19
+#: main/templates/home.html:22
 msgid "YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS"
 msgstr "PUEDES GESTIONAR HUELLAS A DISTINTOS NIVELES"
 
-#: main/templates/home.html:29
+#: main/templates/home.html:32
 msgid ""
 "\n"
 "              Measures the environmental impact associated with the carbon "
@@ -705,13 +921,13 @@ msgstr ""
 "empresariales de la cuantificación de los inventarios de Gases de Efecto "
 "Invernadero (GEI) emitidos."
 
-#: main/templates/home.html:35 main/templates/home.html:49
-#: main/templates/home.html:64 main/templates/home.html:89
-#: main/templates/home.html:106 main/templates/home.html:123
+#: main/templates/home.html:38 main/templates/home.html:52
+#: main/templates/home.html:67 main/templates/home.html:92
+#: main/templates/home.html:109 main/templates/home.html:126
 msgid "More"
 msgstr "Más"
 
-#: main/templates/home.html:42
+#: main/templates/home.html:45
 msgid ""
 "\n"
 "                Quantifies the environmental impact associated with the "
@@ -726,7 +942,7 @@ msgstr ""
 "realización de un evento desde él antes, durante y después,  como una "
 "conferencia, un concierto, un foro o una exhibición en su entorno."
 
-#: main/templates/home.html:57
+#: main/templates/home.html:60
 msgid ""
 "\n"
 "              Calculates the environmental impact to the carbon footprint "
@@ -741,11 +957,11 @@ msgstr ""
 "(ACV) del proceso productivo. Se consideran factores como recepción de "
 "materias primas, producción, transporte y entrega del producto. "
 
-#: main/templates/home.html:72
+#: main/templates/home.html:75
 msgid "YOU CAN MANAGE DIFFERENT TYPES OF FOOTPRINTS"
 msgstr "PUEDES GESTIONAR DISTINTOS TIPOS DE HUELLAS"
 
-#: main/templates/home.html:84
+#: main/templates/home.html:87
 msgid ""
 "The carbon footprint is a measure of the environmental impact of an activity "
 "or product,\n"
@@ -757,12 +973,12 @@ msgstr ""
 "producto, expresada en CO2 en términos de las emisiones de gases de efecto "
 "invernadero - GEI generadas en un tiempo determinado."
 
-#: main/templates/home.html:97 main/templates/plastic_footprint.html:4
+#: main/templates/home.html:100 main/templates/plastic_footprint.html:4
 #: main/templates/plastic_footprint.html:10
 msgid "Plastic Footprint"
 msgstr "Huella Plástica"
 
-#: main/templates/home.html:99
+#: main/templates/home.html:102
 msgid ""
 "\n"
 "              The plastic footprint is a measure of the environmental impact "
@@ -778,12 +994,12 @@ msgstr ""
 "extracción de materias primas, la producción, el transporte, el uso y el fin "
 "de vida del mismo. "
 
-#: main/templates/home.html:114 main/templates/water_footprint.html:4
+#: main/templates/home.html:117 main/templates/water_footprint.html:4
 #: main/templates/water_footprint.html:10
 msgid "Water Footprint"
 msgstr "Huella Hídrica"
 
-#: main/templates/home.html:116
+#: main/templates/home.html:119
 msgid ""
 "\n"
 "              The water footprint is a measure of the environmental impact "
@@ -799,65 +1015,106 @@ msgstr ""
 "cúbicos, utilizada para producir un producto o realizar una actividad. "
 "Incluye el agua utilizada en la agricultura, la industria y el hogar. "
 
-#: main/templates/home.html:129
+#: main/templates/home.html:132
 msgid "To whom is Pl4n3t directed?"
 msgstr "¿A quién se dirige Pl4n3t?"
 
-#: main/templates/home.html:130
+#: main/templates/home.html:133
 msgid "To any organization that wants to focus on sustainability."
 msgstr "A cualquier organización que quiera orientarse a la sostenibilidad."
 
-#: main/templates/home.html:145
+#: main/templates/home.html:148
 msgid "Trust Us"
 msgstr "Confían en Nosotros"
 
-#: main/templates/includes/footer.html:12
+#: main/templates/includes/footer.html:13
 msgid "Copyright"
 msgstr ""
 
-#: main/templates/includes/footer.html:13
+#: main/templates/includes/footer.html:14
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
-#: main/templates/includes/footer.html:32
+#: main/templates/includes/footer.html:33
 msgid "Powered by"
 msgstr "Desarrollado por"
 
-#: main/templates/includes/footer.html:37
+#: main/templates/includes/footer.html:38
 msgid "Privacy policy"
 msgstr "Política de Privacidad"
 
-#: main/templates/includes/header.html:19
+#: main/templates/includes/header.html:23
 msgid "The Company"
 msgstr "La Empresa"
 
-#: main/templates/includes/header.html:25
+#: main/templates/includes/header.html:29
 msgid "Quantify"
 msgstr "Cuantifique"
 
-#: main/templates/includes/header.html:28 main/templates/why_quantify.html:4
+#: main/templates/includes/header.html:32 main/templates/why_quantify.html:4
 msgid "Why Quantify"
 msgstr "¿Por que Cuantificar?"
 
-#: main/templates/includes/header.html:29
+#: main/templates/includes/header.html:33
 msgid "Footprint Levels"
 msgstr "Niveles de Huellas"
 
-#: main/templates/includes/header.html:33
+#: main/templates/includes/header.html:37
 msgid "Carbon footprint"
 msgstr "Huella de Carbono"
 
-#: main/templates/includes/header.html:34
+#: main/templates/includes/header.html:38
 msgid "Plastic footprint"
 msgstr "Huella Plástica"
 
-#: main/templates/includes/header.html:36
+#: main/templates/includes/header.html:40
 msgid "Water footprint"
 msgstr "Huella Hídrica"
 
-#: main/templates/includes/header.html:41
+#: main/templates/includes/header.html:45
 msgid "Contact us"
 msgstr "Comunícate con nosotros"
+
+#: main/templates/includes/webinar.html:15
+msgid "WEBINAR"
+msgstr "SEMINARIO VIRTUAL"
+
+#: main/templates/includes/webinar.html:32
+msgid ""
+"\n"
+"    COMING SOON: Webinar on technological tools for the digitization of "
+"processes and environmental\n"
+"    sustainability\n"
+"  "
+msgstr ""
+"\n"
+"PRÓXIMAMENTE: Seminario web sobre herramientas tecnológicas para la "
+"digitalización de procesos y la sostenibilidad ambiental.\n"
+"  "
+
+#: main/templates/includes/webinar.html:38
+msgid "Participate in the Webinar"
+msgstr "Participar al Seminario Virtual"
+
+#: main/templates/includes/webinar.html:69
+msgid "Company Name"
+msgstr "Nombre de la Empresa"
+
+#: main/templates/includes/webinar.html:73
+msgid "If you represent a company, please enter its name here."
+msgstr "Si representas a una empresa, por favor introduce su nombre aquí."
+
+#: main/templates/includes/webinar.html:75
+msgid "Company Name (optional)"
+msgstr "Nombre de la empresa (opcional)"
+
+#: main/templates/includes/webinar.html:78
+msgid "Close"
+msgstr "Cerrar"
+
+#: main/templates/includes/webinar.html:79
+msgid "Submit"
+msgstr "Enviar"
 
 #: main/templates/plastic_footprint.html:17
 msgid ""
@@ -875,8 +1132,13 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"La huella de plástico es una herramienta que se utiliza para cuantificar la cantidad de plástico que una empresa utiliza y la cantidad de residuos plásticos que genera a lo largo de su cadena de suministro y operaciones. Esta huella permite a las empresas identificar sus impactos ambientales y tomar medidas para reducir su uso de plástico y gestionar mejor los residuos plásticos."
-"\nLas funcionalidades de la huella de plástico para una empresa incluyen: "
+"La huella de plástico es una herramienta que se utiliza para cuantificar la "
+"cantidad de plástico que una empresa utiliza y la cantidad de residuos "
+"plásticos que genera a lo largo de su cadena de suministro y operaciones. "
+"Esta huella permite a las empresas identificar sus impactos ambientales y "
+"tomar medidas para reducir su uso de plástico y gestionar mejor los residuos "
+"plásticos.\n"
+"Las funcionalidades de la huella de plástico para una empresa incluyen: "
 
 #: main/templates/plastic_footprint.html:31
 msgid ""
@@ -885,8 +1147,10 @@ msgid ""
 "operations where plastic is used and waste is\n"
 "            generated.\n"
 "          "
-msgstr "\n"
-"Identificación de los puntos críticos en la cadena de suministro y operaciones donde se utiliza el plástico y se generan residuos."
+msgstr ""
+"\n"
+"Identificación de los puntos críticos en la cadena de suministro y "
+"operaciones donde se utiliza el plástico y se generan residuos."
 
 #: main/templates/plastic_footprint.html:41
 msgid ""
@@ -896,8 +1160,11 @@ msgid ""
 "            and use of natural resources, as well as the impact on air, "
 "water and soil pollution.\n"
 "          "
-msgstr "\n"
-"Evaluación del impacto ambiental de la empresa en términos de emisiones de gases de efecto invernadero, consumo de energía y uso de recursos naturales, así como el impacto en la contaminación del aire, agua y suelo."
+msgstr ""
+"\n"
+"Evaluación del impacto ambiental de la empresa en términos de emisiones de "
+"gases de efecto invernadero, consumo de energía y uso de recursos naturales, "
+"así como el impacto en la contaminación del aire, agua y suelo."
 
 #: main/templates/plastic_footprint.html:51
 msgid ""
@@ -906,8 +1173,11 @@ msgid ""
 "improve plastic waste management, which can\n"
 "            improve the company's efficiency and profitability.\n"
 "          "
-msgstr "\n"
-"Identificación de oportunidades para reducir el uso de plástico y mejorar la gestión de los residuos plásticos, lo que puede mejorar la eficiencia y la rentabilidad de la empresa"
+msgstr ""
+"\n"
+"Identificación de oportunidades para reducir el uso de plástico y mejorar la "
+"gestión de los residuos plásticos, lo que puede mejorar la eficiencia y la "
+"rentabilidad de la empresa"
 
 #: main/templates/plastic_footprint.html:61
 msgid ""
@@ -925,9 +1195,16 @@ msgid ""
 "            opportunities to improve their resource management and reduce "
 "their impact on the environment.\n"
 "          "
-msgstr "\n"
-"Desarrollo de estrategias de sostenibilidad y responsabilidad social que permitan a la empresa mejorar su imagen y reputación, atraer a los consumidores preocupados por el medio ambiente y aumentar su competitividad en el mercado."
-"En resumen, la huella de plástico es una herramienta valiosa para las empresas que quieren mejorar su sostenibilidad y reducir su impacto ambiental. Al cuantificar su uso de plástico y sus residuos, las empresas pueden identificar oportunidades para mejorar su gestión de los recursos y reducir su impacto en el medio ambiente."
+msgstr ""
+"\n"
+"Desarrollo de estrategias de sostenibilidad y responsabilidad social que "
+"permitan a la empresa mejorar su imagen y reputación, atraer a los "
+"consumidores preocupados por el medio ambiente y aumentar su competitividad "
+"en el mercado.En resumen, la huella de plástico es una herramienta valiosa "
+"para las empresas que quieren mejorar su sostenibilidad y reducir su impacto "
+"ambiental. Al cuantificar su uso de plástico y sus residuos, las empresas "
+"pueden identificar oportunidades para mejorar su gestión de los recursos y "
+"reducir su impacto en el medio ambiente."
 
 #: main/templates/water_footprint.html:17
 msgid ""
@@ -942,9 +1219,14 @@ msgid ""
 "            The functionalities of the water footprint for a company may "
 "include:\n"
 "          "
-msgstr "\n"
-"La huella hídrica es una medida del volumen total de agua que se utiliza en la producción de bienes o servicios y su impacto en los recursos hídricos del planeta. Al igual que la huella de carbono y la huella de plástico, la huella hídrica se utiliza para evaluar y reducir el impacto ambiental de una empresa."
-"Las funcionalidades de la huella hídrica para una empresa pueden incluir:"
+msgstr ""
+"\n"
+"La huella hídrica es una medida del volumen total de agua que se utiliza en "
+"la producción de bienes o servicios y su impacto en los recursos hídricos "
+"del planeta. Al igual que la huella de carbono y la huella de plástico, la "
+"huella hídrica se utiliza para evaluar y reducir el impacto ambiental de una "
+"empresa.Las funcionalidades de la huella hídrica para una empresa pueden "
+"incluir:"
 
 #: main/templates/water_footprint.html:28
 msgid "Risk identification"
@@ -958,8 +1240,12 @@ msgid ""
 "            scarcity, which can be useful in making strategic decisions "
 "regarding water resource management.\n"
 "          "
-msgstr "\n"
-"La medición de la huella hídrica puede ayudar a una empresa a identificar las áreas donde existe un mayor riesgo de escasez de agua, lo que puede ser útil para tomar decisiones estratégicas en cuanto a la gestión de los recursos hídricos."
+msgstr ""
+"\n"
+"La medición de la huella hídrica puede ayudar a una empresa a identificar "
+"las áreas donde existe un mayor riesgo de escasez de agua, lo que puede ser "
+"útil para tomar decisiones estratégicas en cuanto a la gestión de los "
+"recursos hídricos."
 
 #: main/templates/water_footprint.html:38
 msgid "Cost reduction"
@@ -972,8 +1258,11 @@ msgid ""
 "company by reducing the need for potable water\n"
 "            and the energy required to treat and deliver water.\n"
 "          "
-msgstr "\n"
-"La reducción del consumo de agua puede resultar en una reducción de costos para la empresa, ya que se reduce la necesidad de agua potable y la energía necesaria para tratar y suministrar agua."
+msgstr ""
+"\n"
+"La reducción del consumo de agua puede resultar en una reducción de costos "
+"para la empresa, ya que se reduce la necesidad de agua potable y la energía "
+"necesaria para tratar y suministrar agua."
 
 #: main/templates/water_footprint.html:48
 msgid "Improved corporate image"
@@ -988,8 +1277,12 @@ msgid ""
 "and responsible management of natural\n"
 "            resources.\n"
 "          "
-msgstr "\n"
-"La medición y reducción de la huella hídrica puede ayudar a una empresa a mejorar su imagen corporativa y su reputación en el mercado, demostrando su compromiso con la sostenibilidad y la gestión responsable de los recursos naturales."
+msgstr ""
+"\n"
+"La medición y reducción de la huella hídrica puede ayudar a una empresa a "
+"mejorar su imagen corporativa y su reputación en el mercado, demostrando su "
+"compromiso con la sostenibilidad y la gestión responsable de los recursos "
+"naturales."
 
 #: main/templates/water_footprint.html:59 main/templates/why_quantify.html:48
 msgid "Regulatory compliance"
@@ -1005,8 +1298,13 @@ msgid ""
 "            agua y tomar medidas para reducir su impacto en el medio "
 "ambiente y mejorar su sostenibilidad.\n"
 "          "
-msgstr "\n"
-"En resumen, la huella hídrica es una medida del uso de agua de una empresa o actividad y su impacto en el medio ambiente. Las empresas pueden utilizar la huella hídrica para identificar áreas de uso excesivo de agua y tomar medidas para reducir su impacto en el medio ambiente y mejorar su sostenibilidad."
+msgstr ""
+"\n"
+"En resumen, la huella hídrica es una medida del uso de agua de una empresa o "
+"actividad y su impacto en el medio ambiente. Las empresas pueden utilizar la "
+"huella hídrica para identificar áreas de uso excesivo de agua y tomar "
+"medidas para reducir su impacto en el medio ambiente y mejorar su "
+"sostenibilidad."
 
 #: main/templates/why_quantify.html:9
 msgid "Why does a company need to quantify its corporate footprint?"
@@ -1027,7 +1325,8 @@ msgid ""
 "to minimize it and become more socially\n"
 "            responsible.\n"
 "          "
-msgstr "\n"
+msgstr ""
+"\n"
 "Al conocer su impacto ambiental, las empresas pueden tomar medidas para "
 "minimizarlo y ser más responsables socialmente."
 
@@ -1091,6 +1390,14 @@ msgstr ""
 "hídrica y plástica) es una herramienta clave para que las empresas entiendan "
 "su impacto ambiental, mejoren su eficiencia, responsabilidad social, cumplan "
 "con regulaciones ambientales y quieran certificarse carbono neutro."
+
+#: main/views.py:58
+msgid "This email is already registered."
+msgstr "Este correo electrónico ya está registrado."
+
+#: main/views.py:61
+msgid "You have been successfully registered."
+msgstr "Te has registrado exitosamente."
 
 #~| msgid "Carbon footprint"
 #~ msgid "Producto Footprint"

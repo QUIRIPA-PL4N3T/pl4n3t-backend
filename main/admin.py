@@ -1,6 +1,8 @@
 from django.contrib import admin
 from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryType, LocationType, State, City, \
-    DocumentType
+    DocumentType, WebinarRegistrant
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 
 
 @admin.register(Configuration)
@@ -54,3 +56,13 @@ class CityAdmin(admin.ModelAdmin):
 class DocumentTypeAdmin(admin.ModelAdmin):
     list_display = ['name', 'code']
     search_fields = ['name']
+
+
+class WebinarRegistrantResource(resources.ModelResource):
+    class Meta:
+        model = WebinarRegistrant
+
+
+@admin.register(WebinarRegistrant)
+class WebinarRegistrantAdmin(ImportExportModelAdmin):
+    resource_class = WebinarRegistrantResource

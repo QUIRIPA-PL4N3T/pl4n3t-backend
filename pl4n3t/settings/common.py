@@ -58,6 +58,7 @@ ADDONS = [
     'debug_toolbar',
     'django_filters',
     'drf_spectacular',
+    'import_export',
 ]
 
 INSTALLED_APPS = DEPENDENCIES_APPS + ADDONS + PROJECT_APPS

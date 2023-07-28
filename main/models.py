@@ -256,3 +256,12 @@ class LocationType(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class WebinarRegistrant(models.Model):
+    email = models.EmailField(max_length=254, unique=True)
+    date_registered = models.DateTimeField(auto_now_add=True)
+    company_name = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        return self.email

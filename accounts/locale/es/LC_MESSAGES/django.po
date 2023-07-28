@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-28 16:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/api.py:36 accounts/api.py:37
+msgid "Obtiene la información de un usuario mediante el nombre usuario"
+msgstr ""
+
+#: accounts/api.py:40 accounts/api.py:54 accounts/api.py:79
+msgid "El Usuario no existe"
+msgstr ""
+
+#: accounts/api.py:51
+msgid ""
+"Actualiza los datos del usuario, solo el usuario puede actualizar sus datos"
+msgstr ""
+
+#: accounts/api.py:55
+msgid "Datos inválidos"
+msgstr ""
+
+#: accounts/api.py:56 accounts/api.py:70
+msgid "Usted no tiene permiso para actualizar este usuario"
+msgstr ""
+
+#: accounts/api.py:75 accounts/api.py:76
+msgid "Elimina un usuario, solo el usuario se puede eliminar a si mismo"
+msgstr ""
+
+#: accounts/api.py:78
+msgid "Eliminación exitosa del usuario"
+msgstr ""
+
+#: accounts/api.py:80 accounts/api.py:93
+msgid "Usted no tiene permiso para eliminar este usuario"
+msgstr ""
+
+#: accounts/api.py:102 accounts/api.py:103
+msgid "Registrar un nuevo Usuario"
+msgstr ""
+
+#: accounts/api.py:130
+msgid "Recuperar Contraseña"
+msgstr ""
+
+#: accounts/api.py:131
+msgid "Solicitar el cambio de contraseña"
+msgstr ""
+
+#: accounts/api.py:143
+msgid ""
+"Se envió un correo con para continuar con la recuperación de la contraseña"
+msgstr ""
+
+#: accounts/api.py:147
+msgid "No existe un usuario con este correo"
+msgstr ""
+
+#: accounts/api.py:159 accounts/templates/emails/reset_password.html:51
+msgid "Cambiar Contraseña"
+msgstr ""
+
+#: accounts/api.py:160
+msgid "Cambiar contraseña"
+msgstr ""
+
+#: accounts/api.py:174
+msgid "El enlace de restablecimiento de contraseña no es válido."
+msgstr ""
+
+#: accounts/api.py:182
+msgid "Se ha completado la cambio de la contraseña Exitosamente"
+msgstr ""
+
+#: accounts/api.py:194 accounts/api.py:195
+msgid "Obtiene el Usuario Actual utilizando el token en el HEADER"
+msgstr ""
+
+#: accounts/api.py:198 accounts/api.py:223
+msgid "Usted no tiene permiso para ver este usuario"
+msgstr ""
+
+#: accounts/api.py:218
+msgid "Cerrar sesión"
+msgstr ""
+
+#: accounts/api.py:222
+msgid "Cierre de sesión exitoso"
+msgstr ""
+
+#: accounts/api.py:232
+msgid "Sesión cerrada correctamente"
+msgstr ""
+
+#: accounts/api.py:243
+msgid "Iniciar Sesión"
+msgstr ""
+
+#: accounts/api.py:268
+msgid "Anexar documento a un modelo de datos"
+msgstr ""
+
+#: accounts/forms.py:10
+msgid "New password"
+msgstr ""
+
+#: accounts/forms.py:18
+msgid "password"
+msgstr ""
+
+#: accounts/forms.py:22 accounts/forms.py:30
+msgid "New password confirmation"
+msgstr ""
+
+#: accounts/models.py:19
+msgid "Correo Electrónico"
+msgstr ""
+
+#: accounts/models.py:68 accounts/templates/emails/account_verification.html:48
+msgid "Activación de cuenta"
+msgstr ""
+
+#: accounts/models.py:96
+msgid "Restablecer Contraseña"
+msgstr ""
+
+#: accounts/models.py:117
+msgid "Usuario"
+msgstr ""
+
+#: accounts/models.py:118
+msgid "Usuarios"
+msgstr ""
+
+#: accounts/serializers.py:103
+msgid "El campo \"token\" es obligatorio."
+msgstr ""
+
+#: accounts/serializers.py:105
+msgid "El campo \"password\" es obligatorio."
+msgstr ""
+
+#: accounts/serializers.py:119
+msgid "Refresh token"
+msgstr ""
+
+#: accounts/serializers.py:120
+msgid "Access token"
+msgstr ""
+
+#: accounts/templates/account/password_reset_confirm.html:7
+msgid "Password reset"
+msgstr ""
+
+#: accounts/templates/account/password_reset_confirm.html:22
+msgid "Enviar"
+msgstr ""
+
+#: accounts/templates/emails/account_verification.html:7
+msgid "Activación de cuenta CQTX"
+msgstr ""
+
+#: accounts/templates/emails/account_verification.html:49
+#: accounts/templates/emails/reset_password.html:49
+msgid "Hola"
+msgstr ""
+
+#: accounts/templates/emails/account_verification.html:50
+msgid ""
+"Gracias por registrarte en PL4N3T. Para activar tu cuenta, haz clic en el "
+"siguiente enlace:"
+msgstr ""
+
+#: accounts/templates/emails/account_verification.html:51
+msgid "Activar mi cuenta"
+msgstr ""
+
+#: accounts/templates/emails/account_verification.html:52
+msgid ""
+"Si no solicitaste la creación de esta cuenta, ignora este correo electrónico."
+msgstr ""
+
+#: accounts/templates/emails/reset_password.html:7
+msgid "Recuperación de contraseña PL4N3T"
+msgstr ""
+
+#: accounts/templates/emails/reset_password.html:48
+msgid "Solicitaste el cambio de Contraseña para la aplicación PL4N3T"
+msgstr ""
+
+#: accounts/templates/emails/reset_password.html:50
+msgid ""
+"Para realizar el cambio de tu contraseña de la aplicación PL4N3T, haz clic "
+"en el siguiente enlace:"
+msgstr ""
+
+#: accounts/templates/emails/reset_password.html:52
+msgid ""
+"Si no solicitaste el cambio de contraseña, ignora este correo electrónico."
+msgstr ""

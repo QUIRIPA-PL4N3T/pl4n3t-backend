@@ -7,24 +7,8 @@
   <div class="container-fluid blog">
     <div class="container navbar-space">
       <div class="row text-center w-75 m-auto">
-        <h3>{% translate 'WEBINAR' %}</h3>
-        <span class="text-gray">
-          {% blocktrans %}
-            COMING SOON: Webinar on technological tools for the digitization of processes and environmental
-            sustainability
-          {% endblocktrans %}
-        </span>
 
-        <div class="mt-5 newsletter-register">
-          <h4 class="text-gray my-3">{% translate 'Participate in the Webinar' %}</h4>
-          <form action="">
-            <div class="d-flex gap-4 gap-sm-2 flex-column flex-sm-row align-items-center">
-              <label class="sr-only" for="inlineFormInput">{% translate 'email' %}</label>
-              <input type="email" class="form-control" id="email" placeholder="{% translate 'email' %}">
-              <a href="{% url 'carbon-footprint' %}" class="newsletter-button p-2">{% translate 'Register' %}</a>
-            </div>
-          </form>
-        </div>
+        {% include 'includes/webinar.html' %}
 
         <div class="row text-center my-5">
           <h2 class="mt-0">{% translate "We're almost ready!" %}</h2>
@@ -60,7 +44,7 @@
 
     function splitTextToSpans(text) {
       let letters = text.toString().split('')
-      return letters.map( character => {
+      return letters.map(character => {
         return `<span class="mx-1">${character}</span>`;
       }).join('')
     }

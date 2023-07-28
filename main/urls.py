@@ -2,7 +2,7 @@
 from django.urls import path
 from django.urls import include
 from main.views import home, blog, company, contact_us, why_quantify, water_footprint, carbon_footprint, \
-    plastic_footprint, footprint_levels
+    plastic_footprint, footprint_levels, webinar_view
 # api imports
 from rest_framework import routers
 from main.api import ConfigurationView, UnitOfMeasureViewSet, EconomicSectorViewSet, IndustryTypeViewSet, \
@@ -35,4 +35,5 @@ urlpatterns = [
     path('plastic-footprint/', plastic_footprint, name="plastic-footprint"),
     path('footprint-levels/', footprint_levels, name="footprint-levels"),
     path('i18n/', include('django.conf.urls.i18n')),
+    path('webinar/', webinar_view, name="webinar"),
 ]
