@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 16:36+0000\n"
+"POT-Creation-Date: 2023-08-16 19:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,27 +257,31 @@ msgstr ""
 msgid "Blog"
 msgstr "Blog"
 
-#: main/templates/blog.html:14
+#: main/templates/blog.html:13
+msgid "Join the Webinar"
+msgstr "Participar en el Seminario Virtual"
+
+#: main/templates/blog.html:17
 msgid "We're almost ready!"
 msgstr "¡Ya casi está todo listo!"
 
-#: main/templates/blog.html:15
+#: main/templates/blog.html:18
 msgid "We are getting ready, don't miss it!"
 msgstr "Nos estamos preparando. ¡No te lo pierdas!"
 
-#: main/templates/blog.html:21
+#: main/templates/blog.html:24
 msgid "Days"
 msgstr "Días"
 
-#: main/templates/blog.html:25
+#: main/templates/blog.html:28
 msgid "Hours"
 msgstr "Horas"
 
-#: main/templates/blog.html:29
+#: main/templates/blog.html:32
 msgid "Minutes"
 msgstr "Minutos"
 
-#: main/templates/blog.html:33
+#: main/templates/blog.html:36
 msgid "Seconds"
 msgstr "Segundos"
 
