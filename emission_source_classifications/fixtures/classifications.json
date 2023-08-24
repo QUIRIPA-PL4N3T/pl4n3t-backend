@@ -1,0 +1,119 @@
+[
+  {
+    "model": "emission_source_classifications.quantificationtype",
+    "pk": 1,
+    "fields": {
+      "name": "Huella de Carbono",
+      "code": "HC",
+      "description": "Representa la cantidad de gases de efecto invernadero producidos."
+    }
+  },
+  {
+    "model": "emission_source_classifications.quantificationtype",
+    "pk": 2,
+    "fields": {
+      "name": "Huella Hídrica",
+      "code": "HH",
+      "description": "Mide el volumen total de agua dulce utilizada para producir los bienes y servicios."
+    }
+  },
+  {
+    "model": "emission_source_classifications.quantificationtype",
+    "pk": 3,
+    "fields": {
+      "name": "Huella Plástica",
+      "code": "HP",
+      "description": "Representa el impacto ambiental relacionado con la producción, uso y eliminación de productos plásticos. Ayuda a cuantificar el volumen de plástico consumido y descartado y cómo este afecta al medio ambiente."
+    }
+  },
+  {
+    "model": "emission_source_classifications.ghgscope",
+    "pk": 1,
+    "fields": {
+      "name": "Alcance 1",
+      "quantification_type": 1,
+      "code": "A1",
+      "description": "Emisiones y absorciones directas."
+    }
+  },
+  {
+    "model": "emission_source_classifications.ghgscope",
+    "pk": 2,
+    "fields": {
+      "name": "Alcance 2",
+      "quantification_type": 1,
+      "code": "A2",
+      "description": "Emisiones indirectas de GEI procedentes de la energía importada."
+    }
+  },
+  {
+    "model": "emission_source_classifications.ghgscope",
+    "pk": 3,
+    "fields": {
+      "name": "Alcance 3",
+      "quantification_type": 1,
+      "code": "A3",
+      "description": "Emisiones indirectas de GEI procedentes de diversas fuentes, incluyendo transporte, productos utilizados por la organización, y otros."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 1,
+    "fields": {
+      "name": "Emisiones y absorciones directas de GEI",
+      "code": "C1",
+      "scope": 1,
+      "description": "Incluye emisiones como el uso de combustible, fugas de refrigerante y emisiones directas del suelo."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 2,
+    "fields": {
+      "name": "Emisiones indirectas de GEI procedentes de la energía importada",
+      "code": "C2",
+      "scope": 2,
+      "description": "Se refiere principalmente a la energía comprada, como electricidad, vapor, calefacción y refrigeración."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 3,
+    "fields": {
+      "name": "Emisiones indirectas de GEI procedentes del transporte",
+      "code": "C3",
+      "scope": 3,
+      "description": "Incluye viajes de negocios, desplazamiento del personal, transporte de mercancías, entre otros."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 4,
+    "fields": {
+      "name": "Emisiones indirectas de GEI de los productos que utiliza una organización",
+      "code": "C4",
+      "scope": 3,
+      "description": "Incluye pérdidas por transporte y distribución de electricidad, trabajo desde casa, abastecimiento de agua, bienes/servicios adquiridos, entre otros."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 5,
+    "fields": {
+      "name": "Emisiones indirectas de GEI (uso de productos de la organización)",
+      "code": "C5",
+      "scope": 3,
+      "description": "Incluye emisiones derivadas del uso de productos vendidos, emisiones al final de la vida útil, franquicias, inversiones, entre otros."
+    }
+  },
+  {
+    "model": "emission_source_classifications.isocategory",
+    "pk": 6,
+    "fields": {
+      "name": "Emisiones indirectas de GEI (otras fuentes)",
+      "code": "C6",
+      "scope": 3,
+      "description": "Emisiones o absorciones específicas que no pueden registrarse en ninguna otra categoría."
+    }
+  }
+]

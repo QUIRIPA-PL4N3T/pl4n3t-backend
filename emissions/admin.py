@@ -1,31 +1,33 @@
 from django.contrib import admin
-from emissions.models import GreenhouseGas, EmissionCategory, EmissionAgent, UnitGreenhouseGasByAgentEmission, \
-    EmissionFactor
+from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType
+from django.utils.translation import gettext_lazy as _
 
 
+# Emission factor classifications
 @admin.register(GreenhouseGas)
 class GreenhouseGasAdmin(admin.ModelAdmin):
     list_display = ['name', 'acronym', 'kg_co2_equivalence', 'pcg_min', 'pcg_max']
 
 
-@admin.register(EmissionFactor)
-class EmissionFactorAdmin(admin.ModelAdmin):
+@admin.register(FactorType)
+class FactorTypeAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(EmissionCategory)
-class EmissionCategoryAdmin(admin.ModelAdmin):
+@admin.register(SourceType)
+class SourceTypeAdmin(admin.ModelAdmin):
     pass
 
 
-class UnitGreenhouseGasByAgentEmissionInline(admin.TabularInline):
-    model = UnitGreenhouseGasByAgentEmission
+class GreenhouseGasEmissionInline(admin.TabularInline):
+    model = GreenhouseGasEmission
     extra = 1
 
 
-@admin.register(EmissionAgent)
-class EmissionAgentAdmin(admin.ModelAdmin):
-    inlines = [UnitGreenhouseGasByAgentEmissionInline]
-    pass
+@admin.register(EmissionFactor)
+class EmissionFactorAdmin(admin.ModelAdmin):
+    inlines = [GreenhouseGasEmissionInline]
+    list_display = ['name', 'unit']
+    search_fields = ['name']
 
 

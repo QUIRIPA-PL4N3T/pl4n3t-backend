@@ -1,5 +1,5 @@
 from django.contrib import admin
-from companies.models import Company, CompanyUser, Location, LocationEmissionAgent, EmissionAgentMonthEntry
+from companies.models import Company, CompanyUser, Location, EmissionsSource, EmissionsSourceMonthEntry
 
 
 @admin.register(Company)
@@ -17,11 +17,11 @@ class LocationAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(LocationEmissionAgent)
-class LocationEmissionAgentAdmin(admin.ModelAdmin):
+@admin.register(EmissionsSource)
+class EmissionsSourceAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(EmissionAgentMonthEntry)
-class EmissionAgentMonthEntryAdmin(admin.ModelAdmin):
+@admin.register(EmissionsSourceMonthEntry)
+class EmissionsSourceMonthEntryAdmin(admin.ModelAdmin):
     pass
