@@ -27,7 +27,7 @@ class QuantificationType(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name = _('Tipo de Cuantificación')
-        verbose_name_plural = _('1. Tipos de Cuantificación')
+        verbose_name_plural = _('Tipos de Cuantificación')
 
     def __str__(self):
         return f'{self.name}'
@@ -65,7 +65,7 @@ class GHGScope(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name = _('Alcance GHG')
-        verbose_name_plural = _('2. Alcances GHG')
+        verbose_name_plural = _('Alcances GHG')
 
     def __str__(self):
         return f'{self.name}'
@@ -107,7 +107,7 @@ class ISOCategory(models.Model):
     class Meta:
         ordering = ('code', 'name',)
         verbose_name = _('Categoría ISO')
-        verbose_name_plural = _('3. Categorías ISO')
+        verbose_name_plural = _('Categorías ISO')
 
     def __str__(self):
         return f'{self.full_code}: {self.name}'
@@ -143,7 +143,7 @@ class EmissionSourceGroup(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name = _('Grupo de fuente de emisión')
-        verbose_name_plural = _('4. Grupos de fuentes de emisión')
+        verbose_name_plural = _('Grupos de fuentes de emisión')
 
     def __str__(self):
         return self.name
