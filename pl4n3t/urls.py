@@ -21,12 +21,14 @@ from main.urls import api_urls as main_api_urls
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from accounts.urls import api_urls as account_api_urls
 from companies.urls import api_urls as companies_api_urls
+from emission_source_classifications.urls import api_urls as classifications_api_urls
 
 # Create the API namespace and add the API only URLs of the applications
 apiurls = ([
     path('accounts/', include(account_api_urls, namespace='accounts')),
     path('main/', include(main_api_urls, namespace='main')),
     path('companies/', include(companies_api_urls, namespace='companies')),
+    path('classifications/', include(classifications_api_urls, namespace='classifications')),
 ], 'api')
 
 urlpatterns = [
