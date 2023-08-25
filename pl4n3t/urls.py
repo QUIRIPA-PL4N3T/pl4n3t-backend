@@ -17,23 +17,26 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from main.urls import api_urls as main_api_urls
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+from main.urls import api_urls as main_api_urls
 from accounts.urls import api_urls as account_api_urls
 from companies.urls import api_urls as companies_api_urls
 from emission_source_classifications.urls import api_urls as classifications_api_urls
+from emissions.urls import api_urls as emission_api_urls
+
 
 # Create the API namespace and add the API only URLs of the applications
-apiurls = ([
+api_urls = ([
     path('accounts/', include(account_api_urls, namespace='accounts')),
     path('main/', include(main_api_urls, namespace='main')),
     path('companies/', include(companies_api_urls, namespace='companies')),
     path('classifications/', include(classifications_api_urls, namespace='classifications')),
+    path('emissions/', include(emission_api_urls, namespace='emissions')),
 ], 'api')
 
 urlpatterns = [
     path('', include('main.urls')),
-    path('api/', include(apiurls, namespace='api')),
+    path('api/', include(api_urls, namespace='api')),
     path('admin/', admin.site.urls),
     path('documentation/schema.yml', SpectacularAPIView.as_view(), name='schema'),
     path('documentation/api/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
