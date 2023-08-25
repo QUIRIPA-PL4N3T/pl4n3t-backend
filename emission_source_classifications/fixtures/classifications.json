@@ -115,5 +115,169 @@
       "scope": 3,
       "description": "Emisiones o absorciones específicas que no pueden registrarse en ninguna otra categoría."
     }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 1,
+    "fields": {
+      "name": "Vehículos de la Organización",
+      "description": "Vehículos de la Organización",
+      "icon": "",
+      "category": 1,
+      "emission_factor_type": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 2,
+    "fields": {
+      "name": "Uso de Combustibles",
+      "description": "Uso de Combustibles",
+      "icon": "",
+      "category": 1,
+      "emission_factor_type": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 3,
+    "fields": {
+      "name": "Transporte y Distribución",
+      "description": "Transporte y Distribución",
+      "icon": "",
+      "category": 3,
+      "emission_factor_type": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 4,
+    "fields": {
+      "name": "Desplazamiento de los empleados / visitantes",
+      "description": "Desplazamiento de los empleados / visitantes",
+      "icon": "",
+      "category": 3,
+      "emission_factor_type": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 5,
+    "fields": {
+      "name": "Uso de Productos Vendidos",
+      "description": "Uso de Productos Vendidos",
+      "icon": "",
+      "category": 5,
+      "emission_factor_type": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 6,
+    "fields": {
+      "name": "Inversiones",
+      "description": "Inversiones",
+      "icon": "",
+      "category": 5,
+      "emission_factor_type": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 7,
+    "fields": {
+      "name": "Refrigerantes / aires acondicionados de la organización",
+      "description": "Refrigerantes / aires acondicionados de la organización",
+      "icon": "",
+      "category": 1,
+      "emission_factor_type": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 8,
+    "fields": {
+      "name": "Compra de Electricidad, vapor, Calefacción y refrigeración",
+      "description": "Compra de Electricidad, vapor, Calefacción y refrigeración",
+      "icon": "",
+      "category": 2,
+      "emission_factor_type": [
+        14
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 9,
+    "fields": {
+      "name": "Bienes Arrendados",
+      "description": "Bienes Arrendados",
+      "icon": "",
+      "category": 4,
+      "emission_factor_type": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 10,
+    "fields": {
+      "name": "Bienes / Servicios Adquiridos",
+      "description": "",
+      "icon": "",
+      "category": 4,
+      "emission_factor_type": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 11,
+    "fields": {
+      "name": "Viajes de negocio",
+      "description": "",
+      "icon": "",
+      "category": 3,
+      "emission_factor_type": [
+        15
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 12,
+    "fields": {
+      "name": "Desperdicio de operaciones",
+      "description": "Desperdicio de operaciones",
+      "icon": "",
+      "category": 4,
+      "emission_factor_type": [
+        9
+      ]
+    }
   }
 ]

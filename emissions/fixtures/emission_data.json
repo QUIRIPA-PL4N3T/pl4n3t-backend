@@ -1,0 +1,3780 @@
+[
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 1,
+    "fields": {
+      "name": "Monóxido de Carbono",
+      "acronym": "CO",
+      "kg_co2_equivalence": 1.0,
+      "pcg_min": "1",
+      "pcg_max": "0",
+      "lifespan_in_years": ""
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 2,
+    "fields": {
+      "name": "Hidrocarburos no quemados",
+      "acronym": "HC",
+      "kg_co2_equivalence": 1.0,
+      "pcg_min": "1",
+      "pcg_max": "0",
+      "lifespan_in_years": ""
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 3,
+    "fields": {
+      "name": "CH₄ - Metano",
+      "acronym": "CH₄",
+      "kg_co2_equivalence": 28.0,
+      "pcg_min": "28",
+      "pcg_max": "28",
+      "lifespan_in_years": "12"
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 4,
+    "fields": {
+      "name": "N₂O - Óxido Nitroso",
+      "acronym": "N₂O",
+      "kg_co2_equivalence": 265.0,
+      "pcg_min": "265",
+      "pcg_max": "265",
+      "lifespan_in_years": "114"
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 5,
+    "fields": {
+      "name": "HFCs - Hidrofluorocarbonos",
+      "acronym": "HFCs",
+      "kg_co2_equivalence": 12400.0,
+      "pcg_min": "4",
+      "pcg_max": "12400",
+      "lifespan_in_years": "1,3 - 270"
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 6,
+    "fields": {
+      "name": "Perfluorocarbonos",
+      "acronym": "PFCs",
+      "kg_co2_equivalence": 1.0,
+      "pcg_min": "1",
+      "pcg_max": "0",
+      "lifespan_in_years": ""
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 7,
+    "fields": {
+      "name": "SF₆ - Hexafluoruro de Azufre",
+      "acronym": "SF₆",
+      "kg_co2_equivalence": 23500.0,
+      "pcg_min": "1",
+      "pcg_max": "0",
+      "lifespan_in_years": "3200"
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 8,
+    "fields": {
+      "name": "Clorofluorocarbonos",
+      "acronym": "CFCs",
+      "kg_co2_equivalence": 1.0,
+      "pcg_min": "1",
+      "pcg_max": "0",
+      "lifespan_in_years": ""
+    }
+  },
+  {
+    "model": "emissions.greenhousegas",
+    "pk": 9,
+    "fields": {
+      "name": "CO₂ - Dióxido de Carbono",
+      "acronym": "CO₂",
+      "kg_co2_equivalence": 1.0,
+      "pcg_min": "1",
+      "pcg_max": "1",
+      "lifespan_in_years": "1 - 200"
+    }
+  },
+  {
+    "model": "emissions.sourcetype",
+    "pk": 1,
+    "fields": {
+      "name": "Fuentes fijas",
+      "description": "Fuentes que se mantienen en un lugar específico y no se mueven, como plantas industriales o generadores eléctricos."
+    }
+  },
+  {
+    "model": "emissions.sourcetype",
+    "pk": 2,
+    "fields": {
+      "name": "Fuentes móviles",
+      "description": "Fuentes que se desplazan o pueden moverse de un lugar a otro, como vehículos, aviones o barcos."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 1,
+    "fields": {
+      "name": "Combustible sólido",
+      "description": "Emisiones provenientes de la quema de combustibles sólidos."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 2,
+    "fields": {
+      "name": "Combustible líquido",
+      "description": "Emisiones derivadas de la quema de combustibles líquidos."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 3,
+    "fields": {
+      "name": "Combustible gaseoso",
+      "description": "Emisiones resultantes de la quema de gases combustibles."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 4,
+    "fields": {
+      "name": "Refrigerante",
+      "description": "Emisiones asociadas con la utilización de refrigerantes en sistemas de refrigeración."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 5,
+    "fields": {
+      "name": "Extintores",
+      "description": "Emisiones relacionadas con la utilización y descarga de extintores."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 6,
+    "fields": {
+      "name": "Lubricantes",
+      "description": "Emisiones relacionadas con la producción, uso y desecho de lubricantes."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 7,
+    "fields": {
+      "name": "Fugas de CO2 en proceso",
+      "description": "Emisiones resultantes de fugas de dióxido de carbono durante procesos industriales."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 8,
+    "fields": {
+      "name": "Aislamiento",
+      "description": "Emisiones relacionadas con materiales de aislamiento y su degradación."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 9,
+    "fields": {
+      "name": "Emisores de procesos",
+      "description": "Emisiones derivadas de diferentes procesos industriales y mecánicos."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 10,
+    "fields": {
+      "name": "Fermentación energética",
+      "description": "Emisiones producidas durante procesos de fermentación utilizados para la producción energética."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 11,
+    "fields": {
+      "name": "Manejo de estiércol por cabeza",
+      "description": "Emisiones derivadas del manejo de estiércol basadas en el número de cabezas de ganado."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 12,
+    "fields": {
+      "name": "Manejo de estiércol por kilogramo",
+      "description": "Emisiones derivadas del manejo de estiércol basadas en el peso (kilogramos) del estiércol."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 13,
+    "fields": {
+      "name": "Uso de fertilizantes",
+      "description": "Emisiones resultantes del uso de fertilizantes en la agricultura."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 14,
+    "fields": {
+      "name": "Electricidad",
+      "description": "Emisiones asociadas con la generación y consumo de electricidad."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 15,
+    "fields": {
+      "name": "Viajes",
+      "description": "Emisiones derivadas de viajes, ya sea por medios terrestres, aéreos o marítimos."
+    }
+  },
+  {
+    "model": "emissions.factortype",
+    "pk": 16,
+    "fields": {
+      "name": "Papel",
+      "description": "Emisiones relacionadas con la producción, uso y desecho del papel."
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 1,
+    "fields": {
+      "name": "Carbón Genérico",
+      "description": "Factor de emisión para Carbón Genérico",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 2,
+    "fields": {
+      "name": "Carbón Guajira - Cesar",
+      "description": "Factor de emisión para Carbón Guajira - Cesar",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 3,
+    "fields": {
+      "name": "Carbón Guajira",
+      "description": "Factor de emisión para Carbón Guajira",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 4,
+    "fields": {
+      "name": "Carbón Cundinamarca",
+      "description": "Factor de emisión para Carbón Cundinamarca",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 5,
+    "fields": {
+      "name": "Carbón Cauca - Valle del Cauca",
+      "description": "Factor de emisión para Carbón Cauca - Valle del Cauca",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 6,
+    "fields": {
+      "name": "Carbón Norte de Santander",
+      "description": "Factor de emisión para Carbón Norte de Santander",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 7,
+    "fields": {
+      "name": "Carbón Córdoba-Norte de Antioquia",
+      "description": "Factor de emisión para Carbón Córdoba-Norte de Antioquia",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 8,
+    "fields": {
+      "name": "Carbón Santander",
+      "description": "Factor de emisión para Carbón Santander",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 9,
+    "fields": {
+      "name": "Carbón Santander Sogamoso",
+      "description": "Factor de emisión para Carbón Santander Sogamoso",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 10,
+    "fields": {
+      "name": "Carbón Boyacá",
+      "description": "Factor de emisión para Carbón Boyacá",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 11,
+    "fields": {
+      "name": "Carbón Antioquia",
+      "description": "Factor de emisión para Carbón Antioquia",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 12,
+    "fields": {
+      "name": "Bagazo",
+      "description": "Factor de emisión para Bagazo",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 13,
+    "fields": {
+      "name": "Fibra de palma",
+      "description": "Factor de emisión para Fibra de palma",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 14,
+    "fields": {
+      "name": "Cuesco de palma",
+      "description": "Factor de emisión para Cuesco de palma",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 15,
+    "fields": {
+      "name": "Raquis de palma",
+      "description": "Factor de emisión para Raquis de palma",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 16,
+    "fields": {
+      "name": "Cascarilla de Arroz",
+      "description": "Factor de emisión para Cascarilla de Arroz",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 17,
+    "fields": {
+      "name": "Borra de Café",
+      "description": "Factor de emisión para Borra de Café",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 18,
+    "fields": {
+      "name": "Cisco de Café",
+      "description": "Factor de emisión para Cisco de Café",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 19,
+    "fields": {
+      "name": "Leña",
+      "description": "Factor de emisión para Leña",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 20,
+    "fields": {
+      "name": "Madera Genérico",
+      "description": "Factor de emisión para Madera Genérico",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 21,
+    "fields": {
+      "name": "Madera Eucalipto",
+      "description": "Factor de emisión para Madera Eucalipto",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 22,
+    "fields": {
+      "name": "Madera Pino",
+      "description": "Factor de emisión para Madera Pino",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 23,
+    "fields": {
+      "name": "Madera Acacia",
+      "description": "Factor de emisión para Madera Acacia",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 24,
+    "fields": {
+      "name": "Madera Melina",
+      "description": "Factor de emisión para Madera Melina",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 25,
+    "fields": {
+      "name": "Residuos para coprocesamiento",
+      "description": "Factor de emisión para Residuos para coprocesamiento",
+      "factor_type": 1,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 26,
+    "fields": {
+      "name": "Carbón Genérico",
+      "description": "Factor de emisión para Carbón Genérico",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 27,
+    "fields": {
+      "name": "Carbón Guajira - Cesar",
+      "description": "Factor de emisión para Carbón Guajira - Cesar",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 28,
+    "fields": {
+      "name": "Carbón Guajira",
+      "description": "Factor de emisión para Carbón Guajira",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 29,
+    "fields": {
+      "name": "Carbón Cundinamarca",
+      "description": "Factor de emisión para Carbón Cundinamarca",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 30,
+    "fields": {
+      "name": "Carbón Cauca - Valle del Cauca",
+      "description": "Factor de emisión para Carbón Cauca - Valle del Cauca",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 31,
+    "fields": {
+      "name": "Carbón Norte de Santander",
+      "description": "Factor de emisión para Carbón Norte de Santander",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 32,
+    "fields": {
+      "name": "Carbón Córdoba-Norte de Antioquia",
+      "description": "Factor de emisión para Carbón Córdoba-Norte de Antioquia",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 33,
+    "fields": {
+      "name": "Carbón Santander",
+      "description": "Factor de emisión para Carbón Santander",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 34,
+    "fields": {
+      "name": "Carbón Santander Sogamoso",
+      "description": "Factor de emisión para Carbón Santander Sogamoso",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 35,
+    "fields": {
+      "name": "Carbón Boyacá",
+      "description": "Factor de emisión para Carbón Boyacá",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 36,
+    "fields": {
+      "name": "Carbón Antioquia",
+      "description": "Factor de emisión para Carbón Antioquia",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 37,
+    "fields": {
+      "name": "Bagazo",
+      "description": "Factor de emisión para Bagazo",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 38,
+    "fields": {
+      "name": "Fibra de palma",
+      "description": "Factor de emisión para Fibra de palma",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 39,
+    "fields": {
+      "name": "Cuesco de palma",
+      "description": "Factor de emisión para Cuesco de palma",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 40,
+    "fields": {
+      "name": "Raquis de palma",
+      "description": "Factor de emisión para Raquis de palma",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 41,
+    "fields": {
+      "name": "Cascarilla de Arroz",
+      "description": "Factor de emisión para Cascarilla de Arroz",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 42,
+    "fields": {
+      "name": "Borra de Café",
+      "description": "Factor de emisión para Borra de Café",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 43,
+    "fields": {
+      "name": "Cisco de Café",
+      "description": "Factor de emisión para Cisco de Café",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 44,
+    "fields": {
+      "name": "Leña",
+      "description": "Factor de emisión para Leña",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 45,
+    "fields": {
+      "name": "Madera Genérico",
+      "description": "Factor de emisión para Madera Genérico",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 46,
+    "fields": {
+      "name": "Madera Eucalipto",
+      "description": "Factor de emisión para Madera Eucalipto",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 47,
+    "fields": {
+      "name": "Madera Pino",
+      "description": "Factor de emisión para Madera Pino",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 48,
+    "fields": {
+      "name": "Madera Acacia",
+      "description": "Factor de emisión para Madera Acacia",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 49,
+    "fields": {
+      "name": "Madera Melina",
+      "description": "Factor de emisión para Madera Melina",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 50,
+    "fields": {
+      "name": "Residuos para coprocesamiento",
+      "description": "Factor de emisión para Residuos para coprocesamiento",
+      "factor_type": 1,
+      "source_type": 2,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 51,
+    "fields": {
+      "name": "Diésel o ACPM (sin mezcla biodiesel)",
+      "description": "Factor de emisión para Diésel o ACPM (sin mezcla biodiesel)",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 52,
+    "fields": {
+      "name": "Gasolina Motor (sin mezcla bioetanol)",
+      "description": "Factor de emisión para Gasolina Motor (sin mezcla bioetanol)",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 53,
+    "fields": {
+      "name": "Kerosene",
+      "description": "Factor de emisión para Kerosene",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 54,
+    "fields": {
+      "name": "Combustóleo",
+      "description": "Factor de emisión para Combustóleo",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 55,
+    "fields": {
+      "name": "Crudo de Castilla",
+      "description": "Factor de emisión para Crudo de Castilla",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 56,
+    "fields": {
+      "name": "Avigas",
+      "description": "Factor de emisión para Avigas",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 57,
+    "fields": {
+      "name": "Jet A1",
+      "description": "Factor de emisión para Jet A1",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 58,
+    "fields": {
+      "name": "Biodiesel palma",
+      "description": "Factor de emisión para Biodiesel palma",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 59,
+    "fields": {
+      "name": "Bioetanol Anhidro",
+      "description": "Factor de emisión para Bioetanol Anhidro",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 60,
+    "fields": {
+      "name": "Fuel Oil # 4 - Ecopetrol",
+      "description": "Factor de emisión para Fuel Oil # 4 - Ecopetrol",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 61,
+    "fields": {
+      "name": "Diésel Marino",
+      "description": "Factor de emisión para Diésel Marino",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 62,
+    "fields": {
+      "name": "Diésel B10 (Mezcla comercial)",
+      "description": "Factor de emisión para Diésel B10 (Mezcla comercial)",
+      "factor_type": 2,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 63,
+    "fields": {
+      "name": "Gasolina E10 (Mezcla comercial)",
+      "description": "Factor de emisión para Gasolina E10 (Mezcla comercial)",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 64,
+    "fields": {
+      "name": "Diésel o ACPM (sin mezcla biodiesel)",
+      "description": "Factor de emisión para Diésel o ACPM (sin mezcla biodiesel)",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 65,
+    "fields": {
+      "name": "Gasolina Motor (sin mezcla bioetanol)",
+      "description": "Factor de emisión para Gasolina Motor (sin mezcla bioetanol)",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 66,
+    "fields": {
+      "name": "Kerosene",
+      "description": "Factor de emisión para Kerosene",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 67,
+    "fields": {
+      "name": "Combustóleo",
+      "description": "Factor de emisión para Combustóleo",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 68,
+    "fields": {
+      "name": "Crudo de Castilla",
+      "description": "Factor de emisión para Crudo de Castilla",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 69,
+    "fields": {
+      "name": "Avigas",
+      "description": "Factor de emisión para Avigas",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 70,
+    "fields": {
+      "name": "Jet A1",
+      "description": "Factor de emisión para Jet A1",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 71,
+    "fields": {
+      "name": "Biodiesel palma",
+      "description": "Factor de emisión para Biodiesel palma",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 72,
+    "fields": {
+      "name": "Bioetanol Anhidro",
+      "description": "Factor de emisión para Bioetanol Anhidro",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 73,
+    "fields": {
+      "name": "Fuel Oil # 4 - Ecopetrol",
+      "description": "Factor de emisión para Fuel Oil # 4 - Ecopetrol",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 74,
+    "fields": {
+      "name": "Diésel Marino",
+      "description": "Factor de emisión para Diésel Marino",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 75,
+    "fields": {
+      "name": "Diésel B10 (Mezcla comercial)",
+      "description": "Factor de emisión para Diésel B10 (Mezcla comercial)",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 76,
+    "fields": {
+      "name": "Gasolina E10 (Mezcla comercial)",
+      "description": "Factor de emisión para Gasolina E10 (Mezcla comercial)",
+      "factor_type": 2,
+      "source_type": 2,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 77,
+    "fields": {
+      "name": "Biogás Genérico",
+      "description": "Factor de emisión para Biogás Genérico",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 78,
+    "fields": {
+      "name": "Coke Gas Genérico",
+      "description": "Factor de emisión para Coke Gas Genérico",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 79,
+    "fields": {
+      "name": "Gas Natural Genérico",
+      "description": "Factor de emisión para Gas Natural Genérico",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 80,
+    "fields": {
+      "name": "Gas Natural Cusiana",
+      "description": "Factor de emisión para Gas Natural Cusiana",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 81,
+    "fields": {
+      "name": "Gas Natural Guajira",
+      "description": "Factor de emisión para Gas Natural Guajira",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 82,
+    "fields": {
+      "name": "Gas Natural Guepaje",
+      "description": "Factor de emisión para Gas Natural Guepaje",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 83,
+    "fields": {
+      "name": "Gas Natural Neiva - Huila",
+      "description": "Factor de emisión para Gas Natural Neiva - Huila",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 84,
+    "fields": {
+      "name": "Gas Opon Payoa",
+      "description": "Factor de emisión para Gas Opon Payoa",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 85,
+    "fields": {
+      "name": "Gas Cupiagua",
+      "description": "Factor de emisión para Gas Cupiagua",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 86,
+    "fields": {
+      "name": "Gas La Creciente",
+      "description": "Factor de emisión para Gas La Creciente",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 87,
+    "fields": {
+      "name": "GLP Genérico",
+      "description": "Factor de emisión para GLP Genérico",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 88,
+    "fields": {
+      "name": "LPG Propano",
+      "description": "Factor de emisión para LPG Propano",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 89,
+    "fields": {
+      "name": "Gas de Pozo cupiagua",
+      "description": "Factor de emisión para Gas de Pozo cupiagua",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 90,
+    "fields": {
+      "name": "Gas Natural Mezcla Sebastopol",
+      "description": "Factor de emisión para Gas Natural Mezcla Sebastopol",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 91,
+    "fields": {
+      "name": "Gas Natural Mezcla Usme",
+      "description": "Factor de emisión para Gas Natural Mezcla Usme",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 92,
+    "fields": {
+      "name": "Gas Natural Mezcla Mariquita",
+      "description": "Factor de emisión para Gas Natural Mezcla Mariquita",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 93,
+    "fields": {
+      "name": "Gas MAPP",
+      "description": "Factor de emisión para Gas MAPP",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 94,
+    "fields": {
+      "name": "Acetileno",
+      "description": "Factor de emisión para Acetileno",
+      "factor_type": 3,
+      "source_type": 1,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 95,
+    "fields": {
+      "name": "Biogás Genérico",
+      "description": "Factor de emisión para Biogás Genérico",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 96,
+    "fields": {
+      "name": "Coke Gas Genérico",
+      "description": "Factor de emisión para Coke Gas Genérico",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 97,
+    "fields": {
+      "name": "Gas Natural Genérico",
+      "description": "Factor de emisión para Gas Natural Genérico",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 98,
+    "fields": {
+      "name": "Gas Natural Cusiana",
+      "description": "Factor de emisión para Gas Natural Cusiana",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 99,
+    "fields": {
+      "name": "Gas Natural Guajira",
+      "description": "Factor de emisión para Gas Natural Guajira",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 100,
+    "fields": {
+      "name": "Gas Natural Guepaje",
+      "description": "Factor de emisión para Gas Natural Guepaje",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 101,
+    "fields": {
+      "name": "Gas Natural Neiva - Huila",
+      "description": "Factor de emisión para Gas Natural Neiva - Huila",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 102,
+    "fields": {
+      "name": "Gas Opon Payoa",
+      "description": "Factor de emisión para Gas Opon Payoa",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 103,
+    "fields": {
+      "name": "Gas Cupiagua",
+      "description": "Factor de emisión para Gas Cupiagua",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 104,
+    "fields": {
+      "name": "Gas La Creciente",
+      "description": "Factor de emisión para Gas La Creciente",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 105,
+    "fields": {
+      "name": "GLP Genérico",
+      "description": "Factor de emisión para GLP Genérico",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 106,
+    "fields": {
+      "name": "LPG Propano",
+      "description": "Factor de emisión para LPG Propano",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 107,
+    "fields": {
+      "name": "Gas de Pozo cupiagua",
+      "description": "Factor de emisión para Gas de Pozo cupiagua",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 108,
+    "fields": {
+      "name": "Gas Natural Mezcla Sebastopol",
+      "description": "Factor de emisión para Gas Natural Mezcla Sebastopol",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 109,
+    "fields": {
+      "name": "Gas Natural Mezcla Usme",
+      "description": "Factor de emisión para Gas Natural Mezcla Usme",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 110,
+    "fields": {
+      "name": "Gas Natural Mezcla Mariquita",
+      "description": "Factor de emisión para Gas Natural Mezcla Mariquita",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 111,
+    "fields": {
+      "name": "Gas MAPP",
+      "description": "Factor de emisión para Gas MAPP",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 112,
+    "fields": {
+      "name": "Acetileno",
+      "description": "Factor de emisión para Acetileno",
+      "factor_type": 3,
+      "source_type": 2,
+      "unit": 56
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 113,
+    "fields": {
+      "name": "CFC-11 / R-11",
+      "description": "Factor de emisión para CFC-11 / R-11",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 114,
+    "fields": {
+      "name": "CFC-12 / R-12",
+      "description": "Factor de emisión para CFC-12 / R-12",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 115,
+    "fields": {
+      "name": "HCFC-22 / R-22",
+      "description": "Factor de emisión para HCFC-22 / R-22",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 116,
+    "fields": {
+      "name": "HCFC-141B / R-141B",
+      "description": "Factor de emisión para HCFC-141B / R-141B",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 117,
+    "fields": {
+      "name": "HFC-23 / R-23",
+      "description": "Factor de emisión para HFC-23 / R-23",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 118,
+    "fields": {
+      "name": "HFC-32 / R-32",
+      "description": "Factor de emisión para HFC-32 / R-32",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 119,
+    "fields": {
+      "name": "HFC-125 / R-125",
+      "description": "Factor de emisión para HFC-125 / R-125",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 120,
+    "fields": {
+      "name": "HFC-134 / R-134",
+      "description": "Factor de emisión para HFC-134 / R-134",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 121,
+    "fields": {
+      "name": "HFC-134a / R-134a",
+      "description": "Factor de emisión para HFC-134a / R-134a",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 122,
+    "fields": {
+      "name": "HFC-143 / R-143",
+      "description": "Factor de emisión para HFC-143 / R-143",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 123,
+    "fields": {
+      "name": "HFC-143a / R-143a",
+      "description": "Factor de emisión para HFC-143a / R-143a",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 124,
+    "fields": {
+      "name": "HFC-227ea / FM-200",
+      "description": "Factor de emisión para HFC-227ea / FM-200",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 125,
+    "fields": {
+      "name": "HFC-404A / R-404A",
+      "description": "Factor de emisión para HFC-404A / R-404A",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 126,
+    "fields": {
+      "name": "HFC-407C / R-407C",
+      "description": "Factor de emisión para HFC-407C / R-407C",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 127,
+    "fields": {
+      "name": "HFC-410a / R-410A",
+      "description": "Factor de emisión para HFC-410a / R-410A",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 128,
+    "fields": {
+      "name": "HFC-422D / R-422D",
+      "description": "Factor de emisión para HFC-422D / R-422D",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 129,
+    "fields": {
+      "name": "PFC-14 / R-14",
+      "description": "Factor de emisión para PFC-14 / R-14",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 130,
+    "fields": {
+      "name": "FE-36 / 1,1,1,3,3,3 - Hexafluoropropano",
+      "description": "Factor de emisión para FE-36 / 1,1,1,3,3,3 - Hexafluoropropano",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 131,
+    "fields": {
+      "name": "Propano Alta Calidad / R-290",
+      "description": "Factor de emisión para Propano Alta Calidad / R-290",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 132,
+    "fields": {
+      "name": "Isobutano / R-600A",
+      "description": "Factor de emisión para Isobutano / R-600A",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 133,
+    "fields": {
+      "name": "Halon 1301 / CBrF3",
+      "description": "Factor de emisión para Halon 1301 / CBrF3",
+      "factor_type": 4,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 134,
+    "fields": {
+      "name": "Extintores CO2",
+      "description": "Factor de emisión para Extintores CO2",
+      "factor_type": 5,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 135,
+    "fields": {
+      "name": "Extintores R-123 / HCFC-123",
+      "description": "Factor de emisión para Extintores R-123 / HCFC-123",
+      "factor_type": 5,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 136,
+    "fields": {
+      "name": "Aceites lubricantes",
+      "description": "Factor de emisión para Aceites lubricantes",
+      "factor_type": 6,
+      "source_type": 1,
+      "unit": 62
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 137,
+    "fields": {
+      "name": "Grasa Lubricante",
+      "description": "Factor de emisión para Grasa Lubricante",
+      "factor_type": 6,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 138,
+    "fields": {
+      "name": "CO2",
+      "description": "Fuga de gas en proceso",
+      "factor_type": 7,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 139,
+    "fields": {
+      "name": "SF6",
+      "description": "Aislamiento SF6",
+      "factor_type": 8,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 140,
+    "fields": {
+      "name": "Extracción de Carbón - Subterráneo",
+      "description": "Factor de emisión para Extracción de Carbón - Subterráneo",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 141,
+    "fields": {
+      "name": "Extracción de Carbón - Cielo Abierto",
+      "description": "Factor de emisión para Extracción de Carbón - Cielo Abierto",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 142,
+    "fields": {
+      "name": "Metano en tierras inundadas",
+      "description": "Factor de emisión para Metano en tierras inundadas",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 36
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 143,
+    "fields": {
+      "name": "Producción de coque",
+      "description": "Factor de emisión para Producción de coque",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 144,
+    "fields": {
+      "name": "Transporte de Gas Natural (Fugas CH4)",
+      "description": "Factor de emisión para Transporte de Gas Natural (Fugas CH4)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 145,
+    "fields": {
+      "name": "Producción de cemento (Clinker)",
+      "description": "Factor de emisión para Producción de cemento (Clinker)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 146,
+    "fields": {
+      "name": "Producción de Cal Viva",
+      "description": "Factor de emisión para Producción de Cal Viva",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 147,
+    "fields": {
+      "name": "Producción de Cal Dolomítica",
+      "description": "Factor de emisión para Producción de Cal Dolomítica",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 148,
+    "fields": {
+      "name": "Calcinación de Calcita (CaCO3)",
+      "description": "Factor de emisión para Calcinación de Calcita (CaCO3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 149,
+    "fields": {
+      "name": "Calcinación de Magnesita (MgCO3)",
+      "description": "Factor de emisión para Calcinación de Magnesita (MgCO3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 150,
+    "fields": {
+      "name": "Calcinación de Dolomita (CaMg(CO3)2)",
+      "description": "Factor de emisión para Calcinación de Dolomita (CaMg(CO3)2)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 151,
+    "fields": {
+      "name": "Calcinación de Siderita (FeCO3)",
+      "description": "Factor de emisión para Calcinación de Siderita (FeCO3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 152,
+    "fields": {
+      "name": "Calcinación de Rhodochrosita (MnCO3)",
+      "description": "Factor de emisión para Calcinación de Rhodochrosita (MnCO3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 153,
+    "fields": {
+      "name": "Calcinación de Carbonato de sodio (Na2CO3)",
+      "description": "Factor de emisión para Calcinación de Carbonato de sodio (Na2CO3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 154,
+    "fields": {
+      "name": "Calcinación de Ankerita (Ca(Fe,Mg,Mn)(CO3)2)",
+      "description": "Factor de emisión para Calcinación de Ankerita (Ca(Fe,Mg,Mn)(CO3)2)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 155,
+    "fields": {
+      "name": "Producción de vidrio plano y recipientes",
+      "description": "Factor de emisión para Producción de vidrio plano y recipientes",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 156,
+    "fields": {
+      "name": "Producción de fibra de vidrio",
+      "description": "Factor de emisión para Producción de fibra de vidrio",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 157,
+    "fields": {
+      "name": "Producción de vidrio especial (vajillas)",
+      "description": "Factor de emisión para Producción de vidrio especial (vajillas)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 158,
+    "fields": {
+      "name": "Producción de vidrio especial (iluminación)",
+      "description": "Factor de emisión para Producción de vidrio especial (iluminación)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 159,
+    "fields": {
+      "name": "Producción de vidrio especial (laboratorio y/o farmacia)",
+      "description": "Factor de emisión para Producción de vidrio especial (laboratorio y/o farmacia)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 160,
+    "fields": {
+      "name": "Producción de Amoniaco",
+      "description": "Factor de emisión para Producción de Amoniaco",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 161,
+    "fields": {
+      "name": "Producción Polipropileno (Gases quemados TEA)",
+      "description": "Factor de emisión para Producción Polipropileno (Gases quemados TEA)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 162,
+    "fields": {
+      "name": "Producción de Acido Nítrico",
+      "description": "Factor de emisión para Producción de Acido Nítrico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 6
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 163,
+    "fields": {
+      "name": "Vertimientos industriales no tratados (solo para alcance 3)",
+      "description": "Factor de emisión para Vertimientos industriales no tratados (solo para alcance 3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 164,
+    "fields": {
+      "name": "Vertimientos industriales tratados (PTAR aeróbica)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (PTAR aeróbica)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 165,
+    "fields": {
+      "name": "Vertimientos industriales tratados (PTAR aeróbica sobrecargada)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (PTAR aeróbica sobrecargada)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 166,
+    "fields": {
+      "name": "Vertimientos industriales tratados (Digestor anaeróbico)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (Digestor anaeróbico)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 167,
+    "fields": {
+      "name": "Vertimientos industriales tratados (Reactor anaeróbico)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (Reactor anaeróbico)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 168,
+    "fields": {
+      "name": "Vertimientos industriales tratados (Laguna anaeróbica < 2 mts)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (Laguna anaeróbica < 2 mts)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 169,
+    "fields": {
+      "name": "Vertimientos industriales tratados (Laguna anaeróbica > 2 mts)",
+      "description": "Factor de emisión para Vertimientos industriales tratados (Laguna anaeróbica > 2 mts)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 170,
+    "fields": {
+      "name": "Vertimientos domésticos no tratados (solo para alcance 3)",
+      "description": "Factor de emisión para Vertimientos domésticos no tratados (solo para alcance 3)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 171,
+    "fields": {
+      "name": "Vertimientos domésticos a cloaca o alcantarilla estancada",
+      "description": "Factor de emisión para Vertimientos domésticos a cloaca o alcantarilla estancada",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 172,
+    "fields": {
+      "name": "Vertimientos domésticos a cloaca o alcantarilla en movimiento (abierta o cerrada)",
+      "description": "Factor de emisión para Vertimientos domésticos a cloaca o alcantarilla en movimiento (abierta o cerrada)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 173,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (PTAR aeróbica)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (PTAR aeróbica)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 174,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (PTAR aeróbica sobrecargada)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (PTAR aeróbica sobrecargada)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 175,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (Digestor anaeróbico)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (Digestor anaeróbico)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 176,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (Reactor anaeróbico)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (Reactor anaeróbico)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 177,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (Laguna anaeróbica < 2 mts)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (Laguna anaeróbica < 2 mts)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 178,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (Laguna anaeróbica > 2 mts)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (Laguna anaeróbica > 2 mts)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 179,
+    "fields": {
+      "name": "Vertimientos domésticos tratados (Sistema séptico)",
+      "description": "Factor de emisión para Vertimientos domésticos tratados (Sistema séptico)",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 180,
+    "fields": {
+      "name": "Tratamiento de lodos orgánicos industriales",
+      "description": "Factor de emisión para Tratamiento de lodos orgánicos industriales",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 181,
+    "fields": {
+      "name": "Tratamiento de lodos orgánicos domésticos",
+      "description": "Factor de emisión para Tratamiento de lodos orgánicos domésticos",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 182,
+    "fields": {
+      "name": "Residuos solidos domiciliarios a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos domiciliarios a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 183,
+    "fields": {
+      "name": "Residuos solidos domiciliarios a relleno sanitario semiaerobico",
+      "description": "Factor de emisión para Residuos solidos domiciliarios a relleno sanitario semiaerobico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 184,
+    "fields": {
+      "name": "Residuos solidos domiciliarios a botadero >5mts profundidad",
+      "description": "Factor de emisión para Residuos solidos domiciliarios a botadero >5mts profundidad",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 185,
+    "fields": {
+      "name": "Residuos solidos domiciliarios a botadero <5mts profundidad",
+      "description": "Factor de emisión para Residuos solidos domiciliarios a botadero <5mts profundidad",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 186,
+    "fields": {
+      "name": "Residuos solidos domiciliarios a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos domiciliarios a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 187,
+    "fields": {
+      "name": "Lodos aguas residuales a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Lodos aguas residuales a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 188,
+    "fields": {
+      "name": "Residuos solidos hospitalarios a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos hospitalarios a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 189,
+    "fields": {
+      "name": "Residuos solidos industria alimentos a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria alimentos a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 190,
+    "fields": {
+      "name": "Residuos solidos industria textil a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria textil a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 191,
+    "fields": {
+      "name": "Residuos solidos industria madera a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria madera a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 192,
+    "fields": {
+      "name": "Residuos solidos industria pulpa y papel a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria pulpa y papel a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 193,
+    "fields": {
+      "name": "Residuos solidos industria caucho a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria caucho a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 194,
+    "fields": {
+      "name": "Residuos solidos industria construcción a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos industria construcción a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 195,
+    "fields": {
+      "name": "Residuos solidos otras industrias a relleno sanitario anaeróbico",
+      "description": "Factor de emisión para Residuos solidos otras industrias a relleno sanitario anaeróbico",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 196,
+    "fields": {
+      "name": "Quema a cielo abierto residuos solidos ordinarios",
+      "description": "Factor de emisión para Quema a cielo abierto residuos solidos ordinarios",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 197,
+    "fields": {
+      "name": "Incineración controlada residuos solidos ordinarios",
+      "description": "Factor de emisión para Incineración controlada residuos solidos ordinarios",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 198,
+    "fields": {
+      "name": "Incineración controlada residuos solidos industriales",
+      "description": "Factor de emisión para Incineración controlada residuos solidos industriales",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 199,
+    "fields": {
+      "name": "Incineración controlada residuos solidos hospitalarios",
+      "description": "Factor de emisión para Incineración controlada residuos solidos hospitalarios",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 200,
+    "fields": {
+      "name": "Incineración controlada residuos líquidos domésticos",
+      "description": "Factor de emisión para Incineración controlada residuos líquidos domésticos",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 201,
+    "fields": {
+      "name": "Incineración controlada residuos líquidos industriales",
+      "description": "Factor de emisión para Incineración controlada residuos líquidos industriales",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 202,
+    "fields": {
+      "name": "Incineración controlada residuos liquidos fósiles",
+      "description": "Factor de emisión para Incineración controlada residuos liquidos fósiles",
+      "factor_type": 9,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 203,
+    "fields": {
+      "name": "Vacas de alta producción lechera (Holstein, Jersey, Ayrshire) - Peso Promedio 520kg - Producción Promedio 11,7 kg leche/día",
+      "description": "Factor de emisión para Vacas de alta producción lechera (Holstein, Jersey, Ayrshire) - Peso Promedio 520kg - Producción Promedio 11,7 kg leche/día",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 204,
+    "fields": {
+      "name": "Vacas de baja producción lechera (Doble Propósito) - Peso Promedio 395 kg - Producción Promedio 3,5 kg leche/día",
+      "description": "Factor de emisión para Vacas de baja producción lechera (Doble Propósito) - Peso Promedio 395 kg - Producción Promedio 3,5 kg leche/día",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 205,
+    "fields": {
+      "name": "Vacas de baja producción lechera (Doble Propósito con corte Cebuino) - Peso Promedio 380 kg - Producción Promedio 1,9 kg leche/día",
+      "description": "Factor de emisión para Vacas de baja producción lechera (Doble Propósito con corte Cebuino) - Peso Promedio 380 kg - Producción Promedio 1,9 kg leche/día",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 206,
+    "fields": {
+      "name": "Toros reproductores (tipo Cebuino) - Peso Promedio 530 kg",
+      "description": "Factor de emisión para Toros reproductores (tipo Cebuino) - Peso Promedio 530 kg",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 207,
+    "fields": {
+      "name": "Terneros pre-destetos",
+      "description": "Factor de emisión para Terneros pre-destetos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 208,
+    "fields": {
+      "name": "Terneras de reemplazo",
+      "description": "Factor de emisión para Terneras de reemplazo",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 209,
+    "fields": {
+      "name": "Ganado de engorde",
+      "description": "Factor de emisión para Ganado de engorde",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 210,
+    "fields": {
+      "name": "Ganado vacuno lechero",
+      "description": "Factor de emisión para Ganado vacuno lechero",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 211,
+    "fields": {
+      "name": "Ganado vacuno no lechero",
+      "description": "Factor de emisión para Ganado vacuno no lechero",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 212,
+    "fields": {
+      "name": "Búfalos",
+      "description": "Factor de emisión para Búfalos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 213,
+    "fields": {
+      "name": "Ovejas",
+      "description": "Factor de emisión para Ovejas",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 214,
+    "fields": {
+      "name": "Cabras",
+      "description": "Factor de emisión para Cabras",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 215,
+    "fields": {
+      "name": "Caballos",
+      "description": "Factor de emisión para Caballos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 216,
+    "fields": {
+      "name": "Mulas y Asnos",
+      "description": "Factor de emisión para Mulas y Asnos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 217,
+    "fields": {
+      "name": "Cerdos",
+      "description": "Factor de emisión para Cerdos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 218,
+    "fields": {
+      "name": "Conejos",
+      "description": "Factor de emisión para Conejos",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 219,
+    "fields": {
+      "name": "Pollos de engorde",
+      "description": "Factor de emisión para Pollos de engorde",
+      "factor_type": 10,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 220,
+    "fields": {
+      "name": "Ganado No Lechero - Clima Frío",
+      "description": "Factor de emisión para Ganado No Lechero - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 221,
+    "fields": {
+      "name": "Ganado No Lechero - Clima Templado",
+      "description": "Factor de emisión para Ganado No Lechero - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 222,
+    "fields": {
+      "name": "Ganado No Lechero - Clima Cálido",
+      "description": "Factor de emisión para Ganado No Lechero - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 223,
+    "fields": {
+      "name": "Ganado Lechero - Clima Frío",
+      "description": "Factor de emisión para Ganado Lechero - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 224,
+    "fields": {
+      "name": "Ganado Lechero - Clima Templado",
+      "description": "Factor de emisión para Ganado Lechero - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 225,
+    "fields": {
+      "name": "Ganado Lechero - Clima Cálido",
+      "description": "Factor de emisión para Ganado Lechero - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 226,
+    "fields": {
+      "name": "Aves de Corral - Clima Frío",
+      "description": "Factor de emisión para Aves de Corral - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 227,
+    "fields": {
+      "name": "Aves de Corral - Clima Templado",
+      "description": "Factor de emisión para Aves de Corral - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 228,
+    "fields": {
+      "name": "Aves de Corral - Clima Cálido",
+      "description": "Factor de emisión para Aves de Corral - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 229,
+    "fields": {
+      "name": "Ovejas - Clima Frío",
+      "description": "Factor de emisión para Ovejas - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 230,
+    "fields": {
+      "name": "Ovejas - Clima Templado",
+      "description": "Factor de emisión para Ovejas - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 231,
+    "fields": {
+      "name": "Ovejas - Clima Cálido",
+      "description": "Factor de emisión para Ovejas - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 232,
+    "fields": {
+      "name": "Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Frío",
+      "description": "Factor de emisión para Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 233,
+    "fields": {
+      "name": "Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Templado",
+      "description": "Factor de emisión para Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 234,
+    "fields": {
+      "name": "Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Cálido",
+      "description": "Factor de emisión para Cerdos Almacenamiento Sólido y Parcelas Secas - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 235,
+    "fields": {
+      "name": "Cerdos Otros Sistemas de Manejo del Estiércol - Clima Frío",
+      "description": "Factor de emisión para Cerdos Otros Sistemas de Manejo del Estiércol - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 236,
+    "fields": {
+      "name": "Cerdos Otros Sistemas de Manejo del Estiércol - Clima Templado",
+      "description": "Factor de emisión para Cerdos Otros Sistemas de Manejo del Estiércol - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 237,
+    "fields": {
+      "name": "Cerdos Otros Sistemas de Manejo del Estiércol - Clima Cálido",
+      "description": "Factor de emisión para Cerdos Otros Sistemas de Manejo del Estiércol - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 238,
+    "fields": {
+      "name": "Búfalos - Clima Frío",
+      "description": "Factor de emisión para Búfalos - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 239,
+    "fields": {
+      "name": "Búfalos - Clima Templado",
+      "description": "Factor de emisión para Búfalos - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 240,
+    "fields": {
+      "name": "Búfalos - Clima Cálido",
+      "description": "Factor de emisión para Búfalos - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 241,
+    "fields": {
+      "name": "Cabras - Clima Frío",
+      "description": "Factor de emisión para Cabras - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 242,
+    "fields": {
+      "name": "Cabras - Clima Templado",
+      "description": "Factor de emisión para Cabras - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 243,
+    "fields": {
+      "name": "Cabras - Clima Cálido",
+      "description": "Factor de emisión para Cabras - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 244,
+    "fields": {
+      "name": "Caballos - Clima Frío",
+      "description": "Factor de emisión para Caballos - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 245,
+    "fields": {
+      "name": "Caballos - Clima Templado",
+      "description": "Factor de emisión para Caballos - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 246,
+    "fields": {
+      "name": "Caballos - Clima Cálido",
+      "description": "Factor de emisión para Caballos - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 247,
+    "fields": {
+      "name": "Mulas y Asnos - Clima Frío",
+      "description": "Factor de emisión para Mulas y Asnos - Clima Frío",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 248,
+    "fields": {
+      "name": "Mulas y Asnos - Clima Templado",
+      "description": "Factor de emisión para Mulas y Asnos - Clima Templado",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 249,
+    "fields": {
+      "name": "Mulas y Asnos - Clima Cálido",
+      "description": "Factor de emisión para Mulas y Asnos - Clima Cálido",
+      "factor_type": 11,
+      "source_type": 1,
+      "unit": 94
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 250,
+    "fields": {
+      "name": "Compostaje de materia orgánica (base seca)",
+      "description": "Factor de emisión para Compostaje de materia orgánica (base seca)",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 251,
+    "fields": {
+      "name": "Compostaje de materia orgánica (base húmeda)",
+      "description": "Factor de emisión para Compostaje de materia orgánica (base húmeda)",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 252,
+    "fields": {
+      "name": "Digestión anaeróbica en instalaciones de biogás (base seca)",
+      "description": "Factor de emisión para Digestión anaeróbica en instalaciones de biogás (base seca)",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 253,
+    "fields": {
+      "name": "Digestión anaeróbica en instalaciones de biogás (base húmeda)",
+      "description": "Factor de emisión para Digestión anaeróbica en instalaciones de biogás (base húmeda)",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 254,
+    "fields": {
+      "name": "Fugas de metano en proceso de captura (solamente cuando hay captura de biogas)",
+      "description": "Factor de emisión para Fugas de metano en proceso de captura (solamente cuando hay captura de biogas)",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 255,
+    "fields": {
+      "name": "Quema de Residuos Agrícolas",
+      "description": "Factor de emisión para Quema de Residuos Agrícolas",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 256,
+    "fields": {
+      "name": "Quema de Residuos Pastizales",
+      "description": "Factor de emisión para Quema de Residuos Pastizales",
+      "factor_type": 12,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 257,
+    "fields": {
+      "name": "Uso de fertilizantes minerales, abonos orgánicos y residuos agrícolas",
+      "description": "Factor de emisión para Uso de fertilizantes minerales, abonos orgánicos y residuos agrícolas",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 258,
+    "fields": {
+      "name": "Fertilización directa de vacunos, aves de corral y porcinos",
+      "description": "Factor de emisión para Fertilización directa de vacunos, aves de corral y porcinos",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 259,
+    "fields": {
+      "name": "Fertilización directa de ovinos y otros animales",
+      "description": "Factor de emisión para Fertilización directa de ovinos y otros animales",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 260,
+    "fields": {
+      "name": "Uso de fertilizantes aplicados en arrozales inundados",
+      "description": "Factor de emisión para Uso de fertilizantes aplicados en arrozales inundados",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 261,
+    "fields": {
+      "name": "Caliza cálcica aplicada (CaCO3)",
+      "description": "Factor de emisión para Caliza cálcica aplicada (CaCO3)",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 262,
+    "fields": {
+      "name": "Cal Dolomita Aplicada (CaMg(CO3)2)",
+      "description": "Factor de emisión para Cal Dolomita Aplicada (CaMg(CO3)2)",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 263,
+    "fields": {
+      "name": "Fertilización con Urea (CO(NH2)2)",
+      "description": "Factor de emisión para Fertilización con Urea (CO(NH2)2)",
+      "factor_type": 13,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 264,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC promedio)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC promedio)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 265,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2019)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2019)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 266,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2018)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2018)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 267,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2017)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2017)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 268,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2016)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2016)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 269,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2015)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2015)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 270,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2014)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2014)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 271,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2013)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2013)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 272,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2012)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2012)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 273,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2011)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2011)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 274,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2010)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2010)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 275,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-FECOC 2009)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-FECOC 2009)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 276,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión Informe EIA 2013)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión Informe EIA 2013)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 277,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión Informe EIA 2011)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión Informe EIA 2011)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 278,
+    "fields": {
+      "name": "Energía eléctrica adquirida (Factor emisión UPME-MDL 2008)",
+      "description": "Factor de emisión para Energía eléctrica adquirida (Factor emisión UPME-MDL 2008)",
+      "factor_type": 14,
+      "source_type": 1,
+      "unit": 73
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 279,
+    "fields": {
+      "name": "Bogotá - Armenia - Bogotá",
+      "description": "Factor de emisión para Bogotá - Armenia - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 280,
+    "fields": {
+      "name": "Bogotá - Barrancabermeja - Bogotá",
+      "description": "Factor de emisión para Bogotá - Barrancabermeja - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 281,
+    "fields": {
+      "name": "Bogotá - Barranquilla - Bogotá",
+      "description": "Factor de emisión para Bogotá - Barranquilla - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 282,
+    "fields": {
+      "name": "Bogotá - Bucaramanga - Bogotá",
+      "description": "Factor de emisión para Bogotá - Bucaramanga - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 283,
+    "fields": {
+      "name": "Bogotá - Buenaventura - Bogotá",
+      "description": "Factor de emisión para Bogotá - Buenaventura - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 284,
+    "fields": {
+      "name": "Bogotá - Cali - Bogotá",
+      "description": "Factor de emisión para Bogotá - Cali - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 285,
+    "fields": {
+      "name": "Bogotá - Cartagena - Bogotá",
+      "description": "Factor de emisión para Bogotá - Cartagena - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 286,
+    "fields": {
+      "name": "Bogotá - Cúcuta - Bogotá",
+      "description": "Factor de emisión para Bogotá - Cúcuta - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 287,
+    "fields": {
+      "name": "Bogotá - Florencia - Bogotá",
+      "description": "Factor de emisión para Bogotá - Florencia - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 288,
+    "fields": {
+      "name": "Bogotá - Ibagué - Bogotá",
+      "description": "Factor de emisión para Bogotá - Ibagué - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 289,
+    "fields": {
+      "name": "Bogotá - Leticia - Bogotá",
+      "description": "Factor de emisión para Bogotá - Leticia - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 290,
+    "fields": {
+      "name": "Bogotá - Manizales - Bogotá",
+      "description": "Factor de emisión para Bogotá - Manizales - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 291,
+    "fields": {
+      "name": "Bogotá - Medellín - Bogotá",
+      "description": "Factor de emisión para Bogotá - Medellín - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 292,
+    "fields": {
+      "name": "Bogotá - Mitú - Bogotá",
+      "description": "Factor de emisión para Bogotá - Mitú - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 293,
+    "fields": {
+      "name": "Bogotá - Montería - Bogotá",
+      "description": "Factor de emisión para Bogotá - Montería - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 294,
+    "fields": {
+      "name": "Bogotá - Neiva - Bogotá",
+      "description": "Factor de emisión para Bogotá - Neiva - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 295,
+    "fields": {
+      "name": "Bogotá - Pasto - Bogotá",
+      "description": "Factor de emisión para Bogotá - Pasto - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 296,
+    "fields": {
+      "name": "Bogotá - Pereira - Bogotá",
+      "description": "Factor de emisión para Bogotá - Pereira - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 297,
+    "fields": {
+      "name": "Bogotá - Popayán - Bogotá",
+      "description": "Factor de emisión para Bogotá - Popayán - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 298,
+    "fields": {
+      "name": "Bogotá - Puerto Asís - Bogotá",
+      "description": "Factor de emisión para Bogotá - Puerto Asís - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 299,
+    "fields": {
+      "name": "Bogotá - Puerto Carreño - Bogotá",
+      "description": "Factor de emisión para Bogotá - Puerto Carreño - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 300,
+    "fields": {
+      "name": "Bogotá - Puerto Inírida - Bogotá",
+      "description": "Factor de emisión para Bogotá - Puerto Inírida - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 301,
+    "fields": {
+      "name": "Bogotá - Riohacha - Bogotá",
+      "description": "Factor de emisión para Bogotá - Riohacha - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 302,
+    "fields": {
+      "name": "Bogotá - Santa Marta - Bogotá",
+      "description": "Factor de emisión para Bogotá - Santa Marta - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 303,
+    "fields": {
+      "name": "Bogotá - Valledupar - Bogotá",
+      "description": "Factor de emisión para Bogotá - Valledupar - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 304,
+    "fields": {
+      "name": "Bogotá - Villavicencio - Bogotá",
+      "description": "Factor de emisión para Bogotá - Villavicencio - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 305,
+    "fields": {
+      "name": "Bogotá - Yopal - Bogotá",
+      "description": "Factor de emisión para Bogotá - Yopal - Bogotá",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 306,
+    "fields": {
+      "name": "Transporte aéreo de carga",
+      "description": "Factor de emisión para Transporte aéreo de carga",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 307,
+    "fields": {
+      "name": "Transporte marítimo de carga",
+      "description": "Factor de emisión para Transporte marítimo de carga",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 308,
+    "fields": {
+      "name": "Transporte terrestre de carga",
+      "description": "Factor de emisión para Transporte terrestre de carga",
+      "factor_type": 15,
+      "source_type": 1,
+      "unit": 95
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 309,
+    "fields": {
+      "name": "Papel bond blanco",
+      "description": "Factor de emisión para Papel bond blanco",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 310,
+    "fields": {
+      "name": "Papel reciclado",
+      "description": "Factor de emisión para Papel reciclado",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 311,
+    "fields": {
+      "name": "Papel mate de revista",
+      "description": "Factor de emisión para Papel mate de revista",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 312,
+    "fields": {
+      "name": "Papel brillante de revista",
+      "description": "Factor de emisión para Papel brillante de revista",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 313,
+    "fields": {
+      "name": "Polietileno de alta densidad",
+      "description": "Factor de emisión para Polietileno de alta densidad",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 314,
+    "fields": {
+      "name": "Polietileno de baja densidad",
+      "description": "Factor de emisión para Polietileno de baja densidad",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 315,
+    "fields": {
+      "name": "Polipropileno",
+      "description": "Factor de emisión para Polipropileno",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 316,
+    "fields": {
+      "name": "Aluminio primario",
+      "description": "Factor de emisión para Aluminio primario",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.emissionfactor",
+    "pk": 317,
+    "fields": {
+      "name": "Aluminio reciclado",
+      "description": "Factor de emisión para Aluminio reciclado",
+      "factor_type": 16,
+      "source_type": 1,
+      "unit": 7
+    }
+  },
+  {
+    "model": "emissions.greenhousegasemission",
+    "pk": 1,
+    "fields": {
+      "greenhouse_gas": 9,
+      "unit": 76,
+      "emission_factor": 1,
+      "value": 2534.813,
+      "bibliographic_source": "FECOC, 2015",
+      "percentage_uncertainty": 0.264,
+      "maximum_allowed_amount": 0.0
+    }
+  },
+  {
+    "model": "emissions.greenhousegasemission",
+    "pk": 2,
+    "fields": {
+      "greenhouse_gas": 3,
+      "unit": 76,
+      "emission_factor": 1,
+      "value": 0.0287602,
+      "bibliographic_source": "IPCC, 2006",
+      "percentage_uncertainty": 0.3,
+      "maximum_allowed_amount": 0.0
+    }
+  },
+  {
+    "model": "emissions.greenhousegasemission",
+    "pk": 3,
+    "fields": {
+      "greenhouse_gas": 4,
+      "unit": 76,
+      "emission_factor": 1,
+      "value": 0.0431404,
+      "bibliographic_source": "IPCC, 2006",
+      "percentage_uncertainty": 0.5,
+      "maximum_allowed_amount": 0.0
+    }
+  }
+]

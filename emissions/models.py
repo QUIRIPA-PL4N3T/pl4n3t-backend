@@ -111,7 +111,7 @@ class EmissionFactor(models.Model):
     """
     name = models.CharField(_('Nombre'), max_length=255)
     description = models.CharField(_('Descripción'), max_length=255)
-    factory_type = models.ForeignKey(
+    factor_type = models.ForeignKey(
         FactorType,
         on_delete=models.CASCADE,
         verbose_name=_('Tipo de Factor de Emisión'),

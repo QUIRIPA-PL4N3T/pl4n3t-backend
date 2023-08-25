@@ -101,7 +101,8 @@ class UnitOfMeasure(models.Model):
         -- conversionToISOstandardUnit is not null only if the conversion is a simple scale
     """  # noqa
 
-    MEASURE_TYPE_UNKNOWN = ""
+    MEASURE_TYPE_UNKNOWN = "UNKNOWN"
+    MEASURE_TYPE_QUANTITY = "QUANTITY"
     MEASURE_TYPE_AREA = "AREA"
     MEASURE_TYPE_LENGTH = "LENGTH"
     MEASURE_TYPE_ANGLE = "ANGLE"
@@ -120,6 +121,7 @@ class UnitOfMeasure(models.Model):
 
     MEASURE_TYPE_CHOICES = [
         (MEASURE_TYPE_UNKNOWN, _("Desconocido")),
+        (MEASURE_TYPE_QUANTITY, _("Cantidad")),
         (MEASURE_TYPE_AREA, _("Area")),
         (MEASURE_TYPE_LENGTH, _("Longitud")),
         (MEASURE_TYPE_ANGLE, _("Ángulo")),

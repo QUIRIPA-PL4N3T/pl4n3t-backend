@@ -715,34 +715,6 @@
   },
   {
     "model": "main.unitofmeasure",
-    "pk": 64,
-    "fields": {
-      "name": "Kilogramo",
-      "slug": "kilogramo",
-      "symbol": "kg",
-      "measure_type": "WEIGHT",
-      "name_standard_unit": "Kilogramo",
-      "scale_to_standard_unit": 1.0,
-      "offset_to_standard_unit": 0.0,
-      "formula": ""
-    }
-  },
-  {
-    "model": "main.unitofmeasure",
-    "pk": 65,
-    "fields": {
-      "name": "Tonelada",
-      "slug": "tonelada",
-      "symbol": "t",
-      "measure_type": "WEIGHT",
-      "name_standard_unit": "Kilogramo",
-      "scale_to_standard_unit": 1000.0,
-      "offset_to_standard_unit": 0.0,
-      "formula": ""
-    }
-  },
-  {
-    "model": "main.unitofmeasure",
     "pk": 66,
     "fields": {
       "name": "Libra",
@@ -871,8 +843,8 @@
     "model": "main.unitofmeasure",
     "pk": 75,
     "fields": {
-      "name": "Gramo",
-      "slug": "gramo",
+      "name": "Gramo - masa",
+      "slug": "gramo-masa",
       "symbol": "g",
       "measure_type": "MASS",
       "name_standard_unit": "Kilogramo",
@@ -885,8 +857,8 @@
     "model": "main.unitofmeasure",
     "pk": 76,
     "fields": {
-      "name": "Kilogramo",
-      "slug": "kilogramo",
+      "name": "Kilogramo - masa",
+      "slug": "kilogramo-masa",
       "symbol": "kg",
       "measure_type": "MASS",
       "name_standard_unit": "Kilogramo",
@@ -899,8 +871,8 @@
     "model": "main.unitofmeasure",
     "pk": 77,
     "fields": {
-      "name": "Tonelada",
-      "slug": "tonelada",
+      "name": "Tonelada - masa",
+      "slug": "tonelada-masa",
       "symbol": "t",
       "measure_type": "MASS",
       "name_standard_unit": "Kilogramo",
@@ -913,8 +885,8 @@
     "model": "main.unitofmeasure",
     "pk": 78,
     "fields": {
-      "name": "Libra",
-      "slug": "libra",
+      "name": "Libra - masa",
+      "slug": "libra-masa",
       "symbol": "lb",
       "measure_type": "MASS",
       "name_standard_unit": "Kilogramo",
@@ -927,8 +899,8 @@
     "model": "main.unitofmeasure",
     "pk": 79,
     "fields": {
-      "name": "Onza",
-      "slug": "onza",
+      "name": "Onza - masa",
+      "slug": "onza-masa",
       "symbol": "oz",
       "measure_type": "MASS",
       "name_standard_unit": "Kilogramo",
@@ -1130,6 +1102,34 @@
       "name_standard_unit": "Hertz",
       "scale_to_standard_unit": 1000000.0,
       "offset_to_standard_unit": 0.0,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 94,
+    "fields": {
+      "name": "Unidad Animal (Cabeza)",
+      "slug": "unidad-animal-cabeza",
+      "symbol": "Cabezas",
+      "measure_type": "QUANTITY",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": ""
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 95,
+    "fields": {
+      "name": "Viaje",
+      "slug": "viaje",
+      "symbol": "Viaje",
+      "measure_type": "QUANTITY",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
       "formula": ""
     }
   }

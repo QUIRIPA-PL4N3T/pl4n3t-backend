@@ -71,6 +71,37 @@ class Company(models.Model):
         return f'{self.name}'
 
 
+class Brand(models.Model):
+    """
+    Represents a brand owned by a company.
+
+    The `Brand` model encapsulates details about individual brands that are
+    associated with a particular company. This model captures basic attributes
+    such as brand name, logo, and a brief description.
+
+    Attributes:
+    - company (ForeignKey to Company): The company that owns the brand.
+    - name (CharField): The name of the brand.
+    - description (TextField): A brief description of the brand.
+    - logo (ImageField): An image representing the brand's logo.
+
+    Note:
+    The string representation of the instance displays the brand name.
+    """
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='brands')
+    name = models.CharField(_('Nombre de la Marca'), max_length=255)
+    description = models.TextField(_('Descripción'), blank=True, null=True)
+    logo = models.ImageField(_('Logo'), upload_to='brands/', null=True, blank=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _('Marca')
+        verbose_name_plural = _('Marcas')
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 class CompanyUser(models.Model):
     """
     Represents an association between a company and a user.
@@ -117,6 +148,7 @@ class Location(models.Model):
     - zip_code (CharField): The postal code for the location.
     - company (ForeignKey to Company): The company that the location belongs to.
     - geo_location (PointField): The geographical point representing the location on a map.
+    - brand (ForeignKey to Brand): The brand that the location belongs to.
     - location_type (ForeignKey to LocationType): The type of location (e.g., office, warehouse).
 
     Note:
@@ -130,6 +162,14 @@ class Location(models.Model):
     zip_code = models.CharField(_('Código Postal'), max_length=255)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='locations')
     geo_location = models.PointField(_('Posición Geográfica'), null=True, blank=True)
+    brand = models.ForeignKey(
+        Brand,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name=_('Marca'),
+        related_name='locations'
+    )
     location_type = models.ForeignKey(
         LocationType,
         verbose_name=_('Tipo de Sede'),

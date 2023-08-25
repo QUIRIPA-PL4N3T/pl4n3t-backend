@@ -1,4 +1,7 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType
 from django.utils.translation import gettext_lazy as _
 
@@ -24,10 +27,18 @@ class GreenhouseGasEmissionInline(admin.TabularInline):
     extra = 1
 
 
+class EmissionFactorResource(resources.ModelResource):
+    class Meta:
+        model = EmissionFactor
+        fields = ('id', 'name', 'description', 'factor_type', 'source_type', 'unit')
+
+
 @admin.register(EmissionFactor)
-class EmissionFactorAdmin(admin.ModelAdmin):
+class EmissionFactorAdmin(ImportExportModelAdmin):
+    resource_class = EmissionFactorResource
+    list_filter = ['source_type', 'factor_type']
     inlines = [GreenhouseGasEmissionInline]
-    list_display = ['name', 'unit']
+    list_display = ['name', 'source_type', 'unit', 'factor_type']
     search_fields = ['name']
 
 

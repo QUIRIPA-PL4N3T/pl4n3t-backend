@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from emissions.models import EmissionFactor
+from emissions.models import EmissionFactor, FactorType
 
 
 class QuantificationType(models.Model):
@@ -134,8 +134,14 @@ class EmissionSourceGroup(models.Model):
     name = models.CharField(_('Nombre'), max_length=255)
     description = models.TextField(_('Descripción'), blank=True, null=True)
     icon = models.ImageField(_('Ícono'), upload_to='groups', blank=True, null=True)
-    emission_factors = models.ManyToManyField(
-        EmissionFactor,
+    category = models.ForeignKey(
+        ISOCategory,
+        verbose_name=_('Categoría'),
+        related_name='groups',
+        on_delete=models.CASCADE
+    )
+    emission_factor_type = models.ManyToManyField(
+        FactorType,
         related_name='emission_source_group',
         blank=True
     )
