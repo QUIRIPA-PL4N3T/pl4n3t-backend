@@ -1,12 +1,18 @@
 from rest_framework import serializers
 from main.models import Configuration, State, City, DocumentType, UnitOfMeasure, EconomicSector, IndustryType, \
-    LocationType
+    LocationType, Country
 
 
 class ConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Configuration
         fields = ['key', 'value']
+
+
+class CountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Country
+        fields = ('id', 'name', 'iso_code', 'slug')
 
 
 class StateSerializer(serializers.ModelSerializer):
@@ -16,7 +22,6 @@ class StateSerializer(serializers.ModelSerializer):
 
 
 class CitySerializer(serializers.ModelSerializer):
-    state = StateSerializer()
 
     class Meta:
         model = City

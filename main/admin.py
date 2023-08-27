@@ -1,6 +1,6 @@
 from django.contrib import admin
 from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryType, LocationType, State, City, \
-    DocumentType, WebinarRegistrant
+    DocumentType, WebinarRegistrant, Country
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 
@@ -40,9 +40,16 @@ class LocationTypeAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
+@admin.register(Country)
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'iso_code', 'slug']
+    search_fields = ['name']
+
+
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
     list_display = ['name', 'dane_code', 'geonames_code', 'slug']
+    list_filter = ['country']
     search_fields = ['name']
 
 
