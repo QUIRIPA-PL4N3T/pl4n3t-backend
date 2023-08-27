@@ -3,7 +3,7 @@ from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup
 from emissions.models import SourceType
 from django.utils.translation import gettext_lazy as _
-from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType
+from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country
 
 
 class Company(models.Model):
@@ -42,6 +42,7 @@ class Company(models.Model):
     ]
 
     name = models.CharField(_('Nombre'), max_length=255)
+    nit = models.CharField(_('NIT'), max_length=15, unique=True, blank=True, null=True)
     description = models.TextField(_('Descripción'), blank=True, null=True)
     industry = models.CharField(_('Industria'), max_length=255, blank=True, null=True)
     size = models.CharField(_('Tamaño de la Empresa'), max_length=10, choices=SIZE_CHOICES, default=SMALL)
@@ -61,6 +62,16 @@ class Company(models.Model):
         blank=True,
         on_delete=models.SET_NULL
     )
+
+    country = models.ForeignKey(
+        Country,
+        verbose_name=_('País de origen'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    ciiu_code = models.CharField(_('Código CIIU'), max_length=10, blank=True, null=True)
 
     class Meta:
         ordering = ('name',)
