@@ -1,5 +1,41 @@
 [
   {
+    "model": "main.country",
+    "pk": 1,
+    "fields": {
+      "name": "Colombia",
+      "iso_code": "COL",
+      "slug": "colombia"
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 2,
+    "fields": {
+      "name": "Ecuador",
+      "iso_code": "ECU",
+      "slug": "ecuador"
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 3,
+    "fields": {
+      "name": "Peru",
+      "iso_code": "PER",
+      "slug": "peru"
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 4,
+    "fields": {
+      "name": "Brazil",
+      "iso_code": "BRA",
+      "slug": "brazil"
+    }
+  },
+  {
     "pk": 29,
     "model": "main.state",
     "fields": {

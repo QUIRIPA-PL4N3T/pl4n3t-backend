@@ -13,10 +13,32 @@ class Configuration(models.Model):
         return self.key
 
 
+class Country(models.Model):
+    """
+    Represents countries.
+    """
+    name = models.CharField(_("Nombre de País"), max_length=255)
+    iso_code = models.CharField(_("ISO Code"), max_length=3, unique=True)  # ISO 3166-1 alpha-3 code
+    slug = AutoSlugField(populate_from='name')
+
+    class Meta:
+        verbose_name = _("País")
+        verbose_name_plural = _("Paises")
+        ordering = ("name",)
+
+    def __str__(self):
+        return self.name
+
+
 class State(models.Model):
     """
     Departamentos de Colombia
     """
+    country = models.ForeignKey(
+        Country, related_name="states",
+        null=True,
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(_("Nombre del Departamento"), max_length=255)
     dane_code = models.CharField(_("Código DANE"), max_length=3)
     geonames_code = models.CharField(_("Código GeoNames"), max_length=10, null=True, blank=True)
