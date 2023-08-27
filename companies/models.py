@@ -113,18 +113,19 @@ class Brand(models.Model):
         return f'{self.name}'
 
 
-class CompanyUser(models.Model):
+class Member(models.Model):
     """
     Represents an association between a company and a user.
 
-    The `CompanyUser` model establishes a link between individual users and the companies
+    The `Member` model establishes a link between individual users and the companies
     they are associated with, whether as employees, stakeholders, or in any other capacity.
     This relationship can be particularly useful in applications where user privileges,
     roles, or access rights are determined based on their company affiliation.
 
     Attributes:
     - company (ForeignKey to Company): The company with which the user is associated.
-    - user (ForeignKey to User): The individual user linked to the company.
+    - user (ForeignKey to User): The individual user linked to the company.\
+    - rol company rol
 
     Note:
     The string representation of the instance combines the name of the company and the
@@ -140,8 +141,8 @@ class CompanyUser(models.Model):
         (EMPLOYEE, _('Empleado')),
     ]
 
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='company_users')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='members_roles')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='companies_roles')
     role = models.CharField(_('Rol'), choices=ROLES, max_length=20, default=EMPLOYEE)
 
     class Meta:

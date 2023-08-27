@@ -1,7 +1,7 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
-from companies.models import Company, Brand, CompanyUser, Location, EmissionsSource, EmissionsSourceMonthEntry
-from companies.serializers import CompanySerializer, BrandSerializer, CompanyUserSerializer, LocationSerializer, \
+from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
+from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
     EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer
 
 
@@ -12,16 +12,16 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        company_ids = CompanyUser.objects.filter(user=user).values_list('company_id', flat=True)
+        company_ids = Member.objects.filter(user=user).values_list('company_id', flat=True)
         return Company.objects.filter(id__in=company_ids)
 
     def perform_create(self, serializer):
         company = serializer.save()
 
-        CompanyUser.objects.create(
+        Member.objects.create(
             user=self.request.user,
             company=company,
-            role=CompanyUser.ADMIN
+            role=Member.ADMIN
         )
 
 
@@ -31,10 +31,10 @@ class BrandViewSet(viewsets.ModelViewSet):
     serializer_class = BrandSerializer
 
 
-@extend_schema(tags=['CompanyUsers'])
-class CompanyUserViewSet(viewsets.ModelViewSet):
-    queryset = CompanyUser.objects.all()
-    serializer_class = CompanyUserSerializer
+@extend_schema(tags=['CompanyMembers'])
+class MemberViewSet(viewsets.ModelViewSet):
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
 
 
 @extend_schema(tags=['Locations'])
