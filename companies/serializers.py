@@ -37,7 +37,7 @@ class CompanySerializer(serializers.ModelSerializer):
         model = Company
         fields = ('id', 'name', 'description', 'industry', 'size', 'locations',
                   'website', 'geo_location', 'economic_sector', 'industry_type',
-                  'members_roles', 'brands')
+                  'members_roles', 'brands', 'country')
 
 
 class EmissionsSourceSerializer(serializers.ModelSerializer):
