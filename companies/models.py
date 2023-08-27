@@ -119,8 +119,19 @@ class CompanyUser(models.Model):
     The string representation of the instance combines the name of the company and the
     full name of the user.
     """
+    ADMIN = 'ADMIN'
+    MANAGER = 'MANAGER'
+    EMPLOYEE = 'EMPLOYEE'
+
+    ROLES = [
+        (ADMIN, _('Administrador de empresa')),
+        (MANAGER, _('Gerente de sede')),
+        (EMPLOYEE, _('Empleado')),
+    ]
+
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='company_users')
+    role = models.CharField(_('Rol'), choices=ROLES, max_length=20, default=EMPLOYEE)
 
     class Meta:
         ordering = ('company', 'user',)

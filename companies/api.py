@@ -10,6 +10,20 @@ class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
 
+    def get_queryset(self):
+        user = self.request.user
+        company_ids = CompanyUser.objects.filter(user=user).values_list('company_id', flat=True)
+        return Company.objects.filter(id__in=company_ids)
+
+    def perform_create(self, serializer):
+        company = serializer.save()
+
+        CompanyUser.objects.create(
+            user=self.request.user,
+            company=company,
+            role=CompanyUser.ADMIN
+        )
+
 
 @extend_schema(tags=['Brands'])
 class BrandViewSet(viewsets.ModelViewSet):
