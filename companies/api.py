@@ -1,11 +1,15 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
+from rest_framework.parsers import MultiPartParser, FormParser
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
     EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer
 
 
-@extend_schema(tags=['Companies'])
+@extend_schema(
+    tags=['Companies'],
+    request={'multipart/form-data': CompanySerializer}
+)
 class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
@@ -25,10 +29,14 @@ class CompanyViewSet(viewsets.ModelViewSet):
         )
 
 
-@extend_schema(tags=['Brands'])
+@extend_schema(
+    tags=['Brands'],
+    request={'multipart/form-data': BrandSerializer}
+)
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
 
 @extend_schema(tags=['CompanyMembers'])

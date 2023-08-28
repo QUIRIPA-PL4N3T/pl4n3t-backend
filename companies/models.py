@@ -97,7 +97,7 @@ class Company(models.Model):
     ciiu_code = models.CharField(_('Código CIIU'), max_length=10, blank=True, null=True)
 
     @property
-    def logo_absolute_url(self):
+    def logo_absolute_url(self) -> str:
         try:
             current_site = Site.objects.get_current()
             domain = current_site.domain

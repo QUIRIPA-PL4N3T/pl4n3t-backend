@@ -261,6 +261,7 @@ SPECTACULAR_SETTINGS = {
     'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],
     'SCHEMA_PATH_PREFIX': "/api",  # Allows grouping APIs without considering the /api part
     'CAMELIZE_NAMES': True,
+    "COMPONENT_SPLIT_REQUEST": True,
     # 'ENUM_NAME_OVERRIDES': SPECTACULAR_ENUM_NAME_OVERRIDES,
     'SWAGGER_UI_SETTINGS': {
         "deepLinking": True,
