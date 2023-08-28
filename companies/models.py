@@ -51,6 +51,7 @@ class Company(models.Model):
     size = models.CharField(_('Tamaño de la Empresa'), max_length=10, choices=SIZE_CHOICES, default=SMALL)
     website = models.CharField(_('Página Web'), max_length=255, blank=True, null=True)
     address = models.CharField(_('Dirección'), max_length=255, blank=True, null=True)
+    email = models.EmailField(_('Correo Electrónico'), max_length=255, blank=True, null=True)
     postal_code = models.CharField(_('Código Postal'), max_length=15, blank=True, null=True)
     phone = models.CharField(_('Teléfono'), max_length=20, blank=True, null=True)
     geo_location = models.PointField(_('Posición geográfica'), null=True, blank=True)
