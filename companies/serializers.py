@@ -52,7 +52,7 @@ class CompanySerializer(serializers.ModelSerializer):
                   'website', 'geo_location', 'economic_sector', 'industry_type',
                   'members_roles', 'brands', 'country', 'address', 'postal_code',
                   'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
-                  'state_name', 'city_name')
+                  'state_name', 'city_name', 'nit')
 
 
 class EmissionsSourceSerializer(serializers.ModelSerializer):
