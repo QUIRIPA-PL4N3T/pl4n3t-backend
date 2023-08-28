@@ -33,12 +33,26 @@ class CompanySerializer(serializers.ModelSerializer):
     members_roles = MemberSerializer(many=True, read_only=True)
     brands = BrandSerializer(many=True, read_only=True)
 
+    country_name = serializers.SerializerMethodField(read_only=True)
+    state_name = serializers.SerializerMethodField(read_only=True)
+    city_name = serializers.SerializerMethodField(read_only=True)
+
+    def get_country_name(self, obj:Company): # noqa
+        return obj.country.name if obj.country else ''
+
+    def get_state_name(self, obj:Company): # noqa
+        return obj.state.name if obj.state else ''
+
+    def get_city_name(self, obj:Company): # noqa
+        return obj.city.name if obj.city else ''
+
     class Meta:
         model = Company
         fields = ('id', 'name', 'description', 'industry', 'size', 'locations',
                   'website', 'geo_location', 'economic_sector', 'industry_type',
                   'members_roles', 'brands', 'country', 'address', 'postal_code',
-                  'phone', 'state', 'city', 'logo_absolute_url', 'email')
+                  'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
+                  'state_name', 'city_name')
 
 
 class EmissionsSourceSerializer(serializers.ModelSerializer):
