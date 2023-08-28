@@ -1,4 +1,6 @@
+from urllib.parse import urljoin
 from django.contrib.gis.db import models
+from django.contrib.sites.models import Site
 from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup
 from emissions.models import SourceType
@@ -92,6 +94,17 @@ class Company(models.Model):
     )
 
     ciiu_code = models.CharField(_('Código CIIU'), max_length=10, blank=True, null=True)
+
+    @property
+    def logo_absolute_url(self):
+        try:
+            current_site = Site.objects.get_current()
+            domain = current_site.domain
+            if domain is not None and self.logo:
+                return urljoin(domain, self.logo.url)
+            return ''
+        except:
+            return ''
 
     class Meta:
         ordering = ('name',)
