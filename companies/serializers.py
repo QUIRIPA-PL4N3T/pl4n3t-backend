@@ -31,7 +31,7 @@ class LocationSerializer(serializers.ModelSerializer):
 class CompanySerializer(serializers.ModelSerializer):
     locations = LocationSerializer(many=True, read_only=True)
     members_roles = MemberSerializer(many=True, read_only=True)
-    brands = BrandSerializer(many=True)
+    brands = BrandSerializer(many=True, read_only=True)
 
     class Meta:
         model = Company
