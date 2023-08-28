@@ -3,7 +3,7 @@ from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup
 from emissions.models import SourceType
 from django.utils.translation import gettext_lazy as _
-from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country
+from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
 
 
 class Company(models.Model):
@@ -41,12 +41,16 @@ class Company(models.Model):
         (LARGE, _('Grande (201+ empleados)')),
     ]
 
+    logo = models.ImageField(_('Logo'), upload_to='company_logos/', blank=True, null=True)
     name = models.CharField(_('Nombre'), max_length=255)
     nit = models.CharField(_('NIT'), max_length=15, unique=True, blank=True, null=True)
     description = models.TextField(_('Descripción'), blank=True, null=True)
     industry = models.CharField(_('Industria'), max_length=255, blank=True, null=True)
     size = models.CharField(_('Tamaño de la Empresa'), max_length=10, choices=SIZE_CHOICES, default=SMALL)
     website = models.CharField(_('Página Web'), max_length=255, blank=True, null=True)
+    address = models.CharField(_('Dirección'), max_length=255, blank=True, null=True)
+    postal_code = models.CharField(_('Código Postal'), max_length=15, blank=True, null=True)
+    phone = models.CharField(_('Teléfono'), max_length=20, blank=True, null=True)
     geo_location = models.PointField(_('Posición geográfica'), null=True, blank=True)
     economic_sector = models.ForeignKey(
         EconomicSector,
@@ -66,6 +70,22 @@ class Company(models.Model):
     country = models.ForeignKey(
         Country,
         verbose_name=_('País de origen'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    state = models.ForeignKey(
+        State,
+        verbose_name=_('Departamento/Estado/Provincia'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    city = models.ForeignKey(
+        City,
+        verbose_name=_('Ciudad'),
         on_delete=models.SET_NULL,
         null=True,
         blank=True
