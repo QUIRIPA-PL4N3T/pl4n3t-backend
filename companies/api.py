@@ -1,15 +1,12 @@
 from drf_spectacular.utils import extend_schema
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.parsers import MultiPartParser, FormParser
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
-    EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer
+    EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer, CompanyLogoSerializer
 
 
-@extend_schema(
-    tags=['Companies'],
-    request={'multipart/form-data': CompanySerializer}
-)
+@extend_schema(tags=['Companies'])
 class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
@@ -30,9 +27,34 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
 
 @extend_schema(
+    tags=['Companies'],
+    request={
+        'multipart/form-data': {
+            'type': 'object',
+            'properties': {
+                'logo': {'type': 'string', 'format': 'binary'},
+            }
+        }
+    })
+class CompanyLogoViewSet(viewsets.GenericViewSet, mixins.UpdateModelMixin):
+    queryset = Company.objects.all()
+    serializer_class = CompanyLogoSerializer
+    parser_classes = (MultiPartParser, FormParser)
+
+
+@extend_schema(
     tags=['Brands'],
-    request={'multipart/form-data': BrandSerializer}
-)
+    request={
+        'multipart/form-data': {
+            'type': 'object',
+            'properties': {
+                'description': {"type": "string"},
+                'name': {"type": "string"},
+                'company': {"type": "integer"},
+                'logo': {'type': 'string', 'format': 'binary'},
+            }
+        }
+    })
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer

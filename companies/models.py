@@ -138,6 +138,17 @@ class Brand(models.Model):
     description = models.TextField(_('Descripción'), blank=True, null=True)
     logo = models.ImageField(_('Logo'), upload_to='brands/', null=True, blank=True)
 
+    @property
+    def logo_absolute_url(self) -> str:
+        try:
+            current_site = Site.objects.get_current()
+            domain = current_site.domain
+            if domain is not None and self.logo:
+                return urljoin(domain, self.logo.url)
+            return ''
+        except:
+            return ''
+
     class Meta:
         ordering = ('name',)
         verbose_name = _('Marca')

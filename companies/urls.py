@@ -1,9 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from companies.api import CompanyViewSet, BrandViewSet, MemberViewSet, LocationViewSet, EmissionsSourceViewSet, EmissionsSourceMonthEntryViewSet
+from companies.api import CompanyViewSet, BrandViewSet, MemberViewSet, LocationViewSet, EmissionsSourceViewSet, \
+    EmissionsSourceMonthEntryViewSet, CompanyLogoViewSet
 
 router = DefaultRouter()
 router.register(r'companies', CompanyViewSet)
+router.register(r'company-logo', CompanyLogoViewSet)
 router.register(r'brands', BrandViewSet)
 router.register(r'company-users', MemberViewSet)
 router.register(r'locations', LocationViewSet)

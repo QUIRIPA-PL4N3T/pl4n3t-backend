@@ -5,10 +5,12 @@ from companies.models import Company, Brand, Member, Location, EmissionsSource, 
 
 
 class BrandSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Brand
-        fields = ('id', 'company', 'name', 'description', 'logo')
+        fields = ('id', 'company', 'name', 'description', 'logo', 'logo_absolute_url')
+        extra_kwargs = {
+            'logo': {'write_only': True}
+        }
 
 
 class MemberSerializer(serializers.ModelSerializer):
@@ -60,6 +62,12 @@ class CompanySerializer(serializers.ModelSerializer):
                   'members_roles', 'brands', 'country', 'address', 'postal_code',
                   'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
                   'state_name', 'city_name', 'nit', 'logo')
+
+
+class CompanyLogoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ('logo',)
 
 
 class EmissionsSourceSerializer(serializers.ModelSerializer):
