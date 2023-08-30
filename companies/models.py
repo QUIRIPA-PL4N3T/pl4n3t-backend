@@ -225,10 +225,38 @@ class Location(models.Model):
     """
     name = models.CharField(_('Nombre'), max_length=255)
     address = models.TextField(_('Dirección'), )
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='locations')
-    country = models.CharField(_('Pais'), max_length=255)
+    phone = models.CharField(_('Teléfono'), max_length=20, blank=True, null=True)
+    email = models.EmailField(_('Correo Electrónico'), max_length=255, blank=True, null=True)
+    country = models.ForeignKey(
+        Country,
+        verbose_name=_('País'),
+        related_name='locations',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    state = models.ForeignKey(
+        State,
+        verbose_name=_('Departamento/Estado/Provincia'),
+        related_name='locations',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    city = models.ForeignKey(
+        City,
+        verbose_name=_('Ciudad'),
+        on_delete=models.SET_NULL,
+        related_name='locations',
+        null = True,
+        blank = True,
+    )
     zip_code = models.CharField(_('Código Postal'), max_length=255)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='locations')
+    company = models.ForeignKey(
+        Company,
+        on_delete=models.CASCADE,
+        related_name='locations'
+    )
     geo_location = models.PointField(_('Posición Geográfica'), null=True, blank=True)
     brand = models.ForeignKey(
         Brand,

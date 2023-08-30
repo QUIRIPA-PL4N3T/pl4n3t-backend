@@ -30,8 +30,8 @@ class MemberSerializer(serializers.ModelSerializer):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ('id', 'name', 'address', 'city', 'country', 'zip_code',
-                  'company', 'geo_location', 'brand', 'location_type')
+        fields = ('id', 'name', 'address', 'phone', 'email', 'country', 'state', 'city',
+                  'zip_code',  'company', 'geo_location', 'brand', 'location_type')
 
 
 class CompanySerializer(serializers.ModelSerializer):
