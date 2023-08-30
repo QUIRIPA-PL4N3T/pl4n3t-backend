@@ -274,6 +274,8 @@ class Location(models.Model):
         on_delete=models.SET_NULL
     )
 
+    employees = models.IntegerField(_('Empleados'), default=0)
+
     class Meta:
         ordering = ('company__name', 'name')
         verbose_name = _('Sede')

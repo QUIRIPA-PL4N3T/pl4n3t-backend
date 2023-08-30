@@ -31,7 +31,8 @@ class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
         fields = ('id', 'name', 'address', 'phone', 'email', 'country', 'state', 'city',
-                  'zip_code',  'company', 'geo_location', 'brand', 'location_type')
+                  'zip_code',  'company', 'geo_location', 'brand', 'location_type',
+                  'employees')
 
 
 class CompanySerializer(serializers.ModelSerializer):
