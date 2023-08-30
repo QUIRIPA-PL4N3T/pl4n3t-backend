@@ -124,7 +124,7 @@
       "description": "Vehículos de la Organización",
       "icon": "",
       "category": 1,
-      "emission_factor_type": [
+      "emission_factor_types": [
         3,
         2,
         1
@@ -139,7 +139,7 @@
       "description": "Uso de Combustibles",
       "icon": "",
       "category": 1,
-      "emission_factor_type": [
+      "emission_factor_types": [
         3,
         2,
         1
@@ -154,7 +154,7 @@
       "description": "Transporte y Distribución",
       "icon": "",
       "category": 3,
-      "emission_factor_type": [
+      "emission_factor_types": [
         3,
         2,
         1
@@ -169,7 +169,7 @@
       "description": "Desplazamiento de los empleados / visitantes",
       "icon": "",
       "category": 3,
-      "emission_factor_type": [
+      "emission_factor_types": [
         3,
         2,
         1
@@ -184,7 +184,7 @@
       "description": "Uso de Productos Vendidos",
       "icon": "",
       "category": 5,
-      "emission_factor_type": [
+      "emission_factor_types": [
         9
       ]
     }
@@ -197,7 +197,7 @@
       "description": "Inversiones",
       "icon": "",
       "category": 5,
-      "emission_factor_type": [
+      "emission_factor_types": [
         9
       ]
     }
@@ -210,7 +210,7 @@
       "description": "Refrigerantes / aires acondicionados de la organización",
       "icon": "",
       "category": 1,
-      "emission_factor_type": [
+      "emission_factor_types": [
         4
       ]
     }
@@ -223,7 +223,7 @@
       "description": "Compra de Electricidad, vapor, Calefacción y refrigeración",
       "icon": "",
       "category": 2,
-      "emission_factor_type": [
+      "emission_factor_types": [
         14
       ]
     }
@@ -236,7 +236,7 @@
       "description": "Bienes Arrendados",
       "icon": "",
       "category": 4,
-      "emission_factor_type": [
+      "emission_factor_types": [
         9
       ]
     }
@@ -249,7 +249,7 @@
       "description": "",
       "icon": "",
       "category": 4,
-      "emission_factor_type": [
+      "emission_factor_types": [
         9
       ]
     }
@@ -262,7 +262,7 @@
       "description": "",
       "icon": "",
       "category": 3,
-      "emission_factor_type": [
+      "emission_factor_types": [
         15
       ]
     }
@@ -275,7 +275,7 @@
       "description": "Desperdicio de operaciones",
       "icon": "",
       "category": 4,
-      "emission_factor_type": [
+      "emission_factor_types": [
         9
       ]
     }

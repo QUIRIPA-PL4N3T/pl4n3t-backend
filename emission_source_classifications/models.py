@@ -140,7 +140,7 @@ class EmissionSourceGroup(models.Model):
         related_name='groups',
         on_delete=models.CASCADE
     )
-    emission_factor_type = models.ManyToManyField(
+    emission_factor_types = models.ManyToManyField(
         FactorType,
         related_name='emission_source_group',
         blank=True

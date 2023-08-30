@@ -19,4 +19,4 @@ class GHGScopeAdmin(admin.ModelAdmin):
 
 @admin.register(EmissionSourceGroup)
 class EmissionSourceGroupAdmin(admin.ModelAdmin):
-    filter_horizontal = ('emission_factor_type',)
+    filter_horizontal = ('emission_factor_types',)
