@@ -3,7 +3,7 @@ from django.contrib.gis.db import models
 from django.contrib.sites.models import Site
 from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup
-from emissions.models import SourceType, FactorType
+from emissions.models import SourceType, EmissionFactor
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
 
@@ -333,7 +333,7 @@ class EmissionsSource(models.Model):
         related_name='emission_sources')
 
     emission_factor = models.ForeignKey(
-        FactorType,
+        EmissionFactor,
         on_delete=models.CASCADE,
         verbose_name=_('Factor de Emisión'),
         related_name='emission_sources'
