@@ -1,4 +1,6 @@
 from rest_framework import serializers
+
+from emissions.serializers import FactorTypeSerializer
 from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup
 
 
@@ -25,8 +27,9 @@ class ISOCategorySerializer(serializers.ModelSerializer):
 class EmissionSourceGroupSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
     emission_factor_type_names = serializers.StringRelatedField(source='emission_factor_type', many=True)
+    emission_factor_type = FactorTypeSerializer(read_only=True, many=True)
 
     class Meta:
         model = EmissionSourceGroup
         fields = ('id', 'name', 'description', 'icon', 'category', 'category_name',
-                  'emission_factor_type', 'emission_factor_type_names')
+                  'emission_factor_type', 'emission_factor_type_names', 'emission_factor_type')
