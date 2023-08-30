@@ -4,6 +4,19 @@ from rest_framework import serializers
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 
 
+class EmissionsSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EmissionsSource
+        fields = ('id', 'name', 'code', 'description', 'location', 'image',
+                  'group', 'source_type', 'geo_location')
+
+
+class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EmissionsSourceMonthEntry
+        fields = ('id', 'register_date', 'emission_agent', 'month', 'emission', 'unit')
+
+
 class BrandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
@@ -28,11 +41,13 @@ class MemberSerializer(serializers.ModelSerializer):
 
 
 class LocationSerializer(serializers.ModelSerializer):
+    emission_source_locations = EmissionsSourceSerializer(many=True, read_only=True)
+
     class Meta:
         model = Location
         fields = ('id', 'name', 'address', 'phone', 'email', 'country', 'state', 'city',
                   'zip_code',  'company', 'geo_location', 'brand', 'location_type',
-                  'employees')
+                  'employees', 'emission_source_locations')
 
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -69,16 +84,3 @@ class CompanyLogoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ('logo',)
-
-
-class EmissionsSourceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EmissionsSource
-        fields = ('id', 'name', 'code', 'description', 'location', 'image',
-                  'group', 'source_type', 'geo_location')
-
-
-class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EmissionsSourceMonthEntry
-        fields = ('id', 'register_date', 'emission_agent', 'month', 'emission', 'unit')
