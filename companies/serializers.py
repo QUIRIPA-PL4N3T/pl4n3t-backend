@@ -7,8 +7,8 @@ from companies.models import Company, Brand, Member, Location, EmissionsSource, 
 class EmissionsSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionsSource
-        fields = ('id', 'name', 'code', 'description', 'location', 'image',
-                  'group', 'source_type', 'geo_location', 'emission_factor')
+        fields = ('id', 'name', 'code', 'description', 'location', 'image', 'group',
+                  'source_type', 'geo_location', 'factor_type', 'emission_factor')
 
 
 class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
