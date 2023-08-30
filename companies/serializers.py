@@ -8,7 +8,7 @@ class EmissionsSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionsSource
         fields = ('id', 'name', 'code', 'description', 'location', 'image',
-                  'group', 'source_type', 'geo_location')
+                  'group', 'source_type', 'geo_location', 'emission_factor')
 
 
 class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
