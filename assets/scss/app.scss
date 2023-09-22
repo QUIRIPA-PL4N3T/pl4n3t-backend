@@ -292,26 +292,23 @@ hr {
 }
 
 .carbon-background {
-    background-image:
-    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
-    url('../img/carbon_page.png');
-    background-size: auto, cover;
-    bottom: 0;
-    padding: 20px;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+  url('../img/carbon_page.png');
+  background-size: auto, cover;
+  bottom: 0;
+  padding: 20px;
 }
 
 .plastic-background {
   @extend .carbon-background;
-  background-image:
-    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
-    url('../img/plastic_page.png');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+  url('../img/plastic_page.png');
 }
 
 .water-background {
   @extend .carbon-background;
-  background-image:
-    linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9)),
-    url('../img/water_page.png');
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9)),
+  url('../img/water_page.png');
   background-position: bottom;
 }
 
@@ -321,7 +318,7 @@ hr {
   color: white;
   text-decoration: none;
   display: inline-flex;
-  font-family: "Helvetica Neue", Helvetica, Arial, SansSerif, sans-serif ;
+  font-family: "Helvetica Neue", Helvetica, Arial, SansSerif, sans-serif;
   font-weight: 700;
   padding-left: 40px;
   padding-right: 40px;
@@ -344,7 +341,7 @@ hr {
   }
 
   .clock {
-    div.numbers>span {
+    div.numbers > span {
       background-color: black;
       color: white;
       min-width: 1.45em;
@@ -355,7 +352,8 @@ hr {
       line-height: 1.1;
       display: inline-block;
     }
-    div>span {
+
+    div > span {
       margin-top: 5px;
       font-size: 12px;
     }
@@ -374,4 +372,50 @@ hr {
 
 select.form-select-sm:focus-visible {
   border: none;
+}
+
+.vertical-line {
+  height: 100px; /* Puedes ajustar esto según la altura que desees */
+  width: 1px;
+  background-color: #000; /* Cambia el color según tus necesidades */
+  margin: 0 10px; /* Agrega márgenes laterales para separar de los íconos */
+}
+
+.purple-color {
+  color: #6805f2
+}
+
+.border-purple {
+  border-color: #6805f2;
+}
+
+.bg-purple {
+  background-color: #6805f2;
+}
+
+.webinar-button {
+  @extend .more-button;
+  @extend .bg-purple;
+  text-align: center;
+  width: 100%;
+
+  &:hover {
+    background-color: lighten(#6805f2, 10%);
+  }
+}
+
+.webinar-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      width: 32px;
+      margin-right: 10px;
+    }
+  }
 }

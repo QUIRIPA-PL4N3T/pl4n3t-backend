@@ -1,39 +1,91 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block page_title %}{% translate 'Blog' %}{% endblock page_title %}
+{% block page_title %}{% translate 'Webinar' %}{% endblock page_title %}
 
 {% block content %}
   <div class="container-fluid blog">
-    <div class="container navbar-space">
-      <div class="row text-center w-75 m-auto">
-
-
-        <div>
-          <a class="btn btn-info newsletter-button p-2" href="https://wkf.ms/3QXs0pl" target="_blank">{% translate 'Join the Webinar' %}</a>
-        </div>
+    <div class="container-fluid navbar-space">
+      <div class="row text-center m-auto">
 
         <div class="row text-center my-5">
-          <h2 class="mt-0">{% translate "We're almost ready!" %}</h2>
-          <h4 class="text-gray">{% translate "We are getting ready, don't miss it!" %}</h4>
+          <h2 class="mt-0">{% translate "WEBINAR" %}</h2>
+          <h4
+            class="text-gray">{% translate "Technological tools for process digitization and environmental sustainability" %}</h4>
         </div>
+        <div class="container-fluid">
+          <div class="row d-flex mb-3">
+            <div class="col-12 col-md-4">
+              <video class="w-100" controls>
+                <source src="{% static '/videos/reel.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+              <div class="d-flex flex-row justify-content-center align-items-center mb-5 purple-color">
+          <span>
+            <i class="fa fa-calendar fa-3x flex-gap"></i>
+            <p class="text-black"><strong>28 y 29</strong><br> de SEP</p>
+          </span>
+                <div class="vertical-line bg-purple"></div>
+                <span>
+            <i class="fa fa-clock-o fa-3x flex-gap"></i>
+            <p class="text-black">De <strong>8:00</strong> AM<br> A <strong>12:00</strong> PM</p>
+          </span>
+              </div>
 
-        <div class="clock gap-4 text-center d-flex justify-content-center mb-5">
-          <div>
-            <div class="numbers" id="days"></div>
-            <span class="mt-1">{% translate 'Days' %}</span>
+              <div>
+                <a class="btn webinar-button p-2 text-white" href="https://wkf.ms/3QXs0pl" target="_blank"><h2
+                  class="text-white my-0 mx-3">{% translate 'PRE-REGISTER' %}</h2></a>
+                <p><small>{% translate 'To send you the live connection link' %}</small></p>
+              </div>
+
+              <div class="row text-center my-5">
+                <h2 class="mt-0">{% translate "We're almost ready!" %}</h2>
+                <h4 class="text-gray">{% translate "We are getting ready, don't miss it!" %}</h4>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+              <h4 class="purple-color mb-3">{% translate 'Topics to be discussed' %}</h4>
+              <ul class="webinar-list">
+                <li>
+                  <img src="{% static 'images/concept.png' %}" alt="">
+                  <span>{% translate 'Fundamental Concepts' %}</span>
+                </li>
+                <li>
+                  <img src="{% static 'images/analitic.png' %}" alt="">
+                  <span>{% translate 'Big data and data analytics technologies' %}</span>
+                </li>
+                <li>
+                  <img src="{% static 'images/transformation.png' %}" alt="">
+                  <span>{% translate 'Digital transformation' %}</span>
+                </li>
+                <li>
+                  <img src="{% static 'images/foot.png' %}" alt="">
+                  <span>{% translate 'Corporate environmental footprint management' %}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <div class="numbers" id="hours"></div>
-            <span class="mt-1">{% translate 'Hours' %}</span>
-          </div>
-          <div>
-            <div class="numbers" id="minutes"></div>
-            <span class="mt-1">{% translate 'Minutes' %}</span>
-          </div>
-          <div>
-            <div class="numbers" id="seconds"></div>
-            <span class="mt-1">{% translate 'Seconds' %}</span>
+          <div class="row">
+            <div class="clock gap-4 text-center d-flex justify-content-center mb-5">
+              <div>
+                <div class="numbers" id="days"></div>
+                <span class="mt-1">{% translate 'Days' %}</span>
+              </div>
+              <div>
+                <div class="numbers" id="hours"></div>
+                <span class="mt-1">{% translate 'Hours' %}</span>
+              </div>
+              <div>
+                <div class="numbers" id="minutes"></div>
+                <span class="mt-1">{% translate 'Minutes' %}</span>
+              </div>
+              <div>
+                <div class="numbers" id="seconds"></div>
+                <span class="mt-1">{% translate 'Seconds' %}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

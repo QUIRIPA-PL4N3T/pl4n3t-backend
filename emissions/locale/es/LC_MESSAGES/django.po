@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 19:22+0000\n"
+"POT-Creation-Date: 2023-09-22 16:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,66 +18,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: emissions/models.py:8
+#: emissions/apps.py:8
+msgid "Configuración Factores de emisión"
+msgstr ""
+
+#: emissions/models.py:21 emissions/models.py:51 emissions/models.py:81
+#: emissions/models.py:112
 msgid "Nombre"
 msgstr ""
 
-#: emissions/models.py:9
+#: emissions/models.py:22
 msgid "Sigla"
 msgstr ""
 
-#: emissions/models.py:10
+#: emissions/models.py:23
 msgid "Kg de CO₂ Equivalencia"
 msgstr ""
 
-#: emissions/models.py:11 emissions/models.py:12
+#: emissions/models.py:24 emissions/models.py:25
 msgid "Porcentaje de calentamiento global min"
 msgstr ""
 
-#: emissions/models.py:13
+#: emissions/models.py:26
 msgid "Permanencia en años"
 msgstr ""
 
-#: emissions/models.py:17
+#: emissions/models.py:30
 msgid "Gas de Efecto Invernadero"
 msgstr ""
 
-#: emissions/models.py:18
+#: emissions/models.py:31
 msgid "Gases de Efecto Invernadero"
 msgstr ""
 
-#: emissions/models.py:30
-msgid "Categoría de Emisión"
+#: emissions/models.py:52 emissions/models.py:82 emissions/models.py:113
+msgid "Descripción"
 msgstr ""
 
-#: emissions/models.py:31
-msgid "Categorías de Emisiones"
+#: emissions/models.py:56 emissions/models.py:123
+msgid "Tipo de Fuente de Emisión"
 msgstr ""
 
-#: emissions/models.py:44 emissions/models.py:57
+#: emissions/models.py:57
+msgid "Tipos de Fuente de Emisión"
+msgstr ""
+
+#: emissions/models.py:86 emissions/models.py:117
+msgid "Tipo de Factor de Emisión"
+msgstr ""
+
+#: emissions/models.py:87
+msgid "Tipo de Factores de Emisión"
+msgstr ""
+
+#: emissions/models.py:128
+msgid "Unidad de Consumo"
+msgstr ""
+
+#: emissions/models.py:134
 msgid "Factor de Emisión"
 msgstr ""
 
-#: emissions/models.py:45
+#: emissions/models.py:135
 msgid "Factores de Emisión"
 msgstr ""
 
-#: emissions/models.py:61
-msgid "Agente Emisor"
+#: emissions/models.py:165
+msgid "Gas de efecto invernadero"
 msgstr ""
 
-#: emissions/models.py:62
-msgid "Agentes Emisores"
+#: emissions/models.py:171
+msgid "Unidad Factor de Emisión"
 msgstr ""
 
-#: emissions/models.py:71
+#: emissions/models.py:181
 msgid "Cantidad de Emisión"
 msgstr ""
 
-#: emissions/models.py:72
+#: emissions/models.py:189
+msgid "Porcentaje de Incertidumbre"
+msgstr ""
+
+#: emissions/models.py:192
 msgid "Cantidad Máxima Permitida"
 msgstr ""
 
-#: emissions/models.py:76
-msgid "Unidad de Emisión de GEI por Agente Emisor"
+#: emissions/models.py:196
+msgid "Emisión de Gas de Efecto Invernadero"
 msgstr ""

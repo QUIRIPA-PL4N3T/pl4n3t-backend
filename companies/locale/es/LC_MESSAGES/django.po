@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 19:22+0000\n"
+"POT-Creation-Date: 2023-09-22 16:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,146 +18,230 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: companies/models.py:13
-msgid "Pequeña (1-50 empleados)"
-msgstr ""
-
-#: companies/models.py:14
-msgid "Mediana (51-200 empleados)"
-msgstr ""
-
-#: companies/models.py:15
-msgid "Grande (201+ empleados)"
-msgstr ""
-
-#: companies/models.py:18 companies/models.py:62 companies/models.py:87
-msgid "Nombre"
-msgstr ""
-
-#: companies/models.py:19
-msgid "Descripción"
-msgstr ""
-
-#: companies/models.py:20
-msgid "Industria"
-msgstr ""
-
-#: companies/models.py:21
-msgid "Tamaño de la Empresa"
-msgstr ""
-
-#: companies/models.py:22
-msgid "Página Web"
-msgstr ""
-
-#: companies/models.py:23
-msgid "Posición geográfica"
-msgstr ""
-
-#: companies/models.py:26
-msgid "Sector Económico"
-msgstr ""
-
-#: companies/models.py:33
-msgid "Tipo de Industria"
+#: companies/apps.py:8
+msgid "Empresas, Sedes, Fuentes de Emisión"
 msgstr ""
 
 #: companies/models.py:41
-msgid "Compañía"
+msgid "Pequeña (1-50 empleados)"
 msgstr ""
 
 #: companies/models.py:42
-msgid "Compañías"
+msgid "Mediana (51-200 empleados)"
 msgstr ""
 
-#: companies/models.py:54
-msgid "Usuario de Compañía"
+#: companies/models.py:43
+msgid "Grande (201+ empleados)"
 msgstr ""
 
-#: companies/models.py:55
-msgid "Usuarios de las Compañías"
+#: companies/models.py:46 companies/models.py:139
+msgid "Logo"
 msgstr ""
 
-#: companies/models.py:63
+#: companies/models.py:47 companies/models.py:226 companies/models.py:310
+msgid "Nombre"
+msgstr ""
+
+#: companies/models.py:48
+msgid "NIT"
+msgstr ""
+
+#: companies/models.py:49 companies/models.py:138 companies/models.py:312
+msgid "Descripción"
+msgstr ""
+
+#: companies/models.py:50
+msgid "Industria"
+msgstr ""
+
+#: companies/models.py:51
+msgid "Tamaño de la Empresa"
+msgstr ""
+
+#: companies/models.py:52
+msgid "Página Web"
+msgstr ""
+
+#: companies/models.py:53 companies/models.py:227
 msgid "Dirección"
 msgstr ""
 
-#: companies/models.py:65
-msgid "Pais"
+#: companies/models.py:54 companies/models.py:229
+msgid "Correo Electrónico"
 msgstr ""
 
-#: companies/models.py:66
+#: companies/models.py:55 companies/models.py:254
 msgid "Código Postal"
 msgstr ""
 
-#: companies/models.py:68
-msgid "Posición Geográfica"
+#: companies/models.py:56 companies/models.py:228
+msgid "Teléfono"
 msgstr ""
 
-#: companies/models.py:71
-msgid "Tipo de Sede"
+#: companies/models.py:57
+msgid "Posición geográfica"
 msgstr ""
 
-#: companies/models.py:79
-msgid "Sede"
+#: companies/models.py:60
+msgid "Sector Económico"
 msgstr ""
 
-#: companies/models.py:80
-msgid "Sedes"
+#: companies/models.py:67
+msgid "Tipo de Industria"
 msgstr ""
 
-#: companies/models.py:94
-msgid "Agente emisor de una sede"
+#: companies/models.py:75
+msgid "País de origen"
 msgstr ""
 
-#: companies/models.py:95
-msgid "Agentes emisores por sede"
+#: companies/models.py:83 companies/models.py:240
+msgid "Departamento/Estado/Provincia"
 msgstr ""
 
-#: companies/models.py:104
-msgid "Enero"
+#: companies/models.py:91 companies/models.py:248
+msgid "Ciudad"
 msgstr ""
 
-#: companies/models.py:105
-msgid "Febrero"
-msgstr ""
-
-#: companies/models.py:106
-msgid "Marzo"
-msgstr ""
-
-#: companies/models.py:107
-msgid "Abril"
-msgstr ""
-
-#: companies/models.py:108
-msgid "Mayo"
-msgstr ""
-
-#: companies/models.py:109
-msgid "Junio"
-msgstr ""
-
-#: companies/models.py:110
-msgid "Julio"
-msgstr ""
-
-#: companies/models.py:111
-msgid "Agosto"
+#: companies/models.py:97
+msgid "Código CIIU"
 msgstr ""
 
 #: companies/models.py:112
-msgid "Septiembre"
+msgid "Compañía"
 msgstr ""
 
 #: companies/models.py:113
+msgid "Compañías"
+msgstr ""
+
+#: companies/models.py:137
+msgid "Nombre de la Marca"
+msgstr ""
+
+#: companies/models.py:154 companies/models.py:266
+msgid "Marca"
+msgstr ""
+
+#: companies/models.py:155
+msgid "Marcas"
+msgstr ""
+
+#: companies/models.py:184
+msgid "Administrador de empresa"
+msgstr ""
+
+#: companies/models.py:185
+msgid "Gerente de sede"
+msgstr ""
+
+#: companies/models.py:186
+msgid "Empleado"
+msgstr ""
+
+#: companies/models.py:191
+msgid "Rol"
+msgstr ""
+
+#: companies/models.py:195
+msgid "Usuario de Compañía"
+msgstr ""
+
+#: companies/models.py:196
+msgid "Usuarios de las Compañías"
+msgstr ""
+
+#: companies/models.py:232
+msgid "País"
+msgstr ""
+
+#: companies/models.py:260
+msgid "Posición Geográfica"
+msgstr ""
+
+#: companies/models.py:271
+msgid "Tipo de Sede"
+msgstr ""
+
+#: companies/models.py:277
+msgid "Empleados"
+msgstr ""
+
+#: companies/models.py:281
+msgid "Sede"
+msgstr ""
+
+#: companies/models.py:282
+msgid "Sedes"
+msgstr ""
+
+#: companies/models.py:311
+msgid "Código"
+msgstr ""
+
+#: companies/models.py:319
+msgid "Imagen"
+msgstr ""
+
+#: companies/models.py:332
+msgid "Tipo de Fuente de Emisión"
+msgstr ""
+
+#: companies/models.py:338 companies/models.py:345
+msgid "Factor de Emisión"
+msgstr ""
+
+#: companies/models.py:353
+msgid "Fuente de Emisión"
+msgstr ""
+
+#: companies/models.py:354
+msgid "Fuentes de Emisión"
+msgstr ""
+
+#: companies/models.py:381
+msgid "Enero"
+msgstr ""
+
+#: companies/models.py:382
+msgid "Febrero"
+msgstr ""
+
+#: companies/models.py:383
+msgid "Marzo"
+msgstr ""
+
+#: companies/models.py:384
+msgid "Abril"
+msgstr ""
+
+#: companies/models.py:385
+msgid "Mayo"
+msgstr ""
+
+#: companies/models.py:386
+msgid "Junio"
+msgstr ""
+
+#: companies/models.py:387
+msgid "Julio"
+msgstr ""
+
+#: companies/models.py:388
+msgid "Agosto"
+msgstr ""
+
+#: companies/models.py:389
+msgid "Septiembre"
+msgstr ""
+
+#: companies/models.py:390
 msgid "Octubre"
 msgstr ""
 
-#: companies/models.py:114
+#: companies/models.py:391
 msgid "Noviembre"
 msgstr ""
 
-#: companies/models.py:115
+#: companies/models.py:392
 msgid "Diciembre"
 msgstr ""
