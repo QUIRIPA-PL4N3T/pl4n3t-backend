@@ -148,6 +148,10 @@ class EmissionSourceGroup(models.Model):
 
     allow_inventory = models.BooleanField(_('Permitir registro de inventario'), default=False)
 
+    @property
+    def classification(self) -> str:
+        return self.category.full_code
+
     class Meta:
         ordering = ('name',)
         verbose_name = _('Grupo de fuente de emisión')
