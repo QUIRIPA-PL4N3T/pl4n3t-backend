@@ -95,8 +95,8 @@
 
 {% block extra_js %}
   <script>
-    let eventDate = new Date('2023-10-06T05:00:00.820Z');
-
+    // let eventDate = new Date('2023-09-28T05:00:00.820Z');
+    let eventDate = new Date(Date.UTC(2023, 8, 28, 13, 0, 0));
     function splitTextToSpans(text) {
       let letters = text.toString().split('')
       return letters.map(character => {
