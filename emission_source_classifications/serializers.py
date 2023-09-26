@@ -32,4 +32,5 @@ class EmissionSourceGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionSourceGroup
         fields = ('id', 'name', 'description', 'icon', 'category', 'category_name',
-                  'emission_factor_types', 'emission_factor_type_names', 'emission_factor_types')
+                  'emission_factor_types', 'emission_factor_type_names', 'emission_factor_types',
+                  'allow_inventory')
