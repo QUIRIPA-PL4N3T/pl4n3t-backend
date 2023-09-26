@@ -36,7 +36,7 @@
     "pk": 6,
     "fields": {
       "key": "COMPANY_FACEBOOK_URL",
-      "value": "###"
+      "value": "https://www.facebook.com/profile.php?id=100089450971408"
     }
   },
   {
@@ -44,7 +44,7 @@
     "pk": 7,
     "fields": {
       "key": "COMPANY_INSTAGRAM_URL",
-      "value": "###"
+      "value": "https://www.instagram.com/pl4n3t_com/"
     }
   },
   {
@@ -52,15 +52,7 @@
     "pk": 8,
     "fields": {
       "key": "COMPANY_LINKEDIN_URL",
-      "value": "###"
-    }
-  },
-  {
-    "model": "main.configuration",
-    "pk": 9,
-    "fields": {
-      "key": "COMPANY_TWITTER_URL",
-      "value": "###"
+      "value": "https://www.linkedin.com/company/pl4n3t/"
     }
   },
   {
