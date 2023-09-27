@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from emissions.models import EmissionFactor, FactorType
+from ckeditor.fields import RichTextField
 
 
 class QuantificationType(models.Model):
@@ -132,7 +133,7 @@ class EmissionSourceGroup(models.Model):
     The string representation of the instance displays the name of the emission source group.
     """
     name = models.CharField(_('Nombre'), max_length=255)
-    description = models.TextField(_('Descripción'), blank=True, null=True)
+    description = RichTextField(_('Descripción'), blank=True, null=True)
     icon = models.ImageField(_('Ícono'), upload_to='groups', blank=True, null=True)
     category = models.ForeignKey(
         ISOCategory,

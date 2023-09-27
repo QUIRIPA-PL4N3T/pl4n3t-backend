@@ -60,6 +60,7 @@ ADDONS = [
     'django_filters',
     'drf_spectacular',
     'import_export',
+    'ckeditor',
 ]
 
 INSTALLED_APPS = DEPENDENCIES_APPS + ADDONS + PROJECT_APPS
