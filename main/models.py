@@ -7,7 +7,7 @@ from slugify import slugify
 
 class Configuration(models.Model):
     key = models.CharField(max_length=200)
-    value = models.CharField(max_length=200)
+    value = models.TextField()
 
     def __str__(self):
         return self.key

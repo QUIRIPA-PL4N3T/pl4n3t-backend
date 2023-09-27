@@ -7,7 +7,8 @@ from import_export import resources
 
 @admin.register(Configuration)
 class ConfigurationAdmin(admin.ModelAdmin):
-    list_display = ["key", "value"]
+    list_display = ["id", "key", "value"]
+    list_editable = ["key", "value"]
 
 
 @admin.register(UnitOfMeasure)

@@ -8,6 +8,12 @@ class ConfigurationSerializer(serializers.ModelSerializer):
         model = Configuration
         fields = ['key', 'value']
 
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        if rep['key'].endswith('_LIST'):
+            rep['value'] = rep['value'].replace('\r', '').replace('\n', '').replace(' ', '')
+        return rep
+
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:

@@ -348,6 +348,14 @@ class EmissionsSource(models.Model):
 
     geo_location = models.PointField(null=True, blank=True)
 
+    # Vehicle fields
+    vehicle_type = models.CharField(_('Tipo de Vehículo'), max_length=128, blank=True, null=True)
+    vehicle_load = models.CharField(_('Tipo de Carga'), max_length=128,blank=True, null=True)
+    vehicle_fuel = models.CharField(_('Tipo de Combustible'), max_length=128,blank=True, null=True)
+    vehicle_capacity = models.FloatField(_('Capacidad'), default=0)
+    vehicle_efficiency = models.FloatField(_('Capacidad'), default=0)
+    vehicle_efficiency_unit = models.FloatField(_('Capacidad'), default=0)
+
     class Meta:
         ordering = ('name',)
         verbose_name = _('Fuente de Emisión')
