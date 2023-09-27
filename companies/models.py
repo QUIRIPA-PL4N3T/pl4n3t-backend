@@ -353,8 +353,8 @@ class EmissionsSource(models.Model):
     vehicle_load = models.CharField(_('Tipo de Carga'), max_length=128,blank=True, null=True)
     vehicle_fuel = models.CharField(_('Tipo de Combustible'), max_length=128,blank=True, null=True)
     vehicle_capacity = models.FloatField(_('Capacidad'), default=0)
-    vehicle_efficiency = models.FloatField(_('Capacidad'), default=0)
-    vehicle_efficiency_unit = models.FloatField(_('Capacidad'), default=0)
+    vehicle_efficiency = models.FloatField(_('Eficiencia del Vehículo'), default=0)
+    vehicle_efficiency_unit = models.CharField(_('Unidad de Medida'), max_length=128, blank=True, null=True)
 
     class Meta:
         ordering = ('name',)
