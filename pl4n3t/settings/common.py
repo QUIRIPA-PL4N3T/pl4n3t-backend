@@ -47,6 +47,7 @@ PROJECT_APPS = [
     'emissions',
     'memberships',
     'emission_source_classifications',
+    'documents',
 ]
 
 ADDONS = [

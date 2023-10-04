@@ -2,15 +2,16 @@ from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
+from documents.serializer import BaseDocumentSerializer
 
 
-class EmissionsSourceSerializer(serializers.ModelSerializer):
+class EmissionsSourceSerializer(BaseDocumentSerializer):
     class Meta:
         model = EmissionsSource
         fields = ('id', 'name', 'code', 'description', 'location', 'image', 'group',
                   'source_type', 'geo_location', 'factor_type', 'emission_factor',
                   'vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity',
-                  'vehicle_efficiency', 'vehicle_efficiency_unit')
+                  'vehicle_efficiency', 'vehicle_efficiency_unit', 'documents')
 
 
 class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):

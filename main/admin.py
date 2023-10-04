@@ -3,6 +3,17 @@ from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryTy
     DocumentType, WebinarRegistrant, Country
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
+from django.contrib.auth import get_user_model
+
+
+class UsernameSearch:
+    """The User object may not be auth.User, so we need to provide
+    a mechanism for issuing the equivalent of a .filter(user__username=...)
+    search in CommentAdmin.
+    """
+
+    def __str__(self):
+        return 'user__%s' % get_user_model().USERNAME_FIELD
 
 
 @admin.register(Configuration)
