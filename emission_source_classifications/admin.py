@@ -22,8 +22,8 @@ class GHGScopeAdmin(admin.ModelAdmin):
 @admin.register(EmissionSourceGroup)
 class EmissionSourceGroupAdmin(admin.ModelAdmin):
     filter_horizontal = ('emission_factor_types',)
-    list_display = ('id', 'name', 'description', 'allow_inventory', 'icon_tag')
-    list_editable = ('name', 'description', 'allow_inventory')
+    list_display = ('id', 'name', 'form_name', 'description', 'allow_inventory', 'icon_tag')
+    list_editable = ('name', 'form_name', 'description', 'allow_inventory')
 
     def icon_tag(self, obj):
         if obj.icon:
