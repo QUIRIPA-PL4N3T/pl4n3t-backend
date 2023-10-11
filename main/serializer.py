@@ -11,7 +11,7 @@ class ConfigurationSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         rep = super().to_representation(instance)
         if rep['key'].endswith('_LIST'):
-            rep['value'] = rep['value'].replace('\r', '').replace('\n', '').replace(' ', '')
+            rep['value'] = rep['value'].replace('\r', '').replace('\n', '')
         return rep
 
 
