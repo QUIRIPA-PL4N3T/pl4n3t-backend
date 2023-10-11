@@ -8,6 +8,12 @@ from slugify import slugify
 class Configuration(models.Model):
     key = models.CharField(max_length=200)
     value = models.TextField()
+    company = models.ForeignKey(
+        'companies.Company',
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return self.key

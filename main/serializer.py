@@ -6,7 +6,7 @@ from main.models import Configuration, State, City, DocumentType, UnitOfMeasure,
 class ConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Configuration
-        fields = ['key', 'value']
+        fields = ['key', 'value', 'company']
 
     def to_representation(self, instance):
         rep = super().to_representation(instance)
