@@ -307,8 +307,8 @@ class EmissionsSource(models.Model):
     Note:
     The string representation of the instance shows the name of the emission source.
     """
-    name = models.CharField(_('Nombre'), max_length=255)
-    code = models.CharField(_('Código'), max_length=255)
+    name = models.CharField(_('Nombre'), max_length=255, blank=True, null=True)
+    code = models.CharField(_('Código'), max_length=255, blank=True, null=True)
     description = models.TextField(_('Descripción'), blank=True, null=True)
     location = models.ForeignKey(
         Location,
