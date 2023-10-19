@@ -25,7 +25,7 @@ class LocationAdmin(admin.ModelAdmin):
 
 @admin.register(EmissionsSource)
 class EmissionsSourceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'location', 'source_type')
+    list_display = ('id', 'emission_source_name', 'location', 'source_type')
     list_filter = ('source_type', 'group')
 
     fieldsets = (

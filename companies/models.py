@@ -363,6 +363,15 @@ class EmissionsSource(models.Model):
     electricity_efficiency_unit = models.CharField(_('Unidad Eficiencia Energética'), max_length=256, blank=True,
                                                    null=True)
 
+    @property
+    def emission_source_name(self):
+        if self.group.form_name == 'ELECTRICITY':
+            return f"{self.group} - {self.electricity_supplier}"
+        if self.group.form_name == 'ORGANIZATION_VEHICLES':
+            return f"{self.group} - {self.name}, {self.code}"
+        else:
+            return f"{self.group} - {self.name}"
+
     class Meta:
         ordering = ('name',)
         verbose_name = _('Fuente de Emisión')

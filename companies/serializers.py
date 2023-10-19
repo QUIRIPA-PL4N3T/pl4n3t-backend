@@ -13,7 +13,7 @@ class EmissionsSourceSerializer(BaseDocumentSerializer):
                   'vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity',
                   'vehicle_efficiency', 'vehicle_efficiency_unit', 'electricity_supplier',
                   'electricity_source', 'electricity_efficiency', 'electricity_efficiency_unit',
-                  'documents')
+                  'documents', 'emission_source_name')
 
 
 class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
