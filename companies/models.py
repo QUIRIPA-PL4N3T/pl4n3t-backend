@@ -364,7 +364,7 @@ class EmissionsSource(models.Model):
                                                    null=True)
 
     @property
-    def emission_source_name(self):
+    def emission_source_name(self) -> str:
         if self.group.form_name == 'ELECTRICITY':
             return f"{self.group} - {self.electricity_supplier}"
         if self.group.form_name == 'ORGANIZATION_VEHICLES':

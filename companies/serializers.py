@@ -14,6 +14,7 @@ class EmissionsSourceSerializer(BaseDocumentSerializer):
                   'vehicle_efficiency', 'vehicle_efficiency_unit', 'electricity_supplier',
                   'electricity_source', 'electricity_efficiency', 'electricity_efficiency_unit',
                   'documents', 'emission_source_name')
+        read_only_fields = ['id', 'emission_source_name']
 
 
 class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
