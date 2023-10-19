@@ -356,6 +356,13 @@ class EmissionsSource(models.Model):
     vehicle_efficiency = models.FloatField(_('Eficiencia del Vehículo'), default=0)
     vehicle_efficiency_unit = models.CharField(_('Unidad de Medida'), max_length=128, blank=True, null=True)
 
+    # Electricity fields
+    electricity_supplier = models.CharField(_('Proveedor de Electricidad'), max_length=256, blank=True, null=True)
+    electricity_source = models.CharField(_('Fuente de generación'), max_length=256, blank=True, null=True)
+    electricity_efficiency = models.FloatField(_('Eficiencia Energética'), blank=True, null=True)
+    electricity_efficiency_unit = models.CharField(_('Unidad Eficiencia Energética'), max_length=256, blank=True,
+                                                   null=True)
+
     class Meta:
         ordering = ('name',)
         verbose_name = _('Fuente de Emisión')
