@@ -148,6 +148,7 @@ class EmissionSourceGroup(models.Model):
     )
 
     allow_inventory = models.BooleanField(_('Permitir registro de inventario'), default=False)
+    enabled = models.BooleanField(_('¿Grupo de clasificación activo?'), default=True)
     form_name = models.CharField(_('Nombre del Formulario'), max_length=255, blank='True', null=True)
 
     @property
