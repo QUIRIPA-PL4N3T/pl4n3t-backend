@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 16:24+0000\n"
+"POT-Creation-Date: 2023-12-06 00:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: companies/admin.py:33
+msgid "Información General"
+msgstr ""
+
+#: companies/admin.py:36
+msgid "Vehículos"
+msgstr ""
+
+#: companies/admin.py:40
+msgid "Electricidad"
+msgstr ""
 
 #: companies/apps.py:8
 msgid "Empresas, Sedes, Fuentes de Emisión"
@@ -190,58 +202,98 @@ msgstr ""
 msgid "Factor de Emisión"
 msgstr ""
 
+#: companies/models.py:352
+msgid "Tipo de Vehículo"
+msgstr ""
+
 #: companies/models.py:353
-msgid "Fuente de Emisión"
+msgid "Tipo de Carga"
 msgstr ""
 
 #: companies/models.py:354
+msgid "Tipo de Combustible"
+msgstr ""
+
+#: companies/models.py:355
+msgid "Capacidad"
+msgstr ""
+
+#: companies/models.py:356
+msgid "Eficiencia del Vehículo"
+msgstr ""
+
+#: companies/models.py:357
+msgid "Unidad de Medida"
+msgstr ""
+
+#: companies/models.py:360
+msgid "Proveedor de Electricidad"
+msgstr ""
+
+#: companies/models.py:361
+msgid "Fuente de generación"
+msgstr ""
+
+#: companies/models.py:362
+msgid "Eficiencia Energética"
+msgstr ""
+
+#: companies/models.py:363
+msgid "Unidad Eficiencia Energética"
+msgstr ""
+
+#: companies/models.py:377
+msgid "Fuente de Emisión"
+msgstr ""
+
+#: companies/models.py:378
 msgid "Fuentes de Emisión"
 msgstr ""
 
-#: companies/models.py:381
+#: companies/models.py:405
 msgid "Enero"
 msgstr ""
 
-#: companies/models.py:382
+#: companies/models.py:406
 msgid "Febrero"
 msgstr ""
 
-#: companies/models.py:383
+#: companies/models.py:407
 msgid "Marzo"
 msgstr ""
 
-#: companies/models.py:384
+#: companies/models.py:408
 msgid "Abril"
 msgstr ""
 
-#: companies/models.py:385
+#: companies/models.py:409
 msgid "Mayo"
 msgstr ""
 
-#: companies/models.py:386
+#: companies/models.py:410
 msgid "Junio"
 msgstr ""
 
-#: companies/models.py:387
+#: companies/models.py:411
 msgid "Julio"
 msgstr ""
 
-#: companies/models.py:388
+#: companies/models.py:412
 msgid "Agosto"
 msgstr ""
 
-#: companies/models.py:389
+#: companies/models.py:413
 msgid "Septiembre"
 msgstr ""
 
-#: companies/models.py:390
+#: companies/models.py:414
 msgid "Octubre"
 msgstr ""
 
-#: companies/models.py:391
+#: companies/models.py:415
 msgid "Noviembre"
 msgstr ""
 
-#: companies/models.py:392
+#: companies/models.py:416
 msgid "Diciembre"
 msgstr ""
