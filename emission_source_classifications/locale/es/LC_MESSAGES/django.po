@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 16:24+0000\n"
+"POT-Creation-Date: 2023-12-06 00:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,72 +17,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: emission_source_classifications/admin.py:33
+#: emission_source_classifications/models.py:137
+msgid "Ícono"
+msgstr ""
 
 #: emission_source_classifications/apps.py:8
 msgid "Clasificación de fuentes de emisión"
 msgstr ""
 
-#: emission_source_classifications/models.py:23
-#: emission_source_classifications/models.py:53
-#: emission_source_classifications/models.py:92
-#: emission_source_classifications/models.py:134
-msgid "Nombre"
-msgstr ""
-
 #: emission_source_classifications/models.py:24
-#: emission_source_classifications/models.py:62
+#: emission_source_classifications/models.py:54
 #: emission_source_classifications/models.py:93
-msgid "Código"
+#: emission_source_classifications/models.py:135
+msgid "Nombre"
 msgstr ""
 
 #: emission_source_classifications/models.py:25
 #: emission_source_classifications/models.py:63
-#: emission_source_classifications/models.py:100
-#: emission_source_classifications/models.py:135
+#: emission_source_classifications/models.py:94
+msgid "Código"
+msgstr ""
+
+#: emission_source_classifications/models.py:26
+#: emission_source_classifications/models.py:64
+#: emission_source_classifications/models.py:101
+#: emission_source_classifications/models.py:136
 msgid "Descripción"
 msgstr ""
 
-#: emission_source_classifications/models.py:29
-#: emission_source_classifications/models.py:60
+#: emission_source_classifications/models.py:30
+#: emission_source_classifications/models.py:61
 msgid "Tipo de Cuantificación"
 msgstr ""
 
-#: emission_source_classifications/models.py:30
+#: emission_source_classifications/models.py:31
 msgid "Tipos de Cuantificación"
 msgstr ""
 
-#: emission_source_classifications/models.py:67
+#: emission_source_classifications/models.py:68
 msgid "Alcance GHG"
 msgstr ""
 
-#: emission_source_classifications/models.py:68
+#: emission_source_classifications/models.py:69
 msgid "Alcances GHG"
 msgstr ""
 
-#: emission_source_classifications/models.py:96
+#: emission_source_classifications/models.py:97
 msgid "Alcance"
 msgstr ""
 
-#: emission_source_classifications/models.py:109
+#: emission_source_classifications/models.py:110
 msgid "Categoría ISO"
 msgstr ""
 
-#: emission_source_classifications/models.py:110
+#: emission_source_classifications/models.py:111
 msgid "Categorías ISO"
 msgstr ""
 
-#: emission_source_classifications/models.py:136
-msgid "Ícono"
-msgstr ""
-
-#: emission_source_classifications/models.py:139
+#: emission_source_classifications/models.py:140
 msgid "Categoría"
 msgstr ""
 
+#: emission_source_classifications/models.py:150
+msgid "Permitir registro de inventario"
+msgstr ""
+
 #: emission_source_classifications/models.py:151
-msgid "Grupo de fuente de emisión"
+msgid "¿Grupo de clasificación activo?"
 msgstr ""
 
 #: emission_source_classifications/models.py:152
+msgid "Nombre del Formulario"
+msgstr ""
+
+#: emission_source_classifications/models.py:160
+msgid "Grupo de fuente de emisión"
+msgstr ""
+
+#: emission_source_classifications/models.py:161
 msgid "Grupos de fuentes de emisión"
 msgstr ""
