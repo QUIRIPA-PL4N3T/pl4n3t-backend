@@ -30,7 +30,6 @@ django-filter==22.1
 drf-spectacular==0.26.1
 
 ffmpy==0.3.0
-pyodk==0.1.0
 pandas==1.5.3
 django-webpack-loader==0.7.0
 
@@ -40,3 +39,11 @@ Faker==18.10.1
 
 django-import-export==3.2.0
 django-ckeditor==6.7.0
+
+django-pdfkit==0.3.1
+
+openpyxl==3.1.2
+
+xhtml2pdf==0.2.13
+
+django-taggit==4.0.0

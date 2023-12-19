@@ -22,6 +22,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     gettext \
     python-psycopg2 \
     nodejs \
+    wkhtmltopdf \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup workdir

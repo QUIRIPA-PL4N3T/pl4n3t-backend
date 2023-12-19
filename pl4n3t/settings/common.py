@@ -48,6 +48,7 @@ PROJECT_APPS = [
     'memberships',
     'emission_source_classifications',
     'documents',
+    'reports',
 ]
 
 ADDONS = [
@@ -62,6 +63,7 @@ ADDONS = [
     'drf_spectacular',
     'import_export',
     'ckeditor',
+    'taggit',
 ]
 
 INSTALLED_APPS = DEPENDENCIES_APPS + ADDONS + PROJECT_APPS
@@ -278,3 +280,10 @@ SPECTACULAR_SETTINGS = {
 PL4N3T_APPLICATION = 'https://planet-frontend.dev.altix.co/'
 
 DOCUMENTS_UPLOAD_TO = 'documents'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+    },
+}
