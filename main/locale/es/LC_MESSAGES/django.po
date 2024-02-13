@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 00:12+0000\n"
+"POT-Creation-Date: 2023-12-06 00:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 #: main/base.py:50
 msgid "Latitud"
 msgstr ""
@@ -314,25 +313,21 @@ msgid "PL4N3T"
 msgstr ""
 
 #: main/templates/blog.html:4 main/templates/includes/header.html:49
-#, fuzzy
-#| msgid "Join the Webinar"
 msgid "Webinar"
-msgstr "Participar en el Seminario Virtual"
+msgstr ""
 
 #: main/templates/blog.html:12 main/templates/includes/webinar.html:15
 msgid "WEBINAR"
-msgstr "SEMINARIO VIRTUAL"
+msgstr ""
 
 #: main/templates/blog.html:14
 msgid ""
 "Technological tools for process digitization and environmental sustainability"
 msgstr ""
-"Herramientas tecnológicas para la digitalización de los procesos y la "
-"sostenibilidad ambiental"
 
 #: main/templates/blog.html:39
 msgid "PRE-REGISTER"
-msgstr "PRE INSCRÍBETE"
+msgstr ""
 
 #: main/templates/blog.html:41
 msgid "MEMORIES WEBINAR"
@@ -340,58 +335,58 @@ msgstr "MEMORIAS WEBINAR"
 
 #: main/templates/blog.html:43
 msgid "To send you the live connection link"
-msgstr "Para enviarte el link de conexión en vivo"
+msgstr ""
 
 #: main/templates/blog.html:47
 msgid "We're almost ready!"
-msgstr "¡Ya casi está todo listo!"
+msgstr ""
 
 #: main/templates/blog.html:48
 msgid "We are getting ready, don't miss it!"
-msgstr "Nos estamos preparando. ¡No te lo pierdas!"
+msgstr ""
 
 #: main/templates/blog.html:52
 msgid "Topics to be discussed"
-msgstr "Temas a Tratar"
+msgstr ""
 
 #: main/templates/blog.html:56
 msgid "Fundamental Concepts"
-msgstr "Conceptos Fundamentales"
+msgstr ""
 
 #: main/templates/blog.html:60
 msgid "Big data and data analytics technologies"
-msgstr "Tecnologías de big data y analítica de datos"
+msgstr ""
 
 #: main/templates/blog.html:64
 msgid "Digital transformation"
-msgstr "Transformación digital"
+msgstr ""
 
 #: main/templates/blog.html:68
 msgid "Corporate environmental footprint management"
-msgstr "Gestión de la huella corporativa"
+msgstr ""
 
 #: main/templates/blog.html:77
 msgid "Days"
-msgstr "Días"
+msgstr ""
 
 #: main/templates/blog.html:81
 msgid "Hours"
-msgstr "Horas"
+msgstr ""
 
 #: main/templates/blog.html:85
 msgid "Minutes"
-msgstr "Minutos"
+msgstr ""
 
 #: main/templates/blog.html:89
 msgid "Seconds"
-msgstr "Segundos"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:4
 #: main/templates/carbon_footprint.html:10 main/templates/home.html:82
 #: main/templates/home.html:85 main/templates/home.html:97
 #: main/templates/home.html:114
 msgid "Carbon Footprint"
-msgstr "Huella de Carbono"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:17
 msgid ""
@@ -406,19 +401,11 @@ msgid ""
 "several functionalities:\n"
 "          "
 msgstr ""
-"\n"
-"La huella de carbono es una medida del total de emisiones de gases de efecto "
-"invernadero (GEI), expresada en equivalentes de dióxido de carbono (CO2e), "
-"que se producen directa o indirectamente como resultado de las actividades "
-"de una organización, producto o servicio.\n"
-"En el contexto empresarial, la medición de la huella de carbono tiene varias "
-"funcionalidades:\n"
-"          "
 
 #: main/templates/carbon_footprint.html:28
 #: main/templates/plastic_footprint.html:29
 msgid "Identification of impacts"
-msgstr "Identificación de impactos"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:30
 msgid ""
@@ -429,15 +416,11 @@ msgid ""
 "and opportunities for reduction.\n"
 "          "
 msgstr ""
-"\n"
-"La medición de la huella de carbono ayuda a una empresa a identificar los "
-"impactos ambientales que sus operaciones tienen en términos de emisiones de "
-"GEI, permitiendo identificar áreas de mejora y oportunidades de reducción. "
 
 #: main/templates/carbon_footprint.html:38
 #: main/templates/plastic_footprint.html:39
 msgid "Risk management"
-msgstr "Gestión de riesgos"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:40
 msgid ""
@@ -447,15 +430,11 @@ msgid ""
 "            societal expectations regarding sustainability.\n"
 "          "
 msgstr ""
-"\n"
-"La huella de carbono también ayuda a una empresa a gestionar riesgos "
-"relacionados con la regulación ambiental y las expectativas de los clientes "
-"y la sociedad en cuanto a la sostenibilidad. "
 
 #: main/templates/carbon_footprint.html:48
 #: main/templates/plastic_footprint.html:49
 msgid "Cost savings"
-msgstr "Ahorro de costos"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:50
 msgid ""
@@ -465,15 +444,11 @@ msgid ""
 "            resources.\n"
 "          "
 msgstr ""
-"\n"
-"La identificación de oportunidades de reducción de emisiones de GEI puede "
-"ayudar a una empresa a ahorrar costos en términos de energía y otros "
-"recursos. "
 
 #: main/templates/carbon_footprint.html:58
 #: main/templates/plastic_footprint.html:59
 msgid "Competitive differentiation"
-msgstr "Diferenciación competitiva"
+msgstr ""
 
 #: main/templates/carbon_footprint.html:60
 msgid ""
@@ -490,18 +465,10 @@ msgid ""
 "            differentiation.\n"
 "          "
 msgstr ""
-"\n"
-"La medición y reducción de la huella de carbono puede ayudar a una empresa a "
-"diferenciarse de sus competidores al demostrar su compromiso con la "
-"sostenibilidad y la responsabilidad social.\n"
-"En resumen, la medición de la huella de carbono es una herramienta "
-"importante para la gestión ambiental y la sostenibilidad de una empresa, "
-"permitiendo la identificación de impactos, la gestión de riesgos, el ahorro "
-"de costos y la diferenciación competitiva."
 
 #: main/templates/company.html:4
 msgid "Company"
-msgstr "Empresa"
+msgstr ""
 
 #: main/templates/company.html:11
 msgid ""
@@ -511,14 +478,10 @@ msgid ""
 "            protect our home.\"\n"
 "          "
 msgstr ""
-"\n"
-"Cuantificarla nos ayuda a ser conscientes de nuestro impacto y a tomar "
-"medidas concretas para vivir de manera más sostenible y proteger nuestro "
-"hogar."
 
 #: main/templates/company.html:22
 msgid "About us"
-msgstr "Sobre Nosotros"
+msgstr ""
 
 #: main/templates/company.html:24
 msgid ""
@@ -530,19 +493,14 @@ msgid ""
 "          (suppliers, customers, investors, government and others).\n"
 "        "
 msgstr ""
-"\n"
-"Somos una Empresa que cuantificamos las huellas corporativas ( Huella de "
-"Carbono,Hídrica,Plástica), los que sirven de base para la comunicación del "
-"desempeño de la empresa frente al cambio climático con todos los grupos de "
-"interés (proveedores, clientes, inversionistas, gobierno y otros)."
 
 #: main/templates/company.html:36
 msgid "Our Strategies"
-msgstr "Nuestras Estrategias"
+msgstr ""
 
 #: main/templates/company.html:40
 msgid "MISSION"
-msgstr "MISIÓN"
+msgstr ""
 
 #: main/templates/company.html:42
 msgid ""
@@ -551,13 +509,10 @@ msgid ""
 "which are Carbon, Water and Plastic Footprint.\n"
 "              "
 msgstr ""
-"\n"
-"Brindamos soluciones para mitigar la huella corporativa que son Huella de "
-"Carbono, Hídrica y Plástica."
 
 #: main/templates/company.html:48
 msgid "VISION"
-msgstr "VISIÓN"
+msgstr ""
 
 #: main/templates/company.html:50
 msgid ""
@@ -567,9 +522,6 @@ msgid ""
 "                corporate level.\n"
 "              "
 msgstr ""
-"\n"
-"En el año 2030 seremos reconocidos en latino-américa por nuestro impacto en "
-"mitigar el cambio climático a nivel corporativo."
 
 #: main/templates/company.html:62
 msgid ""
@@ -579,13 +531,10 @@ msgid ""
 "          reduce the carbon footprint of the economy.\n"
 "        "
 msgstr ""
-"\n"
-"Con Pl4N3T ayuda en la transición hacia una economía baja en carbono a "
-"través de herramientas soste"
 
 #: main/templates/company.html:71
 msgid "Our History"
-msgstr "Nuestra Historia"
+msgstr ""
 
 #: main/templates/company.html:75
 msgid ""
@@ -599,12 +548,6 @@ msgid ""
 "              sequestration.\n"
 "            "
 msgstr ""
-"\n"
-"Pl4n3t es una marca que surgió en el año 2021 a raíz de las reformas "
-"tributarias que abrieron una oportunidad para generar ingresos en el área "
-"ambiental. Fue  entonces  cuando comenzaron  a surgir proyectos "
-"medioambientales  en colaboración  con organismos internacionales, enfocados "
-"en la cuantificación de remociones, específicamente la captura de carbono."
 
 #: main/templates/company.html:83
 msgid ""
@@ -625,18 +568,6 @@ msgid ""
 "companies.\n"
 "            "
 msgstr ""
-"\n"
-"Con el objetivo de la necesidad de cumplir con los acuerdos del Tratado de "
-"Montreal y la normatividad colombiana e internacional, que exigen la "
-"cuantificación de emisiones y la compensación a través de certificados de "
-"carbono verificados. Para ampliar su mercado, Amanecer en el palmar por "
-"medio la marca Pl4n3t decidió participar en  el año 2022, en un proyecto de "
-"innovación llamado “SENAInnova Productividad para las Empresas 2.0” apoyado "
-"por SENAInnova - Productividad para las empresas que es un proyecto entre el "
-"SENA y Colombia Productiva, que es una entidad del  Ministerio de Industria "
-"y Turismo. Con el objetivo de formular un proyecto que permitiera "
-"cuantificar las de emisiones de gases de efecto invernadero  (GEI)  de las "
-"empresas."
 
 #: main/templates/company.html:94
 msgid ""
@@ -652,14 +583,6 @@ msgid ""
 "              Hydric).\n"
 "            "
 msgstr ""
-"\n"
-"En el año 2022, la empresa Amanecer en el Palmar bajo la marca Pl4n3t "
-"comenzó a ofrecer y realizar servicios de cuantificación de emisiones de "
-"gases de efecto invernadero  (GEI) a las empresas, eventos, organizaciones y "
-"productos. Finalmente a mediado de noviembre del año 2022, Amanecer en el "
-"Palmar fueron seleccionados en el proyecto de innovación, lo que llevó a la "
-"creación de una plataforma tecnológica de cuantificación de la huella "
-"corporativa ( Carbono, Plástica y Hidrica)."
 
 #: main/templates/company.html:103
 msgid ""
@@ -674,21 +597,14 @@ msgid ""
 "              commitment to sustainability and environmental care.\n"
 "            "
 msgstr ""
-"\n"
-"En resumen, Pl4n3t es una marca que nace de la empresa Amanecer en el "
-"palmar, con el objetivo de aprovechar las oportunidades del mercado "
-"ambiental, con un enfoque en la cuantificación de emisiones de GEI. Su "
-"colaboración con Amanecer en el Palmar y su plataforma tecnológica "
-"demuestran su compromiso con la sostenibilidad y el cuidado del medio "
-"ambiente."
 
 #: main/templates/company.html:117 main/templates/home.html:160
 msgid "Support us"
-msgstr "Nos Apoyan"
+msgstr ""
 
 #: main/templates/company.html:122
 msgid "MinComercio"
-msgstr "MinComercio"
+msgstr ""
 
 #: main/templates/company.html:124
 msgid ""
@@ -701,15 +617,10 @@ msgid ""
 "                generation of greater added value.\n"
 "              "
 msgstr ""
-"\n"
-"Apoya la actividad empresarial, productora de bienes, servicios y "
-"tecnología, así como la gestión turística de las regiones del país para "
-"mejorar su competitividad y su sostenibilidad e incentivar la generación de "
-"mayor valor agregado. "
 
 #: main/templates/company.html:133
 msgid "Colombia Productiva"
-msgstr "Colombia Productiva"
+msgstr ""
 
 #: main/templates/company.html:135
 msgid ""
@@ -728,21 +639,10 @@ msgid ""
 "                for entry into international markets, among others.\n"
 "              "
 msgstr ""
-"\n"
-"Apoya a las empresas del país a través de convocatorias y programas que les "
-"permite mejorar en indicadores que son importantes para aumentar la "
-"eficiencia en los procesos productivos como calidad, capital humano y "
-"productividad.\n"
-"Otros servicios que ofrecen están asistencia técnica, intervención y "
-"acompañamiento en las empresas para que adopten metodologías internacionales "
-"de mejora productiva, programas de capacitación especializados en alianza "
-"con empresas e instituciones educativas, orientación y financiamiento para "
-"la obtención de certificaciones como requisito para la entrada a mercados "
-"internacionales, entre otros"
 
 #: main/templates/company.html:147
 msgid "SENA"
-msgstr "SENA"
+msgstr ""
 
 #: main/templates/company.html:149
 msgid ""
@@ -756,12 +656,6 @@ msgid ""
 "                development of the country.\n"
 "              "
 msgstr ""
-"\n"
-"Está encargado de cumplir la función que le corresponde al Estado de "
-"invertir en el desarrollo social y técnico de los trabajadores colombianos, "
-"ofreciendo y ejecutando la formación profesional integral, para la "
-"incorporación y el desarrollo de las personas en actividades productivas que "
-"contribuyan al desarrollo social, económico y tecnológico del país. "
 
 #: main/templates/company.html:158
 msgid "Cataruben"
@@ -785,74 +679,64 @@ msgid ""
 "climate change mitigation projects. .\n"
 "              "
 msgstr ""
-"\n"
-"Desarrolla soluciones climáticas basadas en la naturaleza para conservar la "
-"biodiversidad, el agua y los ecosistemas estratégicos en esta región. "
-"Cataruben también cuenta con un Departamento de Investigación, Desarrollo "
-"Tecnológico e Innovación (I+D+i) que genera conocimiento sobre "
-"compensaciones de carbono.Sus Principales servicios son el desarrollo de "
-"consultorías especializadas en mitigación del cambio climático, la "
-"cuantificación de reducciones y/o remociones de GEI en el sector AFOLU y el "
-"desarrollo de soluciones tecnológicas orientadas a mejorar los procesos del "
-"ciclo de vida de los proyectos de mitigación del cambio climático."
 
 #: main/templates/contact_us.html:4
 msgid "Contact Us"
-msgstr "Comunícate con nosotros"
+msgstr ""
 
 #: main/templates/contact_us.html:10
 msgid "CONTACT US"
-msgstr "COMUNÍCATE CON NOSOTROS"
+msgstr ""
 
 #: main/templates/contact_us.html:13
 msgid "Find more ways to help!"
-msgstr "¡Encuentra más formas de ayudar!"
+msgstr ""
 
 #: main/templates/contact_us.html:15 main/templates/includes/footer.html:8
 msgid "Address"
-msgstr "Dirección"
+msgstr ""
 
 #: main/templates/contact_us.html:16 main/templates/includes/footer.html:9
 msgid "Phones"
-msgstr "Teléfonos"
+msgstr ""
 
 #: main/templates/contact_us.html:17 main/templates/includes/footer.html:10
 msgid "Email"
-msgstr "Correo Electrónico"
+msgstr ""
 
 #: main/templates/contact_us.html:26
 msgid "Send us a message"
-msgstr "Envíanos un mensaje"
+msgstr ""
 
 #: main/templates/contact_us.html:31
 msgid "Quantify now"
-msgstr "Cuantifique ya"
+msgstr ""
 
 #: main/templates/contact_us.html:34 main/templates/contact_us.html:35
 #: main/templates/home.html:138 main/templates/home.html:139
 #: main/templates/includes/webinar.html:42
 #: main/templates/includes/webinar.html:48
 msgid "email"
-msgstr "Dirección de correo electrónico"
+msgstr ""
 
 #: main/templates/contact_us.html:36 main/templates/home.html:140
 #: main/templates/includes/webinar.html:58
 msgid "Register"
-msgstr "Inscribirse"
+msgstr ""
 
 #: main/templates/footprint_levels.html:4
 msgid "Carbon Level"
-msgstr "Huella de Carbono"
+msgstr ""
 
 #: main/templates/footprint_levels.html:10
 msgid "Different Levels of Carbon Footprints"
-msgstr "Distintos Niveles de Huellas de Carbono"
+msgstr ""
 
 #: main/templates/footprint_levels.html:16
 #: main/templates/footprint_levels.html:19 main/templates/home.html:29
 #: main/templates/home.html:30
 msgid "Corporate Footprint"
-msgstr "Huella Corporativa"
+msgstr ""
 
 #: main/templates/footprint_levels.html:21
 msgid ""
@@ -868,14 +752,6 @@ msgid ""
 "              employee to their workplace).\n"
 "            "
 msgstr ""
-"\n"
-"La huella de carbono corporativo es una medida de la cantidad de gases de "
-"efecto invernadero que una organización emite a la atmósfera como resultado "
-"de sus operaciones comerciales. Esto incluye emisiones directas generadas "
-"por la empresa (como la quema de combustibles fósiles en vehículos o "
-"equipos) e indirectas (como la generación de electricidad consumida por la "
-"empresa y la producción y transporte de materiales o empleado a su sitio de "
-"trabajo ). "
 
 #: main/templates/footprint_levels.html:31
 msgid ""
@@ -888,26 +764,20 @@ msgid ""
 "mitigation.\n"
 "            "
 msgstr ""
-"\n"
-"Medir la huella de carbono corporativo puede ayudar a las empresas a "
-"identificar áreas de mejora y establecer objetivos para reducir sus "
-"emisiones de gases de efecto invernadero, con el fin de mitigar su impacto "
-"ambiental y cumplir con regulaciones y requisitos legales relacionados con "
-"la mitigación del cambio climático. "
 
 #: main/templates/footprint_levels.html:38
 #: main/templates/footprint_levels.html:65
 #: main/templates/footprint_levels.html:93
 msgid "measure your footprint"
-msgstr "Mida su Huella"
+msgstr ""
 
 #: main/templates/footprint_levels.html:45 main/templates/home.html:42
 msgid "Event Footprint"
-msgstr "Huella Evento"
+msgstr ""
 
 #: main/templates/footprint_levels.html:48 main/templates/home.html:43
 msgid "Events Footprint"
-msgstr "Huella Eventos"
+msgstr ""
 
 #: main/templates/footprint_levels.html:50
 msgid ""
@@ -922,14 +792,6 @@ msgid ""
 "during the event.\n"
 "            "
 msgstr ""
-"\n"
-"La huella de carbono de eventos se refiere a la cantidad de gases de efecto "
-"invernadero emitidos a la atmósfera durante la realización de un evento, "
-"como una conferencia, concierto, festival o reunión corporativa. La huella "
-"de carbono de un evento se compone de varias fuentes de emisiones, "
-"incluyendo la energía utilizada para la iluminación y la climatización, el "
-"transporte de los asistentes y la producción de los materiales utilizados "
-"durante el evento. "
 
 #: main/templates/footprint_levels.html:59
 msgid ""
@@ -941,17 +803,12 @@ msgid ""
 "              and promote sustainability.\n"
 "            "
 msgstr ""
-"\n"
-"Medir la huella de carbono de un evento puede ayudar a identificar áreas de "
-"mejora y establecer planes de acción para reducir las emisiones de gases de "
-"efecto invernadero, lo que puede contribuir a mitigar el impacto ambiental "
-"del evento y promover la sostenibilidad."
 
 #: main/templates/footprint_levels.html:72
 #: main/templates/footprint_levels.html:75 main/templates/home.html:57
 #: main/templates/home.html:58
 msgid "Product Footprint"
-msgstr "Huella Producto"
+msgstr ""
 
 #: main/templates/footprint_levels.html:77
 msgid ""
@@ -967,14 +824,6 @@ msgid ""
 "              with its final disposal.\n"
 "            "
 msgstr ""
-"\n"
-"La huella de carbono de productos se refiere a la cantidad de gases de "
-"efecto invernadero emitidos durante el ciclo de vida de un producto, desde "
-"su extracción, fabricación, distribución, uso y disposición final. Esta "
-"huella incluye emisiones directas e indirectas de gases de efecto "
-"invernadero, como la energía utilizada para producir y transportar el "
-"producto, las emisiones generadas por la fabricación y el uso del producto y "
-"las emisiones asociadas con su disposición final. "
 
 #: main/templates/footprint_levels.html:87
 msgid ""
@@ -986,31 +835,26 @@ msgid ""
 "              with its production and use.\n"
 "            "
 msgstr ""
-"\n"
-"Medir la huella de carbono de un producto puede ayudar a las empresas y "
-"consumidores a comprender mejor su impacto ambiental y tomar decisiones "
-"informadas sobre cómo reducir las emisiones de gases de efecto invernadero "
-"asociadas con su producción y uso."
 
 #: main/templates/home.html:4 main/templates/includes/header.html:19
 msgid "Home"
-msgstr "Inicio"
+msgstr ""
 
 #: main/templates/home.html:11
 msgid "WITH PL4N3T IT IS VERY EASY TO QUANTIFY YOUR FOOTPRINT..."
-msgstr "CON PL4N3T ES MUY FÁCIL CUANTIFICAR TU HUELLA..."
+msgstr ""
 
 #: main/templates/home.html:12
 msgid "Carbon, Water and Plastic"
-msgstr "De Carbono, Hídrica y Plástica"
+msgstr ""
 
 #: main/templates/home.html:16
 msgid "Quantify now!"
-msgstr "¡Gestiona Ya!"
+msgstr ""
 
 #: main/templates/home.html:22
 msgid "YOU CAN MANAGE FOOTPRINTS AT DIFFERENT LEVELS"
-msgstr "PUEDES GESTIONAR HUELLAS A DISTINTOS NIVELES"
+msgstr ""
 
 #: main/templates/home.html:32
 msgid ""
@@ -1021,16 +865,12 @@ msgid ""
 "emitted.\n"
 "            "
 msgstr ""
-"\n"
-"Mide el impacto ambiental asociado a la huella de carbono de las actividades "
-"empresariales de la cuantificación de los inventarios de Gases de Efecto "
-"Invernadero (GEI) emitidos."
 
 #: main/templates/home.html:38 main/templates/home.html:52
 #: main/templates/home.html:67 main/templates/home.html:92
 #: main/templates/home.html:109 main/templates/home.html:126
 msgid "More"
-msgstr "Más"
+msgstr ""
 
 #: main/templates/home.html:45
 msgid ""
@@ -1042,10 +882,6 @@ msgid ""
 "exhibition in its environment.\n"
 "              "
 msgstr ""
-"\n"
-"Cuantifica el impacto ambiental asociado a la huella de carbono en la "
-"realización de un evento desde él antes, durante y después,  como una "
-"conferencia, un concierto, un foro o una exhibición en su entorno."
 
 #: main/templates/home.html:60
 msgid ""
@@ -1057,14 +893,10 @@ msgid ""
 "              the product are considered.\n"
 "            "
 msgstr ""
-"\n"
-"Calcula el impacto ambiental a la huella de carbono en todo su ciclo de vida "
-"(ACV) del proceso productivo. Se consideran factores como recepción de "
-"materias primas, producción, transporte y entrega del producto. "
 
 #: main/templates/home.html:75
 msgid "YOU CAN MANAGE DIFFERENT TYPES OF FOOTPRINTS"
-msgstr "PUEDES GESTIONAR DISTINTOS TIPOS DE HUELLAS"
+msgstr ""
 
 #: main/templates/home.html:87
 msgid ""
@@ -1074,14 +906,11 @@ msgid ""
 "generated in a given time.\n"
 "            "
 msgstr ""
-"La huella de carbono es una medida del impacto ambiental de una actividad o "
-"producto, expresada en CO2 en términos de las emisiones de gases de efecto "
-"invernadero - GEI generadas en un tiempo determinado."
 
 #: main/templates/home.html:100 main/templates/plastic_footprint.html:4
 #: main/templates/plastic_footprint.html:10
 msgid "Plastic Footprint"
-msgstr "Huella Plástica"
+msgstr ""
 
 #: main/templates/home.html:102
 msgid ""
@@ -1093,16 +922,11 @@ msgid ""
 "              end-of-life of plastic.\n"
 "            "
 msgstr ""
-"\n"
-"La huella plástica es una medida del impacto ambiental asociado en Kg con la "
-"producción, uso y gestión de los residuos de plástico, incluyendo la "
-"extracción de materias primas, la producción, el transporte, el uso y el fin "
-"de vida del mismo. "
 
 #: main/templates/home.html:117 main/templates/water_footprint.html:4
 #: main/templates/water_footprint.html:10
 msgid "Water Footprint"
-msgstr "Huella Hídrica"
+msgstr ""
 
 #: main/templates/home.html:119
 msgid ""
@@ -1114,23 +938,18 @@ msgid ""
 "              includes water used in agriculture, industry and households.\n"
 "            "
 msgstr ""
-"\n"
-"La huella hídrica es una medida del impacto ambiental asociado con el uso "
-"del agua, expresado en términos de la cantidad total de agua en metros "
-"cúbicos, utilizada para producir un producto o realizar una actividad. "
-"Incluye el agua utilizada en la agricultura, la industria y el hogar. "
 
 #: main/templates/home.html:132
 msgid "To whom is Pl4n3t directed?"
-msgstr "¿A quién se dirige Pl4n3t?"
+msgstr ""
 
 #: main/templates/home.html:133
 msgid "To any organization that wants to focus on sustainability."
-msgstr "A cualquier organización que quiera orientarse a la sostenibilidad."
+msgstr ""
 
 #: main/templates/home.html:148
 msgid "Trust Us"
-msgstr "Confían en Nosotros"
+msgstr ""
 
 #: main/templates/includes/footer.html:13
 msgid "Copyright"
@@ -1138,47 +957,47 @@ msgstr ""
 
 #: main/templates/includes/footer.html:14
 msgid "All rights reserved"
-msgstr "Todos los derechos reservados"
+msgstr ""
 
 #: main/templates/includes/footer.html:33
 msgid "Powered by"
-msgstr "Desarrollado por"
+msgstr ""
 
 #: main/templates/includes/footer.html:38
 msgid "Privacy policy"
-msgstr "Política de Privacidad"
+msgstr ""
 
 #: main/templates/includes/header.html:23
 msgid "The Company"
-msgstr "La Empresa"
+msgstr ""
 
 #: main/templates/includes/header.html:29
 msgid "Quantify"
-msgstr "Cuantifique"
+msgstr ""
 
 #: main/templates/includes/header.html:32 main/templates/why_quantify.html:4
 msgid "Why Quantify"
-msgstr "¿Por que Cuantificar?"
+msgstr ""
 
 #: main/templates/includes/header.html:33
 msgid "Footprint Levels"
-msgstr "Niveles de Huellas"
+msgstr ""
 
 #: main/templates/includes/header.html:37
 msgid "Carbon footprint"
-msgstr "Huella de Carbono"
+msgstr ""
 
 #: main/templates/includes/header.html:38
 msgid "Plastic footprint"
-msgstr "Huella Plástica"
+msgstr ""
 
 #: main/templates/includes/header.html:40
 msgid "Water footprint"
-msgstr "Huella Hídrica"
+msgstr ""
 
 #: main/templates/includes/header.html:45
 msgid "Contact us"
-msgstr "Comunícate con nosotros"
+msgstr ""
 
 #: main/templates/includes/webinar.html:32
 msgid ""
@@ -1188,34 +1007,30 @@ msgid ""
 "    sustainability\n"
 "  "
 msgstr ""
-"\n"
-"PRÓXIMAMENTE: Seminario web sobre herramientas tecnológicas para la "
-"digitalización de procesos y la sostenibilidad ambiental.\n"
-"  "
 
 #: main/templates/includes/webinar.html:38
 msgid "Participate in the Webinar"
-msgstr "Participar al Seminario Virtual"
+msgstr ""
 
 #: main/templates/includes/webinar.html:69
 msgid "Company Name"
-msgstr "Nombre de la Empresa"
+msgstr ""
 
 #: main/templates/includes/webinar.html:73
 msgid "If you represent a company, please enter its name here."
-msgstr "Si representas a una empresa, por favor introduce su nombre aquí."
+msgstr ""
 
 #: main/templates/includes/webinar.html:75
 msgid "Company Name (optional)"
-msgstr "Nombre de la empresa (opcional)"
+msgstr ""
 
 #: main/templates/includes/webinar.html:78
 msgid "Close"
-msgstr "Cerrar"
+msgstr ""
 
 #: main/templates/includes/webinar.html:79
 msgid "Submit"
-msgstr "Enviar"
+msgstr ""
 
 #: main/templates/plastic_footprint.html:17
 msgid ""
@@ -1232,14 +1047,6 @@ msgid ""
 "include:\n"
 "          "
 msgstr ""
-"\n"
-"La huella de plástico es una herramienta que se utiliza para cuantificar la "
-"cantidad de plástico que una empresa utiliza y la cantidad de residuos "
-"plásticos que genera a lo largo de su cadena de suministro y operaciones. "
-"Esta huella permite a las empresas identificar sus impactos ambientales y "
-"tomar medidas para reducir su uso de plástico y gestionar mejor los residuos "
-"plásticos.\n"
-"Las funcionalidades de la huella de plástico para una empresa incluyen: "
 
 #: main/templates/plastic_footprint.html:31
 msgid ""
@@ -1249,9 +1056,6 @@ msgid ""
 "            generated.\n"
 "          "
 msgstr ""
-"\n"
-"Identificación de los puntos críticos en la cadena de suministro y "
-"operaciones donde se utiliza el plástico y se generan residuos."
 
 #: main/templates/plastic_footprint.html:41
 msgid ""
@@ -1262,10 +1066,6 @@ msgid ""
 "water and soil pollution.\n"
 "          "
 msgstr ""
-"\n"
-"Evaluación del impacto ambiental de la empresa en términos de emisiones de "
-"gases de efecto invernadero, consumo de energía y uso de recursos naturales, "
-"así como el impacto en la contaminación del aire, agua y suelo."
 
 #: main/templates/plastic_footprint.html:51
 msgid ""
@@ -1275,10 +1075,6 @@ msgid ""
 "            improve the company's efficiency and profitability.\n"
 "          "
 msgstr ""
-"\n"
-"Identificación de oportunidades para reducir el uso de plástico y mejorar la "
-"gestión de los residuos plásticos, lo que puede mejorar la eficiencia y la "
-"rentabilidad de la empresa"
 
 #: main/templates/plastic_footprint.html:61
 msgid ""
@@ -1297,15 +1093,6 @@ msgid ""
 "their impact on the environment.\n"
 "          "
 msgstr ""
-"\n"
-"Desarrollo de estrategias de sostenibilidad y responsabilidad social que "
-"permitan a la empresa mejorar su imagen y reputación, atraer a los "
-"consumidores preocupados por el medio ambiente y aumentar su competitividad "
-"en el mercado.En resumen, la huella de plástico es una herramienta valiosa "
-"para las empresas que quieren mejorar su sostenibilidad y reducir su impacto "
-"ambiental. Al cuantificar su uso de plástico y sus residuos, las empresas "
-"pueden identificar oportunidades para mejorar su gestión de los recursos y "
-"reducir su impacto en el medio ambiente."
 
 #: main/templates/water_footprint.html:17
 msgid ""
@@ -1321,17 +1108,10 @@ msgid ""
 "include:\n"
 "          "
 msgstr ""
-"\n"
-"La huella hídrica es una medida del volumen total de agua que se utiliza en "
-"la producción de bienes o servicios y su impacto en los recursos hídricos "
-"del planeta. Al igual que la huella de carbono y la huella de plástico, la "
-"huella hídrica se utiliza para evaluar y reducir el impacto ambiental de una "
-"empresa.Las funcionalidades de la huella hídrica para una empresa pueden "
-"incluir:"
 
 #: main/templates/water_footprint.html:28
 msgid "Risk identification"
-msgstr "Identificación de riesgos"
+msgstr ""
 
 #: main/templates/water_footprint.html:30
 msgid ""
@@ -1342,15 +1122,10 @@ msgid ""
 "regarding water resource management.\n"
 "          "
 msgstr ""
-"\n"
-"La medición de la huella hídrica puede ayudar a una empresa a identificar "
-"las áreas donde existe un mayor riesgo de escasez de agua, lo que puede ser "
-"útil para tomar decisiones estratégicas en cuanto a la gestión de los "
-"recursos hídricos."
 
 #: main/templates/water_footprint.html:38
 msgid "Cost reduction"
-msgstr "Reducción de costos"
+msgstr ""
 
 #: main/templates/water_footprint.html:40
 msgid ""
@@ -1360,14 +1135,10 @@ msgid ""
 "            and the energy required to treat and deliver water.\n"
 "          "
 msgstr ""
-"\n"
-"La reducción del consumo de agua puede resultar en una reducción de costos "
-"para la empresa, ya que se reduce la necesidad de agua potable y la energía "
-"necesaria para tratar y suministrar agua."
 
 #: main/templates/water_footprint.html:48
 msgid "Improved corporate image"
-msgstr "Mejora de la imagen corporativa"
+msgstr ""
 
 #: main/templates/water_footprint.html:50
 msgid ""
@@ -1379,15 +1150,10 @@ msgid ""
 "            resources.\n"
 "          "
 msgstr ""
-"\n"
-"La medición y reducción de la huella hídrica puede ayudar a una empresa a "
-"mejorar su imagen corporativa y su reputación en el mercado, demostrando su "
-"compromiso con la sostenibilidad y la gestión responsable de los recursos "
-"naturales."
 
 #: main/templates/water_footprint.html:59 main/templates/why_quantify.html:48
 msgid "Regulatory compliance"
-msgstr "Cumplimiento de regulaciones"
+msgstr ""
 
 #: main/templates/water_footprint.html:61
 msgid ""
@@ -1400,24 +1166,18 @@ msgid ""
 "ambiente y mejorar su sostenibilidad.\n"
 "          "
 msgstr ""
-"\n"
-"En resumen, la huella hídrica es una medida del uso de agua de una empresa o "
-"actividad y su impacto en el medio ambiente. Las empresas pueden utilizar la "
-"huella hídrica para identificar áreas de uso excesivo de agua y tomar "
-"medidas para reducir su impacto en el medio ambiente y mejorar su "
-"sostenibilidad."
 
 #: main/templates/why_quantify.html:9
 msgid "Why does a company need to quantify its corporate footprint?"
-msgstr "¿Por qué una empresa necesita cuantificar su huella corporativa?"
+msgstr ""
 
 #: main/templates/why_quantify.html:12
 msgid "Companies may quantify for several reasons:"
-msgstr "Las empresas pueden cuantificar por varias razones:"
+msgstr ""
 
 #: main/templates/why_quantify.html:18
 msgid "Social responsibility"
-msgstr "Responsabilidad social"
+msgstr ""
 
 #: main/templates/why_quantify.html:20
 msgid ""
@@ -1427,13 +1187,10 @@ msgid ""
 "            responsible.\n"
 "          "
 msgstr ""
-"\n"
-"Al conocer su impacto ambiental, las empresas pueden tomar medidas para "
-"minimizarlo y ser más responsables socialmente."
 
 #: main/templates/why_quantify.html:28
 msgid "Improved efficiency"
-msgstr " Mejora de la eficiencia"
+msgstr ""
 
 #: main/templates/why_quantify.html:30
 msgid ""
@@ -1443,22 +1200,12 @@ msgid ""
 "            more efficient in their use of resources.\n"
 "          "
 msgstr ""
-"\n"
-"Al conocer su huella corporativa, las empresas pueden identificar áreas de "
-"mejora y tomar medidas para ser más eficientes en el uso de recursos."
 
 #: main/templates/why_quantify.html:38
 msgid "Competitiveness"
 msgstr ""
 
 #: main/templates/why_quantify.html:40
-#, fuzzy
-#| msgid ""
-#| "Competitividad\n"
-#| "            Companies that demonstrate sustainability and reduced "
-#| "environmental impact are more attractive to consumers\n"
-#| "            and may have a competitive advantage in the marketplace.\n"
-#| "          "
 msgid ""
 "\n"
 "            Companies that demonstrate sustainability and reduced "
@@ -1466,9 +1213,6 @@ msgid ""
 "            and may have a competitive advantage in the marketplace.\n"
 "          "
 msgstr ""
-"Las empresas que demuestran ser sostenibles y tener un impacto ambiental "
-"reducido son más atractivas para los consumidores y pueden tener una ventaja "
-"competitiva en el mercado"
 
 #: main/templates/why_quantify.html:50
 msgid ""
@@ -1484,25 +1228,11 @@ msgid ""
 "            environmental regulations and want to become carbon neutral.\n"
 "          "
 msgstr ""
-"\n"
-"En muchos países, las empresas están obligadas a cumplir con regulaciones "
-"ambientales, y cuantificar su huella corporativa es un paso importante para "
-"cumplir con ellas.En resumen, cuantificar su huella corporativa (carbono, "
-"hídrica y plástica) es una herramienta clave para que las empresas entiendan "
-"su impacto ambiental, mejoren su eficiencia, responsabilidad social, cumplan "
-"con regulaciones ambientales y quieran certificarse carbono neutro."
 
 #: main/views.py:58
 msgid "This email is already registered."
-msgstr "Este correo electrónico ya está registrado."
+msgstr ""
 
 #: main/views.py:61
 msgid "You have been successfully registered."
-msgstr "Te has registrado exitosamente."
-
-#~ msgid "Blog"
-#~ msgstr "Blog"
-
-#~| msgid "Carbon footprint"
-#~ msgid "Producto Footprint"
-#~ msgstr "Huella Productos"
+msgstr ""
