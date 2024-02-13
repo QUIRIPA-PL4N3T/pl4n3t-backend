@@ -192,7 +192,8 @@ class GreenhouseGasEmission(models.Model):
         _('Cantidad Máxima Permitida'), default=0)
 
     class Meta:
-        ordering = ('greenhouse_gas__name',)
+        ordering = ('emission_factor__source_type', 'emission_factor', 'emission_factor__source_type',
+                    'greenhouse_gas__name',)
         verbose_name = _('Emisión de Gas de Efecto Invernadero')
         verbose_name_plural = 'Emisiones de Gases de Efecto Invernadero'
 

@@ -23,6 +23,8 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     python-psycopg2 \
     nodejs \
     wkhtmltopdf \
+    # Weasyprint requirements \
+    libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup workdir

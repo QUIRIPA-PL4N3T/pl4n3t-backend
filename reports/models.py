@@ -42,6 +42,9 @@ class ReportTemplate(models.Model):
     # Report Fields order
     fields_ordered = models.CharField('Secciones del Reporte', max_length=1024, blank=True)
 
+    def content_list(self) -> list:
+        return self.fields_ordered.split(',')
+
     def get_field_display_name(self, field_name):
         try:
             field = self._meta.get_field(field_name)

@@ -44,6 +44,7 @@ urlpatterns = [
     path('documentation/api/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('documentation/api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
     path('account/', include('accounts.urls')),
+    path('reports/', include('reports.urls')),
 ]
 
 if not settings.IS_PRODUCTION:

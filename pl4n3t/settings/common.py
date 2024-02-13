@@ -281,6 +281,8 @@ PL4N3T_APPLICATION = 'https://planet-frontend.dev.altix.co/'
 
 DOCUMENTS_UPLOAD_TO = 'documents'
 
+WEASYPRINT_BASEURL = '/'
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
