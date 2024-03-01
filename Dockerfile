@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 
 # Install system packages required by Wagtail and Django.
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+RUN apt-get update --yes --allow-releaseinfo-change --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
     postgis \
     gdal-bin \
