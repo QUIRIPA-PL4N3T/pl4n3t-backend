@@ -260,7 +260,7 @@ class CustomObtainTokenPairWithView(TokenObtainPairView):
 
 @extend_schema(tags=['Accounts'])
 class GoogleLoginView(APIView):
-
+    permission_classes = (permissions.AllowAny,)
     @extend_schema(
         description=_("Iniciar sesión con una cuenta de google"),
         request=GoogleAccountSerializer,
