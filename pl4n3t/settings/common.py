@@ -285,7 +285,7 @@ WEASYPRINT_BASEURL = '/'
 
 FIREBASE_CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials', 'pl4n3t-firebase-key.json')
 GOOGLE_CLIENT_ID = os.environ.setdefault('GOOGLE_CLIENT_ID', '')
-
+MERCADOPAGO_ACCESS_TOKEN = os.environ.setdefault('MERCADOPAGO_ACCESS_TOKEN', '')
 
 CKEDITOR_CONFIGS = {
     'default': {

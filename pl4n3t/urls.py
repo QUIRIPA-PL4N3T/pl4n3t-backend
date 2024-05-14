@@ -24,6 +24,7 @@ from companies.urls import api_urls as companies_api_urls
 from emission_source_classifications.urls import api_urls as classifications_api_urls
 from emissions.urls import api_urls as emission_api_urls
 from documents.urls import api_urls as documents_api_urls
+from memberships.urls import api_urls as memberships_api_urls
 
 
 # Create the API namespace and add the API only URLs of the applications
@@ -34,6 +35,7 @@ api_urls = ([
     path('classifications/', include(classifications_api_urls, namespace='classifications')),
     path('emissions/', include(emission_api_urls, namespace='emissions')),
     path('documents/', include(documents_api_urls, namespace='documents')),
+    path('memberships/', include(memberships_api_urls, namespace='memberships')),
 ], 'api')
 
 urlpatterns = [

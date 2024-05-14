@@ -1,0 +1,50 @@
+[
+  {
+    "model": "memberships.Membership",
+    "pk": 1,
+    "fields": {
+      "name": "Membresía Gratis",
+      "membership_type": "FREE",
+      "price": "0.00",
+      "duration": 365,
+      "description": "Esta es una membresía gratuita con características limitadas.",
+      "benefits": "Acceso a características limitadas"
+    }
+  },
+  {
+    "model": "memberships.Membership",
+    "pk": 2,
+    "fields": {
+      "name": "Membresía Básica",
+      "membership_type": "BASIC",
+      "price": "9.99",
+      "duration": 365,
+      "description": "Esta es una membresía básica con más características.",
+      "benefits": "Acceso a características básicas"
+    }
+  },
+  {
+    "model": "memberships.Membership",
+    "pk": 3,
+    "fields": {
+      "name": "Membresía Premium",
+      "membership_type": "PREMIUM",
+      "price": "19.99",
+      "duration": 365,
+      "description": "Esta es una membresía premium con características adicionales.",
+      "benefits": "Acceso a características premium"
+    }
+  },
+  {
+    "model": "memberships.Membership",
+    "pk": 4,
+    "fields": {
+      "name": "Membresía VIP",
+      "membership_type": "VIP",
+      "price": "29.99",
+      "duration": 365,
+      "description": "Esta es una membresía VIP con todas las características.",
+      "benefits": "Acceso a todas las características"
+    }
+  }
+]
