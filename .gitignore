@@ -21,9 +21,11 @@ env/
 temp.py
 media/
 /static/
+/credentials/*.*
 
 assets/webpack_bundles/
 webpack-*-stats.json
 
 !media/.keep
 !static/.keep
+!credentials/.keep

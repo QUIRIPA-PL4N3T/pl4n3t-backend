@@ -1,4 +1,5 @@
 import logging
+from django.conf import settings
 from django.utils.crypto import get_random_string
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from rest_framework import permissions, status, mixins, viewsets, parsers
@@ -12,9 +13,19 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.utils.translation import gettext_lazy as _
-from .models import User
-from .serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
-    LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer
+from accounts.models import User
+from google.oauth2 import id_token as google_id_token
+from google.auth.transport import requests
+from accounts.serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
+    LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer, \
+    GoogleAccountSerializer
+import firebase_admin
+from firebase_admin import auth, credentials
+
+
+cred = credentials.Certificate(settings.FIREBASE_CREDENTIALS_PATH)
+firebase_admin.initialize_app(cred)
+
 
 logger = logging.getLogger(__name__)
 
@@ -246,6 +257,61 @@ class CustomObtainTokenPairWithView(TokenObtainPairView):
     )
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
+
+
+@extend_schema(tags=['Accounts'])
+class GoogleLoginView(APIView):
+    permission_classes = (permissions.AllowAny,)
+    @extend_schema(
+        description=_("Iniciar sesión con una cuenta de google"),
+        request=GoogleAccountSerializer,
+        methods=["post"],
+        responses={200: TokenOutput},
+    )
+    def post(self, request, *args, **kwargs):
+        token = request.data.get('token')
+
+        try:
+            decoded_token = google_id_token.verify_firebase_token(
+                token,
+                requests.Request(),
+                settings.GOOGLE_CLIENT_ID
+            )
+            email = decoded_token['email']
+            username = decoded_token['name']
+
+            user, created = User.objects.get_or_create(
+                email=email,
+                defaults={
+                    'username': username,
+                    'password': User.objects.make_random_password()
+                }
+            )
+
+            if created:
+                user.send_activation_email()
+                return Response(data={
+                    'detail': _(
+                        'Se envió un correo para activar su cuenta, por favor active su cuenta e intente de nuevo')},
+                    status=status.HTTP_200_OK
+                )
+            elif user.is_active:
+                refresh = RefreshToken.for_user(user)
+                access_token = str(refresh.access_token)
+                refresh_token = str(refresh)
+
+                return Response(data={
+                    'access': access_token,
+                    'refresh': refresh_token
+                }, status=status.HTTP_200_OK
+                )
+            else:
+                return Response(data={
+                    'error': _('la cuenta de usuario no se encuentra activa')
+                }, status=status.HTTP_400_BAD_REQUEST
+                )
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @extend_schema(tags=['Accounts'])
