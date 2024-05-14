@@ -279,10 +279,6 @@ class GoogleLoginView(APIView):
             )
             email = decoded_token['email']
             username = decoded_token['name']
-            uid = decoded_token['sub']
-
-            # Todo remove print
-            print(email, username, uid)
 
             user, created = User.objects.get_or_create(
                 email=email,
@@ -292,15 +288,28 @@ class GoogleLoginView(APIView):
                 }
             )
 
-            refresh = RefreshToken.for_user(user)
-            access_token = str(refresh.access_token)
-            refresh_token = str(refresh)
+            if created:
+                user.send_activation_email()
+                return Response(data={
+                    'detail': _(
+                        'Se envió un correo para activar su cuenta, por favor active su cuenta e intente de nuevo')},
+                    status=status.HTTP_200_OK
+                )
+            elif user.is_active:
+                refresh = RefreshToken.for_user(user)
+                access_token = str(refresh.access_token)
+                refresh_token = str(refresh)
 
-            return Response({
-                'access': access_token,
-                'refresh': refresh_token
-            }, status=status.HTTP_200_OK
-            )
+                return Response(data={
+                    'access': access_token,
+                    'refresh': refresh_token
+                }, status=status.HTTP_200_OK
+                )
+            else:
+                return Response(data={
+                    'error': _('la cuenta de usuario no se encuentra activa')
+                }, status=status.HTTP_400_BAD_REQUEST
+                )
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
