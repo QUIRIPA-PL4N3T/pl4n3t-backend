@@ -284,6 +284,8 @@ DOCUMENTS_UPLOAD_TO = 'documents'
 WEASYPRINT_BASEURL = '/'
 
 FIREBASE_CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials', 'pl4n3t-firebase-key.json')
+GOOGLE_CLIENT_ID = env('GOOGLE_CLIENT_ID', default='')
+
 
 CKEDITOR_CONFIGS = {
     'default': {

@@ -14,6 +14,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.utils.translation import gettext_lazy as _
 from accounts.models import User
+from google.oauth2 import id_token as google_id_token
+from google.auth.transport import requests
 from accounts.serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
     LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer, \
     GoogleAccountSerializer
@@ -271,12 +273,35 @@ class GoogleLoginView(APIView):
         token = request.data.get('token')
 
         try:
-            decoded_token = auth.verify_id_token(token)
-            uid = decoded_token['uid']
+            decoded_token = google_id_token.verify_oauth2_token(
+                token,
+                requests.Request(),
+                settings.GOOGLE_CLIENT_ID
+            )
+            email = decoded_token['email']
+            username = decoded_token['name']
+            uid = decoded_token['sub']
 
-            jwt_token = jwt.encode({'user_id': uid}, settings.SECRET_KEY, algorithm='HS256')
+            # Todo remove print
+            print(email, username, uid)
 
-            return Response({'token': jwt_token}, status=status.HTTP_200_OK)
+            user, created = User.objects.get_or_create(
+                email=email,
+                defaults={
+                    'username': username,
+                    'password': User.objects.make_random_password()
+                }
+            )
+
+            refresh = RefreshToken.for_user(user)
+            access_token = str(refresh.access_token)
+            refresh_token = str(refresh)
+
+            return Response({
+                'access': access_token,
+                'refresh': refresh_token
+            }, status=status.HTTP_200_OK
+            )
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
