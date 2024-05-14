@@ -1,50 +1,106 @@
 [
-  {
-    "model": "memberships.Membership",
-    "pk": 1,
-    "fields": {
-      "name": "Membresía Gratis",
-      "membership_type": "FREE",
-      "price": "0.00",
-      "duration": 365,
-      "description": "Esta es una membresía gratuita con características limitadas.",
-      "benefits": "Acceso a características limitadas"
+    {
+        "model": "memberships.membership",
+        "pk": 1,
+        "fields": {
+            "name": "Gratuito",
+            "membership_type": "FREE",
+            "price": 0.00,
+            "duration": 365,
+            "description": "Membresía gratuita para pequeñas empresas.",
+            "benefits": "Navegación y visualización de contenido público, creación de un perfil.",
+            "num_brands": 1,
+            "num_locations": 1,
+            "num_users": 1,
+            "emission_sources": true,
+            "footprint_types": "Huella de Carbono",
+            "liquidation_options": "Anual",
+            "analysis_tools": false,
+            "basic_support": true,
+            "storage_capacity": "No sube soportes",
+            "tutorials": true,
+            "webinars": false,
+            "general_support": true,
+            "dedicated_support": false,
+            "custom_api_access": false
+        }
+    },
+    {
+        "model": "memberships.membership",
+        "pk": 2,
+        "fields": {
+            "name": "Membresía Básica",
+            "membership_type": "BASIC",
+            "price": 50.00,
+            "duration": 365,
+            "description": "Membresía básica para pequeñas empresas.",
+            "benefits": "Navegación y visualización de contenido público, creación de un perfil.",
+            "num_brands": 1,
+            "num_locations": 5,
+            "num_users": 5,
+            "emission_sources": true,
+            "footprint_types": "Todas",
+            "liquidation_options": "Todas",
+            "analysis_tools": true,
+            "basic_support": true,
+            "storage_capacity": "1 Gb",
+            "tutorials": true,
+            "webinars": true,
+            "general_support": true,
+            "dedicated_support": false,
+            "custom_api_access": false
+        }
+    },
+    {
+        "model": "memberships.membership",
+        "pk": 3,
+        "fields": {
+            "name": "Membresía Premium",
+            "membership_type": "PREMIUM",
+            "price": 100.00,
+            "duration": 365,
+            "description": "Membresía premium para medianas empresas.",
+            "benefits": "Navegación y visualización de contenido público, creación de un perfil.",
+            "num_brands": 5,
+            "num_locations": 50,
+            "num_users": 50,
+            "emission_sources": true,
+            "footprint_types": "Todas",
+            "liquidation_options": "Todas",
+            "analysis_tools": true,
+            "basic_support": true,
+            "storage_capacity": "5 GB",
+            "tutorials": true,
+            "webinars": true,
+            "general_support": true,
+            "dedicated_support": false,
+            "custom_api_access": true
+        }
+    },
+    {
+        "model": "memberships.membership",
+        "pk": 4,
+        "fields": {
+            "name": "Membresía Elite",
+            "membership_type": "ELITE",
+            "price": 200.00,
+            "duration": 365,
+            "description": "Membresía elite para grandes empresas.",
+            "benefits": "Navegación y visualización de contenido público, creación de un perfil.",
+            "num_brands": null,
+            "num_locations": null,
+            "num_users": null,
+            "emission_sources": true,
+            "footprint_types": "Todas",
+            "liquidation_options": "Todas",
+            "analysis_tools": true,
+            "basic_support": true,
+            "storage_capacity": "Ilimitado",
+            "tutorials": true,
+            "webinars": true,
+            "general_support": true,
+            "dedicated_support": true,
+            "custom_api_access": true
+        }
     }
-  },
-  {
-    "model": "memberships.Membership",
-    "pk": 2,
-    "fields": {
-      "name": "Membresía Básica",
-      "membership_type": "BASIC",
-      "price": "9.99",
-      "duration": 365,
-      "description": "Esta es una membresía básica con más características.",
-      "benefits": "Acceso a características básicas"
-    }
-  },
-  {
-    "model": "memberships.Membership",
-    "pk": 3,
-    "fields": {
-      "name": "Membresía Premium",
-      "membership_type": "PREMIUM",
-      "price": "19.99",
-      "duration": 365,
-      "description": "Esta es una membresía premium con características adicionales.",
-      "benefits": "Acceso a características premium"
-    }
-  },
-  {
-    "model": "memberships.Membership",
-    "pk": 4,
-    "fields": {
-      "name": "Membresía VIP",
-      "membership_type": "VIP",
-      "price": "29.99",
-      "duration": 365,
-      "description": "Esta es una membresía VIP con todas las características.",
-      "benefits": "Acceso a todas las características"
-    }
-  }
 ]
