@@ -21,7 +21,6 @@ from accounts.serializers import CustomTokenObtainPairSerializer, UserModelSeria
     GoogleAccountSerializer
 import firebase_admin
 from firebase_admin import auth, credentials
-import jwt
 
 
 cred = credentials.Certificate(settings.FIREBASE_CREDENTIALS_PATH)
@@ -273,7 +272,7 @@ class GoogleLoginView(APIView):
         token = request.data.get('token')
 
         try:
-            decoded_token = google_id_token.verify_oauth2_token(
+            decoded_token = google_id_token.verify_firebase_token(
                 token,
                 requests.Request(),
                 settings.GOOGLE_CLIENT_ID
