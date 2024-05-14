@@ -1,4 +1,5 @@
 import logging
+from django.conf import settings
 from django.utils.crypto import get_random_string
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from rest_framework import permissions, status, mixins, viewsets, parsers
@@ -12,9 +13,18 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.utils.translation import gettext_lazy as _
-from .models import User
-from .serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
-    LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer
+from accounts.models import User
+from accounts.serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
+    LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer, \
+    GoogleAccountSerializer
+import firebase_admin
+from firebase_admin import auth, credentials
+import jwt
+
+
+cred = credentials.Certificate(settings.FIREBASE_CREDENTIALS_PATH)
+firebase_admin.initialize_app(cred)
+
 
 logger = logging.getLogger(__name__)
 
@@ -246,6 +256,29 @@ class CustomObtainTokenPairWithView(TokenObtainPairView):
     )
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
+
+
+@extend_schema(tags=['Accounts'])
+class GoogleLoginView(APIView):
+
+    @extend_schema(
+        description=_("Iniciar sesión con una cuenta de google"),
+        request=GoogleAccountSerializer,
+        methods=["post"],
+        responses={200: TokenOutput},
+    )
+    def post(self, request, *args, **kwargs):
+        token = request.data.get('token')
+
+        try:
+            decoded_token = auth.verify_id_token(token)
+            uid = decoded_token['uid']
+
+            jwt_token = jwt.encode({'user_id': uid}, settings.SECRET_KEY, algorithm='HS256')
+
+            return Response({'token': jwt_token}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @extend_schema(tags=['Accounts'])
