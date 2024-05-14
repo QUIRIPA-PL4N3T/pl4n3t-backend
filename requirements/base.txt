@@ -14,8 +14,8 @@ djangorestframework==3.13.1
 djangorestframework-gis==1.0
 
 # JWT
-djangorestframework-simplejwt==5.1.0
-PyJWT==2.3.0
+djangorestframework-simplejwt==5.2.2
+PyJWT==2.8.0
 
 # Password hashing
 argon2-cffi==21.3.0
@@ -51,3 +51,5 @@ django-taggit==4.0.0
 weasyprint==52.5
 
 django-weasyprint<2.0.0
+
+firebase-admin==6.5.0

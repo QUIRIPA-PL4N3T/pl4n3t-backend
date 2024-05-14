@@ -27,9 +27,16 @@ RUN apt-get update --yes --allow-releaseinfo-change --quiet && apt-get install -
     libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Setup workdir
+# Add group:user that will be used in the container.
+RUN groupadd --gid 2000 planet
+RUN useradd --uid 2000 --gid planet --create-home planet
+
+# Use /src folder as a directory where the source code is stored.
 RUN mkdir /src
 WORKDIR /src
+
+# Set this directory to be owned by the "planet" user.
+RUN chown planet:planet /src
 
 # JS dependencies
 COPY package.json /src/
@@ -41,4 +48,8 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r /src/requirements.txt
 
-COPY . /src
+# Copy the source code of the project into the container.
+COPY --chown=planet:planet . /src
+
+# Use user "planet" to run the build commands and the server itself.
+USER planet
