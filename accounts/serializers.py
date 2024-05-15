@@ -26,6 +26,8 @@ class UserModelSerializer(serializers.ModelSerializer):
     def get_avatar(self, user: User): # noqa
         if user.avatar:
             return f'{Site.objects.get_current()}{user.avatar.url}'
+        if user.google_picture:
+            return user.google_picture
         return ''
 
     class Meta:

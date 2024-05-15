@@ -279,17 +279,28 @@ class GoogleLoginView(APIView):
             )
             email = decoded_token['email']
             username = decoded_token['name']
+            picture = decoded_token['picture']
+            uid = decoded_token.get('uid')
 
             user, created = User.objects.get_or_create(
                 email=email,
                 defaults={
+                    'name': username,
                     'username': username,
-                    'password': User.objects.make_random_password()
+                    'password': User.objects.make_random_password(),
+                    'google_account': uid,
+                    'google_picture': picture
                 }
             )
 
+            # Active user created
             if created:
                 user.is_active = True
+                user.save()
+
+            # Update google picture
+            if user.google_picture != picture:
+                user.google_picture = picture
                 user.save()
 
             if user.is_active:

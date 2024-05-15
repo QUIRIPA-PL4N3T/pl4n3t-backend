@@ -46,6 +46,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name']
     google_account = models.CharField(max_length=255, blank=True, null=True)
+    google_picture = models.CharField(max_length=255, blank=True, null=True)
 
     @classmethod
     def generate_unique_username(cls, email: str) -> str:
