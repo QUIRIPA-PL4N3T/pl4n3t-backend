@@ -35,7 +35,7 @@ class PurchaseMembershipView(APIView):
 
     @extend_schema(
         description=_("Compra una membresía"),
-        request=PreferenceRequestSerializer,
+        request=PurchaseSerializer,
         methods=["post"],
         responses={
             200: OpenApiResponse(response=PreferenceResponseSerializer, description=_('Compra de membresía exitosa')),
