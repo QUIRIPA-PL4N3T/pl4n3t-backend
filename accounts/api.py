@@ -289,13 +289,10 @@ class GoogleLoginView(APIView):
             )
 
             if created:
-                user.send_activation_email()
-                return Response(data={
-                    'detail': _(
-                        'Se envió un correo para activar su cuenta, por favor active su cuenta e intente de nuevo')},
-                    status=status.HTTP_201_CREATED
-                )
-            elif user.is_active:
+                user.is_active = True
+                user.save()
+
+            if user.is_active:
                 refresh = RefreshToken.for_user(user)
                 access_token = str(refresh.access_token)
                 refresh_token = str(refresh)
