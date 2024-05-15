@@ -285,7 +285,6 @@ class GoogleLoginView(APIView):
             user, created = User.objects.get_or_create(
                 email=email,
                 defaults={
-                    'name': username,
                     'username': username,
                     'password': User.objects.make_random_password(),
                     'google_account': uid,
