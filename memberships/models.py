@@ -76,6 +76,18 @@ class Membership(models.Model):
 
 
 class CompanyMembership(models.Model):
+    PENDING = 'PENDING'
+    PAID = 'PAID'
+    CANCELED = 'CANCELED'
+    EXPIRED = 'EXPIRED'
+
+    MEMBERSHIP_STATUS_CHOICES = [
+        (PENDING, _('Pending')),
+        (PAID, _('Paid')),
+        (CANCELED, _('Canceled')),
+        (EXPIRED, _('Expired')),
+    ]
+
     company = models.OneToOneField(
         'companies.Company',
         on_delete=models.CASCADE,
@@ -86,6 +98,11 @@ class CompanyMembership(models.Model):
     membership = models.ForeignKey(Membership, on_delete=models.SET_NULL, null=True)
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField()
+    status = models.CharField(
+        max_length=10,
+        choices=MEMBERSHIP_STATUS_CHOICES,
+        default=PENDING,
+    )
 
     def __str__(self):
         return f'{self.company.name} - {self.membership.name}'

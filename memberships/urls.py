@@ -9,7 +9,7 @@ router.register(r'company-memberships', CompanyMembershipViewSet)
 
 api_urls = ([
     path('', include(router.urls)),
-    path('purchase/<int:membership_id>/', PurchaseMembershipView.as_view(), name='purchase_membership'),
+    path('purchase/<int:company_id>/<int:membership_id>/', PurchaseMembershipView.as_view(), name='purchase_membership'),
     path('success/', MembershipPaymentSuccessView.as_view(), name='membership_success'),
 ], 'memberships')
 
