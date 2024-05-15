@@ -53,3 +53,5 @@ weasyprint==52.5
 django-weasyprint<2.0.0
 
 firebase-admin==6.5.0
+
+mercadopago==2.2.1
