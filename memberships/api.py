@@ -1,32 +1,49 @@
 from datetime import datetime, timedelta
 import mercadopago
 from django.conf import settings
+from django.db import transaction
 from django.utils import timezone
+from mercadopago import SDK
 from rest_framework import viewsets, mixins, permissions, status
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework.response import Response
+from rest_framework.exceptions import NotFound
 from rest_framework.views import APIView
 from django.utils.translation import gettext_lazy as _
 from companies.models import Company
 from memberships.models import Membership, CompanyMembership
 from memberships.serializers import MembershipSerializer, CompanyMembershipSerializer, PurchaseSerializer, \
-    PreferenceResponseSerializer
+    PreferenceResponseSerializer, PaymentVerificationSerializer
 
 
 @extend_schema(tags=['Memberships'])
-class MembershipViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
+class MembershipViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     queryset = Membership.objects.all()
     serializer_class = MembershipSerializer
 
 
 @extend_schema(tags=['Memberships'])
-class CompanyMembershipViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
-    queryset = CompanyMembership.objects.all()
+class CompanyMembershipViewSet(viewsets.GenericViewSet, mixins.RetrieveModelMixin):
     serializer_class = CompanyMembershipSerializer
+    queryset = CompanyMembership.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
+    def get_object(self):
+        """
+        Returns the membership for a specified company associated with the currently authenticated user.
+        Requires the company ID to be specified in the URL parameters.
+        """
         user = self.request.user
-        return CompanyMembership.objects.filter(company__members_roles__user=user)
+        company_id = self.kwargs.get('pk')  # Get company_id from URL parameters
+
+        if not company_id:
+            raise NotFound(_("el id de la compañía es requerido."))
+
+        # Try to get the company membership for the specified company and check if the user is a member
+        try:
+            return CompanyMembership.objects.get(company__id=company_id, company__members_roles__user=user)
+        except CompanyMembership.DoesNotExist:
+            raise NotFound(_("No se han encontrado una membresía para la empresa y el usuario especificados."))
 
 
 @extend_schema(tags=['Memberships'])
@@ -127,50 +144,47 @@ class MembershipPaymentSuccessView(APIView):
 
     @extend_schema(
         description=_("Verificación de pago de membresía exitosa"),
-        methods=["get"],
+        request=PaymentVerificationSerializer,
+        methods=["post"],
         responses={
             200: OpenApiResponse(description=_('Membresía asignada exitosamente')),
             400: OpenApiResponse(description=_('Solicitud incorrecta')),
         },
     )
-    def get(self, request):
+    def post(self, request):
+        user = request.user
+        serializer = PurchaseSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
         try:
-            preference_id = request.session.get('preference_id')
-            if not preference_id:
-                return Response({'detail': _('No preference ID found in session')}, status=status.HTTP_400_BAD_REQUEST)
+            company = Company.objects.get(
+                id=serializer.data['company_id'],
+                members_roles__user=user
+            )
+        except Company.DoesNotExist:
+            return Response({'detail': _('La compañía no existe')}, status=status.HTTP_404_NOT_FOUND)
 
-            # Verificar el estado del pago
-            mp = mercadopago.SDK(settings.MERCADOPAGO_ACCESS_TOKEN)
-            payment_status = mp.payment().get(preference_id)
+        mp = SDK(settings.MERCADOPAGO_ACCESS_TOKEN)
+        payment_status = mp.payment().get(serializer.data['preference_id'])
 
-            if payment_status['status'] == 'approved':
-                # Obtener la membresía y la compañía
-                user = request.user
-                company = user.company
+        if payment_status['status'] != 'approved':
+            return Response({'detail': _('Payment not approved')}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            with transaction.atomic():
+                # Get the membership
                 membership_id = payment_status['response']['items'][0]['id']
                 membership = Membership.objects.get(id=membership_id)
+                company_membership = CompanyMembership.objects.get(company=company)
 
-                # Asignar la membresía a la compañía
-                CompanyMembership.objects.create(
-                    company=company,
-                    membership=membership,
-                    start_date=datetime.now(),
-                    end_date=datetime.now() + timedelta(days=membership.duration)
-                )
+                # Set membership to the company
+                company_membership.membership = membership,
+                company_membership.start_date = timezone.now() + timedelta(days=1),
+                company_membership.end_date = timezone.now() + timedelta(days=membership.duration),
+                company_membership.status = CompanyMembership.PAID  # Suponiendo que tienes un estado 'PAID'
 
-                return Response(
-                    data={'detail': 'Membership assigned successfully'},
-                    status=status.HTTP_200_OK
-                )
-            else:
-                return Response(
-                    data={'detail': 'Payment not approved'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
+                return Response({'detail': _('Membership assigned successfully')}, status=status.HTTP_200_OK)
         except Exception as e:
-            exception_message = str(e)
-            return Response(
-                data={'detail': exception_message},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)

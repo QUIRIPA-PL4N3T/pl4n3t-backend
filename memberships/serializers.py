@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from memberships.models import Membership, CompanyMembership
+from django.utils.translation import gettext_lazy as _
 
 
 class MembershipSerializer(serializers.ModelSerializer):
@@ -14,9 +15,16 @@ class MembershipSerializer(serializers.ModelSerializer):
 
 
 class CompanyMembershipSerializer(serializers.ModelSerializer):
+    """
+    This view returns the membership for the company associated with the currently authenticated user.
+    Since a company can only have one membership, this ensures that the user views or interacts with
+    only their company's membership.
+    """
+    membership = MembershipSerializer(many=False, read_only=True)
+
     class Meta:
         model = CompanyMembership
-        fields = ['id', 'company', 'membership', 'start_date', 'end_date']
+        fields = ['id', 'company', 'membership', 'status', 'start_date', 'end_date']
 
 
 class PhoneSerializer(serializers.Serializer):
@@ -105,3 +113,21 @@ class PreferenceResponseSerializer(serializers.Serializer):
     site_id = serializers.CharField()
     total_amount = serializers.DecimalField(max_digits=10, decimal_places=2, allow_null=True, required=False)
     last_updated = serializers.DateTimeField(allow_null=True, required=False)
+
+
+class PaymentVerificationSerializer(serializers.Serializer):
+    preference_id = serializers.CharField(
+        required=True,
+        help_text=_("ID de preferencia de MercadoPago para verificar el estado del pago."))
+    company_id = serializers.CharField(
+        required=True,
+        help_text=_("ID de la Compañía")
+    )
+
+    def validate_preference_id(self, value): # noqa
+        """
+        You can add additional validation for preference_id here.
+        """
+        if not value:
+            raise serializers.ValidationError(_("El 'preference_id' es obligatorio."))
+        return value

@@ -1,11 +1,16 @@
+from datetime import timedelta
 from urllib.parse import urljoin
 from django.contrib.gis.db import models
 from django.contrib.sites.models import Site
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.utils import timezone
 from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup
 from emissions.models import SourceType, EmissionFactor, FactorType
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
+from memberships.models import Membership, CompanyMembership
 
 
 class Company(models.Model):
@@ -428,3 +433,19 @@ class EmissionsSourceMonthEntry(models.Model):
 
     def __str__(self):
         return f'{self.emission_agent} - {self.month}'
+
+
+@receiver(post_save, sender=Company)
+def create_free_membership(sender, instance, created, **kwargs):
+    if created:
+        try:
+            free_membership = Membership.objects.get(is_default=True)
+            CompanyMembership.objects.create(
+                company=instance,
+                membership=free_membership,
+                start_date=timezone.now(),
+                end_date=timezone.now() + timedelta(days=free_membership.duration),
+                status=CompanyMembership.PAID
+            )
+        except Membership.DoesNotExist:
+            pass

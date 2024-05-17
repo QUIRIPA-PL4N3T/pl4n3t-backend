@@ -1,5 +1,4 @@
 from django.db import models
-from accounts.models import User
 from django.utils.translation import gettext_lazy as _
 
 
@@ -23,6 +22,7 @@ class Membership(models.Model):
         choices=MEMBERSHIP_CHOICES,
         default=FREE
     )
+    is_default = models.BooleanField(default=False, editable=False)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.IntegerField(_('Duración en días'), default=365)
     description = models.TextField(blank=True, null=True)
@@ -70,6 +70,12 @@ class Membership(models.Model):
         _('Acceso a una API personalizada para desarrollar integraciones personalizadas'),
         default=False
     )
+
+    def save(self, *args, **kwargs):
+        if self.is_default:
+            # Make sure that there is no other membership by default
+            Membership.objects.filter(is_default=True).update(is_default=False)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

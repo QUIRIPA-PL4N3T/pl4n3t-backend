@@ -5,7 +5,7 @@ from memberships.api import MembershipViewSet, CompanyMembershipViewSet, Purchas
 
 router = DefaultRouter()
 router.register(r'types', MembershipViewSet)
-router.register(r'company-memberships', CompanyMembershipViewSet)
+router.register(r'company', CompanyMembershipViewSet)
 
 api_urls = ([
     path('', include(router.urls)),
