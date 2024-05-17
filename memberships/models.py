@@ -9,7 +9,7 @@ class Membership(models.Model):
     ELITE = 'ELITE'
 
     MEMBERSHIP_CHOICES = [
-        (FREE, _('Gratuito')),
+        (FREE, _('Gratuita')),
         (BASIC, _('Básica')),
         (PREMIUM, _('Premium')),
         (ELITE, _('Elite')),
