@@ -76,16 +76,28 @@ class Membership(models.Model):
 
 
 class CompanyMembership(models.Model):
+    """
+    This model represents the membership status of a company within the system.
+    It includes fields for managing both current and proposed memberships,
+    allowing the system to handle upgrades or changes that are contingent on
+    payment confirmation.
+
+    The membership states include pending for new applications, paid for active memberships,
+    canceled, expired, and awaiting payment for when a payment process has
+    been initiated but not yet confirmed.
+    """
     PENDING = 'PENDING'
     PAID = 'PAID'
     CANCELED = 'CANCELED'
     EXPIRED = 'EXPIRED'
+    AWAITING_PAYMENT = 'AWAITING_PAYMENT'
 
     MEMBERSHIP_STATUS_CHOICES = [
         (PENDING, _('Pending')),
         (PAID, _('Paid')),
         (CANCELED, _('Canceled')),
         (EXPIRED, _('Expired')),
+        (AWAITING_PAYMENT, _('Awaiting Payment')),  # Indicates payment has been initiated but not yet confirmed.
     ]
 
     company = models.OneToOneField(
@@ -95,11 +107,28 @@ class CompanyMembership(models.Model):
         null=True,
         blank=True,
     )
-    membership = models.ForeignKey(Membership, on_delete=models.SET_NULL, null=True)
+    membership = models.ForeignKey(
+        'Membership',
+        on_delete=models.SET_NULL,
+        null=True
+    )
+
+    # Proposed membership while payment is awaiting confirmation
+    proposed_membership = models.ForeignKey(
+        'Membership',
+        related_name='proposed_membership',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField()
+
+    # Proposed end date for a new membership if a change is awaiting payment confirmation
+    proposed_end_date = models.DateTimeField(null=True, blank=True)
+
     status = models.CharField(
-        max_length=10,
+        max_length=16,
         choices=MEMBERSHIP_STATUS_CHOICES,
         default=PENDING,
     )

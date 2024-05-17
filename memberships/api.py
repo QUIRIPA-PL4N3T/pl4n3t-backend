@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from companies.models import Company
 from memberships.models import Membership, CompanyMembership
 from memberships.serializers import MembershipSerializer, CompanyMembershipSerializer, PurchaseSerializer, \
-    PreferenceRequestSerializer, PreferenceResponseSerializer
+    PreferenceResponseSerializer
 
 
 @extend_schema(tags=['Memberships'])
@@ -53,6 +53,7 @@ class PurchaseMembershipView(APIView):
             membership = Membership.objects.get(id=membership_id)
             company = Company.objects.get(id=company_id)
 
+            # Validate membership price
             if membership.price <= 0:
                 return Response(
                     {'detail': 'El precio de la membresía no es válido'},
@@ -61,6 +62,7 @@ class PurchaseMembershipView(APIView):
 
             mp = mercadopago.SDK(settings.MERCADOPAGO_ACCESS_TOKEN)
 
+            # Create payment preference data
             preference_data = {
                 "items": [
                     {
@@ -74,18 +76,28 @@ class PurchaseMembershipView(APIView):
                 "auto_return": "approved",
             }
 
+            # Create preference in MercadoPago
             preference_response = mp.preference().create(preference_data)
             preference = preference_response["response"]
 
-            company_membership, created = CompanyMembership.objects.get_or_create(
-                company=company,
-            )
-            company_membership.membership = membership
-            company_membership.save()
-            company_membership.start_date = timezone.now() + timedelta(days=1)
-            company_membership.end_date = timezone.now() + timedelta(days=membership.duration)
-            company.status = CompanyMembership.PENDING
-            company_membership.save()
+            try:
+                # Check if the company already has a membership
+                company_membership = CompanyMembership.objects.get(company=company)
+                # Update existing membership to Awaiting Payment status
+                company_membership.proposed_membership = membership
+                company_membership.proposed_end_date = timezone.now() + timedelta(days=membership.duration)
+                company_membership.status = CompanyMembership.AWAITING_PAYMENT
+                company_membership.save()
+            except CompanyMembership.DoesNotExist:
+                # Create new company membership if not exists
+                CompanyMembership.objects.create(
+                    company=company,
+                    membership=membership,
+                    start_date=timezone.now() + timedelta(days=1),  # Start date set to the next day
+                    end_date=timezone.now() + timedelta(days=membership.duration),
+                    # End date based on membership duration
+                    status=CompanyMembership.AWAITING_PAYMENT  # Initial status set to awaiting payment
+                )
 
             return Response(
                 {'init_point': preference},
