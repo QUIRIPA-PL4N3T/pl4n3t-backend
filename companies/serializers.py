@@ -3,6 +3,7 @@ from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from documents.serializer import BaseDocumentSerializer
+from memberships.serializers import CompanyMembershipSerializer
 
 
 class EmissionsSourceSerializer(BaseDocumentSerializer):
@@ -60,6 +61,7 @@ class CompanySerializer(serializers.ModelSerializer):
     locations = LocationSerializer(many=True, read_only=True)
     members_roles = MemberSerializer(many=True, read_only=True)
     brands = BrandSerializer(many=True, read_only=True)
+    membership = CompanyMembershipSerializer(read_only=True)
 
     country_name = serializers.SerializerMethodField(read_only=True)
     state_name = serializers.SerializerMethodField(read_only=True)
@@ -83,7 +85,7 @@ class CompanySerializer(serializers.ModelSerializer):
                   'website', 'geo_location', 'economic_sector', 'industry_type',
                   'members_roles', 'brands', 'country', 'address', 'postal_code',
                   'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
-                  'state_name', 'city_name', 'nit', 'logo')
+                  'state_name', 'city_name', 'nit', 'logo', 'membership')
 
 
 class CompanyLogoSerializer(serializers.ModelSerializer):
