@@ -39,6 +39,7 @@
     "pk": 29,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "AMAZONAS",
       "dane_code": "91",
       "slug": "amazonas"
@@ -48,6 +49,7 @@
     "pk": 1,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "ANTIOQUIA",
       "dane_code": "05",
       "slug": "antioquia"
@@ -57,6 +59,7 @@
     "pk": 25,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "ARAUCA",
       "dane_code": "81",
       "slug": "arauca"
@@ -66,6 +69,7 @@
     "pk": 2,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "ATLANTICO",
       "dane_code": "08",
       "slug": "atlantico"
@@ -75,6 +79,7 @@
     "pk": 3,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "BOGOTA",
       "dane_code": "11",
       "slug": "bogota"
@@ -84,6 +89,7 @@
     "pk": 4,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "BOLIVAR",
       "dane_code": "13",
       "slug": "bolivar"
@@ -93,6 +99,7 @@
     "pk": 5,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "BOYACA",
       "dane_code": "15",
       "slug": "boyaca"
@@ -102,6 +109,7 @@
     "pk": 6,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CALDAS",
       "dane_code": "17",
       "slug": "caldas"
@@ -111,6 +119,7 @@
     "pk": 7,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CAQUETA",
       "dane_code": "18",
       "slug": "caqueta"
@@ -120,6 +129,7 @@
     "pk": 26,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CASANARE",
       "dane_code": "85",
       "slug": "casanare"
@@ -129,6 +139,7 @@
     "pk": 8,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CAUCA",
       "dane_code": "19",
       "slug": "cauca"
@@ -138,6 +149,7 @@
     "pk": 9,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CESAR",
       "dane_code": "20",
       "slug": "cesar"
@@ -147,6 +159,7 @@
     "pk": 12,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CHOCO",
       "dane_code": "27",
       "slug": "choco"
@@ -156,6 +169,7 @@
     "pk": 10,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CORDOBA",
       "dane_code": "23",
       "slug": "cordoba"
@@ -165,6 +179,7 @@
     "pk": 11,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "CUNDINAMARCA",
       "dane_code": "25",
       "slug": "cundinamarca"
@@ -174,6 +189,7 @@
     "pk": 30,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "GUAINIA",
       "dane_code": "94",
       "slug": "guainia"
@@ -183,6 +199,7 @@
     "pk": 31,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "GUAVIARE",
       "dane_code": "95",
       "slug": "guaviare"
@@ -192,6 +209,7 @@
     "pk": 13,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "HUILA",
       "dane_code": "41",
       "slug": "huila"
@@ -201,6 +219,7 @@
     "pk": 14,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "LA GUAJIRA",
       "dane_code": "44",
       "slug": "la-guajira"
@@ -210,6 +229,7 @@
     "pk": 15,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "MAGDALENA",
       "dane_code": "47",
       "slug": "magdalena"
@@ -219,6 +239,7 @@
     "pk": 16,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "META",
       "dane_code": "50",
       "slug": "meta"
@@ -228,6 +249,7 @@
     "pk": 17,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "NARI\u00d1O",
       "dane_code": "52",
       "slug": "narino"
@@ -237,6 +259,7 @@
     "pk": 18,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "NORTE DE SANTANDER",
       "dane_code": "54",
       "slug": "norte-de-santander"
@@ -246,6 +269,7 @@
     "pk": 27,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "PUTUMAYO",
       "dane_code": "86",
       "slug": "putumayo"
@@ -255,6 +279,7 @@
     "pk": 19,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "QUINDIO",
       "dane_code": "63",
       "slug": "quindio"
@@ -264,6 +289,7 @@
     "pk": 20,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "RISARALDA",
       "dane_code": "66",
       "slug": "risaralda"
@@ -273,6 +299,7 @@
     "pk": 28,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "SAN ANDRES",
       "dane_code": "88",
       "slug": "san-andres"
@@ -282,6 +309,7 @@
     "pk": 21,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "SANTANDER",
       "dane_code": "68",
       "slug": "santander"
@@ -291,6 +319,7 @@
     "pk": 22,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "SUCRE",
       "dane_code": "70",
       "slug": "sucre"
@@ -300,6 +329,7 @@
     "pk": 23,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "TOLIMA",
       "dane_code": "73",
       "slug": "tolima"
@@ -309,6 +339,7 @@
     "pk": 24,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "VALLE DEL CAUCA",
       "dane_code": "76",
       "slug": "valle-del-cauca"
@@ -318,6 +349,7 @@
     "pk": 32,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "VAUPES",
       "dane_code": "97",
       "slug": "vaupes"
@@ -327,6 +359,7 @@
     "pk": 33,
     "model": "main.state",
     "fields": {
+      "country": 1,
       "name": "VICHADA",
       "dane_code": "99",
       "slug": "vichada"
