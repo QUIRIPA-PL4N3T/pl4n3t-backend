@@ -153,7 +153,7 @@ class MembershipPaymentSuccessView(APIView):
     )
     def post(self, request):
         user = request.user
-        serializer = PurchaseSerializer(data=request.data)
+        serializer = PaymentVerificationSerializer(data=request.data)
 
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -180,10 +180,11 @@ class MembershipPaymentSuccessView(APIView):
                 company_membership = CompanyMembership.objects.get(company=company)
 
                 # Set membership to the company
-                company_membership.membership = membership,
-                company_membership.start_date = timezone.now() + timedelta(days=1),
-                company_membership.end_date = timezone.now() + timedelta(days=membership.duration),
-                company_membership.status = CompanyMembership.PAID  # Suponiendo que tienes un estado 'PAID'
+                company_membership.membership = membership
+                company_membership.start_date = timezone.now() + timedelta(days=1)
+                company_membership.end_date = timezone.now() + timedelta(days=membership.duration)
+                company_membership.status = CompanyMembership.PAID
+                company.save()
 
                 return Response({'detail': _('Membership assigned successfully')}, status=status.HTTP_200_OK)
         except Exception as e:
