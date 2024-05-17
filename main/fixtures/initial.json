@@ -64,6 +64,303 @@
     }
   },
   {
+    "model": "main.configuration",
+    "pk": 11,
+    "fields": {
+      "key": "VEHICLE_TYPE_LIST",
+      "value": "Automóvil,\r\nBus,\r\nBuseta,\r\nCamión,\r\nCamioneta,\r\nCampero,\r\nCiclomotor,\r\nMaquinaria,\r\nMicrobus,\r\nMonta-carga,\r\nMoto (Motocicleta),\r\nTractocamión",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 12,
+    "fields": {
+      "key": "VEHICLE_LOAD_LIST",
+      "value": "Carga,\r\nPasajeros",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 13,
+    "fields": {
+      "key": "VEHICLE_FUEL_LIST",
+      "value": "Diésel,\r\nGas Natural,\r\nGasolina",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 14,
+    "fields": {
+      "key": "VEHICLE_EFFICIENCY_UNIT_LIST",
+      "value": "Km/L,\r\nMi/gal",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 15,
+    "fields": {
+      "key": "METHODOLOGIES_LIST",
+      "value": "GHGProtocol,\r\nISO 14064-1",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 16,
+    "fields": {
+      "key": "REPORT_FOMAT",
+      "value": "PDF,\r\nEXCEL",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 17,
+    "fields": {
+      "key": "FUEL_STORAGE_LIST",
+      "value": "Tanques,\r\nCilindros,\r\nDepósitos subterráneos,\r\nBolsas a granel,\r\nAlmacenamiento en superficie,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 18,
+    "fields": {
+      "key": "FUEL_STORAGE_MANAGEMENT_LIST",
+      "value": "Registro de Consumo,\r\nControl de inventario,\r\nSeguimiento de fugaz y emisiones,\r\nEtiquetado de contenedores,\r\nRotación de Inventario,\r\nEntrenamiento en manejo seguro,\r\nImplementación de tecnologías eficientes,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 19,
+    "fields": {
+      "key": "ELECTRICITY_SOURCE_LIST",
+      "value": "Carbón,\r\nGas Natural,\r\nEnergía Renovable,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 20,
+    "fields": {
+      "key": "REFRIGERANT_SOURCE_LIST",
+      "value": "Aire acondicionado,\r\nRefrigerador,\r\nCongelador,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 21,
+    "fields": {
+      "key": "REFRIGERANT_TYPE_LIST",
+      "value": "HFC,\r\nHCFC,\r\nCFC,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 22,
+    "fields": {
+      "key": "REFRIGERANT_CAPACITY_UNIT_LIST",
+      "value": "L,\r\nmL,\r\nm3,\r\ngal,\r\nft3,\r\nKg,\r\nlb",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 23,
+    "fields": {
+      "key": "FINAL_REFRIGERANT_DISPOSAL_LIST",
+      "value": "Programa de Mantenimiento Preventivo,\r\nEntrenamiento del personal,\r\nTécnicos certificados,\r\nDisposición final de refrigerantes,\r\nAlmacenamiento adecuado de refrigerantes,\r\nInspecciones periódicas de fugas,\r\nSellado de fugas de manera profesional,\r\nRegistro de mantenimiento (recargas y fugas),\r\nUso de detectores de fugas automáticos",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 24,
+    "fields": {
+      "key": "REFRIGERANT_MAINTENANCE_AND_REPAIR_LIST",
+      "value": "Recuperación y reciclaje,\r\nRe-acondicionamiento,\r\nDestrucción controlada,\r\nCaptura y almacenamiento,\r\nEntrega a centros de disposición aprobados,\r\nIntercambio de refrigerantes,\r\nCanje de refrigerantes usados,\r\nEliminación segura por servicios de eliminación de residuos peligrosos,\r\nPor medio de empresas que cuentan con certificado de disposición final",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 25,
+    "fields": {
+      "key": "OPERATION_WASTE_LIST",
+      "value": "Alimentos,\r\nPlástico,\r\nMadera,\r\nAceite,\r\nVidrio,\r\nMateriales de construcción,\r\nPapel,\r\nProductos químicos,\r\nElectrónicos,\r\nTextil,\r\nMetales,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 26,
+    "fields": {
+      "key": "WASTE_REGISTER_LIST",
+      "value": "Alimentos,\r\nPlástico,\r\nMadera,\r\nAceite,\r\nVidrio,\r\nMateriales de construcción,\r\nPapel,\r\nProductos químicos,\r\nElectrónicos,\r\nTextil,\r\nMetales,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 27,
+    "fields": {
+      "key": "WASTE_MANAGEMENT_ORGANIC_LIST",
+      "value": "Compostaje,\r\nRecogida selectiva,\r\nDonación de alimentos no utilizados,\r\nReutilización,\r\nReventa / reacondicionamiento,\r\nPrácticas para reducir los desperdicios,\r\nEducación y concientización,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 28,
+    "fields": {
+      "key": "GOODS_AND_SERVICES_LIST",
+      "value": "Bienes,\r\nServicios",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 29,
+    "fields": {
+      "key": "GOODS_ACQUIRED_LIST",
+      "value": "Materias primas y materiles de producción,\r\nEquipos y maquinaria,\r\nProductos terminados,\r\nMuebles y mobiliario,\r\nSuministros de oficina,\r\nVehículos y flota,\r\nEmbalaje y envases,\r\nDotación de uniformes y ropa de trabajo,\r\nProductos químicos y sustancias,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 30,
+    "fields": {
+      "key": "SERVICE_ACQUIRED_LIST",
+      "value": "Transporte y logística,\r\nTecnología de la información,\r\nConsultoría y asesoría,\r\nLimpieza y mantenimiento,\r\nServicios financieros,\r\nMarketing y publicidad,\r\nCapacitación y desarrollo,\r\nRecursos humanos,\r\nCatering y alimentación,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 31,
+    "fields": {
+      "key": "GOODS_AND_SERVICES_ORIGIN_LIST",
+      "value": "Nacional,\r\nInternacional",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 32,
+    "fields": {
+      "key": "SUPPLIER_ACTIONS_IMPLEMENTATION_LIST",
+      "value": "Políticas de sostenibilidad o certificaciones ambientales,\r\nPrácticas de economía circular (reciclaje; reutilización; etc.),\r\nOptimización de procesos,\r\nOtros",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 33,
+    "fields": {
+      "key": "ASSETS_LEASED_LIST",
+      "value": "Equipos y maquinaria,\r\nMuebles y mobiliario,\r\nVehículos y flota,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 34,
+    "fields": {
+      "key": "DURATION_LIST",
+      "value": "día,\r\nSemanas,\r\nMeses,\r\nAños,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 35,
+    "fields": {
+      "key": "TRANSPORT_SYSTEM_LIST",
+      "value": "Terrestre,\r\nMarítimo,\r\nAéreo,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 36,
+    "fields": {
+      "key": "PRODUCT_LIST",
+      "value": "Producto 1,\r\nProducto 2,\r\nProducto 3",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 37,
+    "fields": {
+      "key": "INVESTMENT_LIST",
+      "value": "Edificio,\r\nMaquinaria / equipo,\r\nVehículo,",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 38,
+    "fields": {
+      "key": "WASTE_TYPE_LIST",
+      "value": "Residuos orgánicos,\r\nResiduos inorgánicos,\r\nResiduos peligrosos,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 39,
+    "fields": {
+      "key": "WASTE_ORGANIC_LIST",
+      "value": "Residuos de alimentos,\r\nResiduos de jardinería,\r\nResiduos de cocina,\r\nResiduos de animales,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 40,
+    "fields": {
+      "key": "WASTE_INORGANIC_LIST",
+      "value": "Plástico,\r\nVidrio,\r\nResiduos inorgánicos,\r\nMetales,\r\nPapel y cartón,\r\nProductos electrónicos,\r\nMateriales de construcción,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 41,
+    "fields": {
+      "key": "WASTE_DANGER_LIST",
+      "value": "Sustancias químicas tóxicas,\r\nAceites usados,\r\nBaterías,\r\nResiduos médicos,\r\nResiduos radioactivos,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 42,
+    "fields": {
+      "key": "WASTE_MANAGEMENT_INORGANIC_LIST",
+      "value": "Reciclaje interno,\r\nRecogida selectiva,\r\nColaboración con empresas de reciclaje,\r\nReutilización,\r\nReventa / reacondicionamiento,\r\nPrácticas para reducir los desperdicios,\r\nEducación y concientización,\r\nOtro",
+      "company": null
+    }
+  },
+  {
+    "model": "main.configuration",
+    "pk": 43,
+    "fields": {
+      "key": "WASTE_MANAGEMENT_DANGER_LIST",
+      "value": "Almacenamiento adecuado,\r\nEtiquetado correcto,\r\nEliminación certificada,\r\nCapacitación del personal,\r\nControl de emisiones,\r\nPlan de emergencia,\r\nEducación y concientización,\r\nOtro",
+      "company": null
+    }
+  },
+  {
     "model": "main.economicsector",
     "pk": 1,
     "fields": {
