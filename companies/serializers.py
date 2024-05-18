@@ -25,6 +25,18 @@ class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
 
 
 class BrandSerializer(serializers.ModelSerializer):
+
+    def validate(self, data):
+        company = data.get('company')
+        if company:
+            if not company.membership or not company.membership.is_active:
+                raise serializers.ValidationError("La compañía no tiene una membresía válida.")
+
+            if company.membership.num_brands != -1 and company.brands.count() >= company.membership.num_brands:
+                raise serializers.ValidationError(
+                    "La compañía ha alcanzado el límite de marcas permitidas por su membresía.")
+        return data
+
     class Meta:
         model = Brand
         fields = ('id', 'company', 'name', 'description', 'logo', 'logo_absolute_url')
@@ -42,6 +54,18 @@ class MemberSerializer(serializers.ModelSerializer):
         # Devuelve la representación legible del rol.
         return obj.get_role_display()
 
+    def validate(self, data):
+        company = data.get('company')
+        if company:
+            if not company.membership or not company.membership.is_active:
+                raise serializers.ValidationError("La compañía no tiene una membresía válida.")
+
+            if company.membership.num_users != -1 and Member.objects.filter(company=company).count() >= company.membership.num_users:
+                raise serializers.ValidationError(
+                    "La compañía ha alcanzado el límite de usuarios permitidos por su membresía."
+                )
+        return data
+
     class Meta:
         model = Member
         fields = ('id', 'company', 'user_email', 'role', 'role_description')
@@ -49,6 +73,17 @@ class MemberSerializer(serializers.ModelSerializer):
 
 class LocationSerializer(serializers.ModelSerializer):
     emission_source_locations = EmissionsSourceSerializer(many=True, read_only=True)
+
+    def validate(self, data):
+        company = data.get('company')
+        if company:
+            if not company.membership or not company.membership.is_active:
+                raise serializers.ValidationError("La compañía no tiene una membresía válida.")
+
+            if company.membership.num_brands != -1 and company.brands.count() >= company.membership.num_brands:
+                raise serializers.ValidationError(
+                    "La compañía ha alcanzado el límite de marcas permitidas por su membresía.")
+        return data
 
     class Meta:
         model = Location

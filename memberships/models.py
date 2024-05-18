@@ -149,6 +149,23 @@ class CompanyMembership(models.Model):
     )
 
     @property
+    def is_active(self):
+        return self.status not in [self.CANCELED, self.EXPIRED]
+
+
+    @property
+    def num_brands(self):
+        return self.membership.num_brands if self.membership else None
+
+    @property
+    def num_locations(self):
+        return self.membership.num_locations if self.membership else None
+
+    @property
+    def num_users(self):
+        return self.membership.num_users if self.membership else None
+
+    @property
     def days_remaining(self):
         if self.end_date is None:
             return "Ilimitado"
