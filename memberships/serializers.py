@@ -24,7 +24,7 @@ class CompanyMembershipSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CompanyMembership
-        fields = ['id', 'company', 'membership', 'status', 'start_date', 'end_date']
+        fields = ['id', 'company', 'membership', 'status', 'start_date', 'end_date', 'days_remaining']
 
 
 class PhoneSerializer(serializers.Serializer):

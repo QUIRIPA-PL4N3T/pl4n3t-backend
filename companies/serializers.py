@@ -66,26 +66,44 @@ class CompanySerializer(serializers.ModelSerializer):
     country_name = serializers.SerializerMethodField(read_only=True)
     state_name = serializers.SerializerMethodField(read_only=True)
     city_name = serializers.SerializerMethodField(read_only=True)
+    economic_sector_name = serializers.SerializerMethodField(read_only=True)
+    industry_type_name = serializers.SerializerMethodField(read_only=True)
+    size_name = serializers.SerializerMethodField(read_only=True)
 
     @extend_schema_field(OpenApiTypes.STR)
-    def get_country_name(self, obj:Company): # noqa
+    def get_country_name(self, obj: Company):  # noqa
         return obj.country.name if obj.country else ''
 
     @extend_schema_field(OpenApiTypes.STR)
-    def get_state_name(self, obj:Company): # noqa
+    def get_state_name(self, obj: Company):  # noqa
         return obj.state.name if obj.state else ''
 
     @extend_schema_field(OpenApiTypes.STR)
-    def get_city_name(self, obj:Company): # noqa
+    def get_city_name(self, obj: Company):  # noqa
         return obj.city.name if obj.city else ''
+
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_economic_sector_name(self, obj: Company):  # noqa
+        return obj.economic_sector.name if obj.economic_sector else ''
+
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_industry_type_name(self, obj: Company):  # noqa
+        return obj.industry_type.name if obj.industry_type else ''
+
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_size_name(self, obj: Company):  # noqa
+        return obj.get_size_display()
 
     class Meta:
         model = Company
-        fields = ('id', 'name', 'description', 'industry', 'size', 'locations',
-                  'website', 'geo_location', 'economic_sector', 'industry_type',
-                  'members_roles', 'brands', 'country', 'address', 'postal_code',
-                  'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
-                  'state_name', 'city_name', 'nit', 'logo', 'membership')
+        fields = (
+            'id', 'name', 'description', 'industry', 'size', 'locations',
+            'website', 'geo_location', 'economic_sector', 'industry_type',
+            'members_roles', 'brands', 'country', 'address', 'postal_code',
+            'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
+            'state_name', 'city_name', 'nit', 'logo', 'economic_sector_name',
+            'size_name', 'industry_type_name', 'economic_sector_name', 'membership'
+        )
 
 
 class CompanyLogoSerializer(serializers.ModelSerializer):

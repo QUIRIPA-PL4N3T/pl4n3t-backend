@@ -440,11 +440,14 @@ def create_free_membership(sender, instance, created, **kwargs):
     if created:
         try:
             free_membership = Membership.objects.get(is_default=True)
+            end_date = None if free_membership.duration == -1 else timezone.now() + timedelta(
+                days=free_membership.duration)
+
             CompanyMembership.objects.create(
                 company=instance,
                 membership=free_membership,
                 start_date=timezone.now(),
-                end_date=timezone.now() + timedelta(days=free_membership.duration),
+                end_date=end_date,
                 status=CompanyMembership.PAID
             )
         except Membership.DoesNotExist:

@@ -107,11 +107,13 @@ class PurchaseMembershipView(APIView):
                 company_membership.save()
             except CompanyMembership.DoesNotExist:
                 # Create new company membership if not exists
+                end_date = None if membership.duration == -1 else timezone.now() + timedelta(
+                    days=membership.duration)
                 CompanyMembership.objects.create(
                     company=company,
                     membership=membership,
                     start_date=timezone.now() + timedelta(days=1),  # Start date set to the next day
-                    end_date=timezone.now() + timedelta(days=membership.duration),
+                    end_date=end_date,
                     # End date based on membership duration
                     status=CompanyMembership.AWAITING_PAYMENT  # Initial status set to awaiting payment
                 )
@@ -177,12 +179,14 @@ class MembershipPaymentSuccessView(APIView):
                 # Get the membership
                 membership_id = payment_status['response']['items'][0]['id']
                 membership = Membership.objects.get(id=membership_id)
+                end_date = None if membership.duration == -1 else timezone.now() + timedelta(
+                    days=membership.duration)
                 company_membership = CompanyMembership.objects.get(company=company)
 
                 # Set membership to the company
                 company_membership.membership = membership
                 company_membership.start_date = timezone.now() + timedelta(days=1)
-                company_membership.end_date = timezone.now() + timedelta(days=membership.duration)
+                company_membership.end_date = end_date
                 company_membership.status = CompanyMembership.PAID
                 company.save()
 

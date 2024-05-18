@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
@@ -24,7 +25,11 @@ class Membership(models.Model):
     )
     is_default = models.BooleanField(default=False, editable=False)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    duration = models.IntegerField(_('Duración en días'), default=365)
+    duration = models.IntegerField(
+        _('Duración en días'),
+        default=365,
+        help_text=_('Ingrese -1 para una membresía ilimitada.')
+    )
     description = models.TextField(blank=True, null=True)
     benefits = models.TextField(blank=True, null=True)
     num_brands = models.IntegerField(_('Número de Marcas'), default=1)
@@ -128,7 +133,11 @@ class CompanyMembership(models.Model):
         blank=True
     )
     start_date = models.DateTimeField(auto_now_add=True)
-    end_date = models.DateTimeField()
+    end_date = models.DateTimeField(
+        null=True,
+        blank=True,
+        help_text=_('Deje en blanco para membresías ilimitadas.')
+    )
 
     # Proposed end date for a new membership if a change is awaiting payment confirmation
     proposed_end_date = models.DateTimeField(null=True, blank=True)
@@ -138,6 +147,13 @@ class CompanyMembership(models.Model):
         choices=MEMBERSHIP_STATUS_CHOICES,
         default=PENDING,
     )
+
+    @property
+    def days_remaining(self):
+        if self.end_date is None:
+            return "Ilimitado"
+        remaining_days = (self.end_date - timezone.now()).days
+        return remaining_days if remaining_days >= 0 else "Expirado"
 
     def __str__(self):
         return f'{self.company.name} - {self.membership.name}'
