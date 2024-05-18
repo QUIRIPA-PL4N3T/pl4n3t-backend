@@ -60,7 +60,7 @@ class MemberSerializer(serializers.ModelSerializer):
             if not company.membership or not company.membership.is_active:
                 raise serializers.ValidationError("La compañía no tiene una membresía válida.")
 
-            if company.membership.num_users != -1 and Member.objects.filter(company=company).count() >= company.membership.num_users:
+            if company.membership.num_users != -1 and company.members_roles.count() >= company.membership.num_users:
                 raise serializers.ValidationError(
                     "La compañía ha alcanzado el límite de usuarios permitidos por su membresía."
                 )
@@ -80,9 +80,9 @@ class LocationSerializer(serializers.ModelSerializer):
             if not company.membership or not company.membership.is_active:
                 raise serializers.ValidationError("La compañía no tiene una membresía válida.")
 
-            if company.membership.num_brands != -1 and company.brands.count() >= company.membership.num_brands:
+            if company.membership.num_locations != -1 and company.locations.count() >= company.membership.num_locations:
                 raise serializers.ValidationError(
-                    "La compañía ha alcanzado el límite de marcas permitidas por su membresía.")
+                    "La compañía ha alcanzado el límite de Sedes permitidas por su membresía.")
         return data
 
     class Meta:
