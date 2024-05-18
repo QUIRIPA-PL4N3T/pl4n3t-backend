@@ -28,7 +28,7 @@ class BrandSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         company = data.get('company')
-        if company:
+        if self.instance is None and company:
             if not company.membership or not company.membership.is_active:
                 raise serializers.ValidationError("La compañía no tiene una membresía válida.")
 
@@ -56,7 +56,7 @@ class MemberSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         company = data.get('company')
-        if company:
+        if self.instance is None and company:
             if not company.membership or not company.membership.is_active:
                 raise serializers.ValidationError("La compañía no tiene una membresía válida.")
 
@@ -76,7 +76,7 @@ class LocationSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         company = data.get('company')
-        if company:
+        if self.instance is None and company:
             if not company.membership or not company.membership.is_active:
                 raise serializers.ValidationError("La compañía no tiene una membresía válida.")
 
