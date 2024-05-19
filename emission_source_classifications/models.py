@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from emissions.models import EmissionFactor, FactorType
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
 
 
 class QuantificationType(models.Model):
@@ -162,3 +163,55 @@ class EmissionSourceGroup(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CommonEquipment(models.Model):
+    name = models.CharField(
+        _('Nombre del equipo'),
+        max_length=255,
+        unique=True
+    )
+    normalized_name = models.CharField(
+        _('Nombre normalizado'),
+        max_length=255,
+        unique=True,
+        editable=False
+    )
+
+    def save(self, *args, **kwargs):
+        self.normalized_name = slugify(self.name).lower()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _('Maquinaría/Equipo Común')
+        verbose_name_plural = _('Maquinarías/Equipos Comunes')
+
+
+class CommonActivity(models.Model):
+    name = models.CharField(
+        _('Nombre de la actividad'),
+        max_length=255,
+        unique=True
+    )
+    normalized_name = models.CharField(
+        _('Nombre normalizado'),
+        max_length=255,
+        unique=True,
+        editable=False
+    )
+
+    def save(self, *args, **kwargs):
+        self.normalized_name = slugify(self.name).lower()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _('Actividad Común')
+        verbose_name_plural = _('Actividades Comunes')

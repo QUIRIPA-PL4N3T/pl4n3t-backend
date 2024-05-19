@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from emission_source_classifications.models import ISOCategory, GHGScope, EmissionSourceGroup, QuantificationType
+from emission_source_classifications.models import ISOCategory, GHGScope, EmissionSourceGroup, QuantificationType, \
+    CommonActivity, CommonEquipment
 from django.utils.translation import gettext_lazy as _
 
 
@@ -31,3 +32,13 @@ class EmissionSourceGroupAdmin(admin.ModelAdmin):
         return ""
 
     icon_tag.short_description = _('Ícono')
+
+
+@admin.register(CommonActivity)
+class CommonActivityAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CommonEquipment)
+class CommonEquipmentAdmin(admin.ModelAdmin):
+    pass

@@ -5,8 +5,10 @@ from django.contrib.sites.models import Site
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+from django.utils.text import slugify
+
 from accounts.models import User
-from emission_source_classifications.models import EmissionSourceGroup
+from emission_source_classifications.models import EmissionSourceGroup, CommonActivity, CommonEquipment
 from emissions.models import SourceType, EmissionFactor, FactorType
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
@@ -368,6 +370,9 @@ class EmissionsSource(models.Model):
     electricity_efficiency_unit = models.CharField(_('Unidad Eficiencia Energética'), max_length=256, blank=True,
                                                    null=True)
 
+    activity_name = models.CharField(_('Nombre de la Actividad'), max_length=255, blank=True, null=True)
+    equipment_name = models.CharField(_('Nombre del Equipo'), max_length=255, blank=True, null=True)
+
     @property
     def emission_source_name(self) -> str:
         if self.group.form_name == 'ELECTRICITY':
@@ -452,3 +457,23 @@ def create_free_membership(sender, instance, created, **kwargs):
             )
         except Membership.DoesNotExist:
             pass
+
+
+@receiver(post_save, sender=Company)
+def create_common_data(sender, instance, created, **kwargs):
+    if created:
+        if instance.activity_name:
+            normalized_name = slugify(instance.activity_name).lower()
+            CommonActivity.objects.get_or_create(
+                normalized_name=normalized_name,
+                defaults={'name': instance.activity_name}
+            )
+        if instance.equipment_name:
+            normalized_name = slugify(instance.activity_name).lower()
+            CommonEquipment.objects.get_or_create(
+                normalized_name=normalized_name,
+                defaults={'name': instance.activity_name}
+            )
+
+
+

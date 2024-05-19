@@ -1,0 +1,216 @@
+[
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 1,
+    "fields": {
+      "name": "Vehículos de la Organización",
+      "description": "<p><strong>Ejemplos:</strong><br />\r\nVehiculos de propiedad de la organizaci&oacute;n (Camiones, tractocamiones, Maquinaria amarilla, aviones, etc)</p>",
+      "icon": "groups/Vehiculos_de_la_organizacion.png",
+      "category": 1,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "ORGANIZATION_VEHICLES",
+      "emission_factor_types": [
+        3,
+        2,
+        1,
+        17
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 2,
+    "fields": {
+      "name": "Uso de Combustibles en Actividades Propias de la Organización",
+      "description": "<p><strong>Ejemplo:</strong></p>\r\n\r\n<p>Gasolina comercial que se use para abastecimiento de equipos que requieran de suministro (Plantas de abastecimiento de energia, hornos, etc). Las cuales son de propiedad de la Organizaci&oacute;n</p>\r\n\r\n<p>Gas natural, propano u otro combustible gasesoso que se utiliza para el funcionamiento en hornos, estufa, etc y que son propiedad de la organizaci&oacute;n.</p>",
+      "icon": "groups/Uso_de_combustibles.png",
+      "category": 1,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "FUEL",
+      "emission_factor_types": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 3,
+    "fields": {
+      "name": "Transporte y Distribución",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Contrataci&oacute;n de proveedores que brindan transporte para el suministro o entrega de productos o servicios. No son propiedad de la organizaci&oacute;n</p>",
+      "icon": "groups/Transporte_y_distribucion.png",
+      "category": 3,
+      "allow_inventory": false,
+      "enabled": true,
+      "form_name": "TRANSPORTATION",
+      "emission_factor_types": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 4,
+    "fields": {
+      "name": "Desplazamiento de los empleados / visitantes",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Uso de motocicleta, buseta, taxi, etc que el cliente o visitante use para llegar a las instalaciones fisicas de la empresa.</p>\r\n\r\n<p>Uso de motocicleta, buseta, taxi, etc que el empleado utilice desde su residencia hasta la sede fisica de la organizaci&oacute;n, puede ser de uso propio o particular.</p>",
+      "icon": "groups/Desplazamiento_1.png",
+      "category": 3,
+      "allow_inventory": false,
+      "enabled": true,
+      "form_name": "COMMUTING_EMPLOYEES",
+      "emission_factor_types": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 5,
+    "fields": {
+      "name": "Uso de Productos Vendidos",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Si la empresa se dedica a a crear o transformar un producto, debe de estimar el tiempo de vigencia del producto. Ejemplo: Tiempo conservaci&oacute;n del arroz y cual es su disposici&oacute;n final, mas adecuada.</p>",
+      "icon": "groups/Uso_de_productos_vendidos.png",
+      "category": 5,
+      "allow_inventory": true,
+      "enabled": false,
+      "form_name": "PRODUCTS",
+      "emission_factor_types": [
+        3,
+        2,
+        1,
+        14,
+        18
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 6,
+    "fields": {
+      "name": "Inversiones",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>La organizaci&oacute;n utiliza para un proyecto especifico fondos financieros, derivados de un prestamo o financiamiento de alguna entidad bancaria pubica o privada.</p>",
+      "icon": "groups/Inversiones.png",
+      "category": 5,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "INVESTMENTS",
+      "emission_factor_types": [
+        3,
+        2,
+        1,
+        14,
+        18
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 7,
+    "fields": {
+      "name": "Refrigerantes / aires acondicionados de la organización",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Aires acondicionados o congeladores de la organizaci&oacute;n tengan instalados en las diferentes areas de la sede fisica.</p>",
+      "icon": "groups/Refrigerantes_1.png",
+      "category": 1,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "REFRIGERANTS",
+      "emission_factor_types": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 8,
+    "fields": {
+      "name": "Compra de Electricidad",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Energia consumida por la organizaci&oacute;n cuando es proveniente de plantas de energia que hacen posible que los equipos, maquinaria y demas puedan funcionar sin depender de la red elecrica convencional de la localidad. Ejemplo: Planta de energia</p>\r\n\r\n<p>Energia (KWH) consumida por la organizaci&oacute;n a travez del proveedor de servicios publicos de la localidad, regi&oacute;n o pais que suminsitra a la sede fisica de la organizaci&oacute;n . Ejemplo: Empresa de Servicios publicos de la localidad.</p>\r\n\r\n<p>&nbsp;</p>",
+      "icon": "groups/Compra_de_electricidad.png",
+      "category": 2,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "ELECTRICITY",
+      "emission_factor_types": [
+        14
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 9,
+    "fields": {
+      "name": "Bienes Arrendados",
+      "description": "<p><strong>Ejemplo:</strong></p>\r\n\r\n<p>Edificios, vehiculos, maquinaria amarilla, etc que no sean de propiedad de la organizaci&oacute;n, sino que sean rentados o alquilados</p>",
+      "icon": "groups/Instalaciones_arrendadas.png",
+      "category": 4,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "LEASED_ASSETS",
+      "emission_factor_types": [
+        3,
+        2,
+        1,
+        14,
+        17,
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 10,
+    "fields": {
+      "name": "Bienes / Servicios Adquiridos",
+      "description": "<p><strong>Ejemplos:</strong></p>\r\n\r\n<p>Servicio adquirido por un proveedor tercero que se requiere para transportar el personal. Ejemplo: Contrataci&oacute;n de proveedor para prestar el servicio de transporte de personal en buseta al personal de la organizaci&oacute;n.</p>\r\n\r\n<p>Compra de Resmas de papel que la organizaci&oacute;n adquiere para imprimir o usar en fotocopias,</p>\r\n\r\n<p>Compra de muebles o equipos de orden nacional o internacional que la organizaci&oacute;n realice su compra a un proveedor y tenga disponible la informaci&oacute;n. Ejemplo: Compra de Tolvas, descascarilladora, etc</p>\r\n\r\n<p>&nbsp;</p>",
+      "icon": "groups/Bienes_y_servicios_adquiridos.png",
+      "category": 4,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "SERVICES",
+      "emission_factor_types": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 11,
+    "fields": {
+      "name": "Viajes de negocio",
+      "description": "<p><strong>Ejemplo:</strong></p>\r\n\r\n<p>Son aquellas cuando por empleados viajan o se transportan via aerea a terrestre para cerrar negociaciones comerciales, acuerdos, alianzas, etc Las cuales se utilizan servicios de proveedores terceros, que no solo se conoce el tipo de desplazamiento utilizado.</p>",
+      "icon": "groups/Viajes_de_negocio.png",
+      "category": 3,
+      "allow_inventory": false,
+      "enabled": true,
+      "form_name": "TRAVELS",
+      "emission_factor_types": [
+        15
+      ]
+    }
+  },
+  {
+    "model": "emission_source_classifications.emissionsourcegroup",
+    "pk": 12,
+    "fields": {
+      "name": "Desperdicio de operaciones",
+      "description": "<p><strong>Ejemplo:</strong><br />\r\nResiduos generados por la organizaci&oacute;n, de acuerdo a su disposici&oacute;n final con proveedor</p>",
+      "icon": "groups/Desperdicio_de_operaciones.png",
+      "category": 4,
+      "allow_inventory": true,
+      "enabled": true,
+      "form_name": "WASTE",
+      "emission_factor_types": [
+        9
+      ]
+    }
+  }
+]
