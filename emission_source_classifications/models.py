@@ -165,9 +165,9 @@ class EmissionSourceGroup(models.Model):
         return self.name
 
 
-class CommonEquipment(models.Model):
+class CommonModel(models.Model):
     name = models.CharField(
-        _('Nombre del equipo'),
+        _('Nombre'),
         max_length=255,
         unique=True
     )
@@ -186,32 +186,26 @@ class CommonEquipment(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('name',)
+        abstract = True
+
+
+class CommonEquipment(CommonModel):
+
+    class Meta:
         verbose_name = _('Maquinaría/Equipo Común')
         verbose_name_plural = _('Maquinarías/Equipos Comunes')
-
-
-class CommonActivity(models.Model):
-    name = models.CharField(
-        _('Nombre de la actividad'),
-        max_length=255,
-        unique=True
-    )
-    normalized_name = models.CharField(
-        _('Nombre normalizado'),
-        max_length=255,
-        unique=True,
-        editable=False
-    )
-
-    def save(self, *args, **kwargs):
-        self.normalized_name = slugify(self.name).lower()
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
         ordering = ('name',)
+
+
+class CommonActivity(CommonModel):
+    class Meta:
         verbose_name = _('Actividad Común')
         verbose_name_plural = _('Actividades Comunes')
+        ordering = ('name',)
+
+
+class CommonProduct(CommonModel):
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _('Producto Común')
+        verbose_name_plural = _('Productos Comunes')

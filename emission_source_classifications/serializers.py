@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from emissions.serializers import FactorTypeSerializer
-from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity
+from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \
+    CommonProduct
 
 
 class QuantificationTypeSerializer(serializers.ModelSerializer):
@@ -44,4 +45,10 @@ class CommonEquipmentSerializer(serializers.ModelSerializer):
 class CommonActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = CommonActivity
+        fields = ('id', 'name')
+
+
+class CommonProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CommonProduct
         fields = ('id', 'name')

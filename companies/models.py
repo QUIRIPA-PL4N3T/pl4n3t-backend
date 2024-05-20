@@ -255,8 +255,8 @@ class Location(models.Model):
         verbose_name=_('Ciudad'),
         on_delete=models.SET_NULL,
         related_name='locations',
-        null = True,
-        blank = True,
+        null=True,
+        blank=True,
     )
     zip_code = models.CharField(_('Código Postal'), max_length=255)
     company = models.ForeignKey(
@@ -314,13 +314,22 @@ class EmissionsSource(models.Model):
     Note:
     The string representation of the instance shows the name of the emission source.
     """
+
+    WASTE_CHOICES = [
+        ('food', _('Residuos de alimentos')),
+        ('gardening', _('Residuos de jardinería')),
+        ('kitchen', _('Residuos de cocina')),
+        ('animals', _('Residuos de animales')),
+        ('other', _('Otro')),
+    ]
+
     name = models.CharField(_('Nombre'), max_length=255, blank=True, null=True)
     code = models.CharField(_('Código'), max_length=255, blank=True, null=True)
     description = models.TextField(_('Descripción'), blank=True, null=True)
     location = models.ForeignKey(
         Location,
         on_delete=models.CASCADE,
-        related_name='emission_source_locations'
+        related_name='emission_sources'
     )
     image = models.ImageField(
         _('Imagen'),
@@ -357,21 +366,77 @@ class EmissionsSource(models.Model):
 
     # Vehicle fields
     vehicle_type = models.CharField(_('Tipo de Vehículo'), max_length=128, blank=True, null=True)
-    vehicle_load = models.CharField(_('Tipo de Carga'), max_length=128,blank=True, null=True)
-    vehicle_fuel = models.CharField(_('Tipo de Combustible'), max_length=128,blank=True, null=True)
+    vehicle_load = models.CharField(_('Tipo de Carga'), max_length=128, blank=True, null=True)
+    vehicle_fuel = models.CharField(_('Tipo de Combustible'), max_length=128, blank=True, null=True)
     vehicle_capacity = models.FloatField(_('Capacidad'), default=0)
     vehicle_efficiency = models.FloatField(_('Eficiencia del Vehículo'), default=0)
     vehicle_efficiency_unit = models.CharField(_('Unidad de Medida'), max_length=128, blank=True, null=True)
 
     # Electricity fields
     electricity_supplier = models.CharField(_('Proveedor de Electricidad'), max_length=256, blank=True, null=True)
+
     electricity_source = models.CharField(_('Fuente de generación'), max_length=256, blank=True, null=True)
     electricity_efficiency = models.FloatField(_('Eficiencia Energética'), blank=True, null=True)
     electricity_efficiency_unit = models.CharField(_('Unidad Eficiencia Energética'), max_length=256, blank=True,
                                                    null=True)
+    know_type_electricity_generation_source = models.BooleanField(
+        _('Conoce el tipo de fuente de generación de electricidad'),
+        default=False
+    )
 
+    # leased assets Fields
+    leased_assets_type = models.CharField(_('Tipo de bien arrendado'), max_length=128, blank=True, null=True)
+    leased_assets_durations = models.IntegerField(_('Duración del contrato de Arrendamiento'), default=0)
+    leased_assets_duration_unit = models.CharField(
+        _('Unidad de Medida de la duración'), max_length=128, blank=True, null=True)
+
+    # fuel management
+    fuel_store = models.CharField(_('Almacenamiento del Combustible'), max_length=256, blank=True, null=True)
+    fuel_management = models.CharField(_('Gestión del Combustible'), max_length=256, blank=True, null=True)
+
+    # Steam Generation
+    exist_steam_specific_factor = models.BooleanField(default=False)
+
+    # Common fields
     activity_name = models.CharField(_('Nombre de la Actividad'), max_length=255, blank=True, null=True)
     equipment_name = models.CharField(_('Nombre del Equipo'), max_length=255, blank=True, null=True)
+    origin = models.CharField(_('origen'), max_length=255, blank=True, null=True)
+    energy_efficiency_value = models.FloatField(
+        _('Eficiencia energética del equipo o sistema que usa combustible'), default=0)
+    energy_efficiency_unit = models.CharField(_('Unidad de Medida'), max_length=128, blank=True, null=True)
+    service_life = models.IntegerField(_('Vida Útil'), default=0)
+    service_life_unit = models.CharField(_('Unidad de Medida Vida útil'), max_length=128, blank=True, null=True)
+
+    # goods and services acquired
+    good_and_service_acquired_type = models.CharField(_('Tipo de Bien o Servicio Adquirido'),
+                                                      max_length=128, blank=True, null=True)
+    acquired_service = models.CharField(_('Servicio Adquirido'), max_length=128, blank=True, null=True)
+    supplier_name = models.CharField(_('Nombre del Proveedor'), max_length=255, blank=True, null=True)
+    ghg_emission_are_recorded = models.BooleanField(_('Se registran y monitorean las emisiones GEI'), default=False)
+
+    # waste
+    waste_type = models.CharField(_('Tipo de desperdicio'), choices=WASTE_CHOICES,
+                                  max_length=128, blank=True, null=True)
+    waste_classification = models.CharField(_('Clase de desperdicio'), max_length=128, blank=True, null=True)
+
+    # Investments
+    investment_type = models.CharField(_('Tipo de Inversión'), max_length=128, blank=True, null=True)
+
+    # Refrigerants
+    refrigerant_capacity = models.FloatField(_('Capacidad'), default=0)
+    refrigerant_capacity_unit = models.CharField(_('Unidad de Medida'), max_length=128, blank=True, null=True)
+    has_refrigerant_leaks = models.BooleanField(_('¿Existen Fugas del refrigerante en el equipo?'), default=False)
+    has_refrigerant_conversions = models.BooleanField(
+        _('¿Se han realizado conversiones a refrigerantes con menor potencial de calentamiento global (PCG)?'),
+        default=False
+    )
+    final_disposal_of_refrigerants = models.CharField(
+        _('disposición final de refrigerantes'), max_length=128, blank=True, null=True)
+    support_actions_refrigerant_equipment = models.CharField(
+        _('acciones realiza para el mantenimiento y reparaciones del equipo'), max_length=128, blank=True, null=True)
+
+    # Products
+    product_name = models.CharField(_('Nombre del Producto'), max_length=255, blank=True, null=True)
 
     @property
     def emission_source_name(self) -> str:
@@ -474,6 +539,3 @@ def create_common_data(sender, instance, created, **kwargs):
                 normalized_name=normalized_name,
                 defaults={'name': instance.activity_name}
             )
-
-
-

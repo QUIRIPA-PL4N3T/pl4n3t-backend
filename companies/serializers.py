@@ -9,12 +9,23 @@ from memberships.serializers import CompanyMembershipSerializer
 class EmissionsSourceSerializer(BaseDocumentSerializer):
     class Meta:
         model = EmissionsSource
-        fields = ('id', 'name', 'code', 'description', 'location', 'image', 'group',
-                  'source_type', 'geo_location', 'factor_type', 'emission_factor',
-                  'vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity',
-                  'vehicle_efficiency', 'vehicle_efficiency_unit', 'electricity_supplier',
-                  'electricity_source', 'electricity_efficiency', 'electricity_efficiency_unit',
-                  'documents', 'emission_source_name')
+        fields = (
+            'id', 'name', 'code', 'description', 'location', 'image', 'group',
+            'source_type', 'geo_location', 'factor_type', 'emission_factor',
+            'vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity',
+            'vehicle_efficiency', 'vehicle_efficiency_unit', 'electricity_supplier',
+            'electricity_source', 'electricity_efficiency', 'electricity_efficiency_unit',
+            'know_type_electricity_generation_source',  # new field
+            'leased_assets_type', 'leased_assets_durations', 'leased_assets_duration_unit',
+            'fuel_store', 'fuel_management', 'exist_steam_specific_factor', 'activity_name',
+            'equipment_name', 'origin', 'energy_efficiency_value', 'energy_efficiency_unit',
+            'service_life', 'service_life_unit', 'good_and_service_acquired_type',
+            'acquired_service', 'supplier_name', 'ghg_emission_are_recorded', 'waste_type',
+            'waste_classification', 'investment_type', 'refrigerant_capacity',
+            'refrigerant_capacity_unit', 'has_refrigerant_leaks', 'has_refrigerant_conversions',
+            'final_disposal_of_refrigerants', 'support_actions_refrigerant_equipment',
+            'product_name', 'documents', 'emission_source_name'
+        )
         read_only_fields = ['id', 'emission_source_name']
 
 

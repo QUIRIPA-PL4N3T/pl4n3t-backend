@@ -6,12 +6,13 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
-from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity
+from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \
+    CommonProduct
 from .serializers import (
     QuantificationTypeSerializer,
     GHGScopeSerializer,
     ISOCategorySerializer,
-    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer
+    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer, CommonProductSerializer
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -84,3 +85,9 @@ class CommonEquipmentViewSet(BaseSearchViewSet):
 class CommonActivityViewSet(BaseSearchViewSet):
     queryset = CommonActivity.objects.all()
     serializer_class = CommonActivitySerializer
+
+
+@extend_schema(tags=['EmissionSourceGroups'])
+class CommonProductViewSet(BaseSearchViewSet):
+    queryset = CommonProduct.objects.all()
+    serializer_class = CommonProductSerializer
