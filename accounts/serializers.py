@@ -1,5 +1,6 @@
 # Django
 from django.contrib.auth import authenticate, password_validation
+from django.contrib.auth.password_validation import validate_password
 from django.contrib.sites.models import Site
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
@@ -16,7 +17,6 @@ class UserAvatarSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['avatar']
-        read_only_fields = ['id', ]
 
 
 class UserModelSerializer(serializers.ModelSerializer):
@@ -33,6 +33,7 @@ class UserModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'email', 'avatar')
+        read_only_fields = ['id', 'username', 'email']
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -92,6 +93,17 @@ class UserLogoutSerializer(serializers.Serializer): # noqa
 
 class ResetPasswordRequestSerializer(serializers.Serializer): # noqa
     email = serializers.EmailField(required=True)
+
+
+class UpdatePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True, validators=[validate_password])
+    confirm_password = serializers.CharField(required=True)
+
+    def validate(self, attrs):
+        if attrs['new_password'] != attrs['confirm_password']:
+            raise serializers.ValidationError({"confirm_password": "New passwords do not match"})
+        return attrs
 
 
 class ResetPasswordSerializer(serializers.Serializer): # noqa

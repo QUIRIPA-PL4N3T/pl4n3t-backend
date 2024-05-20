@@ -6,6 +6,7 @@ from rest_framework import permissions, status, mixins, viewsets, parsers
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import action
 from rest_framework.generics import GenericAPIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.settings import api_settings
 from rest_framework.response import Response
@@ -18,7 +19,7 @@ from google.oauth2 import id_token as google_id_token
 from google.auth.transport import requests
 from accounts.serializers import CustomTokenObtainPairSerializer, UserModelSerializer, RegisterSerializer, TokenOutput, \
     LogoutSerializer, ResetPasswordSerializer, ResetPasswordRequestSerializer, UserAvatarSerializer, \
-    GoogleAccountSerializer
+    GoogleAccountSerializer, UpdatePasswordSerializer
 import firebase_admin
 from firebase_admin import auth, credentials
 
@@ -167,7 +168,7 @@ class ResetPasswordConfirmAPIView(GenericAPIView):
     serializer_class = ResetPasswordSerializer
 
     @extend_schema(
-        summary=_("Cambiar Contraseña"),
+        summary=_("Cambiar contraseña con un token de recuperación"),
         description=_("Cambiar contraseña"),
         request=ResetPasswordSerializer,
         methods=["post"]
@@ -218,6 +219,55 @@ class CurrentUserAPIView(GenericAPIView):
         logger.info(f"Authenticating current user {request.user.username}")
 
         return Response(current_user.data)
+
+    @extend_schema(
+        request=UserModelSerializer,
+        summary=_("Actualiza el Usuario Actual utilizando el token en el HEADER"),
+        description=_("Actualiza los datos del usuario, solo el usuario puede actualizar sus datos"),
+        responses={
+            200: UserModelSerializer,
+            404: OpenApiResponse(description=_('El Usuario no existe')),
+            400: OpenApiResponse(description=_('Datos inválidos')),
+            401: OpenApiResponse(description=_('Usted no tiene permiso para actualizar este usuario')),
+        },
+        methods=["post"]
+    )
+    def post(self, request):
+        user = request.user
+        serializer = UserModelSerializer(user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@extend_schema(tags=['Accounts'])
+class UpdatePasswordAPIView(GenericAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UpdatePasswordSerializer
+
+    @extend_schema(
+        summary=_("Actualizar contraseña del usuario"),
+        description=_("Actualizar contraseña del usuario"),
+        request=UpdatePasswordSerializer,
+        methods=["post"]
+    )
+    def post(self, request):
+        user = request.user
+        serializer = UpdatePasswordSerializer(data=request.data)
+
+        if serializer.is_valid():
+            # Check old password
+            if not user.check_password(serializer.data.get("old_password")):
+                return Response({"old_password": "Wrong password."}, status=status.HTTP_400_BAD_REQUEST)
+
+            # set_password also hashes the password that the user will get
+            user.set_password(serializer.data.get("new_password"))
+            user.save()
+
+            return Response({"detail": "Password updated successfully"}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @extend_schema(tags=['Accounts'])
@@ -338,8 +388,7 @@ class AvatarViewSet(viewsets.GenericViewSet, mixins.DestroyModelMixin):
     )
 
     @extend_schema(
-        summary=_("Anexar documento a un modelo de datos"),
-        description=f'Anexar una imagen a una emergencia',
+        summary=_("Actualiza avatar del usuario"),
         request={
             'multipart/form-data': {
                 'type': 'object',
