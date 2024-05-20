@@ -83,7 +83,7 @@ class MemberSerializer(serializers.ModelSerializer):
 
 
 class LocationSerializer(serializers.ModelSerializer):
-    emission_source_locations = EmissionsSourceSerializer(many=True, read_only=True)
+    emission_sources = EmissionsSourceSerializer(many=True, read_only=True)
 
     def validate(self, data):
         company = data.get('company')
@@ -100,7 +100,7 @@ class LocationSerializer(serializers.ModelSerializer):
         model = Location
         fields = ('id', 'name', 'address', 'phone', 'email', 'country', 'state', 'city',
                   'zip_code',  'company', 'geo_location', 'brand', 'location_type',
-                  'employees', 'emission_source_locations')
+                  'employees', 'emission_sources')
 
 
 class CompanySerializer(serializers.ModelSerializer):
