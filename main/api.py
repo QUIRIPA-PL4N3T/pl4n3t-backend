@@ -71,6 +71,9 @@ class UnitOfMeasureViewSet(viewsets.GenericViewSet, ListModelMixin):
     queryset = UnitOfMeasure.objects.all()
     serializer_class = UnitOfMeasureSerializer
 
+    def get_queryset(self):
+        return UnitOfMeasure.objects.filter(is_enabled=True)
+
 
 @extend_schema(tags=['Main'])
 class EconomicSectorViewSet(viewsets.GenericViewSet, ListModelMixin):

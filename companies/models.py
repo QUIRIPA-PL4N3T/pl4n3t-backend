@@ -362,6 +362,15 @@ class EmissionsSource(models.Model):
         related_name='emission_sources'
     )
 
+    emission_factor_unit = models.ForeignKey(
+        'main.UnitOfMeasure',
+        on_delete=models.CASCADE,
+        verbose_name=_('Unidad por defecto'),
+        related_name='emission_sources',
+        blank=True,
+        null=True,
+    )
+
     geo_location = models.PointField(null=True, blank=True)
 
     # Vehicle fields

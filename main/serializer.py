@@ -45,7 +45,7 @@ class UnitOfMeasureSerializer(serializers.ModelSerializer):
         model = UnitOfMeasure
         fields = [
              'id', 'name', 'slug', 'symbol', 'measure_type', 'name_standard_unit',
-            'scale_to_standard_unit', 'offset_to_standard_unit', 'formula'
+            'scale_to_standard_unit', 'offset_to_standard_unit', 'formula', 'is_gei_unit'
         ]
 
 

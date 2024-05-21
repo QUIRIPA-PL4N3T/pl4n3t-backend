@@ -181,7 +181,7 @@ class UnitOfMeasure(models.Model):
     slug = models.CharField(_("Slug"), max_length=32, blank=True, db_index=True)
     symbol = models.CharField(
         _("Símbolo"),
-        max_length=8,
+        max_length=32,
         help_text=_(
             """El símbolo utilizado para esta unidad de medida, como "ft" para pies o "m" para metro.""",
         ),
@@ -238,6 +238,8 @@ class UnitOfMeasure(models.Model):
             "Este atributo de miembro no es obligatorio, pero es una pieza valiosa de documentación",
         ),
     )
+    is_enabled = models.BooleanField(_('Activa'), default=False)
+    is_gei_unit = models.BooleanField(_('Es una unidad de medida GEI'), default=False)
 
     class Meta:
         verbose_name = _("Unidad de Medida")

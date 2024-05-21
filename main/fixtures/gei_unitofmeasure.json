@@ -1,0 +1,142 @@
+[
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de CO₂ equivalente por kilovatio-hora",
+            "slug": "kg-co2e-kwh",
+            "symbol": "kg CO₂e/kWh",
+            "measure_type": "ENERGY",
+            "name_standard_unit": "Kilogramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de CO₂ equivalente por litro",
+            "slug": "kg-co2e-l",
+            "symbol": "kg CO₂e/l",
+            "measure_type": "VOLUMEN",
+            "name_standard_unit": "Kilogramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de CO₂ equivalente por metro cúbico",
+            "slug": "kg-co2e-m3",
+            "symbol": "kg CO₂e/m³",
+            "measure_type": "VOLUMEN",
+            "name_standard_unit": "Kilogramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de CO₂ equivalente por tonelada",
+            "slug": "kg-co2e-t",
+            "symbol": "kg CO₂e/t",
+            "measure_type": "WEIGHT",
+            "name_standard_unit": "Kilogramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Toneladas de CO₂ equivalente por gigajulio",
+            "slug": "t-co2e-gj",
+            "symbol": "t CO₂e/GJ",
+            "measure_type": "ENERGY",
+            "name_standard_unit": "Tonelada de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Toneladas de CO₂ equivalente por kilómetro",
+            "slug": "t-co2e-km",
+            "symbol": "t CO₂e/km",
+            "measure_type": "LENGTH",
+            "name_standard_unit": "Tonelada de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Gramos de CO₂ equivalente por kilovatio-hora",
+            "slug": "g-co2e-kwh",
+            "symbol": "g CO₂e/kWh",
+            "measure_type": "ENERGY",
+            "name_standard_unit": "Gramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Gramos de CO₂ equivalente por metro cuadrado",
+            "slug": "g-co2e-m2",
+            "symbol": "g CO₂e/m²",
+            "measure_type": "AREA",
+            "name_standard_unit": "Gramo de CO₂ equivalente",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de metano por kilovatio-hora",
+            "slug": "kg-ch4-kwh",
+            "symbol": "kg CH₄/kWh",
+            "measure_type": "ENERGY",
+            "name_standard_unit": "Kilogramo de CH₄",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    },
+    {
+        "model": "main.UnitOfMeasure",
+        "fields": {
+            "name": "Kilogramos de óxido nitroso por kilovatio-hora",
+            "slug": "kg-n2o-kwh",
+            "symbol": "kg N₂O/kWh",
+            "measure_type": "ENERGY",
+            "name_standard_unit": "Kilogramo de N₂O",
+            "scale_to_standard_unit": 1.0,
+            "offset_to_standard_unit": 0.0,
+            "is_enabled": true,
+            "is_gei_unit": true
+        }
+    }
+]

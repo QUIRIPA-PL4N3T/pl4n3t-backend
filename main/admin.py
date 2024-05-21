@@ -24,14 +24,14 @@ class ConfigurationAdmin(admin.ModelAdmin):
 
 @admin.register(UnitOfMeasure)
 class UnitOfMeasureAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'symbol', 'measure_type']
-    list_editable = ['name', 'symbol', 'measure_type']
+    list_display = ['id', 'name', 'symbol', 'measure_type', 'is_enabled', 'is_gei_unit']
+    list_editable = ['name', 'symbol', 'measure_type', 'is_enabled', 'is_gei_unit']
     fields = ['name', 'slug', 'symbol', 'measure_type', 'name_standard_unit',
               'scale_to_standard_unit', 'offset_to_standard_unit', 'formula'
               ]
     readonly_fields = ["slug"]
     search_fields = ('name',)
-    list_filter = ('measure_type', 'name_standard_unit')
+    list_filter = ('measure_type', 'name_standard_unit', 'is_gei_unit', 'is_enabled')
 
 
 @admin.register(EconomicSector)
