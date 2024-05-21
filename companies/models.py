@@ -453,11 +453,17 @@ class EmissionsSource(models.Model):
     @property
     def emission_source_name(self) -> str:
         if self.group.form_name == 'ELECTRICITY':
-            return f"{self.group} - {self.electricity_supplier}"
+            return self.electricity_supplier
         if self.group.form_name == 'ORGANIZATION_VEHICLES':
-            return f"{self.group} - {self.name}, {self.code}"
+            return f"{self.code}: {self.name}"
+        if self.group.form_name == 'SERVICES':
+            return self.supplier_name
         else:
-            return f"{self.group} - {self.name}"
+            return self.name
+
+    @property
+    def group_name(self) -> str:
+        return self.group.name
 
     class Meta:
         ordering = ('name',)
