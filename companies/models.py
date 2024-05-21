@@ -6,10 +6,9 @@ from django.contrib.sites.models import Site
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
-from django.utils.text import slugify
-
 from accounts.models import User
-from emission_source_classifications.models import EmissionSourceGroup, CommonActivity, CommonEquipment
+from emission_source_classifications.models import EmissionSourceGroup, CommonActivity, CommonEquipment, CommonProduct, \
+    create_or_get_common_data
 from emissions.models import SourceType, EmissionFactor, FactorType
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
@@ -527,78 +526,6 @@ def create_free_membership(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=EmissionsSource)
 def create_common_data(sender, instance, created, **kwargs):
-    if created:
-        if instance.activity_name:
-            try:
-                activity_names = json.loads(instance.activity_name)
-                if isinstance(activity_names, list):
-                    for name in activity_names:
-                        normalized_name = slugify(name).lower()
-                        CommonActivity.objects.get_or_create(
-                            normalized_name=normalized_name,
-                            defaults={'name': name}
-                        )
-                else:
-                    # Manejo del caso en que activity_name no es un arreglo
-                    normalized_name = slugify(instance.activity_name).lower()
-                    CommonActivity.objects.get_or_create(
-                        normalized_name=normalized_name,
-                        defaults={'name': instance.activity_name}
-                    )
-            except json.JSONDecodeError:
-                # Manejo del caso en que activity_name no es una cadena JSON válida
-                normalized_name = slugify(instance.activity_name).lower()
-                CommonActivity.objects.get_or_create(
-                    normalized_name=normalized_name,
-                    defaults={'name': instance.activity_name}
-                )
-
-        if instance.equipment_name:
-            try:
-                equipment_names = json.loads(instance.equipment_name)
-                if isinstance(equipment_names, list):
-                    for name in equipment_names:
-                        normalized_name = slugify(name).lower()
-                        CommonEquipment.objects.get_or_create(
-                            normalized_name=normalized_name,
-                            defaults={'name': name}
-                        )
-                else:
-                    # Manejo del caso en que equipment_name no es un arreglo
-                    normalized_name = slugify(instance.equipment_name).lower()
-                    CommonEquipment.objects.get_or_create(
-                        normalized_name=normalized_name,
-                        defaults={'name': instance.equipment_name}
-                    )
-            except json.JSONDecodeError:
-                # Manejo del caso en que equipment_name no es una cadena JSON válida
-                normalized_name = slugify(instance.equipment_name).lower()
-                CommonEquipment.objects.get_or_create(
-                    normalized_name=normalized_name,
-                    defaults={'name': instance.equipment_name}
-                )
-
-        if instance.product_name:
-            try:
-                equipment_names = json.loads(instance.equipment_name)
-                if isinstance(equipment_names, list):
-                    for name in equipment_names:
-                        normalized_name = slugify(name).lower()
-                        CommonEquipment.objects.get_or_create(
-                            normalized_name=normalized_name,
-                            defaults={'name': name}
-                        )
-                else:
-                    # Manejo del caso en que equipment_name no es un arreglo
-                    normalized_name = slugify(instance.equipment_name).lower()
-                    CommonEquipment.objects.get_or_create(
-                        normalized_name=normalized_name,
-                        defaults={'name': instance.equipment_name}
-                    )
-            except json.JSONDecodeError:
-                # Manejo del caso en que equipment_name no es una cadena JSON válida
-                normalized_name = slugify(instance.equipment_name).lower()
-                CommonEquipment.objects.get_or_create(
-                    normalized_name=normalized_name,
-                    defaults={'name': instance.equipment_name}
-                )
+    create_or_get_common_data(CommonActivity, 'name', instance.activity_name)
+    create_or_get_common_data(CommonEquipment, 'name', instance.equipment_name)
+    create_or_get_common_data(CommonProduct, 'name', instance.product_name)

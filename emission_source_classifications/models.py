@@ -1,4 +1,5 @@
-from django.db import models
+import json
+from django.db import models, IntegrityError
 from django.utils.translation import gettext_lazy as _
 from emissions.models import EmissionFactor, FactorType
 from ckeditor.fields import RichTextField
@@ -209,3 +210,37 @@ class CommonProduct(CommonModel):
         ordering = ('name',)
         verbose_name = _('Producto Común')
         verbose_name_plural = _('Productos Comunes')
+
+
+def create_or_get_common_data(model_class, name_field, instance_field):
+    if instance_field:
+        try:
+            names = json.loads(instance_field)
+            if isinstance(names, list):
+                for name in names:
+                    normalized_name = slugify(name).lower()
+                    try:
+                        model_class.objects.get_or_create(
+                            normalized_name=normalized_name,
+                            defaults={name_field: name}
+                        )
+                    except IntegrityError:
+                        pass
+            else:
+                normalized_name = slugify(instance_field).lower()
+                try:
+                    model_class.objects.get_or_create(
+                        normalized_name=normalized_name,
+                        defaults={name_field: instance_field}
+                    )
+                except IntegrityError:
+                    pass
+        except json.JSONDecodeError:
+            normalized_name = slugify(instance_field).lower()
+            try:
+                model_class.objects.get_or_create(
+                    normalized_name=normalized_name,
+                    defaults={name_field: instance_field}
+                )
+            except IntegrityError:
+                pass
