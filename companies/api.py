@@ -4,6 +4,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
     EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer, CompanyLogoSerializer
+from django_filters import rest_framework as filters
 
 
 @extend_schema(tags=['Companies'])
@@ -73,10 +74,24 @@ class LocationViewSet(viewsets.ModelViewSet):
     serializer_class = LocationSerializer
 
 
+class EmissionsSourceFilter(filters.FilterSet):
+    name = filters.CharFilter(field_name='name', lookup_expr='icontains')
+    code = filters.CharFilter(field_name='code', lookup_expr='icontains')
+    location = filters.NumberFilter(field_name='location_id')
+    group = filters.NumberFilter(field_name='group_id')
+    source_type = filters.NumberFilter(field_name='source_type_id')
+    factor_type = filters.NumberFilter(field_name='factor_type_id')
+
+    class Meta:
+        model = EmissionsSource
+        fields = ['name', 'code', 'location', 'group', 'source_type', 'factor_type']
+
+
 @extend_schema(tags=['CompanyEmissionSources'])
 class EmissionsSourceViewSet(viewsets.ModelViewSet):
     queryset = EmissionsSource.objects.all()
     serializer_class = EmissionsSourceSerializer
+    filterset_class = EmissionsSourceFilter
 
 
 @extend_schema(tags=['CompanyEmissionSourceEntries'])
