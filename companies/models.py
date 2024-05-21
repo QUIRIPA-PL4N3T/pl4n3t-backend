@@ -346,6 +346,8 @@ class EmissionsSource(models.Model):
         SourceType,
         on_delete=models.CASCADE,
         verbose_name=_('Tipo de Fuente de Emisión'),
+        blank=True,
+        null=True,
         related_name='emission_sources')
 
     factor_type = models.ForeignKey(
@@ -422,6 +424,7 @@ class EmissionsSource(models.Model):
     acquired_service = models.CharField(_('Servicio Adquirido'), max_length=128, blank=True, null=True)
     supplier_name = models.CharField(_('Nombre del Proveedor'), max_length=255, blank=True, null=True)
     ghg_emission_are_recorded = models.BooleanField(_('Se registran y monitorean las emisiones GEI'), default=False)
+
 
     # waste
     waste_type = models.CharField(_('Tipo de desperdicio'), choices=WASTE_CHOICES,
