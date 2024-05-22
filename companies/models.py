@@ -444,9 +444,9 @@ class EmissionsSource(models.Model):
         default=False
     )
     final_disposal_of_refrigerants = models.CharField(
-        _('disposición final de refrigerantes'), max_length=128, blank=True, null=True)
+        _('disposición final de refrigerantes'), max_length=1024, blank=True, null=True)
     support_actions_refrigerant_equipment = models.CharField(
-        _('acciones realiza para el mantenimiento y reparaciones del equipo'), max_length=128, blank=True, null=True)
+        _('acciones realiza para el mantenimiento y reparaciones del equipo'), max_length=1024, blank=True, null=True)
 
     # Products
     product_name = models.CharField(_('Nombre del Producto'), max_length=255, blank=True, null=True)
