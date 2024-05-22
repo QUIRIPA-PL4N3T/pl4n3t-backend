@@ -191,6 +191,13 @@ class CommonModel(models.Model):
 
 
 class CommonEquipment(CommonModel):
+
+    normalized_name = models.CharField(
+        _('Nombre normalizado'),
+        max_length=255,
+        editable=False
+    )
+
     group = models.ForeignKey(
         EmissionSourceGroup,
         related_name='equipment_types',
@@ -203,6 +210,7 @@ class CommonEquipment(CommonModel):
     class Meta:
         verbose_name = _('Tipo de Maquinaría/Equipo')
         verbose_name_plural = _('Tipos de Maquinarías/Equipos')
+        unique_together = (('group', 'normalized_name'),)
         ordering = ('name',)
 
 
@@ -227,35 +235,36 @@ class Investment(CommonModel):
         verbose_name_plural = _('Tipos de Inversiones')
 
 
-def create_or_get_common_data(model_class, name_field, instance_field):
-    if instance_field:
+def create_or_get_common_data(model_class, name_field, instance_field, group=None):
+    """
+    Creates or retrieves instances in the specified model based on the provided names.
+
+    :param model_class: The Django model in which the instances are to be created or retrieved.
+    :param name_field: The field in the model where the name will be stored.
+    :param instance_field: The field in the instance containing the name or list of names.
+    :param group: (Optional) The group to which the instance belongs.
+    """
+
+    if not instance_field:
+        return
+
+    try:
+        names = json.loads(instance_field)
+        if not isinstance(names, list):
+            names = [instance_field]
+    except json.JSONDecodeError:
+        names = [instance_field]
+
+    for name in names:
+        normalized_name = slugify(name).lower()
+        defaults = {name_field: name}
+        if group:
+            defaults['group'] = group
+
         try:
-            names = json.loads(instance_field)
-            if isinstance(names, list):
-                for name in names:
-                    normalized_name = slugify(name).lower()
-                    try:
-                        model_class.objects.get_or_create(
-                            normalized_name=normalized_name,
-                            defaults={name_field: name}
-                        )
-                    except IntegrityError:
-                        pass
-            else:
-                normalized_name = slugify(instance_field).lower()
-                try:
-                    model_class.objects.get_or_create(
-                        normalized_name=normalized_name,
-                        defaults={name_field: instance_field}
-                    )
-                except IntegrityError:
-                    pass
-        except json.JSONDecodeError:
-            normalized_name = slugify(instance_field).lower()
-            try:
-                model_class.objects.get_or_create(
-                    normalized_name=normalized_name,
-                    defaults={name_field: instance_field}
-                )
-            except IntegrityError:
-                pass
+            model_class.objects.get_or_create(
+                normalized_name=normalized_name,
+                defaults=defaults
+            )
+        except IntegrityError:
+            pass

@@ -544,8 +544,8 @@ def create_free_membership(sender, instance, created, **kwargs):
 
 
 @receiver(post_save, sender=EmissionsSource)
-def create_common_data(sender, instance, created, **kwargs):
+def create_common_data(sender, instance: EmissionsSource, created, **kwargs):
     create_or_get_common_data(CommonActivity, 'name', instance.activity_name)
-    create_or_get_common_data(CommonEquipment, 'name', instance.equipment_name)
+    create_or_get_common_data(CommonEquipment, 'name', instance.equipment_name, instance.group)
     create_or_get_common_data(CommonProduct, 'name', instance.product_name)
     create_or_get_common_data(Investment, 'name', instance.investment_type)

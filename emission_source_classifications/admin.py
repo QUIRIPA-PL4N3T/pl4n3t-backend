@@ -41,7 +41,9 @@ class CommonActivityAdmin(admin.ModelAdmin):
 
 @admin.register(CommonEquipment)
 class CommonEquipmentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'group']
+    list_editable = ['group']
+    list_filter = ['group']
 
 
 @admin.register(CommonProduct)
