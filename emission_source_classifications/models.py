@@ -191,6 +191,14 @@ class CommonModel(models.Model):
 
 
 class CommonEquipment(CommonModel):
+    group = models.ForeignKey(
+        EmissionSourceGroup,
+        related_name='equipment_types',
+        verbose_name=_('Grupo'),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         verbose_name = _('Tipo de Maquinaría/Equipo')

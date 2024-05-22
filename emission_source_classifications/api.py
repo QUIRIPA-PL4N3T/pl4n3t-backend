@@ -16,6 +16,7 @@ from .serializers import (
     InvestmentSerializer
 )
 from django.utils.translation import gettext_lazy as _
+from django_filters import rest_framework as filters
 
 
 @extend_schema(tags=['QuantificationTypes'])
@@ -76,10 +77,20 @@ class BaseSearchViewSet(ListModelMixin, viewsets.GenericViewSet, CreateModelMixi
         return Response({"detail": "No query parameter provided."}, status=status.HTTP_400_BAD_REQUEST)
 
 
+class CommonEquipmentFilter(filters.FilterSet):
+    name = filters.CharFilter(field_name='name', lookup_expr='icontains')
+    group = filters.NumberFilter(field_name='group_id')
+
+    class Meta:
+        model = CommonEquipment
+        fields = ['group',]
+
+
 @extend_schema(tags=['EmissionSourceGroups'])
 class CommonEquipmentViewSet(BaseSearchViewSet):
     queryset = CommonEquipment.objects.all()
     serializer_class = CommonEquipmentSerializer
+    filterset_class = CommonEquipmentFilter
 
 
 @extend_schema(tags=['EmissionSourceGroups'])
