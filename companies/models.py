@@ -425,11 +425,11 @@ class EmissionsSource(models.Model):
     supplier_name = models.CharField(_('Nombre del Proveedor'), max_length=255, blank=True, null=True)
     ghg_emission_are_recorded = models.BooleanField(_('Se registran y monitorean las emisiones GEI'), default=False)
 
-
     # waste
     waste_type = models.CharField(_('Tipo de desperdicio'), choices=WASTE_CHOICES,
                                   max_length=128, blank=True, null=True)
     waste_classification = models.CharField(_('Clase de desperdicio'), max_length=128, blank=True, null=True)
+    waste_management = models.TextField(_('Manejo de desperdicio'), blank=True, null=True)
 
     # Investments
     investment_type = models.CharField(_('Tipo de Inversión'), max_length=128, blank=True, null=True)
