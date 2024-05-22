@@ -8,7 +8,7 @@ from django.dispatch import receiver
 from django.utils import timezone
 from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup, CommonActivity, CommonEquipment, CommonProduct, \
-    create_or_get_common_data
+    create_or_get_common_data, Investment
 from emissions.models import SourceType, EmissionFactor, FactorType
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
@@ -548,3 +548,4 @@ def create_common_data(sender, instance, created, **kwargs):
     create_or_get_common_data(CommonActivity, 'name', instance.activity_name)
     create_or_get_common_data(CommonEquipment, 'name', instance.equipment_name)
     create_or_get_common_data(CommonProduct, 'name', instance.product_name)
+    create_or_get_common_data(Investment, 'name', instance.investment_type)

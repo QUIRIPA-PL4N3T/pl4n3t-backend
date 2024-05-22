@@ -7,12 +7,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \
-    CommonProduct
+    CommonProduct, Investment
 from .serializers import (
     QuantificationTypeSerializer,
     GHGScopeSerializer,
     ISOCategorySerializer,
-    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer, CommonProductSerializer
+    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer, CommonProductSerializer,
+    InvestmentSerializer
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -91,3 +92,9 @@ class CommonActivityViewSet(BaseSearchViewSet):
 class CommonProductViewSet(BaseSearchViewSet):
     queryset = CommonProduct.objects.all()
     serializer_class = CommonProductSerializer
+
+
+@extend_schema(tags=['EmissionSourceGroups'])
+class InvestmentViewSet(BaseSearchViewSet):
+    queryset = Investment.objects.all()
+    serializer_class = InvestmentSerializer

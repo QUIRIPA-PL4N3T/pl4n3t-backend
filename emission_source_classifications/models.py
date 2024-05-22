@@ -193,23 +193,30 @@ class CommonModel(models.Model):
 class CommonEquipment(CommonModel):
 
     class Meta:
-        verbose_name = _('Maquinaría/Equipo Común')
-        verbose_name_plural = _('Maquinarías/Equipos Comunes')
+        verbose_name = _('Tipo de Maquinaría/Equipo')
+        verbose_name_plural = _('Tipos de Maquinarías/Equipos')
         ordering = ('name',)
 
 
 class CommonActivity(CommonModel):
     class Meta:
-        verbose_name = _('Actividad Común')
-        verbose_name_plural = _('Actividades Comunes')
+        verbose_name = _('Tipo de Actividad')
+        verbose_name_plural = _('Tipos de Actividades')
         ordering = ('name',)
 
 
 class CommonProduct(CommonModel):
     class Meta:
         ordering = ('name',)
-        verbose_name = _('Producto Común')
-        verbose_name_plural = _('Productos Comunes')
+        verbose_name = _('Tipo de Producto')
+        verbose_name_plural = _('Tipos de Productos')
+
+
+class Investment(CommonModel):
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _('Tipo de Inversion')
+        verbose_name_plural = _('Tipos de Inversiones')
 
 
 def create_or_get_common_data(model_class, name_field, instance_field):

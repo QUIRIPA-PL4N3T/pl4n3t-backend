@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from emission_source_classifications.models import ISOCategory, GHGScope, EmissionSourceGroup, QuantificationType, \
-    CommonActivity, CommonEquipment
+    CommonActivity, CommonEquipment, Investment, CommonProduct
 from django.utils.translation import gettext_lazy as _
 
 
@@ -41,4 +41,14 @@ class CommonActivityAdmin(admin.ModelAdmin):
 
 @admin.register(CommonEquipment)
 class CommonEquipmentAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CommonProduct)
+class CommonProductAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Investment)
+class InvestmentAdmin(admin.ModelAdmin):
     pass

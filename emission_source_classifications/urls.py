@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from emission_source_classifications.api import QuantificationTypeViewSet, GHGScopeViewSet, ISOCategoryViewSet, \
-    EmissionSourceGroupViewSet, CommonEquipmentViewSet, CommonActivityViewSet, CommonProductViewSet
+    EmissionSourceGroupViewSet, CommonEquipmentViewSet, CommonActivityViewSet, CommonProductViewSet, InvestmentViewSet
 
 router = DefaultRouter()
 
@@ -12,6 +12,8 @@ router.register(r'emission-source-groups', EmissionSourceGroupViewSet)
 router.register(r'equipments', CommonEquipmentViewSet)
 router.register(r'activities', CommonActivityViewSet)
 router.register(r'products', CommonProductViewSet)
+router.register(r'investment', InvestmentViewSet)
+
 
 app_name = 'classifications'
 
