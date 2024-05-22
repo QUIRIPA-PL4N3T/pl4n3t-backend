@@ -24,7 +24,7 @@ class EmissionsSourceSerializer(BaseDocumentSerializer):
             'waste_classification', 'investment_type', 'refrigerant_capacity',
             'refrigerant_capacity_unit', 'has_refrigerant_leaks', 'has_refrigerant_conversions',
             'final_disposal_of_refrigerants', 'support_actions_refrigerant_equipment',
-            'product_name', 'documents', 'emission_source_name', 'group_name'
+            'product_name', 'documents', 'emission_source_name', 'group_name', 'waste_management_data'
         )
         read_only_fields = ['id', 'emission_source_name']
 

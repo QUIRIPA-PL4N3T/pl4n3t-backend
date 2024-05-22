@@ -430,6 +430,7 @@ class EmissionsSource(models.Model):
                                   max_length=128, blank=True, null=True)
     waste_classification = models.CharField(_('Clase de desperdicio'), max_length=128, blank=True, null=True)
     waste_management = models.TextField(_('Manejo de desperdicio'), blank=True, null=True)
+    waste_management_data = models.JSONField(default=dict, null=True, blank=True, editable=False)
 
     # Investments
     investment_type = models.CharField(_('Tipo de Inversión'), max_length=128, blank=True, null=True)
