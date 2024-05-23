@@ -116,6 +116,7 @@ class PreferenceCompleteResponseSerializer(serializers.Serializer):
 
 
 class PreferenceResponseSerializer(serializers.Serializer):
+    id = serializers.CharField()
     init_point = serializers.URLField()
     sandbox_init_point = serializers.URLField()
 
