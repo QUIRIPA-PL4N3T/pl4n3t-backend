@@ -51,11 +51,12 @@ class PurchaseMembershipView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     @extend_schema(
-        description=_("Compra una membresía"),
+        description=_("Solicitud de Compra una membresía"),
         request=PurchaseSerializer,
         methods=["post"],
         responses={
-            200: OpenApiResponse(response=PreferenceResponseSerializer, description=_('Compra de membresía exitosa')),
+            200: OpenApiResponse(response=PreferenceResponseSerializer,
+                                 description=_('Solicitud de compra de membresía exitosa')),
             401: OpenApiResponse(description=_('No tiene permiso para ver este usuario')),
             400: OpenApiResponse(description=_('Solicitud incorrecta')),
         },
@@ -97,31 +98,36 @@ class PurchaseMembershipView(APIView):
             preference_response = mp.preference().create(preference_data)
             preference = preference_response["response"]
 
-            try:
-                # Check if the company already has a membership
-                company_membership = CompanyMembership.objects.get(company=company)
-                # Update existing membership to Awaiting Payment status
-                company_membership.proposed_membership = membership
-                company_membership.proposed_end_date = timezone.now() + timedelta(days=membership.duration)
-                company_membership.status = CompanyMembership.AWAITING_PAYMENT
-                company_membership.save()
-            except CompanyMembership.DoesNotExist:
-                # Create new company membership if not exists
-                end_date = None if membership.duration == -1 else timezone.now() + timedelta(
-                    days=membership.duration)
-                CompanyMembership.objects.create(
-                    company=company,
-                    membership=membership,
-                    start_date=timezone.now() + timedelta(days=1),  # Start date set to the next day
-                    end_date=end_date,
-                    # End date based on membership duration
-                    status=CompanyMembership.AWAITING_PAYMENT  # Initial status set to awaiting payment
+            serializer = PreferenceResponseSerializer(data=preference)
+            if serializer.is_valid():
+                try:
+                    # Check if the company already has a membership
+                    company_membership = CompanyMembership.objects.get(company=company)
+                    # Update existing membership to Awaiting Payment status
+                    company_membership.proposed_membership = membership
+                    company_membership.proposed_end_date = timezone.now() + timedelta(days=membership.duration)
+                    company_membership.status = CompanyMembership.AWAITING_PAYMENT
+                    company_membership.save()
+                except CompanyMembership.DoesNotExist:
+                    # Create new company membership if not exists
+                    end_date = None if membership.duration == -1 else timezone.now() + timedelta(
+                        days=membership.duration)
+                    CompanyMembership.objects.create(
+                        company=company,
+                        membership=membership,
+                        start_date=timezone.now() + timedelta(days=1),  # Start date set to the next day
+                        end_date=end_date,
+                        # End date based on membership duration
+                        status=CompanyMembership.AWAITING_PAYMENT  # Initial status set to awaiting payment
+                    )
+
+                return Response(
+                    data=serializer.data, status=status.HTTP_200_OK)
+            else:
+                return Response(
+                    data=serializer.errors, status=status.HTTP_400_BAD_REQUEST,
                 )
 
-            return Response(
-                {'init_point': preference},
-                status=status.HTTP_200_OK
-            )
         except Membership.DoesNotExist:
             return Response(
                 {'detail': 'Membership not found'},

@@ -81,7 +81,7 @@ class PaymentMethodsSerializer(serializers.Serializer):
     default_installments = serializers.IntegerField(allow_null=True, required=False)
 
 
-class PreferenceResponseSerializer(serializers.Serializer):
+class PreferenceCompleteResponseSerializer(serializers.Serializer):
     additional_info = serializers.CharField(allow_blank=True, required=False)
     auto_return = serializers.CharField()
     back_urls = BackUrlsSerializer()
@@ -113,6 +113,11 @@ class PreferenceResponseSerializer(serializers.Serializer):
     site_id = serializers.CharField()
     total_amount = serializers.DecimalField(max_digits=10, decimal_places=2, allow_null=True, required=False)
     last_updated = serializers.DateTimeField(allow_null=True, required=False)
+
+
+class PreferenceResponseSerializer(serializers.Serializer):
+    init_point = serializers.URLField()
+    sandbox_init_point = serializers.URLField()
 
 
 class PaymentVerificationSerializer(serializers.Serializer):
