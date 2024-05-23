@@ -450,6 +450,10 @@ class EmissionsSource(models.Model):
 
     # Products
     product_name = models.CharField(_('Nombre del Producto'), max_length=255, blank=True, null=True)
+    product_operation_requirements = models.CharField(
+        _('Requerimientos para el funcionamiento del Producto'), max_length=255, blank=True, null=True)
+    units_sold = models.IntegerField(_('Unidades vendidas'), default=0)
+    units_sold_period = models.CharField(_('Periodo de Ventas'), max_length=255, blank=True, null=True)
 
     @property
     def emission_source_name(self) -> str:
