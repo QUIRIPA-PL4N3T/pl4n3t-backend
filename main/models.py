@@ -4,6 +4,46 @@ from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
 from slugify import slugify
 
+MEASURE_TYPE_UNKNOWN = "UNKNOWN"
+MEASURE_TYPE_QUANTITY = "QUANTITY"
+MEASURE_TYPE_AREA = "AREA"
+MEASURE_TYPE_LENGTH = "LENGTH"
+MEASURE_TYPE_ANGLE = "ANGLE"
+MEASURE_TYPE_TIME = "TIME"
+MEASURE_TYPE_VELOCITY = "VELOCITY"
+MEASURE_TYPE_VOLUME = "VOLUMEN"
+MEASURE_TYPE_SCALE = "SCALE"
+MEASURE_TYPE_WEIGHT = "WEIGHT"
+MEASURE_TYPE_ENERGY = "ENERGY"
+MEASURE_TYPE_MASS = "MASS"
+MEASURE_TYPE_TEMPERATURE = "TEMPERATURE"
+MEASURE_TYPE_PRESSURE = "TEMPERATURE"
+MEASURE_TYPE_POWER = "POWER"
+MEASURE_TYPE_FREQUENCY = "FREQUENCY"
+MEASURE_TYPE_ENERGY_CONSUMPTION = "ENERGY_CONSUMPTION"
+GEI_EMISSION = "GEI_EMISSION"
+
+MEASURE_TYPE_CHOICES = [
+    (MEASURE_TYPE_UNKNOWN, _("Desconocido")),
+    (MEASURE_TYPE_QUANTITY, _("Cantidad")),
+    (MEASURE_TYPE_AREA, _("Area")),
+    (MEASURE_TYPE_LENGTH, _("Longitud")),
+    (MEASURE_TYPE_ANGLE, _("Ángulo")),
+    (MEASURE_TYPE_TIME, _("Tiempo")),
+    (MEASURE_TYPE_VELOCITY, _("Velocidad")),
+    (MEASURE_TYPE_VOLUME, _("Volumen")),
+    (MEASURE_TYPE_SCALE, _("Escala")),
+    (MEASURE_TYPE_WEIGHT, _("Peso")),
+    (MEASURE_TYPE_ENERGY, _("Energía")),
+    (MEASURE_TYPE_MASS, _("Masa")),
+    (MEASURE_TYPE_TEMPERATURE, _("Temperatura")),
+    (MEASURE_TYPE_PRESSURE, _("Presión")),
+    (MEASURE_TYPE_POWER, _("Potencia")),
+    (MEASURE_TYPE_FREQUENCY, _("Frecuencia")),
+    (MEASURE_TYPE_ENERGY_CONSUMPTION, _("Consumo de energía")),
+    (GEI_EMISSION, _('Emisiones de gases de efecto Invernadero'))
+]
+
 
 class Configuration(models.Model):
     key = models.CharField(max_length=200)
@@ -128,44 +168,6 @@ class UnitOfMeasure(models.Model):
         implementation, but their use makes type constraints on measure valued attributes easier to specify.
         -- conversionToISOstandardUnit is not null only if the conversion is a simple scale
     """  # noqa
-
-    MEASURE_TYPE_UNKNOWN = "UNKNOWN"
-    MEASURE_TYPE_QUANTITY = "QUANTITY"
-    MEASURE_TYPE_AREA = "AREA"
-    MEASURE_TYPE_LENGTH = "LENGTH"
-    MEASURE_TYPE_ANGLE = "ANGLE"
-    MEASURE_TYPE_TIME = "TIME"
-    MEASURE_TYPE_VELOCITY = "VELOCITY"
-    MEASURE_TYPE_VOLUME = "VOLUMEN"
-    MEASURE_TYPE_SCALE = "SCALE"
-    MEASURE_TYPE_WEIGHT = "WEIGHT"
-    MEASURE_TYPE_ENERGY = "ENERGY"
-    MEASURE_TYPE_MASS = "MASS"
-    MEASURE_TYPE_TEMPERATURE = "TEMPERATURE"
-    MEASURE_TYPE_PRESSURE = "TEMPERATURE"
-    MEASURE_TYPE_POWER = "POWER"
-    MEASURE_TYPE_FREQUENCY = "FREQUENCY"
-    MEASURE_TYPE_ENERGY_CONSUMPTION = "ENERGY_CONSUMPTION"
-
-    MEASURE_TYPE_CHOICES = [
-        (MEASURE_TYPE_UNKNOWN, _("Desconocido")),
-        (MEASURE_TYPE_QUANTITY, _("Cantidad")),
-        (MEASURE_TYPE_AREA, _("Area")),
-        (MEASURE_TYPE_LENGTH, _("Longitud")),
-        (MEASURE_TYPE_ANGLE, _("Ángulo")),
-        (MEASURE_TYPE_TIME, _("Tiempo")),
-        (MEASURE_TYPE_VELOCITY, _("Velocidad")),
-        (MEASURE_TYPE_VOLUME, _("Volumen")),
-        (MEASURE_TYPE_SCALE, _("Escala")),
-        (MEASURE_TYPE_WEIGHT, _("Peso")),
-        (MEASURE_TYPE_ENERGY, _("Energía")),
-        (MEASURE_TYPE_MASS, _("Masa")),
-        (MEASURE_TYPE_TEMPERATURE, _("Temperatura")),
-        (MEASURE_TYPE_PRESSURE, _("Presión")),
-        (MEASURE_TYPE_POWER, _("Potencia")),
-        (MEASURE_TYPE_FREQUENCY, _("Frecuencia")),
-        (MEASURE_TYPE_ENERGY_CONSUMPTION, _("Consumo de energía"))
-    ]
 
     name = models.CharField(
         _("Nombre"),

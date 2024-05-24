@@ -1,3 +1,5 @@
+from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from memberships.models import Membership, CompanyMembership
 from django.utils.translation import gettext_lazy as _
@@ -21,6 +23,11 @@ class CompanyMembershipSerializer(serializers.ModelSerializer):
     only their company's membership.
     """
     membership = MembershipSerializer(many=False, read_only=True)
+    days_remaining = serializers.SerializerMethodField()
+
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_days_remaining(self, obj):
+        return obj.days_remaining
 
     class Meta:
         model = CompanyMembership

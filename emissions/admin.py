@@ -78,7 +78,8 @@ class EmissionFactorAdmin(ImportExportModelAdmin):
     resource_class = EmissionFactorResource
     list_filter = ['source_type', 'factor_type']
     inlines = [GreenhouseGasEmissionInline]
-    list_display = ['name', 'source_type', 'unit', 'factor_type']
+    list_display = ['name', 'source_type', 'unit', 'measure_type', 'factor_type',]
+    list_editable = ['measure_type', 'measure_type']
     search_fields = ['name']
 
 

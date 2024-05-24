@@ -1,13 +1,17 @@
 import django_filters
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import extend_schema, OpenApiResponse
+from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
+from rest_framework.response import Response
+
 from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryType, LocationType, State, City, \
-    DocumentType, Country
+    DocumentType, Country, MEASURE_TYPE_CHOICES
 from main.serializer import ConfigurationSerializer, UnitOfMeasureSerializer, EconomicSectorSerializer, \
     IndustryTypeSerializer, LocationTypeSerializer, StateSerializer, CitySerializer, DocumentTypeSerializer, \
-    CountrySerializer
+    CountrySerializer, MeasureTypeSerializer
 from rest_framework import viewsets, permissions
 from django_filters import rest_framework as filters
+from django.utils.translation import gettext_lazy as _
 
 
 @extend_schema(tags=['Main'])
@@ -66,10 +70,43 @@ class DocumentTypeViewSet(viewsets.GenericViewSet, ListModelMixin):
 
 
 @extend_schema(tags=['Main'])
+class TypeUnitOfMeasureViewSet(GenericAPIView):
+    """
+    Get:
+    Get types of units of measure
+    """
+    @extend_schema(
+        summary=_("Obtiene la información de un usuario mediante el nombre usuario"),
+        description=_("Obtiene la información de un usuario mediante el nombre usuario"),
+        responses={
+            200: MeasureTypeSerializer,
+            404: OpenApiResponse(description=_('El Usuario no existe')),
+        },
+        methods=["get"]
+    )
+    def get(self, request, *args, **kwargs):
+        data = []
+        for key, value in MEASURE_TYPE_CHOICES:
+            data.append({
+                'label': key,
+                'value': value,
+            })
+        return Response(data)
+
+
+class UnitOfMeasureFilter(filters.FilterSet):
+    measure_type = filters.CharFilter(field_name='measure_type')
+    class Meta:
+        model = UnitOfMeasure
+        fields = ['measure_type',]
+
+
+@extend_schema(tags=['Main'])
 class UnitOfMeasureViewSet(viewsets.GenericViewSet, ListModelMixin):
     permission_classes = [permissions.AllowAny]
     queryset = UnitOfMeasure.objects.all()
     serializer_class = UnitOfMeasureSerializer
+    filterset_class = UnitOfMeasureFilter
 
     def get_queryset(self):
         return UnitOfMeasure.objects.filter(is_enabled=True)

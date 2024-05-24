@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from main.models import UnitOfMeasure
+from main.models import UnitOfMeasure, MEASURE_TYPE_CHOICES, MEASURE_TYPE_UNKNOWN
 
 
 class GreenhouseGas(models.Model):
@@ -111,6 +111,14 @@ class EmissionFactor(models.Model):
     """
     name = models.CharField(_('Nombre'), max_length=255)
     description = models.CharField(_('Descripción'), max_length=255)
+    measure_type = models.CharField(
+        _("Tipo de Medida"),
+        max_length=18,
+        choices=MEASURE_TYPE_CHOICES,
+        help_text=_("Tipo de medida"),
+        default=MEASURE_TYPE_UNKNOWN,
+    )
+
     factor_type = models.ForeignKey(
         FactorType,
         on_delete=models.CASCADE,

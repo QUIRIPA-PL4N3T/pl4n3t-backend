@@ -1,3 +1,5 @@
+from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from main.models import Configuration, State, City, DocumentType, UnitOfMeasure, EconomicSector, IndustryType, \
     LocationType, Country
@@ -40,9 +42,15 @@ class DocumentTypeSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'code']
 
 
-class UnitOfMeasureSerializer(serializers.ModelSerializer):
-    group = serializers.SerializerMethodField()
+class MeasureTypeSerializer(serializers.Serializer):
+    value = serializers.CharField()
+    label = serializers.CharField()
 
+
+class UnitOfMeasureSerializer(serializers.ModelSerializer):
+    group = serializers.SerializerMethodField(read_only=True)
+
+    @extend_schema_field(OpenApiTypes.STR)
     def get_group(self, instance):
         return instance.get_measure_type_display()
 

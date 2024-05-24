@@ -6,7 +6,7 @@ from main.views import home, blog, company, contact_us, why_quantify, water_foot
 # api imports
 from rest_framework import routers
 from main.api import ConfigurationView, UnitOfMeasureViewSet, EconomicSectorViewSet, IndustryTypeViewSet, \
-    LocationTypeViewSet, StateViewSet, CityViewSet, DocumentTypeViewSet, CountryViewSet
+    LocationTypeViewSet, StateViewSet, CityViewSet, DocumentTypeViewSet, CountryViewSet, TypeUnitOfMeasureViewSet
 
 # api urls
 router = routers.DefaultRouter()
@@ -22,6 +22,7 @@ router.register('document-type', DocumentTypeViewSet, basename='document-type')
 
 api_urls = ([
     path('', include(router.urls)),
+    path('type-unit-of-measure/', TypeUnitOfMeasureViewSet.as_view(), name='type-unit-of-measure'),
 ], 'main')
 
 # general urls
