@@ -459,12 +459,20 @@ class EmissionsSource(models.Model):
     def emission_source_name(self) -> str:
         if self.group.form_name == 'ELECTRICITY':
             return self.electricity_supplier
-        if self.group.form_name == 'ORGANIZATION_VEHICLES':
+        if self.group.form_name in ['ORGANIZATION_VEHICLES', 'INVESTMENTS']:
             return f"{self.code}: {self.name}"
         if self.group.form_name == 'SERVICES':
-            return self.supplier_name
-        else:
-            return self.name
+            return f"{self.supplier_name} - {self.good_and_service_acquired_type}"
+        if self.group.form_name in ['PRODUCTS', 'REFRIGERANTS']:
+            return f"{self.code} ] {self.product_name}"
+        if self.group.form_name == 'REFRIGERANTS':
+            return f"{self.code} - {self.product_name}"
+        if self.group.form_name in ['FUEL']:
+            return f"{self.code} - {self.equipment_name}"
+        if self.group.form_name in ['LEASED_ASSETS']:
+            return f"{self.name} - {self.activity_name} - {self.equipment_name}"
+        # WASTE, COMMUTING_EMPLOYEES, INVESTMENTS, TRANSPORTATION, TRAVELS
+        return self.name
 
     @property
     def group_name(self) -> str:
