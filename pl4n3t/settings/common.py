@@ -277,7 +277,7 @@ SPECTACULAR_SETTINGS = {
     },
 }
 
-PL4N3T_APPLICATION = 'https://planet-frontend.dev.altix.co/'
+PL4N3T_APPLICATION = 'https://app.pl4n3t.com'
 
 DOCUMENTS_UPLOAD_TO = 'documents'
 
