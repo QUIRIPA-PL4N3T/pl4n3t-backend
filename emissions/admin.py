@@ -46,11 +46,6 @@ class EmissionFactorResource(resources.ModelResource):
         attribute='unit',
         widget=ForeignKeyWidget(UnitOfMeasure, 'name'))
 
-    greenhouse_gas = fields.Field(
-        column_name='greenhouse_gas',
-        attribute='greenhouse_gas',
-        widget=ForeignKeyWidget(GreenhouseGas, 'name'))
-
     def before_import_row(self, row, **kwargs):
         greenhouse_gas_name = row.get('greenhouse_gas')
         if greenhouse_gas_name:
@@ -69,8 +64,10 @@ class EmissionFactorResource(resources.ModelResource):
 
     class Meta:
         model = EmissionFactor
-        fields = ('id', 'name', 'description', 'factor_type', 'source_type', 'unit', 'greenhouse_gas')
-        export_order = ('id', 'name', 'description', 'factor_type', 'source_type', 'unit', 'greenhouse_gas')
+        fields = ('id', 'name', 'description', 'observations', 'factor_type', 'source_type',
+                  'valid_from', 'valid_until', 'unit')
+        export_order = ('id', 'name', 'description', 'observations', 'factor_type', 'source_type',
+                        'valid_from', 'valid_until', 'unit')
 
 
 @admin.register(EmissionFactor)
@@ -95,6 +92,16 @@ class GreenhouseGasEmissionResource(resources.ModelResource):
         attribute='emission_factor',
         widget=ForeignKeyWidget(EmissionFactor, 'name'))
 
+    description = fields.Field(
+        column_name='description',
+        attribute='emission_factor',
+        widget=ForeignKeyWidget(EmissionFactor, 'description'))
+
+    observations = fields.Field(
+        column_name='observations',
+        attribute='emission_factor',
+        widget=ForeignKeyWidget(EmissionFactor, 'observations'))
+
     factor_type = fields.Field(
         column_name='factor_type',
         attribute='emission_factor__factor_type__name',
@@ -103,6 +110,16 @@ class GreenhouseGasEmissionResource(resources.ModelResource):
     source_type = fields.Field(
         column_name='source_type',
         attribute='emission_factor__source_type__name',
+        readonly=True)
+
+    valid_from = fields.Field(
+        column_name='valid_from',
+        attribute='emission_factor__valid_from',
+        readonly=True)
+
+    valid_until = fields.Field(
+        column_name='source_type',
+        attribute='emission_factor__valid_until',
         readonly=True)
 
     greenhouse_gas = fields.Field(
@@ -120,8 +137,9 @@ class GreenhouseGasEmissionResource(resources.ModelResource):
 
     class Meta:
         model = GreenhouseGasEmission
-        fields = ('emission_factor_id', 'emission_factor', 'factor_type', 'source_type', 'greenhouse_gas',
-                  'unit', 'value', 'bibliographic_source', 'percentage_uncertainty', 'maximum_allowed_amount')
+        fields = ('id', 'emission_factor_id', 'emission_factor', 'description', 'observations', 'factor_type',
+                  'source_type', 'valid_from', 'valid_until', 'greenhouse_gas', 'value', 'unit', 'bibliographic_source',
+                  'percentage_uncertainty', 'maximum_allowed_amount')
         export_order = fields
 
 
@@ -130,3 +148,4 @@ class GreenhouseGasEmissionAdmin(ImportExportModelAdmin):
     resource_class = GreenhouseGasEmissionResource
     list_display = ['emission_factor', 'greenhouse_gas', 'unit', 'value']
     search_fields = ['emission_factor__name', 'greenhouse_gas__name']
+    list_filter = ['emission_factor__source_type', 'emission_factor__factor_type']

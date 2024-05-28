@@ -101,9 +101,13 @@ class EmissionFactor(models.Model):
     Attributes:
     - name (str): The name of the emission factor.
     - description (str): A brief description of the emission factor.
-    - factor_type (FactorType): The type of factor associated with this emission.
-    - source_type (SourceType): The source responsible for these emissions.
-    - unit (UnitOfMeasure): The unit of consumption or activity for which the emission factor applies.
+    - observations (str): additional information of the emission factor.
+    - measure_type (str): The type of measure associated with this emission factor.
+    - factor_type (ForeignKey): The type of factor associated with this emission.
+    - source_type (ForeignKey): The source responsible for these emissions.
+    - unit (ForeignKey): The unit of consumption or activity for which the emission factor applies.
+    - valid_from (date): The start date of the emission factor's validity.
+    - valid_until (date): The end date of the emission factor's validity.
 
     Note:
     The string representation of the instance displays the name of the emission factor
@@ -111,6 +115,7 @@ class EmissionFactor(models.Model):
     """
     name = models.CharField(_('Nombre'), max_length=255)
     description = models.CharField(_('Descripción'), max_length=255)
+    observations = models.TextField(_('Observaciones'), blank=True, null=True)
     measure_type = models.CharField(
         _("Tipo de Medida"),
         max_length=18,
@@ -136,6 +141,9 @@ class EmissionFactor(models.Model):
         verbose_name=_('Unidad de Consumo'),
         on_delete=models.CASCADE,
         related_name='+')
+
+    valid_from = models.DateField(_('Válido desde'), null=True, blank=True)
+    valid_until = models.DateField(_('Válido hasta'), null=True, blank=True)
 
     class Meta:
         ordering = ('name',)
