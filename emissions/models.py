@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from main.models import UnitOfMeasure, MEASURE_TYPE_CHOICES, MEASURE_TYPE_UNKNOWN
@@ -124,6 +125,13 @@ class EmissionFactor(models.Model):
         default=MEASURE_TYPE_UNKNOWN,
     )
 
+    application_percentage = models.FloatField(
+        _('Porcentaje de Aplicación'),
+        default=1,
+        validators=[MinValueValidator(0), MaxValueValidator(1)],
+        help_text=_('1 equivale al 100%')
+    )
+
     factor_type = models.ForeignKey(
         FactorType,
         on_delete=models.CASCADE,
@@ -152,6 +160,35 @@ class EmissionFactor(models.Model):
 
     def __str__(self):
         return f'{self.name} ({self.unit.symbol})'
+
+
+class EmissionFactorComponent(models.Model):
+    emission_factor = models.ForeignKey(
+        EmissionFactor,
+        on_delete=models.CASCADE,
+        related_name='components',
+        verbose_name=_('Factor de Emisión Principal')
+    )
+    component_factor = models.ForeignKey(
+        EmissionFactor,
+        on_delete=models.CASCADE,
+        related_name='component_of',
+        verbose_name=_('Factor de Emisión Componente')
+    )
+    application_percentage = models.FloatField(
+        _('Porcentaje de Aplicación'),
+        default=0,
+        validators=[MinValueValidator(0), MaxValueValidator(1)],
+        help_text=_('1 equivale al 100%')
+    )
+    component_name = models.CharField(_('Nombre del Componente'), max_length=255)
+
+    class Meta:
+        verbose_name = _('Componente de Factor de Emisión')
+        verbose_name_plural = _('Componentes de Factor de Emisión')
+
+    def __str__(self):
+        return f'{self.component_name}: {self.application_percentage}%'
 
 
 class GreenhouseGasEmission(models.Model):

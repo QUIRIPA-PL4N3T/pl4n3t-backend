@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.core.exceptions import ValidationError
 from django.db.models import Prefetch
+from django.forms import ModelForm
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
-from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType
+from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType, \
+    EmissionFactorComponent
 from import_export import fields
 from import_export.widgets import ForeignKeyWidget
 from main.models import UnitOfMeasure
@@ -28,6 +30,50 @@ class SourceTypeAdmin(admin.ModelAdmin):
 class GreenhouseGasEmissionInline(admin.TabularInline):
     model = GreenhouseGasEmission
     extra = 1
+
+
+class EmissionFactorComponentInlineForm(ModelForm):
+    class Meta:
+        model = EmissionFactorComponent
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'instance' in kwargs and kwargs['instance'].pk:
+            emission_factor = kwargs['instance'].emission_factor
+            self.fields['component_factor'].queryset = EmissionFactor.objects.filter(
+                factor_type=emission_factor.factor_type,
+                source_type=emission_factor.source_type
+            ).exclude(id=emission_factor.id)
+        else:
+            # Esto es una nueva instancia; el queryset puede ser configurado después de guardar el formulario
+            self.fields['component_factor'].queryset = EmissionFactor.objects.none()
+
+
+class EmissionFactorComponentInline(admin.TabularInline):
+    model = EmissionFactorComponent
+    form = EmissionFactorComponentInlineForm
+    extra = 1
+    fk_name = 'emission_factor'
+
+    def get_formset(self, request, obj=None, **kwargs):
+        formset = super().get_formset(request, obj, **kwargs)
+
+        class CustomFormSet(formset):
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                # Filtra el queryset para component_factor
+                for form in self.forms:
+                    if 'component_factor' in form.fields:
+                        if obj:
+                            form.fields['component_factor'].queryset = EmissionFactor.objects.filter(
+                                factor_type=obj.factor_type,
+                                source_type=obj.source_type
+                            ).exclude(id=obj.id)
+                        else:
+                            form.fields['component_factor'].queryset = EmissionFactor.objects.none()
+
+        return CustomFormSet
 
 
 class EmissionFactorResource(resources.ModelResource):
@@ -74,11 +120,14 @@ class EmissionFactorResource(resources.ModelResource):
 class EmissionFactorAdmin(ImportExportModelAdmin):
     resource_class = EmissionFactorResource
     list_filter = ['source_type', 'factor_type']
-    inlines = [GreenhouseGasEmissionInline]
+    inlines = [EmissionFactorComponentInline, GreenhouseGasEmissionInline]
     list_display = ['name', 'source_type', 'unit', 'measure_type', 'factor_type',]
     list_editable = ['measure_type', 'measure_type']
     search_fields = ['name']
 
+    def save_model(self, request, obj, form, change):
+        obj.clean()  # Validación antes de guardar
+        super().save_model(request, obj, form, change)
 
 class GreenhouseGasEmissionResource(resources.ModelResource):
 
