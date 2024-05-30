@@ -61,7 +61,7 @@ class EmissionFactorSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionFactor
         fields = ('id', 'name', 'description', 'factor_type', 'source_type', 'unit',
-                  'greenhouse_emission_gases', 'measure_type', 'components')
+                  'greenhouse_emission_gases', 'measure_type', 'components', 'application_percentage')
 
 
 class EmissionFactorListSerializer(serializers.ModelSerializer):
