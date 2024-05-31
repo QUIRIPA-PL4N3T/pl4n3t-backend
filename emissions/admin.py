@@ -204,7 +204,7 @@ class GreenhouseGasEmissionAdmin(ImportExportModelAdmin):
 class EmissionGasDetailInline(admin.TabularInline):
     model = EmissionGasDetail
     extra = 1
-    fields = ['greenhouse_gas', 'value', 'co2e']
+    fields = ['emission_factor', 'greenhouse_gas', 'value', 'co2e']
     readonly_fields = ['co2e']
 
     def get_readonly_fields(self, request, obj=None):
