@@ -65,14 +65,17 @@ class SaveEmissionDataView(APIView):
         request=EmissionResultSerializer,
         methods=["post"],
         responses={
-            201: OpenApiResponse(description=_('Los datos fuerón guardados con éxito')),
+            201: EmissionResultSerializer,
             404: OpenApiResponse(description=_('los datos no son validos')),
         },
     )
     def post(self, request, *args, **kwargs):
-        serializer = EmissionResultSerializer(data=request.data)
+        serializer = EmissionResultSerializer(
+            data=request.data,
+            context={'request': request}
+        )
         if serializer.is_valid():
             serializer.save()
-            return Response({"success": "Data saved successfully"}, status=status.HTTP_201_CREATED)
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

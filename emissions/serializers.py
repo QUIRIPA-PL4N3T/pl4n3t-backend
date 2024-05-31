@@ -1,5 +1,6 @@
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
+from documents.serializer import BaseDocumentSerializer
 from emissions.models import GreenhouseGas, SourceType, FactorType, EmissionFactor, GreenhouseGasEmission, \
     EmissionFactorComponent, EmissionGasDetail, EmissionResult
 from main.serializer import UnitOfMeasureSerializer
@@ -75,17 +76,35 @@ class EmissionFactorListSerializer(serializers.ModelSerializer):
 class EmissionGasDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionGasDetail
-        fields = ['greenhouse_gas', 'value', 'co2e']
+        fields = ['greenhouse_gas', 'value', 'co2e', 'emission_factor']
 
 
-class EmissionResultSerializer(serializers.ModelSerializer):
+class EmissionResultSerializer(BaseDocumentSerializer):
     gas_details = EmissionGasDetailSerializer(many=True)
 
     class Meta:
         model = EmissionResult
-        fields = ['name', 'date', 'usage', 'unit', 'total_co2e', 'gas_details']
+        fields = [
+            'name',
+            'date',
+            'usage',
+            'unit',
+            'total_co2e',
+            'gas_details',
+            'documents',
+            'emission_source',
+            'location',
+            'user_created',
+            'month',
+            'year'
+        ]
+        read_only_fields = ['user_created']
 
     def create(self, validated_data):
+        request = self.context.get('request', None)
+        if request is not None:
+            validated_data['user_created'] = request.user
+
         gas_details_data = validated_data.pop('gas_details')
         emission_result = EmissionResult.objects.create(**validated_data)
         for gas_detail_data in gas_details_data:
