@@ -157,3 +157,26 @@ class CompanyLogoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ('logo',)
+
+
+class GasEmissionSummarySerializer(serializers.Serializer):
+    gas_name = serializers.CharField()
+    total_value = serializers.FloatField()
+    percentage_change = serializers.FloatField()
+
+
+class EmissionSourceSummarySerializer(serializers.Serializer):
+    source_type = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class GEISummarySerializer(serializers.Serializer):
+    category = serializers.CharField()
+    percentage = serializers.FloatField()
+
+
+class DashboardDataSerializer(serializers.Serializer):
+    gas_emissions = GasEmissionSummarySerializer(many=True)
+    emission_sources = EmissionSourceSummarySerializer(many=True)
+    gei_distribution = GEISummarySerializer(many=True)
+    total_emissions = serializers.FloatField()

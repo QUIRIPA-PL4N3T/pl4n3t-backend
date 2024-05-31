@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from companies.api import CompanyViewSet, BrandViewSet, MemberViewSet, LocationViewSet, EmissionsSourceViewSet, \
-    EmissionsSourceMonthEntryViewSet, CompanyLogoViewSet
+    EmissionsSourceMonthEntryViewSet, CompanyLogoViewSet, DashboardView
 
 router = DefaultRouter()
 router.register(r'companies', CompanyViewSet)
@@ -16,5 +16,6 @@ app_name = 'companies'
 
 api_urls = ([
     path('', include(router.urls)),
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
 ], 'companies')
 
