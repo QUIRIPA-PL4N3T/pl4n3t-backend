@@ -1,7 +1,7 @@
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from emissions.models import GreenhouseGas, SourceType, FactorType, EmissionFactor, GreenhouseGasEmission, \
-    EmissionFactorComponent
+    EmissionFactorComponent, EmissionGasDetail, EmissionResult
 from main.serializer import UnitOfMeasureSerializer
 
 
@@ -70,3 +70,17 @@ class EmissionFactorListSerializer(serializers.ModelSerializer):
         model = EmissionFactor
         fields = ('id', 'name', 'description', 'factor_type', 'source_type',
                   'unit', 'measure_type')
+
+
+class EmissionGasDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EmissionGasDetail
+        fields = ['greenhouse_gas', 'value', 'co2e']
+
+
+class EmissionResultSerializer(serializers.ModelSerializer):
+    gas_details = EmissionGasDetailSerializer(many=True)
+
+    class Meta:
+        model = EmissionResult
+        fields = ['name', 'date', 'usage', 'unit', 'total_co2e', 'gas_details']

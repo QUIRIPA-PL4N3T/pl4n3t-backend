@@ -1,12 +1,12 @@
-from drf_spectacular.utils import extend_schema
-from rest_framework import viewsets
+from drf_spectacular.utils import extend_schema, OpenApiResponse
+from rest_framework import viewsets, status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-
-from reports.serializers import CompanyTemplateListSerializer
-from .models import GreenhouseGas, SourceType, FactorType, EmissionFactor, GreenhouseGasEmission
+from rest_framework.views import APIView
+from .models import GreenhouseGas, SourceType, FactorType, EmissionFactor, GreenhouseGasEmission, EmissionGasDetail
 from emissions.serializers import GreenhouseGasSerializer, SourceTypeSerializer, FactorTypeSerializer, \
     EmissionFactorSerializer, \
-    GreenhouseGasEmissionSerializer, EmissionFactorListSerializer
+    GreenhouseGasEmissionSerializer, EmissionFactorListSerializer, EmissionResultSerializer
 from django.utils.translation import gettext_lazy as _
 
 
@@ -53,3 +53,36 @@ class EmissionFactorViewSet(viewsets.ReadOnlyModelViewSet):
 class GreenhouseGasEmissionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = GreenhouseGasEmission.objects.all()
     serializer_class = GreenhouseGasEmissionSerializer
+
+
+@extend_schema(tags=['EmissionsResults'])
+class SaveEmissionDataView(APIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = EmissionResultSerializer
+
+    @extend_schema(
+        description=_("Iniciar sesión con una cuenta de google"),
+        request=EmissionResultSerializer,
+        methods=["post"],
+        responses={
+            201: OpenApiResponse(description=_('Los datos fuerón guardados con éxito')),
+            404: OpenApiResponse(description=_('los datos no son validos')),
+        },
+    )
+    def post(self, request, *args, **kwargs):
+        serializer = EmissionResultSerializer(data=request.data)
+        if serializer.is_valid():
+            emission_result = serializer.save()
+
+            # Save each gas detail
+            for gas_detail_data in serializer.validated_data['gas_details']:
+                EmissionGasDetail.objects.create(
+                    emission_result=emission_result,
+                    greenhouse_gas=gas_detail_data['greenhouse_gas'],
+                    value=gas_detail_data['value'],
+                    co2e=gas_detail_data['co2e']
+                )
+
+            return Response({"success": "Data saved successfully"}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -252,3 +252,53 @@ class GreenhouseGasEmission(models.Model):
 
     def __str__(self):
         return f'{self.emission_factor} {self.value} {self.greenhouse_gas.acronym}'
+
+
+class EmissionResult(models.Model):
+    """
+    Represents the result of an emission calculation for a specific usage.
+
+    Attributes:
+    - name (str): The name of the emission result.
+    - date (date): The date of the emission calculation.
+    - usage (float): The usage amount for the calculation.
+    - unit (ForeignKey): The unit of measurement for the usage.
+    - total_co2e (float): The total CO₂e equivalent for the usage.
+    """
+    name = models.CharField(_('Nombre'), max_length=255)
+    date = models.DateField(_('Fecha'))
+    usage = models.FloatField(_('Uso'))
+    unit = models.ForeignKey(UnitOfMeasure, verbose_name=_('Unidad de Medida'), on_delete=models.CASCADE)
+    total_co2e = models.FloatField(_('Total CO₂e'), default=0)
+
+    class Meta:
+        ordering = ('date', 'name')
+        verbose_name = _('Resultado de Emisión')
+        verbose_name_plural = _('Resultados de Emisión')
+
+    def __str__(self):
+        return f'{self.name} ({self.date})'
+
+
+class EmissionGasDetail(models.Model):
+    """
+    Represents the detailed emission data for a specific greenhouse gas in a specific emission result.
+
+    Attributes:
+    - emission_result (ForeignKey): The associated emission result.
+    - greenhouse_gas (ForeignKey): The greenhouse gas being recorded.
+    - value (float): The amount of the gas emitted.
+    - co2e (float): The CO₂e equivalent for the gas emitted.
+    """
+    emission_result = models.ForeignKey(EmissionResult, related_name='gas_details', on_delete=models.CASCADE)
+    greenhouse_gas = models.ForeignKey(GreenhouseGas, verbose_name=_('Gas de Efecto Invernadero'), on_delete=models.CASCADE)
+    value = models.FloatField(_('Cantidad Emitida'), default=0)
+    co2e = models.FloatField(_('CO₂e Equivalente'), default=0)
+
+    class Meta:
+        ordering = ('emission_result', 'greenhouse_gas')
+        verbose_name = _('Detalle de Emisión de Gas')
+        verbose_name_plural = _('Detalles de Emisión de Gases')
+
+    def __str__(self):
+        return f'{self.greenhouse_gas.name} ({self.value})'

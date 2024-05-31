@@ -5,7 +5,8 @@ from emissions.api import (
     SourceTypeViewSet,
     FactorTypeViewSet,
     EmissionFactorViewSet,
-    GreenhouseGasEmissionViewSet
+    GreenhouseGasEmissionViewSet,
+    SaveEmissionDataView,
 )
 
 router = DefaultRouter()
@@ -20,4 +21,5 @@ app_name = 'emissions'
 
 api_urls = ([
     path('', include(router.urls)),
+    path('save-emission-data/', SaveEmissionDataView.as_view(), name='save-emission-data'),
 ], 'emissions')
