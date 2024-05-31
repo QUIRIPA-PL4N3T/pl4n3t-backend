@@ -7,6 +7,7 @@ from emissions.api import (
     EmissionFactorViewSet,
     GreenhouseGasEmissionViewSet,
     SaveEmissionDataView,
+    EmissionResultViewSet,
 )
 
 router = DefaultRouter()
@@ -16,6 +17,7 @@ router.register(r'source-types', SourceTypeViewSet)
 router.register(r'factor-types', FactorTypeViewSet)
 router.register(r'emission-factors', EmissionFactorViewSet)
 router.register(r'greenhouse-gas-emissions', GreenhouseGasEmissionViewSet)
+router.register(r'emission-results', EmissionResultViewSet)
 
 app_name = 'emissions'
 

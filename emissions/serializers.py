@@ -1,9 +1,22 @@
+from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
+from companies.serializers import EmissionsSourceSerializer
 from documents.serializer import BaseDocumentSerializer
 from emissions.models import GreenhouseGas, SourceType, FactorType, EmissionFactor, GreenhouseGasEmission, \
-    EmissionFactorComponent, EmissionGasDetail, EmissionResult
+     EmissionFactorComponent, EmissionGasDetail, EmissionResult, TotalEmissionGas, Co2ByComponent
 from main.serializer import UnitOfMeasureSerializer
+
+# MAIN GAS ID'S
+CO_GAS_ID = 1
+HC_GAS_ID = 2
+CH4_GAS_ID = 3
+N2O_GAS_ID = 4
+HFCS_GAS_ID = 5
+PFCS_GAS_ID = 6
+SF6_GAS_ID = 7
+CFCS_GAS_ID = 8
+CO2_GAS_ID = 9
 
 
 class GreenhouseGasSerializer(serializers.ModelSerializer):
@@ -85,6 +98,7 @@ class EmissionResultSerializer(BaseDocumentSerializer):
     class Meta:
         model = EmissionResult
         fields = [
+            'id',
             'name',
             'date',
             'usage',
@@ -98,7 +112,7 @@ class EmissionResultSerializer(BaseDocumentSerializer):
             'month',
             'year'
         ]
-        read_only_fields = ['user_created']
+        read_only_fields = ['id', 'user_created']
 
     def create(self, validated_data):
         request = self.context.get('request', None)
@@ -112,3 +126,89 @@ class EmissionResultSerializer(BaseDocumentSerializer):
 
         emission_result.calculate_totals()
         return emission_result
+
+
+class EmissionGasDetailFullSerializer(serializers.ModelSerializer):
+    greenhouse_gas = GreenhouseGasSerializer()
+
+    class Meta:
+        model = EmissionGasDetail
+        fields = ['greenhouse_gas', 'value', 'co2e', 'emission_factor']
+
+
+class TotalEmissionGasSerializer(serializers.ModelSerializer):
+    greenhouse_gas = GreenhouseGasSerializer()
+
+    class Meta:
+        model = TotalEmissionGas
+        fields = ['greenhouse_gas', 'value', 'co2e']
+
+
+class Co2ByComponentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Co2ByComponent
+        fields = ['emission_factor', 'co2e']
+
+
+class EmissionResultListSerializer(serializers.ModelSerializer):
+    co2 = serializers.SerializerMethodField()
+    hc4 = serializers.SerializerMethodField()
+    n2o = serializers.SerializerMethodField()
+    co = serializers.SerializerMethodField()
+    hc = serializers.SerializerMethodField()
+    month = serializers.SerializerMethodField()
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_co2(self, obj): # noqa
+        return obj.get_total_gas_value(CO2_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_hc4(self, obj): # noqa
+        return obj.get_total_gas_value(CH4_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_n2o(self, obj): # noqa
+        return obj.get_total_gas_value(N2O_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_co(self, obj): # noqa
+        return obj.get_total_gas_value(CO_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_hc(self, obj): # noqa
+        return obj.get_total_gas_value(HC_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_month(self, obj: EmissionResult):
+        return obj.get_month_display()
+
+    class Meta:
+        model = EmissionResult
+        fields = ['id', 'name', 'date', 'usage', 'month', 'year', 'unit', 'total_co2e', 'co2', 'hc4', 'n2o', 'co', 'hc']
+
+
+class EmissionResultDetailSerializer(BaseDocumentSerializer):
+    gas_details = EmissionGasDetailFullSerializer(many=True)
+    total_emissions_gas = TotalEmissionGasSerializer(many=True)
+    co2_by_component = Co2ByComponentSerializer(many=True)
+    emission_source = EmissionsSourceSerializer()
+
+    class Meta:
+        model = EmissionResult
+        fields = [
+            'id',
+            'name',
+            'date',
+            'usage',
+            'unit',
+            'total_co2e',
+            'gas_details',
+            'total_emissions_gas',
+            'co2_by_component',
+            'emission_source',
+            'location',
+            'user_created',
+            'month',
+            'year',
+            'documents'
+        ]

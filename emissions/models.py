@@ -318,6 +318,13 @@ class EmissionResult(models.Model):
     unit = models.ForeignKey(UnitOfMeasure, verbose_name=_('Unidad de Medida'), on_delete=models.CASCADE)
     total_co2e = models.FloatField(_('Total CO₂e'), default=0)
 
+    def get_total_gas_value(self, gas_id):
+        try:
+            gas = self.total_emissions_gas.get(greenhouse_gas__id=gas_id)
+            return gas.value
+        except TotalEmissionGas.DoesNotExist:
+            return 0
+
     def calculate_totals(self):
         # Calculate total emissions per gas
         total_emissions_gas = {}
