@@ -321,7 +321,7 @@ class EmissionResult(models.Model):
     def get_total_gas_value(self, gas_id):
         try:
             gas = self.total_emissions_gas.get(greenhouse_gas__id=gas_id)
-            return gas.value
+            return round(gas.value, 7)
         except TotalEmissionGas.DoesNotExist:
             return 0
 
