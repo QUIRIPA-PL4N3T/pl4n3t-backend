@@ -97,7 +97,7 @@ class EmissionsResultFilter(filters.FilterSet):
 
 @extend_schema(tags=['EmissionsResults'])
 class EmissionResultViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = EmissionResult.objects.all()
+    queryset = EmissionResult.objects.all().prefetch_related('total_emissions_gas')
     serializer_class = EmissionResultDetailSerializer
     permission_classes = [IsAuthenticated]
     filterset_class = EmissionsResultFilter
@@ -107,7 +107,7 @@ class EmissionResultViewSet(viewsets.ReadOnlyModelViewSet):
         responses={200: EmissionResultListSerializer}
     )
     def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
+        queryset = self.filter_queryset(self.get_queryset()).prefetch_related('total_emissions_gas')
 
         page = self.paginate_queryset(queryset)
         if page is not None:
