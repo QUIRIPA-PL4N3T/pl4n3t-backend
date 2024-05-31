@@ -183,7 +183,7 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
 
     @extend_schema_field(OpenApiTypes.DECIMAL)
     def get_total_co2e(self, obj):
-        return round(obj.total_co2e)
+        return round(obj.total_co2e, 7)
 
     @extend_schema_field(OpenApiTypes.STR)
     def get_month(self, obj: EmissionResult):
