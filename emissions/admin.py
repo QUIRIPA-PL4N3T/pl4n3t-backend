@@ -5,7 +5,7 @@ from django.forms import ModelForm
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType, \
-    EmissionFactorComponent
+    EmissionFactorComponent, EmissionGasDetail, EmissionResult
 from import_export import fields
 from import_export.widgets import ForeignKeyWidget
 from main.models import UnitOfMeasure
@@ -129,6 +129,7 @@ class EmissionFactorAdmin(ImportExportModelAdmin):
         obj.clean()  # Validación antes de guardar
         super().save_model(request, obj, form, change)
 
+
 class GreenhouseGasEmissionResource(resources.ModelResource):
 
     emission_factor_id = fields.Field(
@@ -198,3 +199,34 @@ class GreenhouseGasEmissionAdmin(ImportExportModelAdmin):
     list_display = ['emission_factor', 'greenhouse_gas', 'unit', 'value']
     search_fields = ['emission_factor__name', 'greenhouse_gas__name']
     list_filter = ['emission_factor__source_type', 'emission_factor__factor_type']
+
+
+class EmissionGasDetailInline(admin.TabularInline):
+    model = EmissionGasDetail
+    extra = 1
+    fields = ['greenhouse_gas', 'value', 'co2e']
+    readonly_fields = ['co2e']
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return self.readonly_fields
+        return []
+
+
+@admin.register(EmissionResult)
+class EmissionResultAdmin(admin.ModelAdmin):
+    list_display = ['name', 'date', 'usage', 'unit', 'get_total_co2e']
+    inlines = [EmissionGasDetailInline]
+    search_fields = ['name']
+    list_filter = ['date', 'unit']
+
+    def get_total_co2e(self, obj):
+        return obj.total_co2e
+    get_total_co2e.short_description = 'Total CO₂e'
+
+
+@admin.register(EmissionGasDetail)
+class EmissionGasDetailAdmin(admin.ModelAdmin):
+    list_display = ['emission_result', 'greenhouse_gas', 'value', 'co2e']
+    list_filter = ['emission_result', 'greenhouse_gas']
+    search_fields = ['emission_result__name', 'greenhouse_gas__name']
