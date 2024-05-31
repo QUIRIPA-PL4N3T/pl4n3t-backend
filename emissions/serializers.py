@@ -159,6 +159,7 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
     month = serializers.SerializerMethodField()
     source_name = serializers.SerializerMethodField()
     unit_symbol = serializers.SerializerMethodField()
+    total_co2e = serializers.SerializerMethodField()
 
     @extend_schema_field(OpenApiTypes.DECIMAL)
     def get_co2(self, obj): # noqa
@@ -179,6 +180,10 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
     @extend_schema_field(OpenApiTypes.DECIMAL)
     def get_hc(self, obj): # noqa
         return obj.get_total_gas_value(HC_GAS_ID)
+
+    @extend_schema_field(OpenApiTypes.DECIMAL)
+    def get_total_co2e(self, obj):
+        return round(obj.total_co2e)
 
     @extend_schema_field(OpenApiTypes.STR)
     def get_month(self, obj: EmissionResult):
