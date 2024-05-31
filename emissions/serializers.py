@@ -84,3 +84,10 @@ class EmissionResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmissionResult
         fields = ['name', 'date', 'usage', 'unit', 'total_co2e', 'gas_details']
+
+    def create(self, validated_data):
+        gas_details_data = validated_data.pop('gas_details')
+        emission_result = EmissionResult.objects.create(**validated_data)
+        for gas_detail_data in gas_details_data:
+            EmissionGasDetail.objects.create(emission_result=emission_result, **gas_detail_data)
+        return emission_result

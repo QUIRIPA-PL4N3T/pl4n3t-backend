@@ -72,17 +72,7 @@ class SaveEmissionDataView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = EmissionResultSerializer(data=request.data)
         if serializer.is_valid():
-            emission_result = serializer.save()
-
-            # Save each gas detail
-            for gas_detail_data in serializer.validated_data['gas_details']:
-                EmissionGasDetail.objects.create(
-                    emission_result=emission_result,
-                    greenhouse_gas=gas_detail_data['greenhouse_gas'],
-                    value=gas_detail_data['value'],
-                    co2e=gas_detail_data['co2e']
-                )
-
+            serializer.save()
             return Response({"success": "Data saved successfully"}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
