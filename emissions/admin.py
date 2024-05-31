@@ -5,7 +5,7 @@ from django.forms import ModelForm
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmission, FactorType, SourceType, \
-    EmissionFactorComponent, EmissionGasDetail, EmissionResult
+    EmissionFactorComponent, EmissionGasDetail, EmissionResult, Co2ByComponent, TotalEmissionGas
 from import_export import fields
 from import_export.widgets import ForeignKeyWidget
 from main.models import UnitOfMeasure
@@ -213,10 +213,20 @@ class EmissionGasDetailInline(admin.TabularInline):
         return []
 
 
+class TotalEmissionGasInline(admin.TabularInline):
+    model = TotalEmissionGas
+    extra = 0
+
+
+class Co2ByComponentInline(admin.TabularInline):
+    model = Co2ByComponent
+    extra = 0
+
+
 @admin.register(EmissionResult)
 class EmissionResultAdmin(admin.ModelAdmin):
     list_display = ['name', 'date', 'usage', 'unit', 'get_total_co2e']
-    inlines = [EmissionGasDetailInline]
+    inlines = [Co2ByComponentInline, TotalEmissionGasInline, EmissionGasDetailInline]
     search_fields = ['name']
     list_filter = ['date', 'unit']
 

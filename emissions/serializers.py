@@ -109,4 +109,6 @@ class EmissionResultSerializer(BaseDocumentSerializer):
         emission_result = EmissionResult.objects.create(**validated_data)
         for gas_detail_data in gas_details_data:
             EmissionGasDetail.objects.create(emission_result=emission_result, **gas_detail_data)
+
+        emission_result.calculate_totals()
         return emission_result

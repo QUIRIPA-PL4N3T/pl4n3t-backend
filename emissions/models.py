@@ -318,6 +318,40 @@ class EmissionResult(models.Model):
     unit = models.ForeignKey(UnitOfMeasure, verbose_name=_('Unidad de Medida'), on_delete=models.CASCADE)
     total_co2e = models.FloatField(_('Total CO₂e'), default=0)
 
+    def calculate_totals(self):
+        # Calculate total emissions per gas
+        total_emissions_gas = {}
+        for detail in self.gas_details.all():
+            if detail.greenhouse_gas not in total_emissions_gas:
+                total_emissions_gas[detail.greenhouse_gas] = {
+                    'value': 0,
+                    'co2e': 0
+                }
+            total_emissions_gas[detail.greenhouse_gas]['value'] += detail.value
+            total_emissions_gas[detail.greenhouse_gas]['co2e'] += detail.co2e
+
+        for greenhouse_gas, totals in total_emissions_gas.items():
+            TotalEmissionGas.objects.create(
+                emission_result=self,
+                greenhouse_gas=greenhouse_gas,
+                value=totals['value'],
+                co2e=totals['co2e']
+            )
+
+        # Calculate total CO2e per component
+        co2_by_component = {}
+        for detail in self.gas_details.all():
+            if detail.emission_factor not in co2_by_component:
+                co2_by_component[detail.emission_factor] = 0
+            co2_by_component[detail.emission_factor] += detail.co2e
+
+        for emission_factor, total_co2e in co2_by_component.items():
+            Co2ByComponent.objects.create(
+                emission_result=self,
+                emission_factor=emission_factor,
+                co2e=total_co2e
+            )
+
     class Meta:
         ordering = ('date', 'name')
         verbose_name = _('Resultado de Emisión')
@@ -354,8 +388,78 @@ class EmissionGasDetail(models.Model):
 
     class Meta:
         ordering = ('emission_result', 'greenhouse_gas')
+        verbose_name = _('Detalle de Emisión de Gas por Factor')
+        verbose_name_plural = _('Detalles de Emisión de Gases por Factor')
+
+    def __str__(self):
+        return f'{self.greenhouse_gas.name} ({self.value})'
+
+
+class TotalEmissionGas(models.Model):
+    """
+    Represents the total emission data for a specific greenhouse gas in a specific emission result.
+
+    Attributes:
+    - emission_result (ForeignKey): The associated emission result.
+    - greenhouse_gas (ForeignKey): The greenhouse gas being recorded.
+    - value (float): The amount of the gas emitted.
+    - co2e (float): The CO₂e equivalent for the gas emitted.
+    """
+    emission_result = models.ForeignKey(
+        EmissionResult,
+        related_name='total_emissions_gas',
+        on_delete=models.CASCADE
+    )
+
+    greenhouse_gas = models.ForeignKey(
+        GreenhouseGas,
+        verbose_name=_('Gas de Efecto Invernadero'),
+        related_name='+',
+        on_delete=models.CASCADE
+    )
+    value = models.FloatField(_('Cantidad Emitida'), default=0)
+    co2e = models.FloatField(_('CO₂e Equivalente'), default=0)
+
+    class Meta:
+        ordering = ('emission_result', 'greenhouse_gas')
         verbose_name = _('Detalle de Emisión de Gas')
         verbose_name_plural = _('Detalles de Emisión de Gases')
 
     def __str__(self):
         return f'{self.greenhouse_gas.name} ({self.value})'
+
+
+class Co2ByComponent(models.Model):
+    """
+    Represents the total CO₂e emission data for a specific component factor
+
+    Attributes:
+    - emission_result (ForeignKey): The associated emission result.
+    - emission_factor (ForeignKey): The associated emission factor.
+    - co2e (float): The CO₂e equivalent for the gas emitted.
+    """
+    emission_result = models.ForeignKey(
+        EmissionResult,
+        related_name='co2_by_component',
+        on_delete=models.CASCADE
+    )
+
+    emission_factor = models.ForeignKey(
+        EmissionFactor,
+        on_delete=models.CASCADE,
+        related_name='+',
+        blank=True,
+        null=True,
+        help_text=_('Factor de emisión asociado.')
+    )
+
+    co2e = models.FloatField(_('CO₂e Equivalente'), default=0)
+
+    class Meta:
+        ordering = ('emission_result', 'emission_factor')
+        verbose_name = _('CO₂e por Componente')
+        verbose_name_plural = _('CO₂e por Componentes')
+
+    def __str__(self):
+        return f'{self.emission_factor.name} ({self.co2e})'
+
