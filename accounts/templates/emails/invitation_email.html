@@ -1,0 +1,54 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación para unirse a la compañía</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        a:visited {
+          color: #fff;
+          background-color: transparent;
+          text-decoration: none;
+        }
+        .ii a[href] {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <p>{% translate 'Hola' %},</p>
+    <p>{% blocktrans %}Has sido invitado a unirte a la compañía {{ member.company.name }}.{% endblocktrans %}</p>
+    <p>{% translate 'Por favor, haz clic en el siguiente enlace para aceptar la invitación:' %}</p>
+    <p><a href="{{ accept_invitation_url  }}">{% translate 'Aceptar Invitación' %}</a></p>
+    <p>{% translate 'Gracias' %},</p>
+    <p>{% blocktrans %}El equipo de {{ member.company.name }}{% endblocktrans %}</p>
+</body>
+</html>

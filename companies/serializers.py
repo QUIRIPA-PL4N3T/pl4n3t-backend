@@ -1,9 +1,12 @@
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
+
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from documents.serializer import BaseDocumentSerializer
 from memberships.serializers import CompanyMembershipSerializer
+from django.utils.translation import gettext_lazy as _
 
 
 class EmissionsSourceSerializer(BaseDocumentSerializer):
@@ -58,29 +61,37 @@ class BrandSerializer(serializers.ModelSerializer):
 
 
 class MemberSerializer(serializers.ModelSerializer):
-    user_email = serializers.CharField(source='user.email', read_only=True)
-    role_description = serializers.SerializerMethodField()
+    role_description = serializers.SerializerMethodField(read_only=True)
+    company = serializers.HiddenField(default=None)
 
     @extend_schema_field(OpenApiTypes.STR)
-    def get_role_description(self, obj: Member): # noqa
+    def get_role_description(self, obj: Member):
         # Devuelve la representación legible del rol.
         return obj.get_role_display()
 
     def validate(self, data):
-        company = data.get('company')
-        if self.instance is None and company:
-            if not company.membership or not company.membership.is_active:
-                raise serializers.ValidationError("La compañía no tiene una membresía válida.")
+        company = self.context['company']
+        data['company'] = company
+        request = self.context.get('request')
 
+        if self.instance is None and company:
+            # Validar que el usuario que realiza la petición es miembro de la compañía
+            if not Member.objects.filter(company=company, user=request.user).exists():
+                raise ValidationError(_("No tienes permiso para realizar esta acción."))
+
+            # Validar la membresía de la compañía
+            if not hasattr(company, 'membership') or not company.membership or not company.membership.is_active:
+                raise ValidationError("La compañía no tiene una membresía válida.")
+
+            # Validar el número de usuarios permitido por la membresía
             if company.membership.num_users != -1 and company.members_roles.count() >= company.membership.num_users:
-                raise serializers.ValidationError(
-                    "La compañía ha alcanzado el límite de usuarios permitidos por su membresía."
-                )
+                raise ValidationError("La compañía ha alcanzado el límite de usuarios permitidos por su membresía.")
         return data
 
     class Meta:
         model = Member
-        fields = ('id', 'company', 'user_email', 'role', 'role_description')
+        fields = ('id', 'company', 'email', 'role', 'role_description', 'status')
+        read_only_fields = ['id', 'role_description']
 
 
 class LocationSerializer(serializers.ModelSerializer):

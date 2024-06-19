@@ -3,9 +3,13 @@ from datetime import timedelta
 from urllib.parse import urljoin
 from django.contrib.gis.db import models
 from django.contrib.sites.models import Site
+from django.core.mail import send_mail
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils import timezone
+from django.utils.html import strip_tags
 from accounts.models import User
 from emission_source_classifications.models import EmissionSourceGroup, CommonActivity, CommonEquipment, CommonProduct, \
     create_or_get_common_data, Investment
@@ -13,6 +17,7 @@ from emissions.models import SourceType, EmissionFactor, FactorType
 from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
 from memberships.models import Membership, CompanyMembership
+from django.conf import settings
 
 
 class Company(models.Model):
@@ -169,23 +174,21 @@ class Member(models.Model):
     """
     Represents an association between a company and a user.
 
-    The `Member` model establishes a link between individual users and the companies
-    they are associated with, whether as employees, stakeholders, or in any other capacity.
-    This relationship can be particularly useful in applications where user privileges,
-    roles, or access rights are determined based on their company affiliation.
-
     Attributes:
     - company (ForeignKey to Company): The company with which the user is associated.
-    - user (ForeignKey to User): The individual user linked to the company.\
-    - rol company rol
-
-    Note:
-    The string representation of the instance combines the name of the company and the
-    full name of the user.
+    - user (ForeignKey to User): The individual user linked to the company.
+    - role (str): The role of the user within the company.
+    - email (EmailField): The email address of the user invited to the company.
+    - status (str): The status of the membership (e.g., invited, active).
     """
+
     ADMIN = 'ADMIN'
     MANAGER = 'MANAGER'
     EMPLOYEE = 'EMPLOYEE'
+
+    INVITED = 'INVITED'
+    ACTIVE = 'ACTIVE'
+    REJECTED = 'REJECTED'
 
     ROLES = [
         (ADMIN, _('Administrador de empresa')),
@@ -193,9 +196,51 @@ class Member(models.Model):
         (EMPLOYEE, _('Empleado')),
     ]
 
+    STATUS_CHOICES = [
+        (INVITED, _('Invitado')),
+        (ACTIVE, _('Activo')),
+        (REJECTED, _('Rechazado')),
+    ]
+
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='members_roles')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='companies_roles')
+    email = models.EmailField(_('Correo Electrónico'), blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='companies_roles', null=True, blank=True)
     role = models.CharField(_('Rol'), choices=ROLES, max_length=20, default=EMPLOYEE)
+    status = models.CharField(_('Estado'), choices=STATUS_CHOICES, max_length=20, default=INVITED)
+
+    def send_invitation_email(self):
+        subject = _('Invitación para unirse a la compañía')
+        current_site = Site.objects.get_current()
+        print(self.id)
+        accept_invitation_url = f"https://{current_site.domain}{reverse('accept_invitation', args=[self.id])}"
+
+        html_message = render_to_string(
+            template_name='emails/invitation_email.html',
+            context={
+                'member': self,
+                'accept_invitation_url': accept_invitation_url
+            })
+        plain_message = strip_tags(html_message)
+        from_email = settings.DEFAULT_FROM_EMAIL
+        to = self.user.email if self.user else self.email
+
+        send_mail(
+            subject=subject,
+            message=plain_message,
+            from_email=from_email,
+            recipient_list=[to],
+            html_message=html_message
+        )
+
+    def save(self, *args, **kwargs):
+        if self.email and not self.user:
+            try:
+                self.user = User.objects.get(email=self.email)
+                self.status = self.ACTIVE
+            except User.DoesNotExist:
+                pass
+
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ('company', 'user',)
@@ -203,7 +248,7 @@ class Member(models.Model):
         verbose_name_plural = _('Usuarios de las Compañías')
 
     def __str__(self):
-        return f'{self.company.name} - {self.user.first_name} {self.user.last_name}'
+        return f'{self.company.name} - {self.user.email if self.user else self.email }'
 
 
 class Location(models.Model):
@@ -561,3 +606,9 @@ def create_common_data(sender, instance: EmissionsSource, created, **kwargs):
     create_or_get_common_data(CommonEquipment, 'name', instance.equipment_name, instance.group)
     create_or_get_common_data(CommonProduct, 'name', instance.product_name)
     create_or_get_common_data(Investment, 'name', instance.investment_type)
+
+
+@receiver(post_save, sender=Member)
+def send_invitation(sender, instance: Member, created, **kwargs):
+    if instance.id and created and instance.status == Member.INVITED:
+        instance.send_invitation_email()

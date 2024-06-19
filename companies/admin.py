@@ -15,7 +15,8 @@ class BrandAdmin(admin.ModelAdmin):
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('company', 'user', 'email', 'status', 'role')
+    list_filter = ('company__name', 'status', 'role')
 
 
 @admin.register(Location)

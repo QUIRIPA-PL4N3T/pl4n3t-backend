@@ -49,6 +49,7 @@ urlpatterns = [
     path('documentation/api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
     path('account/', include('accounts.urls')),
     path('reports/', include('reports.urls')),
+    path('companies/', include('companies.urls')),
 ]
 
 if not settings.IS_PRODUCTION:
