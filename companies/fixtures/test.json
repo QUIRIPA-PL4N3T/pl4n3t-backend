@@ -1,5 +1,58 @@
 [
     {
+        "model": "companies.brand",
+        "pk": 1,
+        "fields": {
+            "company": 1,
+            "name": "Marca Ejemplo",
+            "description": "Una marca reconocida por su calidad y prestigio.",
+            "logo": "brands/logo1.png"
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 1,
+        "fields": {
+            "logo": "company_logos/logo1.png",
+            "name": "Empresa Ejemplo",
+            "nit": "1234567890",
+            "description": "Una empresa dedicada a la tecnología.",
+            "industry": "Tecnología",
+            "size": "MEDIUM",
+            "website": "https://www.empresa-ejemplo.com",
+            "address": "Calle Falsa 123",
+            "email": "contacto@empresa-ejemplo.com",
+            "postal_code": "10001",
+            "phone": "123-456-7890",
+            "geo_location": "POINT (-73.935242 40.730610)",
+            "economic_sector": 1,
+            "industry_type": 1,
+            "country": 1,
+            "state": 1,
+            "city": 1,
+            "ciiu_code": "6201"
+        }
+    },
+    {
+        "model": "companies.location",
+        "pk": 1,
+        "fields": {
+            "name": "Oficina Central",
+            "address": "123 Calle Principal, Edificio A",
+            "phone": "123-456-7890",
+            "email": "contacto@empresa.com",
+            "country": 1,
+            "state": 1,
+            "city": 1,
+            "zip_code": "10001",
+            "company": 1,
+            "geo_location": "POINT (-73.935242 40.730610)",
+            "brand": 1,
+            "location_type": 1,
+            "employees": 100
+        }
+    },
+    {
         "model": "companies.emissionssource",
         "pk": 1,
         "fields": {
