@@ -1,5 +1,5 @@
 import django_filters
-from drf_spectacular.utils import extend_schema, OpenApiResponse
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
@@ -19,6 +19,42 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
     permission_classes = [permissions.AllowAny]
     queryset = Configuration.objects.all()
     serializer_class = ConfigurationSerializer
+
+    @extend_schema(
+        description='Retrieve configurations filtered by key.',
+        parameters=[
+            OpenApiParameter(
+                name='key',
+                type=str,
+                location=OpenApiParameter.QUERY,
+                description='Key to filter configurations.'
+            )
+        ]
+    )
+
+    def list(self, request, *args, **kwargs):
+        key = request.query_params.get('key')
+
+        if key is not None:
+            queryset = self.queryset.filter(key=key)
+            if not queryset.exists():
+                return Response({'detail': 'Not found.'}, status=404)
+
+            serializer = self.get_serializer(queryset, many=True)
+            return Response(self.get_filtered_response(serializer.data))
+
+        else:
+            return super().list(request, *args, **kwargs)
+
+    def get_filtered_response(self, data):
+        if len(data) == 1:
+            item = data[0]
+            if item['company']:
+                return {'value': item['value'], 'company': item['company']}
+            else:
+                return item['value']
+        else:
+            return {'detail': 'More than one result found.'}, status.HTTP_400_BAD_REQUEST
 
 
 @extend_schema(tags=['Main'])
