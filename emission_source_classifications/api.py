@@ -46,6 +46,7 @@ class ISOCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 class EmissionSourceGroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = EmissionSourceGroup.objects.all()
     permission_classes = [permissions.AllowAny]
+    serializer_class = EmissionSourceGroupDetailSerializer
 
     def get_serializer_class(self):
         if self.action == 'list':
@@ -59,14 +60,6 @@ class EmissionSourceGroupViewSet(viewsets.ReadOnlyModelViewSet):
     )
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
-
-
-    @extend_schema(
-        summary='Retrieve a single emission source group',
-        responses={200: EmissionSourceGroupDetailSerializer}
-    )
-    def retrieve(self, request, *args, **kwargs):
-        return super().retrieve(request, *args, **kwargs)
 
 
     @extend_schema(
