@@ -95,10 +95,12 @@ class TypeUnitOfMeasureViewSet(GenericAPIView):
 
 
 class UnitOfMeasureFilter(filters.FilterSet):
-    measure_type = filters.CharFilter(field_name='measure_type')
+    measure_type = filters.ChoiceFilter(field_name='measure_type', choices=MEASURE_TYPE_CHOICES)
+    is_gei_unit = filters.BooleanFilter(field_name='is_gei_unit')
+
     class Meta:
         model = UnitOfMeasure
-        fields = ['measure_type',]
+        fields = ['measure_type', 'is_gei_unit']
 
 
 @extend_schema(tags=['Main'])
