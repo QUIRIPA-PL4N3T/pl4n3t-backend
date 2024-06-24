@@ -43,8 +43,9 @@ class ISOCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @extend_schema(tags=['EmissionSourceGroups'])
-class EmissionSourceGroupViewSet(viewsets.ModelViewSet):
+class EmissionSourceGroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = EmissionSourceGroup.objects.all()
+    permission_classes = [permissions.AllowAny]
 
     def get_serializer_class(self):
         if self.action == 'list':
