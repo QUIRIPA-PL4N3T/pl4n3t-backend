@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from emissions.serializers import FactorTypeSerializer
-from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \
-    CommonProduct, Investment
+from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, \
+    CommonEquipment, CommonActivity, CommonProduct, Investment
 
 
 class QuantificationTypeSerializer(serializers.ModelSerializer):
@@ -24,16 +24,25 @@ class ISOCategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'code', 'scope', 'scope_name', 'description')
 
 
-class EmissionSourceGroupSerializer(serializers.ModelSerializer):
+class EmissionSourceGroupBaseSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
-    emission_factor_type_names = serializers.StringRelatedField(source='emission_factor_types', many=True)
-    emission_factor_types = FactorTypeSerializer(read_only=True, many=True)
 
     class Meta:
         model = EmissionSourceGroup
         fields = ('id', 'name', 'description', 'icon', 'category', 'category_name',
-                  'emission_factor_types', 'emission_factor_type_names', 'emission_factor_types',
                   'allow_inventory', 'enabled', 'form_name', 'classification')
+
+
+class EmissionSourceGroupListSerializer(EmissionSourceGroupBaseSerializer):
+    class Meta(EmissionSourceGroupBaseSerializer.Meta):
+        pass
+
+
+class EmissionSourceGroupDetailSerializer(EmissionSourceGroupBaseSerializer):
+    emission_factor_type_names = serializers.StringRelatedField(source='emission_factor_types', many=True)
+
+    class Meta(EmissionSourceGroupBaseSerializer.Meta):
+        fields = EmissionSourceGroupBaseSerializer.Meta.fields + ('emission_factor_type_names',)
 
 
 class CommonEquipmentSerializer(serializers.ModelSerializer):

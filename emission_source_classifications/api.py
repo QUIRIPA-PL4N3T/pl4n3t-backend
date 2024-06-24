@@ -12,9 +12,11 @@ from .serializers import (
     QuantificationTypeSerializer,
     GHGScopeSerializer,
     ISOCategorySerializer,
-    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer, CommonProductSerializer,
+    EmissionSourceGroupListSerializer, EmissionSourceGroupDetailSerializer, CommonEquipmentSerializer,  \
+    CommonActivitySerializer, CommonProductSerializer,
     InvestmentSerializer
 )
+from emissions.serializers import FactorTypeSerializer
 from django.utils.translation import gettext_lazy as _
 from django_filters import rest_framework as filters
 
@@ -43,8 +45,33 @@ class ISOCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 @extend_schema(tags=['EmissionSourceGroups'])
 class EmissionSourceGroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = EmissionSourceGroup.objects.all()
-    serializer_class = EmissionSourceGroupSerializer
     permission_classes = [permissions.AllowAny]
+    serializer_class = EmissionSourceGroupDetailSerializer
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return EmissionSourceGroupListSerializer
+        return EmissionSourceGroupDetailSerializer
+
+
+    @extend_schema(
+        summary='Retrieve a list of emission source groups',
+        responses={200: EmissionSourceGroupListSerializer(many=True)}
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
+
+    @extend_schema(
+        description='Retrieve emission factor types associated with an emission source group.',
+        responses={200: FactorTypeSerializer(many=True)}
+    )
+    @action(detail=True, methods=['get'])
+    def emission_factor_types(self, request, pk=None):
+        emission_source_group = self.get_object()
+        emission_factor_types = emission_source_group.emission_factor_types.all()
+        serializer = FactorTypeSerializer(emission_factor_types, many=True)
+        return Response(serializer.data)
 
 
 class BaseSearchViewSet(ListModelMixin, viewsets.GenericViewSet, CreateModelMixin):
