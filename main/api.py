@@ -21,28 +21,37 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
     serializer_class = ConfigurationSerializer
 
     @extend_schema(
-        description='Retrieve configurations filtered by key.',
+        description='Retrieve configurations filtered by key and optionally by company.',
         parameters=[
             OpenApiParameter(
                 name='key',
                 type=str,
                 location=OpenApiParameter.QUERY,
                 description='Key to filter configurations.'
+            ),
+            OpenApiParameter(
+                name='company',
+                type=str,
+                location=OpenApiParameter.QUERY,
+                description='Company to filter configurations.'
             )
         ]
     )
 
     def list(self, request, *args, **kwargs):
         key = request.query_params.get('key')
+        company = request.query_params.get('company')
 
         if key is not None:
             queryset = self.queryset.filter(key=key)
+            if company is not None:
+                queryset = queryset.filter(company=company)
+
             if not queryset.exists():
                 return Response({'detail': 'Not found.'}, status=404)
 
             serializer = self.get_serializer(queryset, many=True)
             return Response(self.get_filtered_response(serializer.data))
-
         else:
             return super().list(request, *args, **kwargs)
 
