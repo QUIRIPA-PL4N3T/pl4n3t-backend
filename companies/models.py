@@ -532,6 +532,7 @@ class EmissionsSource(models.Model):
         return f'{self.name}'
 
 
+# TODO: Remove this model not used
 class EmissionsSourceMonthEntry(models.Model):
     """
     Represents a monthly record of emissions for a specific source.

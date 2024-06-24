@@ -8,8 +8,8 @@ from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryTy
     DocumentType, Country, MEASURE_TYPE_CHOICES
 from main.serializer import ConfigurationSerializer, UnitOfMeasureSerializer, EconomicSectorSerializer, \
     IndustryTypeSerializer, LocationTypeSerializer, StateSerializer, CitySerializer, DocumentTypeSerializer, \
-    CountrySerializer, MeasureTypeSerializer
-from rest_framework import viewsets, permissions
+    CountrySerializer, MeasureTypeSerializer, ConfigurationListSerializer
+from rest_framework import viewsets, permissions, status
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
 
@@ -20,50 +20,22 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
     queryset = Configuration.objects.all()
     serializer_class = ConfigurationSerializer
 
-    @extend_schema(
-        description='Retrieve configurations filtered by key and optionally by company.',
-        parameters=[
-            OpenApiParameter(
-                name='key',
-                type=str,
-                location=OpenApiParameter.QUERY,
-                description='Key to filter configurations.'
-            ),
-            OpenApiParameter(
-                name='company',
-                type=str,
-                location=OpenApiParameter.QUERY,
-                description='Company to filter configurations.'
-            )
-        ]
-    )
 
-    def list(self, request, *args, **kwargs):
-        key = request.query_params.get('key')
-        company = request.query_params.get('company')
+class ConfigurationFilter(django_filters.FilterSet):
+    company = django_filters.CharFilter(field_name='company__name', lookup_expr='icontains')
+    key = django_filters.CharFilter(field_name='key', lookup_expr='icontains')
 
-        if key is not None:
-            queryset = self.queryset.filter(key=key)
-            if company is not None:
-                queryset = queryset.filter(company=company)
+    class Meta:
+        model = Configuration
+        fields = ['company', 'key']
 
-            if not queryset.exists():
-                return Response({'detail': 'Not found.'}, status=404)
 
-            serializer = self.get_serializer(queryset, many=True)
-            return Response(self.get_filtered_response(serializer.data))
-        else:
-            return super().list(request, *args, **kwargs)
-
-    def get_filtered_response(self, data):
-        if len(data) == 1:
-            item = data[0]
-            if item['company']:
-                return {'value': item['value'], 'company': item['company']}
-            else:
-                return item['value']
-        else:
-            return {'detail': 'More than one result found.'}, status.HTTP_400_BAD_REQUEST
+@extend_schema(tags=['Main'])
+class ConfigurationListView(viewsets.GenericViewSet, ListModelMixin):
+    permission_classes = [permissions.AllowAny]
+    queryset = Configuration.objects.all()
+    serializer_class = ConfigurationListSerializer
+    filterset_class = ConfigurationFilter
 
 
 @extend_schema(tags=['Main'])
