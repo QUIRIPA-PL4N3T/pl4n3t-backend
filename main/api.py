@@ -1,5 +1,5 @@
 import django_filters
-from drf_spectacular.utils import extend_schema, OpenApiResponse
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
@@ -8,8 +8,8 @@ from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryTy
     DocumentType, Country, MEASURE_TYPE_CHOICES
 from main.serializer import ConfigurationSerializer, UnitOfMeasureSerializer, EconomicSectorSerializer, \
     IndustryTypeSerializer, LocationTypeSerializer, StateSerializer, CitySerializer, DocumentTypeSerializer, \
-    CountrySerializer, MeasureTypeSerializer
-from rest_framework import viewsets, permissions
+    CountrySerializer, MeasureTypeSerializer, ConfigurationListSerializer
+from rest_framework import viewsets, permissions, status
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
 
@@ -19,6 +19,23 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
     permission_classes = [permissions.AllowAny]
     queryset = Configuration.objects.all()
     serializer_class = ConfigurationSerializer
+
+
+class ConfigurationFilter(django_filters.FilterSet):
+    company = django_filters.NumberFilter(field_name='company', lookup_expr='exact')
+    key = django_filters.CharFilter(field_name='key', lookup_expr='icontains')
+
+    class Meta:
+        model = Configuration
+        fields = ['company', 'key']
+
+
+@extend_schema(tags=['Main'])
+class ConfigurationListView(viewsets.GenericViewSet, ListModelMixin):
+    permission_classes = [permissions.AllowAny]
+    queryset = Configuration.objects.all()
+    serializer_class = ConfigurationListSerializer
+    filterset_class = ConfigurationFilter
 
 
 @extend_schema(tags=['Main'])

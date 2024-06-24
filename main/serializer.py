@@ -5,6 +5,11 @@ from main.models import Configuration, State, City, DocumentType, UnitOfMeasure,
     LocationType, Country
 
 
+class OptionSerializer(serializers.Serializer):
+    value = serializers.CharField()
+    label = serializers.CharField()
+
+
 class ConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Configuration
@@ -14,6 +19,24 @@ class ConfigurationSerializer(serializers.ModelSerializer):
         rep = super().to_representation(instance)
         if rep['key'].endswith('_LIST'):
             rep['value'] = rep['value'].replace('\r', '').replace('\n', '')
+        return rep
+
+
+class ConfigurationListSerializer(serializers.ModelSerializer):
+    options = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Configuration
+        fields = ['key', 'options', 'company']
+
+    @extend_schema_field(OptionSerializer(many=True))
+    def get_options(self, obj):
+        values = obj.value.replace('\r', '').replace('\n', '').split(',')
+        return [{'value': value.strip(), 'label': value.strip()} for value in values]
+
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['key'] = [rep['key']]  # Asegura que 'key' siempre sea un arreglo
         return rep
 
 
