@@ -22,7 +22,7 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
 
 
 class ConfigurationFilter(django_filters.FilterSet):
-    company = django_filters.CharFilter(field_name='company__name', lookup_expr='icontains')
+    company = django_filters.NumberFilter(field_name='company', lookup_expr='exact')
     key = django_filters.CharFilter(field_name='key', lookup_expr='icontains')
 
     class Meta:
