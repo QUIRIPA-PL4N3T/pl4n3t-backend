@@ -12,9 +12,11 @@ from .serializers import (
     QuantificationTypeSerializer,
     GHGScopeSerializer,
     ISOCategorySerializer,
-    EmissionSourceGroupSerializer, CommonEquipmentSerializer, CommonActivitySerializer, CommonProductSerializer,
+    EmissionSourceGroupListSerializer, EmissionSourceGroupDetailSerializer, CommonEquipmentSerializer,  \
+    CommonActivitySerializer, CommonProductSerializer,
     InvestmentSerializer
 )
+from emissions.serializers import FactorTypeSerializer
 from django.utils.translation import gettext_lazy as _
 from django_filters import rest_framework as filters
 
@@ -41,10 +43,20 @@ class ISOCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @extend_schema(tags=['EmissionSourceGroups'])
-class EmissionSourceGroupViewSet(viewsets.ReadOnlyModelViewSet):
+class EmissionSourceGroupViewSet(viewsets.ModelViewSet):
     queryset = EmissionSourceGroup.objects.all()
-    serializer_class = EmissionSourceGroupSerializer
-    permission_classes = [permissions.AllowAny]
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return EmissionSourceGroupListSerializer
+        return EmissionSourceGroupDetailSerializer
+
+    @action(detail=True, methods=['get'])
+    def emission_factor_types(self, request, pk=None):
+        emission_source_group = self.get_object()
+        emission_factor_types = emission_source_group.emission_factor_types.all()
+        serializer = FactorTypeSerializer(emission_factor_types, many=True)
+        return Response(serializer.data)
 
 
 class BaseSearchViewSet(ListModelMixin, viewsets.GenericViewSet, CreateModelMixin):
