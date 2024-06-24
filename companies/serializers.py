@@ -116,11 +116,6 @@ class LocationSerializer(serializers.ModelSerializer):
 
 
 class CompanySerializer(serializers.ModelSerializer):
-    locations = LocationSerializer(many=True, read_only=True)
-    members_roles = MemberSerializer(many=True, read_only=True)
-    brands = BrandSerializer(many=True, read_only=True)
-    membership = CompanyMembershipSerializer(read_only=True)
-
     country_name = serializers.SerializerMethodField(read_only=True)
     state_name = serializers.SerializerMethodField(read_only=True)
     city_name = serializers.SerializerMethodField(read_only=True)
@@ -155,14 +150,13 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = (
-            'id', 'name', 'description', 'industry', 'size', 'locations',
-            'website', 'geo_location', 'economic_sector', 'industry_type',
-            'members_roles', 'brands', 'country', 'address', 'postal_code',
-            'phone', 'state', 'city', 'logo_absolute_url', 'email', 'country_name',
-            'state_name', 'city_name', 'nit', 'logo', 'economic_sector_name',
-            'size_name', 'industry_type_name', 'economic_sector_name', 'membership'
+            'id', 'name', 'description', 'industry', 'size', 'website',
+            'geo_location', 'economic_sector', 'industry_type', 'country', 
+            'address', 'postal_code', 'phone', 'state', 'city', 
+            'logo_absolute_url', 'email', 'country_name', 'state_name', 
+            'city_name', 'nit', 'logo', 'economic_sector_name', 
+            'size_name', 'industry_type_name'
         )
-
 
 class CompanyLogoSerializer(serializers.ModelSerializer):
     class Meta:
