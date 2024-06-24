@@ -285,11 +285,10 @@ class LogoutAPIView(APIView):
         },
     )
     def post(self, request, *args, **kwargs):
-        try:
-            refresh_token = request.data["refresh_token"]
-            print(refresh_token)
-            token = RefreshToken(refresh_token)
-            token.blacklist()
+        try:            
+            refresh_token = RefreshToken.for_user(request.user)
+            refresh_token.blacklist()
+
             return Response({'detail': _('Sesión cerrada correctamente')}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)

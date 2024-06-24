@@ -135,8 +135,7 @@ class TokenOutput(serializers.Serializer): # noqa
 
 
 class LogoutSerializer(serializers.Serializer): # noqa
-    refresh_token = serializers.CharField()
-
+    pass
 
 class GoogleAccountSerializer(serializers.Serializer): # noqa
     token = serializers.CharField()
