@@ -7,12 +7,12 @@ from main.views import home, blog, company, contact_us, why_quantify, water_foot
 from rest_framework import routers
 from main.api import ConfigurationView, UnitOfMeasureViewSet, EconomicSectorViewSet, IndustryTypeViewSet, \
     LocationTypeViewSet, StateViewSet, CityViewSet, DocumentTypeViewSet, CountryViewSet, TypeUnitOfMeasureViewSet, \
-    ConfigurationListView
+    ConfigurationDetailView
 
 # api urls
 router = routers.DefaultRouter()
 router.register('configurations', ConfigurationView, basename='configurations')
-router.register('configurations-list', ConfigurationListView, basename='configurations-list')
+router.register('configurations-list', ConfigurationDetailView, basename='configurations-list')
 router.register('unit-of-measure', UnitOfMeasureViewSet, basename='unit-of-measure')
 router.register('economic-sector', EconomicSectorViewSet, basename='economic-sector')
 router.register('industry-type', IndustryTypeViewSet, basename='industry-type')

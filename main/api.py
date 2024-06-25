@@ -1,14 +1,14 @@
 import django_filters
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin
+from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.response import Response
 
 from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryType, LocationType, State, City, \
     DocumentType, Country, MEASURE_TYPE_CHOICES
 from main.serializer import ConfigurationSerializer, UnitOfMeasureSerializer, EconomicSectorSerializer, \
     IndustryTypeSerializer, LocationTypeSerializer, StateSerializer, CitySerializer, DocumentTypeSerializer, \
-    CountrySerializer, MeasureTypeSerializer, ConfigurationListSerializer
+    CountrySerializer, MeasureTypeSerializer, ConfigurationDetailSerializer
 from rest_framework import viewsets, permissions, status
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
@@ -23,19 +23,33 @@ class ConfigurationView(viewsets.GenericViewSet, ListModelMixin):
 
 class ConfigurationFilter(django_filters.FilterSet):
     company = django_filters.NumberFilter(field_name='company', lookup_expr='exact')
-    key = django_filters.CharFilter(field_name='key', lookup_expr='icontains')
 
     class Meta:
         model = Configuration
-        fields = ['company', 'key']
+        fields = ['company']
 
 
 @extend_schema(tags=['Main'])
-class ConfigurationListView(viewsets.GenericViewSet, ListModelMixin):
+class ConfigurationDetailView(viewsets.GenericViewSet, RetrieveModelMixin):
     permission_classes = [permissions.AllowAny]
+    serializer_class = ConfigurationDetailSerializer
     queryset = Configuration.objects.all()
-    serializer_class = ConfigurationListSerializer
     filterset_class = ConfigurationFilter
+    lookup_field = 'key'
+
+    def get_queryset(self):
+        queryset = Configuration.objects.all()
+        filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+        filterset = ConfigurationFilter(self.request.GET, queryset=queryset)
+        return filterset.qs
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='company', description=_('ID de la compañía'), required=False, type=int),
+        ],
+    )
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
 
 
 @extend_schema(tags=['Main'])

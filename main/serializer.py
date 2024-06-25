@@ -22,7 +22,7 @@ class ConfigurationSerializer(serializers.ModelSerializer):
         return rep
 
 
-class ConfigurationListSerializer(serializers.ModelSerializer):
+class ConfigurationDetailSerializer(serializers.ModelSerializer):
     options = serializers.SerializerMethodField()
 
     class Meta:
