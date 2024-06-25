@@ -38,6 +38,28 @@ class CompanyViewSet(viewsets.ModelViewSet):
             company=company,
             role=Member.ADMIN
         )
+    
+    @extend_schema(
+        summary='List all brands of a specific company',
+        responses={200: BrandSerializer(many=True)}
+    )
+    @action(detail=True, methods=['get'])
+    def brands(self, request, pk=None):
+        company = self.get_object()
+        brands = Brand.objects.filter(company=company)
+        serializer = BrandSerializer(brands, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @extend_schema(
+        summary='List all locations of a specific company',
+        responses={200: LocationSerializer(many=True)}
+    )
+    @action(detail=True, methods=['get'])
+    def locations(self, request, pk=None):
+        company = self.get_object()
+        locations = Location.objects.filter(company=company)
+        serializer = LocationSerializer(locations, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @extend_schema(
         summary='List all members of a specific company',
