@@ -18,6 +18,9 @@ from django.utils.translation import gettext_lazy as _
 from main.models import City, UnitOfMeasure, EconomicSector, IndustryType, LocationType, Country, State
 from memberships.models import Membership, CompanyMembership
 from django.conf import settings
+import logging
+
+logger = logging.getLogger('pl4n3t')
 
 
 class Company(models.Model):
@@ -209,10 +212,10 @@ class Member(models.Model):
     status = models.CharField(_('Estado'), choices=STATUS_CHOICES, max_length=20, default=INVITED)
 
     def send_invitation_email(self):
+
         subject = _('Invitación para unirse a la compañía')
         current_site = Site.objects.get_current()
-        print(self.id)
-        accept_invitation_url = f"https://{current_site.domain}{reverse('accept_invitation', args=[self.id])}"
+        accept_invitation_url = f"{current_site.domain}{reverse('companies:accept-invitation', args=[self.id])}"
 
         html_message = render_to_string(
             template_name='emails/invitation_email.html',
@@ -246,6 +249,7 @@ class Member(models.Model):
         ordering = ('company', 'user',)
         verbose_name = _('Usuario de Compañía')
         verbose_name_plural = _('Usuarios de las Compañías')
+        unique_together = ('company', 'email')
 
     def __str__(self):
         return f'{self.company.name} - {self.user.email if self.user else self.email }'
@@ -612,4 +616,8 @@ def create_common_data(sender, instance: EmissionsSource, created, **kwargs):
 @receiver(post_save, sender=Member)
 def send_invitation(sender, instance: Member, created, **kwargs):
     if instance.id and created and instance.status == Member.INVITED:
-        instance.send_invitation_email()
+        try:
+            instance.send_invitation_email()
+            logger.debug(f'Invitation email triggered for member ID: {instance.id}')
+        except Exception as e:
+            logger.error(f'Error sending invitation email: {e}')

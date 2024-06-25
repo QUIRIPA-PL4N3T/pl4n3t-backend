@@ -293,3 +293,29 @@ CKEDITOR_CONFIGS = {
         'height': 300,
     },
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'pl4n3t.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'pl4n3t': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

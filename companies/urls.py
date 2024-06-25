@@ -8,7 +8,6 @@ router = DefaultRouter()
 router.register(r'companies', CompanyViewSet)
 router.register(r'company-logo', CompanyLogoViewSet)
 router.register(r'brands', BrandViewSet)
-router.register(r'company-users', MemberViewSet)
 router.register(r'locations', LocationViewSet)
 router.register(r'emission-sources', EmissionsSourceViewSet)
 router.register(r'emission-source-month-entries', EmissionsSourceMonthEntryViewSet)
@@ -17,9 +16,15 @@ app_name = 'companies'
 
 api_urls = ([
     path('', include(router.urls)),
+    path('companies/<int:company_id>/members/', include([
+        path('<int:pk>/', MemberViewSet.as_view(
+            {'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}),
+             name='member-detail'),
+    ])),
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
+
 ], 'companies')
 
 urlpatterns = [
-    path('accept-invitation/<int:member_id>/', accept_invitation, name='accept_invitation'),
+    path('accept-invitation/<int:member_id>/', accept_invitation, name='accept-invitation'),
 ]

@@ -2,10 +2,8 @@ from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
 from documents.serializer import BaseDocumentSerializer
-from memberships.serializers import CompanyMembershipSerializer
 from django.utils.translation import gettext_lazy as _
 
 
@@ -66,7 +64,7 @@ class MemberSerializer(serializers.ModelSerializer):
 
     @extend_schema_field(OpenApiTypes.STR)
     def get_role_description(self, obj: Member):
-        # Devuelve la representación legible del rol.
+        # Returns the readable representation of the role.
         return obj.get_role_display()
 
     def validate(self, data):
@@ -75,17 +73,21 @@ class MemberSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
 
         if self.instance is None and company:
-            # Validar que el usuario que realiza la petición es miembro de la compañía
+            # Validate that the user making the request is a member of the company
             if not Member.objects.filter(company=company, user=request.user).exists():
                 raise ValidationError(_("No tienes permiso para realizar esta acción."))
 
-            # Validar la membresía de la compañía
+            # Validate company membership
             if not hasattr(company, 'membership') or not company.membership or not company.membership.is_active:
                 raise ValidationError("La compañía no tiene una membresía válida.")
 
-            # Validar el número de usuarios permitido por la membresía
+            # Validate the number of users allowed by the membership
             if company.membership.num_users != -1 and company.members_roles.count() >= company.membership.num_users:
                 raise ValidationError("La compañía ha alcanzado el límite de usuarios permitidos por su membresía.")
+
+            # Validate that a member with the same email address does not already exist in the company.
+            if Member.objects.filter(company=company, email=data['email']).exists():
+                raise ValidationError(_("Ya existe una invitación para este correo electrónico en esta compañía."))
         return data
 
     class Meta:

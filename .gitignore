@@ -22,6 +22,7 @@ temp.py
 media/
 /static/
 /credentials/*.*
+pl4n3t.log
 
 assets/webpack_bundles/
 webpack-*-stats.json
