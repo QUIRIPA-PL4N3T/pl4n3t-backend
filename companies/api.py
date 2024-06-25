@@ -65,19 +65,19 @@ class CompanyViewSet(viewsets.ModelViewSet):
         summary='List all members of a specific company',
         responses={200: MemberSerializer(many=True)}
     )
-    @action(detail=True, methods=['get'], url_path='members', url_name='members')
-    def list_members(self, request, pk=None):
+    @action(detail=True, methods=['get'])
+    def members(self, request, pk=None):
         company = self.get_object()
         members = Member.objects.filter(company=company)
         serializer = MemberSerializer(members, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @extend_schema(
         summary='Add a member to a specific company',
         request=MemberSerializer,
         responses={201: MemberSerializer}
     )
-    @action(detail=True, methods=['post'], url_path='members', url_name='add_member')
+    @action(detail=True, methods=['post'], url_path='add-member', url_name='add-member')
     def add_member(self, request, pk=None):
         company = self.get_object()
 
