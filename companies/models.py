@@ -536,56 +536,6 @@ class EmissionsSource(models.Model):
         return f'{self.name}'
 
 
-# TODO: Remove this model not used
-class EmissionsSourceMonthEntry(models.Model):
-    """
-    Represents a monthly record of emissions for a specific source.
-
-    The `EmissionsSourceMonthEntry` model provides a means to capture monthly data
-    related to specific emission sources. This helps in tracking and analyzing the
-    emission patterns over time. Each entry corresponds to a month and is associated
-    with a particular emission source.
-
-    Attributes:
-    - MONTH_CHOICES (List of Tuples): A list of months for selection.
-    - register_date (DateField): The date when the entry was recorded.
-    - emission_agent (ForeignKey to EmissionsSource): The specific source of the emission.
-    - month (CharField): The month for which the entry is being recorded.
-    - emission (FloatField): The quantity of the emission for the given month.
-    - unit (ForeignKey to UnitOfMeasure): The unit of measurement for the emission.
-
-    Note:
-    The string representation of the instance shows the emission source followed by the month.
-    """
-    MONTH_CHOICES = [
-        ('January', _('Enero')),
-        ('February', _('Febrero')),
-        ('March', _('Marzo')),
-        ('April', _('Abril')),
-        ('May', _('Mayo')),
-        ('June', _('Junio')),
-        ('July', _('Julio')),
-        ('August', _('Agosto')),
-        ('September', _('Septiembre')),
-        ('October', _('Octubre')),
-        ('November', _('Noviembre')),
-        ('December', _('Diciembre')),
-    ]
-    register_date = models.DateField()
-    emission_agent = models.ForeignKey(EmissionsSource, on_delete=models.CASCADE)
-    month = models.CharField(max_length=9, choices=MONTH_CHOICES)
-    emission = models.FloatField(default=0.0)
-    unit = models.ForeignKey(UnitOfMeasure, on_delete=models.CASCADE, related_name='+')
-
-    class Meta:
-        ordering = ('register_date', 'month')
-        verbose_name = 'Registro Mensual de Emisión'
-        verbose_name_plural = 'Registro Mensual de Emisiones'
-
-    def __str__(self):
-        return f'{self.emission_agent} - {self.month}'
-
-
 @receiver(post_save, sender=Company)
 def create_free_membership(sender, instance, created, **kwargs):
     if created:

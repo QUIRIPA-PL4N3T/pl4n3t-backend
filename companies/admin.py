@@ -1,5 +1,5 @@
 from django.contrib import admin
-from companies.models import Company, Member, Location, EmissionsSource, EmissionsSourceMonthEntry, Brand
+from companies.models import Company, Member, Location, EmissionsSource, Brand
 from django.utils.translation import gettext_lazy as _
 
 
@@ -92,8 +92,3 @@ class EmissionsSourceAdmin(admin.ModelAdmin):
     emission_source_name.short_description = 'Fuente de Emisión'
     group_name.short_description = 'Grupo'
     company_name.short_description = 'Compañía'
-
-
-@admin.register(EmissionsSourceMonthEntry)
-class EmissionsSourceMonthEntryAdmin(admin.ModelAdmin):
-    pass

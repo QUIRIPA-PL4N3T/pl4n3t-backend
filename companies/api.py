@@ -11,9 +11,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from accounts.models import User
-from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
+from companies.models import Company, Brand, Member, Location, EmissionsSource
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
-    EmissionsSourceSerializer, EmissionsSourceMonthEntrySerializer, CompanyLogoSerializer, DashboardDataSerializer
+    EmissionsSourceSerializer, CompanyLogoSerializer, DashboardDataSerializer
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
 from emissions.models import EmissionGasDetail
@@ -204,12 +204,6 @@ class EmissionsSourceViewSet(viewsets.ModelViewSet):
     queryset = EmissionsSource.objects.all()
     serializer_class = EmissionsSourceSerializer
     filterset_class = EmissionsSourceFilter
-
-
-@extend_schema(tags=['CompanyEmissionSourceEntries'])
-class EmissionsSourceMonthEntryViewSet(viewsets.ModelViewSet):
-    queryset = EmissionsSourceMonthEntry.objects.all()
-    serializer_class = EmissionsSourceMonthEntrySerializer
 
 
 @extend_schema(tags=['Dashboard'])

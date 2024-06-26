@@ -2,7 +2,7 @@ from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
+from companies.models import Company, Brand, Member, Location, EmissionsSource
 from documents.serializer import BaseDocumentSerializer
 from django.utils.translation import gettext_lazy as _
 
@@ -29,12 +29,6 @@ class EmissionsSourceSerializer(BaseDocumentSerializer):
             'product_operation_requirements', 'units_sold', 'units_sold_period'
         )
         read_only_fields = ['id', 'emission_source_name']
-
-
-class EmissionsSourceMonthEntrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EmissionsSourceMonthEntry
-        fields = ('id', 'register_date', 'emission_agent', 'month', 'emission', 'unit')
 
 
 class BrandSerializer(serializers.ModelSerializer):
@@ -159,6 +153,7 @@ class CompanySerializer(serializers.ModelSerializer):
             'city_name', 'nit', 'logo', 'economic_sector_name', 
             'size_name', 'industry_type_name'
         )
+
 
 class CompanyLogoSerializer(serializers.ModelSerializer):
     class Meta:
