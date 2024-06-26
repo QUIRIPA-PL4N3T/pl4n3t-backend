@@ -9,6 +9,7 @@ from emissions.models import GreenhouseGas, EmissionFactor, GreenhouseGasEmissio
 from import_export import fields
 from import_export.widgets import ForeignKeyWidget
 from main.models import UnitOfMeasure
+from django.utils.translation import gettext_lazy as _
 
 
 # Emission factor classifications
@@ -124,6 +125,18 @@ class EmissionFactorAdmin(ImportExportModelAdmin):
     list_display = ['name', 'source_type', 'unit', 'measure_type', 'factor_type',]
     list_editable = ['measure_type', 'measure_type']
     search_fields = ['name']
+
+    fieldsets = (
+        (_('Información General'), {
+            'fields': ('name', 'description', 'observations', 'measure_type')
+        }),
+        (_('Periodo de Validez'), {
+            'fields': ('valid_from', 'valid_until')
+        }),
+        (_('Componente Principal '), {
+            'fields': (('main_component_name', 'application_percentage'), 'factor_type', 'source_type', 'unit')
+        }),
+    )
 
     def save_model(self, request, obj, form, change):
         obj.clean()  # Validación antes de guardar

@@ -125,6 +125,12 @@ class EmissionFactor(models.Model):
         default=MEASURE_TYPE_UNKNOWN,
     )
 
+    main_component_name = models.CharField(
+        _('Nombre del Componente Principal'),
+        default='',
+        max_length=255
+    )
+
     application_percentage = models.FloatField(
         _('Porcentaje de Aplicación'),
         default=1,

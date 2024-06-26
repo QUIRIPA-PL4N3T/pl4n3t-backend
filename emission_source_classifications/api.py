@@ -2,19 +2,23 @@ from django.utils.text import slugify
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets, permissions
+from rest_framework.generics import GenericAPIView, get_object_or_404
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
+
+from companies.models import EmissionsSource
+from emissions.utils import calculate_emission
 from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \
     CommonProduct, Investment
 from .serializers import (
     QuantificationTypeSerializer,
     GHGScopeSerializer,
     ISOCategorySerializer,
-    EmissionSourceGroupListSerializer, EmissionSourceGroupDetailSerializer, CommonEquipmentSerializer,  \
+    EmissionSourceGroupListSerializer, EmissionSourceGroupDetailSerializer, CommonEquipmentSerializer, \
     CommonActivitySerializer, CommonProductSerializer,
-    InvestmentSerializer
+    InvestmentSerializer, EmissionCalculationResultSerializer, EmissionCalculationInputSerializer
 )
 from emissions.serializers import FactorTypeSerializer
 from django.utils.translation import gettext_lazy as _
@@ -136,3 +140,50 @@ class CommonProductViewSet(BaseSearchViewSet):
 class InvestmentViewSet(BaseSearchViewSet):
     queryset = Investment.objects.all()
     serializer_class = InvestmentSerializer
+
+
+@extend_schema(tags=['Calculator'])
+class EmissionCalculatorView(GenericAPIView):
+    @extend_schema(
+        summary="Calculate emissions",
+        request=EmissionCalculationInputSerializer,
+        responses={200: EmissionCalculationResultSerializer(many=True)}
+    )
+    def post(self, request, *args, **kwargs):
+        # Validate input data
+        serializer = EmissionCalculationInputSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        data = serializer.validated_data
+        emission_source = get_object_or_404(EmissionsSource, id=data['emission_source_id'])
+        consumption = data['consumption']
+        unit_of_measure_id = data['unit_of_measure_id']
+
+        # Get the main emission factor associated with the emission source
+        main_emission_factor = emission_source.emission_factor
+
+        results = []
+
+        # Calculate emissions for the main component
+        main_component_result = calculate_emission(
+            name=main_emission_factor.main_component_name,
+            factor=main_emission_factor,
+            consumption=consumption,
+            application_percentage=main_emission_factor.application_percentage
+        )
+
+        results.append(main_component_result)
+
+        # Calculate emissions for each subcomponent
+        for component in main_emission_factor.components.all():
+            sub_component_result = calculate_emission(
+                name=component.component_name,
+                factor=component.component_factor,
+                consumption=consumption,
+                application_percentage=component.application_percentage
+            )
+            results.append(sub_component_result)
+
+        # Serialize the results and send the response
+        result_serializer = EmissionCalculationResultSerializer(results, many=True)
+        return Response(result_serializer.data, status=status.HTTP_200_OK)

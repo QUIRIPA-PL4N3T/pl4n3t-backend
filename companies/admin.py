@@ -30,10 +30,12 @@ class EmissionsSourceAdmin(admin.ModelAdmin):
     list_filter = ('source_type', 'group', 'location__company')
     search_fields = ('name', 'code', 'location__name', 'location__company__name')
     ordering = ('name',)
+    raw_id_fields = ('emission_factor', 'emission_factor_unit')
 
     fieldsets = (
         (_('Información General'), {
-            'fields': ('name', 'code', 'description', 'location', 'image', 'group', 'source_type', 'geo_location')
+            'fields': ('name', 'code', 'description', 'location', 'image', 'group', 'source_type', 'factor_type',
+                       'emission_factor', 'emission_factor_unit', 'geo_location')
         }),
         (_('Vehículos'), {
             'fields': ('vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity', 'vehicle_efficiency',
@@ -42,7 +44,7 @@ class EmissionsSourceAdmin(admin.ModelAdmin):
         }),
         (_('Electricidad'), {
             'fields': ('electricity_supplier', 'electricity_source', 'electricity_efficiency',
-                       'electricity_efficiency_unit'),
+                       'electricity_efficiency_unit', 'know_type_electricity_generation_source'),
             'classes': ('collapse',)
         }),
         (_('Bienes Arrendados'), {

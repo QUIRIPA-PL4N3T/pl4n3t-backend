@@ -67,3 +67,25 @@ class InvestmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Investment
         fields = ('id', 'name')
+
+
+class EmissionCalculationInputSerializer(serializers.Serializer):
+    emission_source_id = serializers.IntegerField()
+    consumption = serializers.FloatField()
+    unit_of_measure_id = serializers.IntegerField()
+
+
+class EmissionCalculationResultDetailSerializer(serializers.Serializer):
+    gas_name = serializers.CharField()
+    gas = serializers.CharField()
+    value = serializers.FloatField()
+    co2e = serializers.FloatField()
+    uncertainty = serializers.FloatField()
+    gwp = serializers.FloatField()
+
+
+class EmissionCalculationResultSerializer(serializers.Serializer):
+    component = serializers.CharField()
+    co2e = serializers.FloatField()
+    results = EmissionCalculationResultDetailSerializer(many=True)
+
