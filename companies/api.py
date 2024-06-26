@@ -8,6 +8,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.db import models
 
 from accounts.models import User
 from companies.models import Company, Brand, Member, Location, EmissionsSource, EmissionsSourceMonthEntry
@@ -189,16 +190,24 @@ class LocationViewSet(viewsets.ModelViewSet):
 
 
 class EmissionsSourceFilter(filters.FilterSet):
-    name = filters.CharFilter(field_name='name', lookup_expr='icontains')
     code = filters.CharFilter(field_name='code', lookup_expr='icontains')
     location = filters.NumberFilter(field_name='location_id')
     group = filters.NumberFilter(field_name='group_id')
     source_type = filters.NumberFilter(field_name='source_type_id')
     factor_type = filters.NumberFilter(field_name='factor_type_id')
+    search = filters.CharFilter(method='filter_search')
 
     class Meta:
         model = EmissionsSource
-        fields = ['name', 'code', 'location', 'group', 'source_type', 'factor_type']
+        fields = ['search', 'code', 'location', 'group', 'source_type', 'factor_type']
+    
+    def filter_search(self, queryset, name, value):
+        return queryset.filter(
+            models.Q(name__icontains=value) |
+            models.Q(description__icontains=value) |
+            models.Q(supplier_name__icontains=value) |
+            models.Q(product_name__icontains=value)
+        )
 
 
 @extend_schema(tags=['CompanyEmissionSources'])
