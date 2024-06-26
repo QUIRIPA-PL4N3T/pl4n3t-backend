@@ -144,6 +144,9 @@ class InvestmentViewSet(BaseSearchViewSet):
 
 @extend_schema(tags=['Calculator'])
 class EmissionCalculatorView(GenericAPIView):
+    # workaround to remove warning: Failed to obtain model through view's queryset due to raised exception
+    queryset = EmissionsSource.objects.none()
+
     @extend_schema(
         summary="Calculate emissions",
         request=EmissionCalculationInputSerializer,

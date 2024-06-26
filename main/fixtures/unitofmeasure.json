@@ -10,7 +10,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -24,7 +26,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -38,7 +42,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -52,7 +58,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
     }
   },
   {
@@ -66,7 +74,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -77,10 +87,12 @@
       "slug": "toneladas-t",
       "symbol": "t",
       "measure_type": "WEIGHT",
-      "name_standard_unit": "",
+      "name_standard_unit": "kg",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -91,10 +103,12 @@
       "slug": "kilogramo-kg",
       "symbol": "kg",
       "measure_type": "WEIGHT",
-      "name_standard_unit": "",
+      "name_standard_unit": "kg",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -108,7 +122,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -122,7 +138,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -130,13 +148,15 @@
     "pk": 22,
     "fields": {
       "name": "Desconocido",
-      "slug": "",
-      "symbol": "",
-      "measure_type": "",
+      "slug": "desconocido",
+      "symbol": "unknown",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -150,7 +170,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -164,7 +186,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -178,7 +202,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 0.01,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -192,7 +218,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 0.001,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -206,7 +234,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1e-06,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -220,7 +250,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1e-09,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -234,7 +266,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1e-10,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -248,7 +282,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 1609.34,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -262,7 +298,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 0.9144,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -276,7 +314,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 0.3048,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -290,7 +330,9 @@
       "name_standard_unit": "Metro",
       "scale_to_standard_unit": 0.0254,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -304,7 +346,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -318,7 +362,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 1000000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -332,7 +378,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 10000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -346,7 +394,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 4046.86,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -360,7 +410,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 0.00064516,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -374,7 +426,9 @@
       "name_standard_unit": "Metro cuadrado",
       "scale_to_standard_unit": 0.092903,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -388,7 +442,9 @@
       "name_standard_unit": "Radian",
       "scale_to_standard_unit": 0.0174533,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -402,7 +458,9 @@
       "name_standard_unit": "Radian",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -416,7 +474,9 @@
       "name_standard_unit": "Radian",
       "scale_to_standard_unit": 0.000290888,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -430,7 +490,9 @@
       "name_standard_unit": "Radian",
       "scale_to_standard_unit": 4.84814e-06,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -444,7 +506,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -458,7 +522,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 60.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -472,7 +538,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 3600.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -486,7 +554,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 86400.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -500,7 +570,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 604800.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -514,7 +586,9 @@
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 2628000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -522,13 +596,15 @@
     "pk": 50,
     "fields": {
       "name": "Año",
-      "slug": "año",
+      "slug": "ano",
       "symbol": "yr",
       "measure_type": "TIME",
       "name_standard_unit": "Segundo",
       "scale_to_standard_unit": 31536000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -542,7 +618,9 @@
       "name_standard_unit": "Metro por segundo",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -556,7 +634,9 @@
       "name_standard_unit": "Metro por segundo",
       "scale_to_standard_unit": 0.277778,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -570,7 +650,9 @@
       "name_standard_unit": "Metro por segundo",
       "scale_to_standard_unit": 0.44704,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -584,7 +666,9 @@
       "name_standard_unit": "Metro por segundo",
       "scale_to_standard_unit": 0.514444,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -598,7 +682,9 @@
       "name_standard_unit": "Metro por segundo",
       "scale_to_standard_unit": 343.2,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -612,7 +698,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -626,7 +714,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 0.001,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -640,7 +730,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 1e-06,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -654,7 +746,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 1e-06,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -668,7 +762,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 0.0283168,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -682,7 +778,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 1.63871e-05,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -696,7 +794,9 @@
       "name_standard_unit": "Metro cúbico",
       "scale_to_standard_unit": 0.00378541,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -710,7 +810,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.001,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -724,7 +826,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.453592,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -738,7 +842,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.0283495,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -752,7 +858,9 @@
       "name_standard_unit": "Joule",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -766,7 +874,9 @@
       "name_standard_unit": "Joule",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -780,7 +890,9 @@
       "name_standard_unit": "Joule",
       "scale_to_standard_unit": 4.184,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -794,7 +906,9 @@
       "name_standard_unit": "Joule",
       "scale_to_standard_unit": 4184.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -808,7 +922,9 @@
       "name_standard_unit": "Vatio-hora",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -822,7 +938,9 @@
       "name_standard_unit": "Vatio-hora",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -836,7 +954,9 @@
       "name_standard_unit": "Joule",
       "scale_to_standard_unit": 1000000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -850,7 +970,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.001,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -864,7 +986,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -878,7 +1002,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -892,7 +1018,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.453592,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -906,7 +1034,9 @@
       "name_standard_unit": "Kilogramo",
       "scale_to_standard_unit": 0.0283495,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -920,7 +1050,9 @@
       "name_standard_unit": "Kelvin",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 273.15,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -934,7 +1066,9 @@
       "name_standard_unit": "Kelvin",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -948,7 +1082,9 @@
       "name_standard_unit": "Kelvin",
       "scale_to_standard_unit": 0.555556,
       "offset_to_standard_unit": 255.372222,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -958,11 +1094,13 @@
       "name": "Pascal",
       "slug": "pascal",
       "symbol": "Pa",
-      "measure_type": "PRESSURE",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "Pascal",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -972,11 +1110,13 @@
       "name": "Bar",
       "slug": "bar",
       "symbol": "bar",
-      "measure_type": "PRESSURE",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "Pascal",
       "scale_to_standard_unit": 100000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -986,11 +1126,13 @@
       "name": "Atmósfera",
       "slug": "atmosfera",
       "symbol": "atm",
-      "measure_type": "PRESSURE",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "Pascal",
       "scale_to_standard_unit": 101325.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -998,13 +1140,15 @@
     "pk": 86,
     "fields": {
       "name": "Milímetro de mercurio",
-      "slug": "milimetro-mercurio",
+      "slug": "milimetro-de-mercurio",
       "symbol": "mmHg",
-      "measure_type": "PRESSURE",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "Pascal",
       "scale_to_standard_unit": 133.322,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -1012,13 +1156,15 @@
     "pk": 87,
     "fields": {
       "name": "Libra por pulgada cuadrada",
-      "slug": "libra-pulgada-cuadrada",
+      "slug": "libra-por-pulgada-cuadrada",
       "symbol": "psi",
-      "measure_type": "PRESSURE",
+      "measure_type": "UNKNOWN",
       "name_standard_unit": "Pascal",
       "scale_to_standard_unit": 6894.76,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -1032,7 +1178,9 @@
       "name_standard_unit": "Vatio",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -1046,7 +1194,9 @@
       "name_standard_unit": "Vatio",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -1060,7 +1210,9 @@
       "name_standard_unit": "Vatio",
       "scale_to_standard_unit": 1000000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -1074,7 +1226,9 @@
       "name_standard_unit": "Hertz",
       "scale_to_standard_unit": 1.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -1088,7 +1242,9 @@
       "name_standard_unit": "Hertz",
       "scale_to_standard_unit": 1000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -1102,7 +1258,9 @@
       "name_standard_unit": "Hertz",
       "scale_to_standard_unit": 1000000.0,
       "offset_to_standard_unit": 0.0,
-      "formula": ""
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   },
   {
@@ -1116,7 +1274,9 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
     }
   },
   {
@@ -1130,7 +1290,185 @@
       "name_standard_unit": "",
       "scale_to_standard_unit": null,
       "offset_to_standard_unit": null,
-      "formula": ""
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": false
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 96,
+    "fields": {
+      "name": "Kilogramos de CO₂ equivalente por kilovatio-hora",
+      "slug": "kg-co2e-kwh",
+      "symbol": "kg CO₂e/kWh",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Kilogramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 97,
+    "fields": {
+      "name": "Kilogramos de CO₂ equivalente por litro",
+      "slug": "kg-co2e-l",
+      "symbol": "kg CO₂e/l",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Kilogramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 98,
+    "fields": {
+      "name": "Kilogramos de CO₂ equivalente por metro cúbico",
+      "slug": "kg-co2e-m3",
+      "symbol": "kg CO₂e/m³",
+      "measure_type": "VOLUMEN",
+      "name_standard_unit": "Kilogramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 99,
+    "fields": {
+      "name": "Kilogramos de CO₂ equivalente por tonelada",
+      "slug": "kg-co2e-t",
+      "symbol": "kg CO₂e/t",
+      "measure_type": "WEIGHT",
+      "name_standard_unit": "Kilogramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 100,
+    "fields": {
+      "name": "Toneladas de CO₂ equivalente por gigajulio",
+      "slug": "t-co2e-gj",
+      "symbol": "t CO₂e/GJ",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Tonelada de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 101,
+    "fields": {
+      "name": "Toneladas de CO₂ equivalente por kilómetro",
+      "slug": "t-co2e-km",
+      "symbol": "t CO₂e/km",
+      "measure_type": "LENGTH",
+      "name_standard_unit": "Tonelada de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 102,
+    "fields": {
+      "name": "Gramos de CO₂ equivalente por kilovatio-hora",
+      "slug": "g-co2e-kwh",
+      "symbol": "g CO₂e/kWh",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Gramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 103,
+    "fields": {
+      "name": "Gramos de CO₂ equivalente por metro cuadrado",
+      "slug": "g-co2e-m2",
+      "symbol": "g CO₂e/m²",
+      "measure_type": "AREA",
+      "name_standard_unit": "Gramo de CO₂ equivalente",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 104,
+    "fields": {
+      "name": "Kilogramos de metano por kilovatio-hora",
+      "slug": "kg-ch4-kwh",
+      "symbol": "kg CH₄/kWh",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Kilogramo de CH₄",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 105,
+    "fields": {
+      "name": "Kilogramos de óxido nitroso por kilovatio-hora",
+      "slug": "kg-n2o-kwh",
+      "symbol": "kg N₂O/kWh",
+      "measure_type": "ENERGY",
+      "name_standard_unit": "Kilogramo de N₂O",
+      "scale_to_standard_unit": 1.0,
+      "offset_to_standard_unit": 0.0,
+      "formula": "",
+      "is_enabled": true,
+      "is_gei_unit": true
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 106,
+    "fields": {
+      "name": "kg",
+      "slug": "kg",
+      "symbol": "",
+      "measure_type": "",
+      "name_standard_unit": "",
+      "scale_to_standard_unit": null,
+      "offset_to_standard_unit": null,
+      "formula": "",
+      "is_enabled": false,
+      "is_gei_unit": false
     }
   }
 ]

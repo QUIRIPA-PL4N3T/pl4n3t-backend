@@ -243,6 +243,18 @@ class UnitOfMeasure(models.Model):
     is_enabled = models.BooleanField(_('Activa'), default=False)
     is_gei_unit = models.BooleanField(_('Es una unidad de medida GEI'), default=False)
 
+    def convert_to(self, value, target_unit):
+        if not self.scale_to_standard_unit or not target_unit.scale_to_standard_unit:
+            raise ValueError("Conversion requires scale to standard unit for both units.")
+
+        # Convert the value to the standard unit
+        standard_value = (value + self.offset_to_standard_unit) * self.scale_to_standard_unit
+
+        # Convert the standard value to the target unit
+        target_value = (standard_value - target_unit.offset_to_standard_unit) / target_unit.scale_to_standard_unit
+
+        return target_value
+
     class Meta:
         verbose_name = _("Unidad de Medida")
         verbose_name_plural = _("Unidades de Medida")

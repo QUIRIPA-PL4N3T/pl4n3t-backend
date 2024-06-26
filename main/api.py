@@ -1,14 +1,14 @@
 import django_filters
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
+from rest_framework.decorators import action
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.response import Response
-
 from main.models import Configuration, UnitOfMeasure, EconomicSector, IndustryType, LocationType, State, City, \
     DocumentType, Country, MEASURE_TYPE_CHOICES
 from main.serializer import ConfigurationSerializer, UnitOfMeasureSerializer, EconomicSectorSerializer, \
     IndustryTypeSerializer, LocationTypeSerializer, StateSerializer, CitySerializer, DocumentTypeSerializer, \
-    CountrySerializer, MeasureTypeSerializer, ConfigurationDetailSerializer
+    CountrySerializer, MeasureTypeSerializer, ConfigurationDetailSerializer, UnitConversionSerializer
 from rest_framework import viewsets, permissions, status
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
@@ -107,8 +107,7 @@ class TypeUnitOfMeasureViewSet(GenericAPIView):
     Get types of units of measure
     """
     @extend_schema(
-        summary=_("Obtiene la información de un usuario mediante el nombre usuario"),
-        description=_("Obtiene la información de un usuario mediante el nombre usuario"),
+        summary=_("Obtiene una lista con los tipos de unidades de medida"),
         responses={
             200: MeasureTypeSerializer,
             404: OpenApiResponse(description=_('El Usuario no existe')),
@@ -140,6 +139,27 @@ class UnitOfMeasureViewSet(viewsets.GenericViewSet, ListModelMixin):
     queryset = UnitOfMeasure.objects.all()
     serializer_class = UnitOfMeasureSerializer
     filterset_class = UnitOfMeasureFilter
+
+    @action(
+        detail=False,
+        methods=['post'],
+        url_path='convert',
+        serializer_class=UnitConversionSerializer
+    )
+    def convert(self, request):
+        serializer = UnitConversionSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        from_unit = serializer.validated_data['from_unit']
+        to_unit = serializer.validated_data['to_unit']
+        value = serializer.validated_data['value']
+
+        try:
+            converted_value = from_unit.convert_to(value, to_unit)
+        except ValueError as e:
+            return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({'converted_value': converted_value}, status=status.HTTP_200_OK)
 
     def get_queryset(self):
         return UnitOfMeasure.objects.filter(is_enabled=True)

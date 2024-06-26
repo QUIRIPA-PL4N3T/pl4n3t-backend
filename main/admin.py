@@ -24,8 +24,10 @@ class ConfigurationAdmin(admin.ModelAdmin):
 
 @admin.register(UnitOfMeasure)
 class UnitOfMeasureAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'symbol', 'measure_type', 'is_enabled', 'is_gei_unit']
-    list_editable = ['name', 'symbol', 'measure_type', 'is_enabled', 'is_gei_unit']
+    list_display = ['id', 'name', 'symbol', 'slug', 'name_standard_unit', 'scale_to_standard_unit',
+                    'offset_to_standard_unit', 'is_enabled', 'is_gei_unit']
+    list_editable = ['name', 'symbol', 'is_enabled', 'is_gei_unit', 'name_standard_unit', 'scale_to_standard_unit',
+                     'offset_to_standard_unit']
     fields = ['name', 'slug', 'symbol', 'measure_type', 'name_standard_unit',
               'scale_to_standard_unit', 'offset_to_standard_unit', 'formula'
               ]

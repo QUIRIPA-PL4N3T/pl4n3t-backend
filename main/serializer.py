@@ -53,7 +53,6 @@ class StateSerializer(serializers.ModelSerializer):
 
 
 class CitySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = City
         fields = ['id', 'state', 'name', 'dane_code', 'slug', 'coords_lat', 'coords_long', 'geo_location']
@@ -80,9 +79,16 @@ class UnitOfMeasureSerializer(serializers.ModelSerializer):
     class Meta:
         model = UnitOfMeasure
         fields = [
-             'id', 'name', 'group', 'slug', 'symbol', 'measure_type', 'name_standard_unit',
+            'id', 'name', 'group', 'slug', 'symbol', 'measure_type', 'name_standard_unit',
             'scale_to_standard_unit', 'offset_to_standard_unit', 'formula', 'is_gei_unit'
         ]
+
+
+class UnitConversionSerializer(serializers.Serializer):
+    from_unit = serializers.SlugRelatedField(slug_field='slug', queryset=UnitOfMeasure.objects.all())
+    to_unit = serializers.SlugRelatedField(slug_field='slug', queryset=UnitOfMeasure.objects.all())
+    value = serializers.FloatField()
+    converted_value = serializers.FloatField(read_only=True)
 
 
 class EconomicSectorSerializer(serializers.ModelSerializer):
