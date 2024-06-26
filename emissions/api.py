@@ -89,7 +89,7 @@ class EmissionsResultFilter(filters.FilterSet):
     group = filters.NumberFilter(field_name='emission_source__group_id')
     source_type = filters.NumberFilter(field_name='emission_source__source_type_id')
     factor_type = filters.NumberFilter(field_name='emission_source__factor_type_id')
-    year = filters.NumberFilter(field_name='emission_source__year')
+    year = filters.NumberFilter(field_name='year')
     month = filters.NumberFilter(field_name='month')
     usage = filters.CharFilter(field_name='usage', lookup_expr='icontains')
     unit = filters.CharFilter(field_name='unit__symbol', lookup_expr='icontains')
