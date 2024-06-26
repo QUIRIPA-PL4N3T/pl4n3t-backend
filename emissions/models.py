@@ -278,18 +278,18 @@ class EmissionResult(models.Model):
     """
 
     MONTH_CHOICES = [
-        ('1', _('Enero')),
-        ('2', _('Febrero')),
-        ('3', _('Marzo')),
-        ('4', _('Abril')),
-        ('5', _('Mayo')),
-        ('6', _('Junio')),
-        ('7', _('Julio')),
-        ('8', _('Agosto')),
-        ('9', _('Septiembre')),
-        ('10', _('Octubre')),
-        ('11', _('Noviembre')),
-        ('12', _('Diciembre')),
+        (1, _('Enero')),
+        (2, _('Febrero')),
+        (3, _('Marzo')),
+        (4, _('Abril')),
+        (5, _('Mayo')),
+        (6, _('Junio')),
+        (7, _('Julio')),
+        (8, _('Agosto')),
+        (9, _('Septiembre')),
+        (10, _('Octubre')),
+        (11, _('Noviembre')),
+        (12, _('Diciembre')),
     ]
 
     emission_source = models.ForeignKey(
@@ -319,7 +319,7 @@ class EmissionResult(models.Model):
     name = models.CharField(_('Nombre'), max_length=255)
     date = models.DateField(_('Fecha'))
     usage = models.FloatField(_('Uso'))
-    month = models.CharField(_('Mes'), max_length=9, choices=MONTH_CHOICES, default='1')
+    month = models.PositiveSmallIntegerField(_('Mes'), choices=MONTH_CHOICES, default=1)
     year = models.PositiveSmallIntegerField(_('Año'), default=2024)
     unit = models.ForeignKey(UnitOfMeasure, verbose_name=_('Unidad de Medida'), on_delete=models.CASCADE)
     total_co2e = models.FloatField(_('Total CO₂e'), default=0)

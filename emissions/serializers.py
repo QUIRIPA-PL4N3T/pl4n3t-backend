@@ -156,7 +156,7 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
     n2o = serializers.SerializerMethodField()
     co = serializers.SerializerMethodField()
     hc = serializers.SerializerMethodField()
-    month = serializers.SerializerMethodField()
+    month_name = serializers.SerializerMethodField()
     source_name = serializers.SerializerMethodField()
     unit_symbol = serializers.SerializerMethodField()
     total_co2e = serializers.SerializerMethodField()
@@ -186,7 +186,7 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
         return round(obj.total_co2e, 7)
 
     @extend_schema_field(OpenApiTypes.STR)
-    def get_month(self, obj: EmissionResult):
+    def get_month_name(self, obj: EmissionResult):
         return obj.get_month_display()
 
     @extend_schema_field(OpenApiTypes.STR)
@@ -201,7 +201,7 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = EmissionResult
-        fields = ['id', 'name', 'date', 'usage', 'month', 'year',
+        fields = ['id', 'name', 'date', 'usage', 'month', 'month_name', 'year',
                   'unit', 'total_co2e', 'co2', 'hc4', 'n2o', 'co', 'hc',
                   'unit_symbol', 'source_name']
 

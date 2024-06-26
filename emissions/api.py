@@ -89,15 +89,20 @@ class EmissionsResultFilter(filters.FilterSet):
     group = filters.NumberFilter(field_name='emission_source__group_id')
     source_type = filters.NumberFilter(field_name='emission_source__source_type_id')
     factor_type = filters.NumberFilter(field_name='emission_source__factor_type_id')
+    year = filters.NumberFilter(field_name='emission_source__year')
+    month = filters.NumberFilter(field_name='month')
+    usage = filters.CharFilter(field_name='usage', lookup_expr='icontains')
+    unit = filters.CharFilter(field_name='unit__symbol', lookup_expr='icontains')
 
     class Meta:
         model = EmissionResult
-        fields = ['location', 'group', 'source_type', 'factor_type']
+        fields = ['location', 'group', 'source_type', 'factor_type', 'year', 'month', 'usage']
 
 
 @extend_schema(tags=['EmissionsResults'])
 class EmissionResultViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = EmissionResult.objects.all().prefetch_related('total_emissions_gas')
+    queryset = EmissionResult.objects.all().select_related(
+        'emission_source', 'location', 'unit').prefetch_related('total_emissions_gas')
     serializer_class = EmissionResultDetailSerializer
     permission_classes = [IsAuthenticated]
     filterset_class = EmissionsResultFilter
