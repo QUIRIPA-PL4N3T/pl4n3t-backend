@@ -195,7 +195,9 @@ class EmissionResultListSerializer(serializers.ModelSerializer):
 
     @extend_schema_field(OpenApiTypes.STR)
     def get_source_name(self, obj: EmissionResult):
-        return obj.emission_source.emission_source_name
+        if obj.emission_source is not None:
+            return obj.emission_source.emission_source_name
+        return ''
 
     class Meta:
         model = EmissionResult
