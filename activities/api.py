@@ -36,6 +36,7 @@ class ActivityViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     filterset_class = ActivityFilter
     pagination_class = CustomPagination
+    http_method_names = ['get', 'post', 'put', 'delete', 'head', 'options', 'trace']
 
     @extend_schema(
         summary='List all activities',
