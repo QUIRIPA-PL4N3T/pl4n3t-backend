@@ -1,7 +1,26 @@
+from typing import TypedDict, List
+
 from emissions.models import EmissionFactor
 
 
-def calculate_emission(name, factor: EmissionFactor, consumption, application_percentage=1):
+class EmissionResult(TypedDict):
+    gas_name: str
+    gas: str
+    value: float
+    co2e: float
+    uncertainty: float
+    gwp: float
+
+
+class EmissionCalculation(TypedDict):
+    emission_factor: EmissionFactor
+    component: str
+    results: List[EmissionResult]
+    co2e: float
+
+
+def calculate_emission(name, factor: EmissionFactor, consumption,
+                       application_percentage=1) -> EmissionCalculation:
     """
     Calculate emissions for a given emission factor.
 
@@ -45,6 +64,7 @@ def calculate_emission(name, factor: EmissionFactor, consumption, application_pe
 
     # Return the final results including the total CO2e for the component
     return {
+        'emission_factor': factor,
         'component': name,
         'results': results,
         'co2e': total_co2e

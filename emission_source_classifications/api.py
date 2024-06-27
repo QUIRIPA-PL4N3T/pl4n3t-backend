@@ -7,7 +7,6 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
-
 from companies.models import EmissionsSource
 from emissions.utils import calculate_emission
 from .models import QuantificationType, GHGScope, ISOCategory, EmissionSourceGroup, CommonEquipment, CommonActivity, \

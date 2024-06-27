@@ -49,6 +49,7 @@ PROJECT_APPS = [
     'emission_source_classifications',
     'documents',
     'reports',
+    'activities',
 ]
 
 ADDONS = [
