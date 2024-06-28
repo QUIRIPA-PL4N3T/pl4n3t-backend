@@ -4,11 +4,34 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from documents.serializer import DocumentSerializer
 from .models import Activity
 from activities.serializers import ActivitySerializer, ActivityListSerializer, ActivityResponseSerializer
 from django_filters import rest_framework as filters
-from django.contrib.contenttypes.models import ContentType
+
+
+ACTIVITY_REQUEST = {
+    'multipart/form-data': {
+        'type': 'object',
+        'properties': {
+            'documents': {
+                'type': 'array',
+                'items': {
+                    'type': 'string',
+                    'format': 'binary'
+                }
+            },
+            'emission_source': {'type': 'integer'},
+            'location': {'type': 'integer'},
+            'name': {'type': 'string'},
+            'description': {'type': 'string'},
+            'consumption': {'type': 'number'},
+            'date': {'type': 'string', 'format': 'date'},
+            'month': {'type': 'integer'},
+            'year': {'type': 'integer'},
+            'unit': {'type': 'integer'}
+        }
+    }
+}
 
 
 class CustomPagination(PageNumberPagination):
@@ -58,29 +81,7 @@ class ActivityViewSet(viewsets.ModelViewSet):
 
     @extend_schema(
         summary='Create a new activity with documents',
-        request={
-            'multipart/form-data': {
-                'type': 'object',
-                'properties': {
-                    'documents': {
-                        'type': 'array',
-                        'items': {
-                            'type': 'string',
-                            'format': 'binary'
-                        }
-                    },
-                    'emission_source': {'type': 'integer'},
-                    'location': {'type': 'integer'},
-                    'name': {'type': 'string'},
-                    'description': {'type': 'string'},
-                    'consumption': {'type': 'number'},
-                    'date': {'type': 'string', 'format': 'date'},
-                    'month': {'type': 'integer'},
-                    'year': {'type': 'integer'},
-                    'unit': {'type': 'integer'}
-                }
-            }
-        },
+        request=ACTIVITY_REQUEST,
         responses={201: ActivityResponseSerializer}
     )
     def create(self, request, *args, **kwargs):
@@ -91,6 +92,20 @@ class ActivityViewSet(viewsets.ModelViewSet):
         headers = self.get_success_headers(serializer.data)
         response_serializer = ActivityResponseSerializer(activity, context={'request': request})
         return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    @extend_schema(
+        summary='Update an activity with documents',
+        request=ACTIVITY_REQUEST,
+        responses={201: ActivityResponseSerializer}
+    )
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = ActivitySerializer(instance, data=request.data, partial=partial, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        activity = serializer.save()
+        response_serializer = ActivityResponseSerializer(activity)
+        return Response(response_serializer.data)
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
