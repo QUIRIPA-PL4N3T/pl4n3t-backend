@@ -225,6 +225,25 @@ class EmissionsSourceViewSet(viewsets.ModelViewSet):
         response_serializer = EmissionsSourceSerializer(activity, context={'request': request})
         return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
+    @extend_schema(
+        summary='Update an activity with documents',
+        request=generate_schema_for_emission_source(),
+        responses={201: EmissionsSourceSerializer}
+    )
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = EmissionsSourceRequestSerializer(instance, data=request.data, partial=partial, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        activity = serializer.save()
+        response_serializer = EmissionsSourceSerializer(activity)
+        return Response(response_serializer.data)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = EmissionsSourceSerializer(instance, context={'request': request})
+        return Response(serializer.data)
+
 
 @extend_schema(tags=['Dashboard'])
 class DashboardView(APIView):
