@@ -58,6 +58,7 @@ class GreenhouseGasEmissionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GreenhouseGasEmissionSerializer
 
 
+# TODO: Remove this endpoint and models
 @extend_schema(tags=['EmissionsResults'])
 class SaveEmissionDataView(APIView):
     permission_classes = [IsAuthenticated]
@@ -84,6 +85,7 @@ class SaveEmissionDataView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# TODO: Remove this endpoint and models
 class EmissionsResultFilter(filters.FilterSet):
     location = filters.NumberFilter(field_name='location_id')
     group = filters.NumberFilter(field_name='emission_source__group_id')
@@ -99,6 +101,7 @@ class EmissionsResultFilter(filters.FilterSet):
         fields = ['location', 'group', 'source_type', 'factor_type', 'year', 'month', 'usage']
 
 
+# TODO: Remove this endpoint and models
 @extend_schema(tags=['EmissionsResults'])
 class EmissionResultViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = EmissionResult.objects.all().select_related(
