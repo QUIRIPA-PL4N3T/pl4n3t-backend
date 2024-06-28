@@ -1,8 +1,10 @@
+from django.contrib.contenttypes.models import ContentType
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from companies.models import Company, Brand, Member, Location, EmissionsSource
+from documents.models import Document
 from documents.serializer import BaseDocumentSerializer
 from django.utils.translation import gettext_lazy as _
 
@@ -10,25 +12,43 @@ from django.utils.translation import gettext_lazy as _
 class EmissionsSourceSerializer(BaseDocumentSerializer):
     class Meta:
         model = EmissionsSource
-        fields = (
-            'id', 'name', 'code', 'description', 'location', 'image', 'group',
-            'source_type', 'geo_location', 'factor_type', 'emission_factor', 'emission_factor_unit',
-            'vehicle_type', 'vehicle_load', 'vehicle_fuel', 'vehicle_capacity',
-            'vehicle_efficiency', 'vehicle_efficiency_unit', 'electricity_supplier',
-            'electricity_source', 'electricity_efficiency', 'electricity_efficiency_unit',
-            'know_type_electricity_generation_source', 'waste_management',
-            'leased_assets_type', 'leased_assets_durations', 'leased_assets_duration_unit',
-            'fuel_store', 'fuel_management', 'exist_steam_specific_factor', 'activity_name',
-            'equipment_name', 'origin', 'energy_efficiency_value', 'energy_efficiency_unit',
-            'service_life', 'service_life_unit', 'good_and_service_acquired_type',
-            'acquired_service', 'supplier_name', 'ghg_emission_are_recorded', 'waste_type',
-            'waste_classification', 'investment_type', 'refrigerant_capacity',
-            'refrigerant_capacity_unit', 'has_refrigerant_leaks', 'has_refrigerant_conversions',
-            'final_disposal_of_refrigerants', 'support_actions_refrigerant_equipment',
-            'product_name', 'documents', 'emission_source_name', 'group_name', 'waste_management_data',
-            'product_operation_requirements', 'units_sold', 'units_sold_period'
-        )
+        fields = '__all__'
         read_only_fields = ['id', 'emission_source_name']
+
+
+class EmissionsSourceRequestSerializer(serializers.ModelSerializer):
+    documents = serializers.ListField(
+        child=serializers.FileField(allow_empty_file=False, use_url=False),
+        write_only=True,
+        required=False
+    )
+
+    def create(self, validated_data):
+        documents_data = validated_data.pop('documents', [])
+        user = self.context['request'].user
+        emission_source = EmissionsSource.objects.create(**validated_data)
+        self.save_documents(emission_source, documents_data, user)
+        return emission_source
+
+    def update(self, instance, validated_data):
+        documents_data = validated_data.pop('documents', [])
+        user = self.context['request'].user
+        instance = super().update(instance, validated_data)
+        self.save_documents(instance, documents_data, user)
+        return instance
+
+    def save_documents(self, emission_source, documents_data, user): # noqa
+        for document_data in documents_data:
+            Document.objects.create(
+                file=document_data,
+                content_type=ContentType.objects.get_for_model(emission_source),
+                object_pk=emission_source.pk,
+                user_created=user
+            )
+
+    class Meta:
+        model = EmissionsSource
+        exclude = ['id']
 
 
 class BrandSerializer(serializers.ModelSerializer):

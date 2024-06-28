@@ -5,17 +5,19 @@ from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets, mixins, status
 from rest_framework.decorators import action
 from rest_framework.mixins import DestroyModelMixin
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from accounts.models import User
+from activities.api import CustomPagination
 from companies.models import Company, Brand, Member, Location, EmissionsSource
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
-    EmissionsSourceSerializer, CompanyLogoSerializer, DashboardDataSerializer
+    EmissionsSourceSerializer, CompanyLogoSerializer, DashboardDataSerializer, EmissionsSourceRequestSerializer
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
+from companies.utils import generate_schema_for_emission_source
 from emissions.models import EmissionGasDetail
 from main.contrib.mixins import UpdateModelMixinWithRequest
 
@@ -203,7 +205,25 @@ class EmissionsSourceFilter(filters.FilterSet):
 class EmissionsSourceViewSet(viewsets.ModelViewSet):
     queryset = EmissionsSource.objects.all()
     serializer_class = EmissionsSourceSerializer
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser, JSONParser]
+    http_method_names = ['get', 'post', 'put', 'delete', 'head', 'options', 'trace']
+    pagination_class = CustomPagination
     filterset_class = EmissionsSourceFilter
+
+    @extend_schema(
+        summary='Create a new emission source with documents',
+        request=generate_schema_for_emission_source(),
+        responses={201: EmissionsSourceSerializer}
+    )
+    def create(self, request, *args, **kwargs):
+        serializer = EmissionsSourceRequestSerializer(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        activity = serializer.save()
+
+        headers = self.get_success_headers(serializer.data)
+        response_serializer = EmissionsSourceSerializer(activity, context={'request': request})
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
 @extend_schema(tags=['Dashboard'])
