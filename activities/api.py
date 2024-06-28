@@ -84,7 +84,7 @@ class ActivityViewSet(viewsets.ModelViewSet):
         responses={201: ActivityResponseSerializer}
     )
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data, context={'request': request})
+        serializer = ActivitySerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         activity = serializer.save()
 
