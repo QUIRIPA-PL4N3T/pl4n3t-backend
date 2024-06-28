@@ -1,11 +1,14 @@
 from drf_spectacular.utils import extend_schema
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from documents.serializer import DocumentSerializer
 from .models import Activity
-from activities.serializers import ActivitySerializer, ActivityListSerializer
+from activities.serializers import ActivitySerializer, ActivityListSerializer, ActivityResponseSerializer
 from django_filters import rest_framework as filters
+from django.contrib.contenttypes.models import ContentType
 
 
 class CustomPagination(PageNumberPagination):
@@ -32,10 +35,11 @@ class ActivityFilter(filters.FilterSet):
 @extend_schema(tags=['Activities'])
 class ActivityViewSet(viewsets.ModelViewSet):
     queryset = Activity.objects.all()
-    serializer_class = ActivitySerializer
+    serializer_class = ActivityResponseSerializer
     permission_classes = [IsAuthenticated]
     filterset_class = ActivityFilter
     pagination_class = CustomPagination
+    parser_classes = [MultiPartParser, FormParser]
     http_method_names = ['get', 'post', 'put', 'delete', 'head', 'options', 'trace']
 
     @extend_schema(
@@ -50,4 +54,45 @@ class ActivityViewSet(viewsets.ModelViewSet):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @extend_schema(
+        summary='Create a new activity with documents',
+        request={
+            'multipart/form-data': {
+                'type': 'object',
+                'properties': {
+                    'documents': {
+                        'type': 'array',
+                        'items': {
+                            'type': 'string',
+                            'format': 'binary'
+                        }
+                    },
+                    'emission_source': {'type': 'integer'},
+                    'location': {'type': 'integer'},
+                    'name': {'type': 'string'},
+                    'description': {'type': 'string'},
+                    'consumption': {'type': 'number'},
+                    'date': {'type': 'string', 'format': 'date'},
+                    'month': {'type': 'integer'},
+                    'year': {'type': 'integer'},
+                    'unit': {'type': 'integer'}
+                }
+            }
+        },
+        responses={201: ActivityResponseSerializer}
+    )
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        activity = serializer.save()
+
+        headers = self.get_success_headers(serializer.data)
+        response_serializer = ActivityResponseSerializer(activity, context={'request': request})
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = ActivityResponseSerializer(instance, context={'request': request})
         return Response(serializer.data)

@@ -9,6 +9,7 @@ if not os.path.exists(UPLOAD_TO):
 
 CONTENT_TYPE_LIMITE_CHOICES = (
     ('companies', 'emissionssource'), # noqa
+    ('activities', 'activity'), # noqa
 )
 
 
@@ -18,7 +19,9 @@ def get_platform_object_types():
     # example: /documents/emission-source/1/
 
     from companies.models import EmissionsSource
+    from activities.models import Activity
 
     return {
         'emission-source': EmissionsSource,
+        'activity': Activity,
     }
