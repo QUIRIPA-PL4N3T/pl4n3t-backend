@@ -10,16 +10,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db import models
-
-from accounts.models import User
 from activities.api import CustomPagination
+from activities.models import ActivityGasEmitted
 from companies.models import Company, Brand, Member, Location, EmissionsSource
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
     EmissionsSourceSerializer, CompanyLogoSerializer, DashboardDataSerializer, EmissionsSourceRequestSerializer
 from django_filters import rest_framework as filters
 from django.utils.translation import gettext_lazy as _
 from companies.utils import generate_schema_for_emission_source
-from emissions.models import EmissionGasDetail
 from main.contrib.mixins import UpdateModelMixinWithRequest
 
 
@@ -200,7 +198,7 @@ class EmissionsSourceFilter(filters.FilterSet):
     class Meta:
         model = EmissionsSource
         fields = ['search', 'code', 'location', 'group', 'source_type', 'factor_type']
-    
+
     def filter_search(self, queryset, name, value):
         return queryset.filter(
             models.Q(name__icontains=value) |
@@ -257,19 +255,19 @@ class EmissionsSourceViewSet(viewsets.ModelViewSet):
 @extend_schema(tags=['Dashboard'])
 class DashboardView(APIView):
     permission_classes = [IsAuthenticated]
+    company = None
     location = None
-    # EmissionResult query by location
     results = None
 
     def emissions_by_gas(self):
-        # Collect data for the summary of emissions by gas
-        gas_emissions = EmissionGasDetail.objects.filter(
-            emission_result__location_id=self.location.id).values('greenhouse_gas__name').annotate(
+        # Collect data for the summary of emissions emitted by gas
+        gases_emitted = ActivityGasEmitted.objects.filter(
+            activity__location_id=self.location.id).values('greenhouse_gas__name').annotate(
             total_value=Sum('value')
         ).order_by('greenhouse_gas__name')
         gas_summary = []
 
-        for gas in gas_emissions:
+        for gas in gases_emitted:
             percentage_change = self.calculate_percentage_change(gas['greenhouse_gas__name'], self.location.id)
             gas_summary.append({
                 'gas_name': gas['greenhouse_gas__name'],
@@ -303,17 +301,17 @@ class DashboardView(APIView):
         current_month = timezone.now().month
         previous_month = current_month - 1 if current_month > 1 else 12
 
-        current_month_emissions = EmissionGasDetail.objects.filter(
-            emission_result__location=self.location.id,
+        current_month_emissions = ActivityGasEmitted.objects.filter(
+            activity__location=self.location.id,
             greenhouse_gas__name=gas_name,
-            emission_result__location_id=location_id,
-            emission_result__date__month=current_month
+            activity__location_id=location_id,
+            activity__date__month=current_month
         ).aggregate(total=Sum('value'))['total'] or 0
 
-        previous_month_emissions = EmissionGasDetail.objects.filter(
+        previous_month_emissions = ActivityGasEmitted.objects.filter(
             greenhouse_gas__name=gas_name,
-            emission_result__location_id=location_id,
-            emission_result__date__month=previous_month
+            activity__location_id=location_id,
+            activity__date__month=previous_month
         ).aggregate(total=Sum('value'))['total'] or 0
 
         if previous_month_emissions == 0:
@@ -325,12 +323,18 @@ class DashboardView(APIView):
     @extend_schema(
         summary=_('Recuperar los datos del dashboard para una sede especifica'),
         parameters=[
-            OpenApiParameter(name='id', type=OpenApiTypes.INT, description='Location ID', required=True),
+            OpenApiParameter(name='location_id', type=OpenApiTypes.INT, description='Location ID', required=True),
+            OpenApiParameter(name='company_id', type=OpenApiTypes.INT, description='Company ID'),
         ],
         responses={200: DashboardDataSerializer}
     )
     def get(self, request, *args, **kwargs):
-        location_id = request.query_params.get('id')
+
+        self.company = Company.objects.get(id=self.kwargs.get('company_id'))
+        print(self.company)
+        location_id = request.query_params.get('location_id')
+
+
         if location_id:
             self.location = Location.objects.get(id=location_id)
             self.results = self.location.emission_results.all()
