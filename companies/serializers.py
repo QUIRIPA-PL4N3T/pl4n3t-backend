@@ -182,6 +182,7 @@ class CompanyLogoSerializer(serializers.ModelSerializer):
         fields = ('logo',)
 
 
+# Data Analysis serializers
 class GasEmissionSummarySerializer(serializers.Serializer):
     gas_name = serializers.CharField()
     total_value = serializers.FloatField()
@@ -198,7 +199,7 @@ class GEISummarySerializer(serializers.Serializer):
     percentage = serializers.FloatField()
 
 
-class DataFilteredSerializer(serializers.ModelSerializer):
+class ActivitiesFilteredSerializer(serializers.ModelSerializer):
     company = serializers.SerializerMethodField(read_only=True)
     location = serializers.SerializerMethodField(read_only=True)
     scope = serializers.SerializerMethodField(read_only=True)
@@ -208,6 +209,8 @@ class DataFilteredSerializer(serializers.ModelSerializer):
     source_type = serializers.SerializerMethodField(read_only=True)
     factor_type = serializers.SerializerMethodField(read_only=True)
     factor = serializers.SerializerMethodField(read_only=True)
+    emission_source_id = serializers.SerializerMethodField(read_only=True)
+    factor_id = serializers.SerializerMethodField(read_only=True)
 
     def get_company(self, obj: Activity): # noqa
         return obj.location.company.name
@@ -235,6 +238,12 @@ class DataFilteredSerializer(serializers.ModelSerializer):
 
     def get_factor(self, obj: Activity): # noqa
         return obj.emission_source.emission_factor.name
+
+    def get_emission_source_id(self, obj: Activity): # noqa
+        return obj.emission_source.id
+
+    def get_factor_id(self, obj: Activity): # noqa
+        return obj.emission_source.emission_factor.id
 
     class Meta:
         model = Activity
@@ -277,14 +286,14 @@ class GasesEmittedByGroupSerializer(serializers.Serializer):
 
 
 class DashboardDataSerializer(serializers.Serializer):
-    activities_filtered = DataFilteredSerializer(many=True)
+    activities_filtered = ActivitiesFilteredSerializer(many=True)
     gas_emissions = GasEmissionSummarySerializer(many=True)
     emission_sources = EmissionSourceSummarySerializer(many=True)
     gei_distribution = GEISummarySerializer(many=True)
-    total_emissions = serializers.FloatField()
     emissions_by_source_type_and_scope = EmissionsBySourceTypeAndScopeSerializer(many=True)
     emissions_by_scope = EmissionsByScopeSerializer(many=True)
     emissions_direct_and_indirect = EmissionsDirectAndIndirectSerializer(many=True)
     gases_emitted_by_scope = GasesEmittedByScopeSerializer(many=True)
     gases_emitted_by_scope_and_source_type = GasesEmittedByScopeAndSourceTypeSerializer(many=True)
     gases_emitted_by_group = GasesEmittedByGroupSerializer(many=True)
+    total_emissions = serializers.FloatField()

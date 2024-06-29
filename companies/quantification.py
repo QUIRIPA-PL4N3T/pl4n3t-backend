@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.conf import settings
 from django.db.models import Sum, F, Prefetch
 from django.utils import timezone
@@ -240,18 +241,32 @@ class DataAnalysis(object):
         }
         if self.location_id is not None:
             filters['location_id'] = self.location_id
+        if self.category_id is not None:
+            filters['emission_source__group__category_id'] = self.category_id
         if self.scope_id is not None:
             filters['emission_source__group__category__scope_id'] = self.scope_id
         if self.group_id is not None:
             filters['emission_source__group__id'] = self.group_id
-        if self.category_id is not None:
-            filters['emission_source__group__category_id'] = self.category_id
         if self.source_type_id is not None:
             filters['emission_source__source_type_id'] = self.source_type_id
-        if self.factor_type_id is not None:
-            filters['emission_source__factor_type_id'] = self.factor_type_id
         if self.emission_source_id is not None:
             filters['emission_source__id'] = self.emission_source_id
+        if self.factor_type_id is not None:
+            filters['emission_source__factor_type_id'] = self.factor_type_id
+        if self.factor_id is not None:
+            filters['emission_source__emission_factor__id'] = self.factor_id
+        if self.initial_date is not None:
+            initial_date = datetime.strptime(self.initial_date, '%Y-%m-%d')
+            filters['year__gte'] = initial_date.year
+            filters['month__gte'] = initial_date.month
+        if self.end_date is not None:
+            end_date = datetime.strptime(self.end_date, '%Y-%m-%d')
+            filters['year__lte'] = end_date.year
+            filters['month__lte'] = end_date.month
+        if self.year:
+            filters['year'] = self.year
+        if self.month:
+            filters['month'] = self.month
 
         # Filter by activities
         self.filtered_activities = Activity.objects.filter(**filters).select_related(
