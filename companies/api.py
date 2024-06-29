@@ -1,5 +1,3 @@
-from django.db.models import Sum, F
-from django.utils import timezone
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets, mixins, status
@@ -11,8 +9,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db import models
 from activities.api import CustomPagination
-from activities.models import ActivityGasEmitted
 from companies.models import Company, Brand, Member, Location, EmissionsSource
+from companies.quantification import DataAnalysis
 from companies.serializers import CompanySerializer, BrandSerializer, MemberSerializer, LocationSerializer, \
     EmissionsSourceSerializer, CompanyLogoSerializer, DashboardDataSerializer, EmissionsSourceRequestSerializer
 from django_filters import rest_framework as filters
@@ -255,96 +253,45 @@ class EmissionsSourceViewSet(viewsets.ModelViewSet):
 @extend_schema(tags=['Dashboard'])
 class DashboardView(APIView):
     permission_classes = [IsAuthenticated]
-    company = None
-    location = None
-    results = None
-
-    def emissions_by_gas(self):
-        # Collect data for the summary of emissions emitted by gas
-        gases_emitted = ActivityGasEmitted.objects.filter(
-            activity__location_id=self.location.id).values('greenhouse_gas__name').annotate(
-            total_value=Sum('value')
-        ).order_by('greenhouse_gas__name')
-        gas_summary = []
-
-        for gas in gases_emitted:
-            percentage_change = self.calculate_percentage_change(gas['greenhouse_gas__name'], self.location.id)
-            gas_summary.append({
-                'gas_name': gas['greenhouse_gas__name'],
-                'total_value': gas['total_value'],
-                'percentage_change': percentage_change
-            })
-        return gas_summary
-
-    def emissions_by_source(self):
-        # Collect data for the summary by emission source type
-        emission_sources = self.results.values('emission_source__name').annotate(
-            value=Sum('total_co2e')
-        ).order_by('emission_source__name')
-        source_summary = [{'source_type': source['emission_source__name'], 'value': source['value']} for source in
-                          emission_sources]
-        return source_summary
-
-    def emissions_by_classification_group(self):
-        # Collect data for GHG distribution
-        gei_distribution = self.results.values('total_co2e').annotate(
-            percentage=F('total_co2e') / Sum('total_co2e') * 100
-        )
-        gei_summary = [{'category': 'GEI', 'percentage': gei['percentage']} for gei in gei_distribution]
-        return gei_summary
-
-    def get_total_co2e(self):
-        return self.results.aggregate(total=Sum('total_co2e'))['total']
-
-    def calculate_percentage_change(self, gas_name, location_id):
-        # Logic to calculate percentage change since last month
-        current_month = timezone.now().month
-        previous_month = current_month - 1 if current_month > 1 else 12
-
-        current_month_emissions = ActivityGasEmitted.objects.filter(
-            activity__location=self.location.id,
-            greenhouse_gas__name=gas_name,
-            activity__location_id=location_id,
-            activity__date__month=current_month
-        ).aggregate(total=Sum('value'))['total'] or 0
-
-        previous_month_emissions = ActivityGasEmitted.objects.filter(
-            greenhouse_gas__name=gas_name,
-            activity__location_id=location_id,
-            activity__date__month=previous_month
-        ).aggregate(total=Sum('value'))['total'] or 0
-
-        if previous_month_emissions == 0:
-            return 100  # Return 100% increase if there were no emissions in the previous month
-
-        percentage_change = ((current_month_emissions - previous_month_emissions) / previous_month_emissions) * 100
-        return percentage_change
 
     @extend_schema(
         summary=_('Recuperar los datos del dashboard para una sede especifica'),
         parameters=[
-            OpenApiParameter(name='location_id', type=OpenApiTypes.INT, description='Location ID', required=True),
-            OpenApiParameter(name='company_id', type=OpenApiTypes.INT, description='Company ID'),
+            OpenApiParameter(name='company', type=OpenApiTypes.INT, description=_('Id de la Compañía'), required=True),
+            OpenApiParameter(name='location', type=OpenApiTypes.INT, description=_('Id de la sede')),
+            OpenApiParameter(name='scope', type=OpenApiTypes.INT, description='Id del Alcance'),
+            OpenApiParameter(name='category', type=OpenApiTypes.INT, description='Id del Categoría'),
+            OpenApiParameter(name='group', type=OpenApiTypes.INT, description='Id Grupo'),
+            OpenApiParameter(name='emission_source', type=OpenApiTypes.INT, description='Fuente de Emissión'),
+            OpenApiParameter(name='source_type', type=OpenApiTypes.INT, description='Tipo de Fuente e emisión'),
+            OpenApiParameter(name='factor_type', type=OpenApiTypes.INT, description='Tipos de Factores de emisión'),
+            OpenApiParameter(name='factor', type=OpenApiTypes.INT, description='Factores de emisión'),
+            OpenApiParameter(name='initial_date', type=OpenApiTypes.DATE, description='Fecha Inicial'),
+            OpenApiParameter(name='end_date', type=OpenApiTypes.DATE, description='Fecha Final'),
+            OpenApiParameter(name='year', type=OpenApiTypes.INT, description='Año'),
+            OpenApiParameter(name='month', type=OpenApiTypes.DATE, description='Mes'),
+
         ],
         responses={200: DashboardDataSerializer}
     )
     def get(self, request, *args, **kwargs):
+        data_analysis = DataAnalysis(
+            company_id=request.query_params.get('company'),
+            location_id=request.query_params.get('location', None),
+            category_id=request.query_params.get('category', None),
+            scope_id=request.query_params.get('scope', None),
+            group_id=request.query_params.get('group', None),
+            source_type_id=request.query_params.get('source_type', None),
+            emission_source_id=request.query_params.get('emission_source', None),
+            factor_type_id=request.query_params.get('factor_type', None),
+            factor_id=request.query_params.get('factor', None),
+            initial_date=request.query_params.get('initial_date', None),
+            end_date=request.query_params.get('end_date', None),
+            year=request.query_params.get('year', None),
+            month=request.query_params.get('month', None),
 
-        self.company = Company.objects.get(id=self.kwargs.get('company_id'))
-        print(self.company)
-        location_id = request.query_params.get('location_id')
+        )
+        data_analysis.calculate()
+        serializer = DashboardDataSerializer(data_analysis.data)
+        return Response(serializer.data)
 
-
-        if location_id:
-            self.location = Location.objects.get(id=location_id)
-            self.results = self.location.emission_results.all()
-
-            data = {
-                'gas_emissions': self.emissions_by_gas(),
-                'emission_sources': self.emissions_by_source(),
-                'gei_distribution': self.emissions_by_classification_group(),
-                'total_emissions': self.get_total_co2e()
-            }
-            serializer = DashboardDataSerializer(data)
-            return Response(serializer.data)
-        return Response({'error': 'location_id is required'}, status=400)

@@ -3,6 +3,7 @@ from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+from activities.models import Activity
 from companies.models import Company, Brand, Member, Location, EmissionsSource
 from documents.models import Document
 from documents.serializer import BaseDocumentSerializer
@@ -197,8 +198,93 @@ class GEISummarySerializer(serializers.Serializer):
     percentage = serializers.FloatField()
 
 
+class DataFilteredSerializer(serializers.ModelSerializer):
+    company = serializers.SerializerMethodField(read_only=True)
+    location = serializers.SerializerMethodField(read_only=True)
+    scope = serializers.SerializerMethodField(read_only=True)
+    category = serializers.SerializerMethodField(read_only=True)
+    group = serializers.SerializerMethodField(read_only=True)
+    emission_source = serializers.SerializerMethodField(read_only=True)
+    source_type = serializers.SerializerMethodField(read_only=True)
+    factor_type = serializers.SerializerMethodField(read_only=True)
+    factor = serializers.SerializerMethodField(read_only=True)
+
+    def get_company(self, obj: Activity): # noqa
+        return obj.location.company.name
+
+    def get_location(self, obj: Activity): # noqa
+        return obj.location.name
+
+    def get_scope(self, obj: Activity): # noqa
+        return obj.emission_source.group.category.scope.name
+
+    def get_category(self, obj: Activity): # noqa
+        return obj.emission_source.group.category.name
+
+    def get_group(self, obj: Activity): # noqa
+        return obj.emission_source.group.name
+
+    def get_emission_source(self, obj: Activity): # noqa
+        return obj.emission_source.name
+
+    def get_source_type(self, obj: Activity): # noqa
+        return obj.emission_source.source_type.name
+
+    def get_factor_type(self, obj: Activity): # noqa
+        return obj.emission_source.factor_type.name
+
+    def get_factor(self, obj: Activity): # noqa
+        return obj.emission_source.emission_factor.name
+
+    class Meta:
+        model = Activity
+        fields = '__all__'
+
+
+class EmissionsBySourceTypeAndScopeSerializer(serializers.Serializer):
+    source_type = serializers.CharField()
+    scope = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class EmissionsByScopeSerializer(serializers.Serializer):
+    scope = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class EmissionsDirectAndIndirectSerializer(serializers.Serializer):
+    emission_type = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class GasesEmittedByScopeSerializer(serializers.Serializer):
+    scope = serializers.CharField()
+    gas_name = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class GasesEmittedByScopeAndSourceTypeSerializer(serializers.Serializer):
+    scope = serializers.CharField()
+    source_type = serializers.CharField()
+    gas_name = serializers.CharField()
+    value = serializers.FloatField()
+
+
+class GasesEmittedByGroupSerializer(serializers.Serializer):
+    group = serializers.CharField()
+    gas_name = serializers.CharField()
+    value = serializers.FloatField()
+
+
 class DashboardDataSerializer(serializers.Serializer):
+    activities_filtered = DataFilteredSerializer(many=True)
     gas_emissions = GasEmissionSummarySerializer(many=True)
     emission_sources = EmissionSourceSummarySerializer(many=True)
     gei_distribution = GEISummarySerializer(many=True)
     total_emissions = serializers.FloatField()
+    emissions_by_source_type_and_scope = EmissionsBySourceTypeAndScopeSerializer(many=True)
+    emissions_by_scope = EmissionsByScopeSerializer(many=True)
+    emissions_direct_and_indirect = EmissionsDirectAndIndirectSerializer(many=True)
+    gases_emitted_by_scope = GasesEmittedByScopeSerializer(many=True)
+    gases_emitted_by_scope_and_source_type = GasesEmittedByScopeAndSourceTypeSerializer(many=True)
+    gases_emitted_by_group = GasesEmittedByGroupSerializer(many=True)
